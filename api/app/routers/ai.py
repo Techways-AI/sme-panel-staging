@@ -15,7 +15,10 @@ import logging
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.memory import ConversationBufferMemory, ConversationBufferWindowMemory
+from langchain_community.memory import (
+    ConversationBufferMemory,
+    ConversationBufferWindowMemory,
+)
 from langchain.chains import ConversationalRetrievalChain
 from langchain_community.vectorstores import FAISS
 
