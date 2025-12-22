@@ -40,6 +40,16 @@ if [ -z "$PORT" ]; then
     export PORT=8000
 fi
 
+# Optional shim: if Railway public networking targets 8000 but PORT differs,
+# forward traffic from 8000 -> $PORT so the app still responds.
+if [ "$PORT" != "8000" ]; then
+    echo "Detected PORT=$PORT but public networking may point to 8000."
+    echo "Starting TCP forward 8000 -> $PORT using socat..."
+    socat TCP-LISTEN:8000,fork,reuseaddr TCP:127.0.0.1:$PORT &
+    FORWARD_PID=$!
+    echo "socat running with PID $FORWARD_PID"
+fi
+
 echo "Starting uvicorn on port $PORT..."
 echo "Final working directory: $(pwd)"
 echo "Checking if app/main.py exists: $(ls -la app/main.py 2>/dev/null || echo 'NOT FOUND')"
