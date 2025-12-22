@@ -19,5 +19,5 @@ class UniversityCurriculum(Base):
     created_by = Column(String, nullable=True)
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 

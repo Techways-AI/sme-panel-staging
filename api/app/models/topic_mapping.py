@@ -20,5 +20,5 @@ class TopicMapping(Base):
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
