@@ -32,7 +32,11 @@ from PIL import Image
 from pdfminer.high_level import extract_text as pdfminer_extract
 import fitz  # PyMuPDF
 from .text_utils import get_chunk_metadata, looks_like_table, extract_headers
-from langchain.schema import Document as LC_Document
+# LangChain Document import moved; prefer new path with fallback for older versions
+try:
+    from langchain_core.documents import Document as LC_Document
+except ImportError:
+    from langchain.schema import Document as LC_Document
 from docx import Document as DocxDocument
 
 # Configure logging with UTF-8 encoding

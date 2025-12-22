@@ -315,7 +315,7 @@ async def test_endpoint():
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
         "cors_origins": CORS_ORIGINS,
-        "frontend_url": "http://localhost:3000",
+        "frontend_url": "https://app.durranis.ai",
         "environment": os.getenv("ENV", "unknown")
     }
 

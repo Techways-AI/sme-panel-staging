@@ -36,7 +36,10 @@ from ..config.settings import (
     OPENAI_API_KEY, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP, EMBEDDING_MODEL
 )
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
-from langchain.schema import Document as LangchainDocument
+try:
+    from langchain_core.documents import Document as LangchainDocument
+except ImportError:
+    from langchain.schema import Document as LangchainDocument
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from ..utils.text_utils import looks_like_table, get_chunk_metadata
 from ..core.security import get_current_user
