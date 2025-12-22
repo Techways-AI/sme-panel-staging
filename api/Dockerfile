@@ -16,7 +16,7 @@ RUN apt-get update \
      poppler-utils ghostscript \
      tesseract-ocr libtesseract-dev libleptonica-dev \
      libgl1 libglib2.0-0 \
-     openjdk-17-jre-headless \
+     openjdk-21-jre-headless \
      curl ca-certificates \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
