@@ -1,0 +1,148 @@
+{
+  "id": "178659ca-cd7c-4cae-bd5b-edf84315f0e0",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "BP105T",
+                "name": "Communication Skills",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Communication Skills, Barriers, and Perspectives",
+                    "topics": [
+                      "Introduction to communication skills",
+                      "Definition of communication",
+                      "Importance of communication",
+                      "The communication process",
+                      "Source in communication process",
+                      "Message in communication process",
+                      "Encoding in communication process",
+                      "Channel in communication process",
+                      "Decoding in communication process",
+                      "Receiver in communication process",
+                      "Feedback in communication process",
+                      "Context in communication process",
+                      "Barriers to communication",
+                      "Physiological barriers to communication",
+                      "Physical barriers to communication",
+                      "Cultural barriers to communication",
+                      "Language barriers to communication",
+                      "Gender barriers to communication",
+                      "Interpersonal barriers to communication",
+                      "Psychological barriers to communication",
+                      "Emotional barriers to communication",
+                      "Perspectives in communication",
+                      "Visual perception in communication",
+                      "Language perspective in communication",
+                      "Influence of past experiences on communication",
+                      "Influence of prejudices on communication",
+                      "Influence of feelings on communication",
+                      "Influence of environment on communication"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Elements of Communication and Communication Styles",
+                    "topics": [
+                      "Elements of communication",
+                      "Face to face communication",
+                      "Tone of voice",
+                      "Body language",
+                      "Non-verbal communication",
+                      "Verbal communication",
+                      "Physical communication",
+                      "Communication styles",
+                      "Communication styles matrix",
+                      "Direct communication style",
+                      "Spirited communication style",
+                      "Systematic communication style",
+                      "Considerate communication style"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Listening Skills and Written Communication",
+                    "topics": [
+                      "Basic listening skills",
+                      "Self-awareness in listening",
+                      "Active listening",
+                      "Becoming an active listener",
+                      "Listening in difficult situations",
+                      "Effective written communication",
+                      "When to use written communication",
+                      "When not to use written communication",
+                      "Complexity of the topic in written communication",
+                      "Amount of discussion required in written communication",
+                      "Shades of meaning in written communication",
+                      "Formal communication",
+                      "Writing effectively",
+                      "Subject lines",
+                      "Put the main point first",
+                      "Know your audience",
+                      "Organization of the message"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Interview Skills and Presentations",
+                    "topics": [
+                      "Interview skills",
+                      "Purpose of an interview",
+                      "Do’s of an interview",
+                      "Dont’s of an interview",
+                      "Giving presentations",
+                      "Dealing with fears in presentations",
+                      "Planning your presentation",
+                      "Structuring your presentation",
+                      "Delivering your presentation",
+                      "Techniques of delivery"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Group Discussion",
+                    "topics": [
+                      "Group discussion",
+                      "Communication skills in group discussion",
+                      "Do’s of group discussion",
+                      "Dont’s of group discussion"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 72,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:46:56.893448+00:00",
+  "updated_at": null
+}

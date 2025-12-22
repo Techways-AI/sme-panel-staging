@@ -1,0 +1,123 @@
+{
+  "id": "ec40a3a5-7c46-490c-a4fd-0880038e5c99",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP807ET",
+                "name": "Computer Aided Drug Design",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Drug Discovery and Development",
+                    "topics": [
+                      "Stages of drug discovery",
+                      "Stages of drug development",
+                      "Lead discovery",
+                      "Analog Based Drug Design",
+                      "Rational approaches to lead discovery based on traditional medicine",
+                      "Rational approaches to lead discovery based on Random screening",
+                      "Rational approaches to lead discovery based on Non-random screening",
+                      "Rational approaches to lead discovery based on serendipitous drug discovery",
+                      "Rational approaches to lead discovery based on drug metabolism",
+                      "Rational approaches to lead discovery based on clinical observation",
+                      "Bioisosterism",
+                      "Classification of Bioisosterism",
+                      "Bioisosteric replacement",
+                      "Case studies of Analog Based Drug Design"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Quantitative Structure Activity Relationship (QSAR)",
+                    "topics": [
+                      "SAR versus QSAR",
+                      "History of QSAR",
+                      "Development of QSAR",
+                      "Types of physicochemical parameters",
+                      "Determination of Partition coefficient",
+                      "Determination of Hammet’s substituent constant",
+                      "Determination of Tafts steric constant",
+                      "Hansch analysis",
+                      "Free Wilson analysis",
+                      "3D-QSAR approaches",
+                      "COMFA",
+                      "COMSIA"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Molecular Modeling and Virtual Screening Techniques",
+                    "topics": [
+                      "Virtual Screening techniques",
+                      "Drug likeness screening",
+                      "Concept of pharmacophore mapping",
+                      "Pharmacophore based Screening",
+                      "Molecular docking",
+                      "Rigid docking",
+                      "Flexible docking",
+                      "Manual docking",
+                      "Docking based screening",
+                      "De novo drug design"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Informatics and Methods in Drug Design",
+                    "topics": [
+                      "Introduction to Bioinformatics",
+                      "Chemoinformatics",
+                      "ADME databases",
+                      "Chemical databases",
+                      "Biochemical databases",
+                      "Pharmaceutical databases"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Molecular Modeling",
+                    "topics": [
+                      "Introduction to molecular mechanics",
+                      "Introduction to quantum mechanics",
+                      "Energy Minimization methods",
+                      "Conformational Analysis",
+                      "Global conformational minima determination"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 47,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T11:09:22.830571+00:00",
+  "updated_at": null
+}

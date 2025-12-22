@@ -1,0 +1,158 @@
+{
+  "id": "ba6437df-2fda-4cc0-83ba-5d8b68ddc5c0",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 6,
+            "subjects": [
+              {
+                "code": "BP605T",
+                "name": "Pharmaceutical Biotechnology",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Biotechnology, Enzymes and Genetic Engineering",
+                    "topics": [
+                      "Introduction to Biotechnology",
+                      "Biotechnology in Pharmaceutical Sciences",
+                      "Enzyme Biotechnology",
+                      "Methods of enzyme immobilization",
+                      "Applications of immobilized enzymes",
+                      "Biosensors",
+                      "Working of biosensors",
+                      "Applications of biosensors in Pharmaceutical Industries",
+                      "Introduction to Protein Engineering",
+                      "Use of microbes in industry",
+                      "Production of Amylase",
+                      "Production of Catalase",
+                      "Production of Peroxidase",
+                      "Production of Lipase",
+                      "Production of Protease",
+                      "Production of Penicillinase",
+                      "Basic principles of genetic engineering"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Recombinant DNA Technology and its Applications",
+                    "topics": [
+                      "Cloning vectors",
+                      "Restriction endonucleases",
+                      "DNA ligase",
+                      "Recombinant DNA technology",
+                      "Application of genetic engineering in medicine",
+                      "Production of Interferon by r DNA technology",
+                      "Production of Hepatitis-B vaccine by r DNA technology",
+                      "Production of Insulin by r DNA technology",
+                      "Introduction to Polymerase Chain Reaction (PCR)"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Immunology and Vaccine Production",
+                    "topics": [
+                      "Types of immunity",
+                      "Humoral immunity",
+                      "Cellular immunity",
+                      "Structure of Immunoglobulins",
+                      "Structure of MHC",
+                      "Function of MHC",
+                      "Hypersensitivity reactions",
+                      "Immune stimulation",
+                      "Immune suppressions",
+                      "Preparation of bacterial vaccines",
+                      "Preparation of toxoids",
+                      "Preparation of viral vaccine",
+                      "Preparation of antitoxins",
+                      "Preparation of serum-immune blood derivatives",
+                      "Storage conditions of official vaccines",
+                      "Stability of official vaccines",
+                      "Hybridoma technology",
+                      "Production of monoclonal antibodies",
+                      "Purification of monoclonal antibodies",
+                      "Applications of monoclonal antibodies",
+                      "Blood products",
+                      "Plasma substitutes"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Immuno-blotting and Microbial Genetics",
+                    "topics": [
+                      "ELISA technique",
+                      "Western blotting technique",
+                      "Southern blotting technique",
+                      "Genetic organization of Eukaryotes",
+                      "Genetic organization of Prokaryotes",
+                      "Microbial genetics",
+                      "Transformation in microbial genetics",
+                      "Transduction in microbial genetics",
+                      "Conjugation in microbial genetics",
+                      "Plasmids",
+                      "Transposons",
+                      "Introduction to Microbial biotransformation",
+                      "Applications of Microbial biotransformation",
+                      "Types of mutation",
+                      "Types of mutants"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Fermentation Technology and Blood Products",
+                    "topics": [
+                      "Fermentation methods",
+                      "General requirements of fermentation",
+                      "Fermentation media",
+                      "Fermentation equipments",
+                      "Sterilization methods in fermentation",
+                      "Aeration process in fermentation",
+                      "Stirring process in fermentation",
+                      "Large scale production fermenter design",
+                      "Controls in fermenter",
+                      "Production of Penicillins",
+                      "Production of Citric acid",
+                      "Production of Vitamin B12",
+                      "Production of Glutamic acid",
+                      "Production of Griseofulvin",
+                      "Collection of whole human blood",
+                      "Processing of whole human blood",
+                      "Storage of whole human blood",
+                      "Dried human plasma",
+                      "Plasma substitutes"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 6,
+    "subjects": 1,
+    "units": 5,
+    "topics": 82,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:09:12.547231+00:00",
+  "updated_at": null
+}

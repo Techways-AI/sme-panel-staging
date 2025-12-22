@@ -1,0 +1,121 @@
+{
+  "id": 109,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS804",
+                "name": "COMPUTER AIDED DRUG DESIGN (Open Elective - IV)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Drug Discovery and Analog Based Design",
+                    "topics": [
+                      "Stages of drug discovery and development",
+                      "Rational approaches to lead discovery based on traditional medicine",
+                      "Random screening in lead discovery",
+                      "Non-random screening in lead discovery",
+                      "Serendipitous drug discovery",
+                      "Lead discovery based on drug metabolism",
+                      "Lead discovery based on clinical observation",
+                      "Introduction to Analog Based Drug Design",
+                      "Bioisosterism",
+                      "Classification of bioisosteres",
+                      "Bioisosteric replacement",
+                      "Case studies in Analog Based Drug Design"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Quantitative Structure Activity Relationship (QSAR)",
+                    "topics": [
+                      "SAR versus QSAR",
+                      "History of QSAR",
+                      "Development of QSAR",
+                      "Types of physicochemical parameters",
+                      "Determination of Partition coefficient",
+                      "Determination of Hammet’s substituent constant",
+                      "Determination of Tafts steric constant",
+                      "Hansch analysis",
+                      "Free Wilson analysis",
+                      "3D-QSAR approaches",
+                      "COMFA",
+                      "COMSIA"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Molecular Modeling and Virtual Screening",
+                    "topics": [
+                      "Virtual Screening techniques",
+                      "Drug likeness screening",
+                      "Concept of pharmacophore mapping",
+                      "Pharmacophore-based Screening",
+                      "Molecular docking",
+                      "Rigid docking",
+                      "Flexible docking",
+                      "Manual docking",
+                      "Docking based screening",
+                      "De novo drug design"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Informatics & Methods in Drug Design",
+                    "topics": [
+                      "Introduction to Bioinformatics",
+                      "Introduction to Chemoinformatics",
+                      "ADME databases",
+                      "Chemical databases",
+                      "Biochemical databases",
+                      "Pharmaceutical databases"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Molecular Modelling",
+                    "topics": [
+                      "Introduction to molecular mechanics",
+                      "Introduction to quantum mechanics",
+                      "Energy Minimization methods",
+                      "Conformational Analysis",
+                      "Global conformational minima determination"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 45,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:47:06.840828+00:00",
+  "updated_at": null
+}

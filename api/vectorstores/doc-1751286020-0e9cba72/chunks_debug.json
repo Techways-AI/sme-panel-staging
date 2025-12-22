@@ -1,0 +1,29 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "\ud83e\uddea Trigonometric and Mathematical\nFormula Test\nPythagoras Theorem:\n$a^2 + b^2 = c^2$\nTrigonometric Identity:\n$\\sin^2 \\theta + \\cos^2 \\theta = 1$\nSlope Formula:\n$m = \\frac{y_2 - y_1}{x_2 - x_1}$\nArea of a Circle:\n$A = \\pi r^2$\nEuler's Identity:\n$e^{i \\pi} + 1 = 0$\nMatrix:\n$$ \\begin{bmatrix} a & b \\ c ...",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 596,
+      "has_header": true,
+      "semantic_header": "Formula Test",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS101: Human Anatomy and Physiology I",
+      "unit": "Unit 1",
+      "topic": "tester",
+      "folder_path": "bpharmacy/1-1/PS101: Human Anatomy and Physiology I/Unit 1/tester",
+      "source_file": "tester.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1751286020-0e9cba72.pdf",
+      "processing_timestamp": "2025-07-22T19:29:53.153453",
+      "headers": [
+        "Formula Test"
+      ],
+      "block_type": null
+    },
+    "length": 596
+  }
+]

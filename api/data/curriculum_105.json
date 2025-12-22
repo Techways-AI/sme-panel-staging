@@ -1,0 +1,159 @@
+{
+  "id": 105,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS801",
+                "name": "BIOSTATISTICS AND RESEARCH METHODOLOGY",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Statistics and Biostatistics",
+                    "topics": [
+                      "Introduction to Statistics",
+                      "Introduction to Biostatistics",
+                      "Frequency distribution",
+                      "Measures of central tendency",
+                      "Mean",
+                      "Median",
+                      "Mode",
+                      "Measures of dispersion",
+                      "Range",
+                      "Standard deviation",
+                      "Correlation",
+                      "Karl Pearson’s coefficient of correlation",
+                      "Multiple correlation"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Regression, Sampling, Hypothesis Testing and Parametric Tests",
+                    "topics": [
+                      "Regression",
+                      "Curve fitting by least squares",
+                      "Fitting line y= a + bx",
+                      "Fitting line x = a + by",
+                      "Multiple regression",
+                      "Standard error of regression",
+                      "Sample",
+                      "Population",
+                      "Large sample",
+                      "Small sample",
+                      "Null hypothesis",
+                      "Alternative hypothesis",
+                      "Sampling",
+                      "Essence of sampling",
+                      "Types of sampling",
+                      "Error-I type",
+                      "Error-II type",
+                      "Standard error of mean (SEM)",
+                      "Parametric test",
+                      "t-test",
+                      "Unpaired t-test",
+                      "Paired t-test",
+                      "ANOVA",
+                      "One way ANOVA",
+                      "Two way ANOVA",
+                      "Least Significance difference"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Non-Parametric Tests, Research Methodology and Graphs",
+                    "topics": [
+                      "Non-Parametric tests",
+                      "Wilcoxon Rank Sum Test",
+                      "Mann-Whitney U test",
+                      "Kruskal-Wallis test",
+                      "Friedman Test",
+                      "Introduction to Research",
+                      "Need for research",
+                      "Need for design of Experiments",
+                      "Experiential Design Technique",
+                      "Plagiarism",
+                      "Graphs",
+                      "Histogram",
+                      "Pie Chart",
+                      "Cubic Graph",
+                      "Response surface plot",
+                      "Counter Plot graph",
+                      "Designing the methodology",
+                      "Sample size determination",
+                      "Power of a study",
+                      "Report writing",
+                      "Presentation of data",
+                      "Protocol",
+                      "Cohorts studies",
+                      "Observational studies",
+                      "Experimental studies",
+                      "Designing clinical trial",
+                      "Phases of clinical trials"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Statistical Analysis Software",
+                    "topics": [
+                      "Statistical Analysis Using Excel",
+                      "Statistical Analysis Using SPSS",
+                      "Statistical Analysis Using MINITAB",
+                      "Statistical Analysis Using DESIGN OF EXPERIMENTS software",
+                      "Statistical Analysis Using R software",
+                      "Industrial trial approach",
+                      "Clinical trial approach"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Design and Analysis of Experiments",
+                    "topics": [
+                      "Design of experiments",
+                      "Analysis of experiments",
+                      "Factorial Design",
+                      "2^2 Factorial design",
+                      "2^3 Factorial design",
+                      "Advantage of factorial design",
+                      "Response Surface methodology",
+                      "Central composite design",
+                      "Historical design",
+                      "Optimization Techniques"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 83,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:47:06.252751+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,174 @@
+{
+  "id": 89,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS603",
+                "name": "HERBAL DRUG TECHNOLOGY",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Herbs as Raw Materials and Herbal Industry",
+                    "topics": [
+                      "Definition of herb",
+                      "Definition of herbal medicine",
+                      "Definition of herbal drug preparation",
+                      "Source of Herbs",
+                      "Selection of herbal materials",
+                      "Identification of herbal materials",
+                      "Authentication of herbal materials",
+                      "Processing of herbal raw material",
+                      "Good agricultural practices in cultivation of medicinal plants",
+                      "Organic farming",
+                      "Pest management in medicinal plants",
+                      "Biopesticides",
+                      "Bioinsecticides",
+                      "Herbal drugs industry scope",
+                      "Herbal drugs industry future prospects",
+                      "Plant based industries in India",
+                      "Research organizations involved in medicinal plants in India"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Nutraceuticals and Interactions",
+                    "topics": [
+                      "General aspects of Nutraceuticals",
+                      "Market of Nutraceuticals",
+                      "Growth of Nutraceuticals",
+                      "Scope of Nutraceuticals",
+                      "Types of Nutraceutical products",
+                      "Health benefits of Nutraceuticals",
+                      "Role of Nutraceuticals in Diabetes",
+                      "Role of Nutraceuticals in Cancer",
+                      "Role of Nutraceuticals in Irritable bowel syndrome",
+                      "Role of Nutraceuticals in Gastro intestinal diseases",
+                      "Role of Nutraceuticals in Obesity",
+                      "Ginger as health food",
+                      "Fenugreek as health food",
+                      "Garlic as health food",
+                      "Honey as health food",
+                      "Amla as health food",
+                      "Ginseng as health food",
+                      "Ashwagandha as health food",
+                      "Spirulina as health food",
+                      "Tinospora cordifolia as health food",
+                      "Linseed as health food",
+                      "Introduction to Herbal-Drug interactions",
+                      "Introduction to Herb-Food interactions",
+                      "Classification of interactions",
+                      "Side effects and interactions of Hypercium",
+                      "Side effects and interactions of Ginkobiloba",
+                      "Side effects and interactions of Ginseng",
+                      "Side effects and interactions of Garlic",
+                      "Side effects and interactions of Pepper"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Herbal Cosmetics, Excipients and Formulations",
+                    "topics": [
+                      "Principles of herbal cosmetics formulations",
+                      "Preparation of herbal shampoos",
+                      "Preparation of herbal dyes",
+                      "Preparation of herbal face creams",
+                      "Preparation of herbal perfumes",
+                      "Preparation of herbal tooth pastes",
+                      "Preparation of herbal bleaching agents",
+                      "Significance of herbal excipients",
+                      "Natural colorants",
+                      "Natural sweeteners",
+                      "Natural binders",
+                      "Natural diluents",
+                      "Natural viscosity builders",
+                      "Natural disintegrants",
+                      "Natural flavors",
+                      "Conventional herbal formulations",
+                      "Herbal syrups",
+                      "Herbal mixtures",
+                      "Herbal tablets",
+                      "Novel dosage forms",
+                      "Phytosomes",
+                      "Introduction to herbal pharmacopeia"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Evaluation, Patenting and Regulatory Requirements",
+                    "topics": [
+                      "WHO guidelines for assessment of herbal drugs",
+                      "ICH guidelines for assessment of herbal drugs",
+                      "Stability testing of herbal drugs",
+                      "Introduction to Herbal Pharmacopeia",
+                      "Definition of Patent",
+                      "Definition of IPR",
+                      "Definition of Farmers right",
+                      "Definition of Breeder’s right",
+                      "Definition of Bioprospecting",
+                      "Definition of Biopiracy",
+                      "Patenting aspects of Traditional Knowledge",
+                      "Patenting aspects of Natural Products",
+                      "Case study of Curcuma patenting",
+                      "Case study of Neem patenting",
+                      "Regulations in India for ASU drugs",
+                      "ASU DTAB",
+                      "ASU DCC",
+                      "Regulation of manufacture of ASU drugs",
+                      "Schedule Z of Drugs & Cosmetics Act"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "GMP for Herbal Drug Industry",
+                    "topics": [
+                      "Schedule T",
+                      "Good Manufacturing Practice for herbal drug industry",
+                      "Components of GMP (Schedule – T)",
+                      "Objectives of GMP (Schedule – T)",
+                      "Infrastructural requirements for herbal industry",
+                      "Working space requirements",
+                      "Storage area requirements",
+                      "Machinery and equipment requirements",
+                      "Standard operating procedures",
+                      "Health and hygiene in herbal industry",
+                      "Documentation and records in herbal industry"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 98,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:24.995145+00:00",
+  "updated_at": null
+}

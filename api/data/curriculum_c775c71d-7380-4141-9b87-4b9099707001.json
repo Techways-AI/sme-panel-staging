@@ -1,0 +1,115 @@
+{
+  "id": "c775c71d-7380-4141-9b87-4b9099707001",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP808ET",
+                "name": "Cell and Molecular Biology",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Cell and Molecular Biology",
+                    "topics": [
+                      "Definitions of Cell and Molecular Biology",
+                      "Theory of Cell and Molecular Biology",
+                      "Basics of Cell and Molecular Biology",
+                      "Applications of Cell and Molecular Biology",
+                      "History of Cell and Molecular Biology",
+                      "Summation of Cell and Molecular Biology",
+                      "Properties of cells",
+                      "Properties of cell membrane",
+                      "Prokaryotic versus Eukaryotic cells",
+                      "Cellular Reproduction",
+                      "Chemical Foundations of cell biology",
+                      "Types of reactions in cell biology"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "DNA and Molecular Information Flow",
+                    "topics": [
+                      "DNA and the Flow of Molecular Information",
+                      "DNA Functioning",
+                      "DNA structure",
+                      "RNA structure",
+                      "Types of RNA",
+                      "Transcription",
+                      "Translation"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Proteins and Cellular Processes",
+                    "topics": [
+                      "Definition of Proteins",
+                      "Amino Acids",
+                      "Protein Structure",
+                      "Regularities in Protein Pathways",
+                      "Cellular Processes",
+                      "Positive Control of Protein Synthesis",
+                      "Significance of Protein Synthesis"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Genetics and Cell Cycle",
+                    "topics": [
+                      "Science of Genetics",
+                      "Transgenics",
+                      "Genomic Analysis",
+                      "Cell Cycle analysis",
+                      "Mitosis",
+                      "Meiosis",
+                      "Cellular Activities",
+                      "Cell Cycle Checkpoints"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Cell Signaling",
+                    "topics": [
+                      "Introduction to Cell Signals",
+                      "Receptors for Cell Signals",
+                      "Overview of Signaling Pathways",
+                      "Misregulation of Signaling Pathways",
+                      "Functioning of Protein-Kinases"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 39,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:09:51.217107+00:00",
+  "updated_at": null
+}

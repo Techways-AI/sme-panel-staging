@@ -1,0 +1,166 @@
+{
+  "id": 108,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS802",
+                "name": "SOCIAL AND PREVENTIVE PHARMACY",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Concept of Health, Disease and Social Health",
+                    "topics": [
+                      "Definition of public health",
+                      "Concepts of public health",
+                      "Evaluation of public health",
+                      "Concept of prevention of disease",
+                      "Concept of control of disease",
+                      "Social causes of diseases",
+                      "Social problems of the sick",
+                      "Food in relation to nutrition and health",
+                      "Balanced diet",
+                      "Nutritional deficiencies",
+                      "Vitamin deficiencies",
+                      "Malnutrition",
+                      "Prevention of malnutrition",
+                      "Socio cultural factors related to health",
+                      "Socio cultural factors related to disease",
+                      "Impact of urbanization on health",
+                      "Impact of urbanization on disease",
+                      "Poverty and health",
+                      "Personal hygiene",
+                      "Health care",
+                      "Avoidable habits"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Preventive Medicine",
+                    "topics": [
+                      "General principles of prevention of cholera",
+                      "General principles of control of cholera",
+                      "General principles of prevention of SARS",
+                      "General principles of control of SARS",
+                      "General principles of prevention of Ebola virus",
+                      "General principles of control of Ebola virus",
+                      "General principles of prevention of influenza",
+                      "General principles of control of influenza",
+                      "General principles of prevention of acute respiratory infections",
+                      "General principles of control of acute respiratory infections",
+                      "General principles of prevention of malaria",
+                      "General principles of control of malaria",
+                      "General principles of prevention of chicken guinea",
+                      "General principles of control of chicken guinea",
+                      "General principles of prevention of dengue",
+                      "General principles of control of dengue",
+                      "General principles of prevention of lymphatic filariasis",
+                      "General principles of control of lymphatic filariasis",
+                      "General principles of prevention of pneumonia",
+                      "General principles of control of pneumonia",
+                      "General principles of prevention of hypertension",
+                      "General principles of control of hypertension",
+                      "General principles of prevention of diabetes mellitus",
+                      "General principles of control of diabetes mellitus",
+                      "General principles of prevention of cancer",
+                      "General principles of control of cancer",
+                      "General principles of prevention of drug addiction",
+                      "General principles of control of drug addiction",
+                      "General principles of prevention of drug substance abuse",
+                      "General principles of control of drug substance abuse"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "National Health Programs",
+                    "topics": [
+                      "Objectives of HIV and AIDS control programme",
+                      "Functioning of HIV and AIDS control programme",
+                      "Outcome of HIV and AIDS control programme",
+                      "Objectives of TB control programme",
+                      "Functioning of TB control programme",
+                      "Outcome of TB control programme",
+                      "Objectives of Integrated disease surveillance program (IDSP)",
+                      "Functioning of Integrated disease surveillance program (IDSP)",
+                      "Outcome of Integrated disease surveillance program (IDSP)",
+                      "Objectives of National leprosy control programme",
+                      "Functioning of National leprosy control programme",
+                      "Outcome of National leprosy control programme",
+                      "Objectives of National mental health program",
+                      "Functioning of National mental health program",
+                      "Outcome of National mental health program",
+                      "Objectives of National programme for prevention and control of deafness",
+                      "Functioning of National programme for prevention and control of deafness",
+                      "Outcome of National programme for prevention and control of deafness",
+                      "Objectives of Universal immunization programme",
+                      "Functioning of Universal immunization programme",
+                      "Outcome of Universal immunization programme",
+                      "Objectives of National programme for control of blindness",
+                      "Functioning of National programme for control of blindness",
+                      "Outcome of National programme for control of blindness",
+                      "Objectives of Pulse polio programme",
+                      "Functioning of Pulse polio programme",
+                      "Outcome of Pulse polio programme"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "National Health Intervention Programmes",
+                    "topics": [
+                      "National health intervention programme for mother and child",
+                      "National family welfare programme",
+                      "National tobacco control programme",
+                      "National malaria prevention program",
+                      "National programme for the health care for the elderly",
+                      "Social health programme",
+                      "Role of WHO in Indian national program"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Community Services",
+                    "topics": [
+                      "Functions of PHC",
+                      "Improvement in rural sanitation",
+                      "National urban health mission",
+                      "Health promotion in school",
+                      "Health education in school"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 90,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:47:06.687723+00:00",
+  "updated_at": null
+}

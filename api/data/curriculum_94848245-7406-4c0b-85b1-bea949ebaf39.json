@@ -1,0 +1,130 @@
+{
+  "id": "94848245-7406-4c0b-85b1-bea949ebaf39",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP804ET",
+                "name": "Pharmaceutical Regulatory Science",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "New Drug Discovery and Development",
+                    "topics": [
+                      "Stages of drug discovery",
+                      "Drug development process",
+                      "Pre-clinical studies",
+                      "Non-clinical activities",
+                      "Clinical studies",
+                      "Innovator drugs",
+                      "Generic drugs",
+                      "Concept of generics",
+                      "Generic drug product development"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Regulatory Approval Process and Authorities",
+                    "topics": [
+                      "Approval process for Investigational New Drug (IND)",
+                      "Timelines for Investigational New Drug (IND)",
+                      "Approval process for New Drug Application (NDA)",
+                      "Timelines for New Drug Application (NDA)",
+                      "Approval process for Abbreviated New Drug Application (ANDA)",
+                      "Timelines for Abbreviated New Drug Application (ANDA)",
+                      "Changes to an approved NDA",
+                      "Changes to an approved ANDA",
+                      "Regulatory authorities of India",
+                      "Regulatory authorities of United States",
+                      "Regulatory authorities of European Union",
+                      "Regulatory authorities of Australia",
+                      "Regulatory authorities of Japan",
+                      "Regulatory authorities of Canada",
+                      "Organization structure of regulatory authorities",
+                      "Types of applications for regulatory authorities"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Registration in Overseas Market",
+                    "topics": [
+                      "Procedure for export of pharmaceutical products",
+                      "Technical documentation for export",
+                      "Drug Master Files (DMF)",
+                      "Common Technical Document (CTD)",
+                      "Electronic Common Technical Document (eCTD)",
+                      "ASEAN Common Technical Document (ACTD)"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Clinical Trials",
+                    "topics": [
+                      "Developing clinical trial protocols",
+                      "Institutional Review Board formation",
+                      "Institutional Review Board working procedures",
+                      "Independent Ethics committee formation",
+                      "Independent Ethics committee working procedures",
+                      "Informed consent process",
+                      "Informed consent procedures",
+                      "GCP obligations of Investigators",
+                      "GCP obligations of sponsors",
+                      "GCP obligations of Monitors",
+                      "Managing clinical trials",
+                      "Monitoring clinical trials",
+                      "Pharmacovigilance in clinical trials",
+                      "Safety monitoring in clinical trials"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Regulatory Concepts",
+                    "topics": [
+                      "Basic terminology of regulatory concepts",
+                      "Guidance documents",
+                      "Guidelines",
+                      "Regulations",
+                      "Laws and Acts",
+                      "Orange book",
+                      "Federal Register",
+                      "Code of Federal Regulatory",
+                      "Purple book"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 54,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T11:09:23.431388+00:00",
+  "updated_at": null
+}

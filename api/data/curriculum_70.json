@@ -1,0 +1,153 @@
+{
+  "id": 70,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS301",
+                "name": "PHARMACEUTICAL ORGANIC CHEMISTRY – II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Benzene and its Derivatives",
+                    "topics": [
+                      "Analytical evidences of benzene structure",
+                      "Synthetic evidences of benzene structure",
+                      "Orbital picture of benzene",
+                      "Resonance in benzene",
+                      "Aromatic characters",
+                      "Huckel’s rule",
+                      "Preparation of benzene",
+                      "Nitration of benzene",
+                      "Sulphonation of benzene",
+                      "Halogenation of benzene",
+                      "Reactivity of halogenation",
+                      "Friedelcrafts alkylation",
+                      "Reactivity of Friedelcrafts alkylation",
+                      "Limitations of Friedelcrafts alkylation",
+                      "Friedelcrafts acylation",
+                      "Substituents of benzene",
+                      "Effect of substituents on reactivity",
+                      "Effect of substituents on orientation of mono substituted benzene compounds"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Phenols, Aromatic Amines and Aromatic Acids",
+                    "topics": [
+                      "Phenols",
+                      "Preparation of phenols",
+                      "Reactions of phenols",
+                      "Acidity of phenols",
+                      "Effect of substituents on acidity of phenols",
+                      "Qualitative tests for phenols",
+                      "Aromatic Amines",
+                      "Preparation of aromatic amines",
+                      "Reactions of aromatic amines",
+                      "Basicity of aromatic amines",
+                      "Effect of substituents on basicity of aromatic amines",
+                      "Synthetic uses of aryl diazonium salts",
+                      "Aromatic Acids",
+                      "Preparation of aromatic acids",
+                      "Reactions of aromatic acids",
+                      "Acidity of aromatic acids",
+                      "Effect of substituents on acidity of aromatic acids",
+                      "Reactions of benzoic acid"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Nitro Compounds and Ethers",
+                    "topics": [
+                      "Nitro Compounds",
+                      "Preparation of nitro compounds",
+                      "Reactions of nitro compounds",
+                      "Classification of nitro compounds",
+                      "Halogenation using nitrous acid",
+                      "Nef reaction",
+                      "Michael Addition",
+                      "Henry Reaction",
+                      "Aromatic Nitro hydrocarbons",
+                      "Preparation of Nitrobenzene from diazonium salt",
+                      "Direct nitration of benzene",
+                      "Reactivity of nitrobenzene in different media",
+                      "Reduction of nitrobenzene in different media",
+                      "Aliphatic ethers",
+                      "Synthesis of aliphatic ethers",
+                      "Reactions of aliphatic ethers",
+                      "Aromatic ethers",
+                      "Synthesis of aromatic ethers",
+                      "Reactions of aromatic ethers"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Polynuclear Hydrocarbons",
+                    "topics": [
+                      "Synthesis of polynuclear hydrocarbons",
+                      "Reactions of polynuclear hydrocarbons",
+                      "Structure of Naphthalene",
+                      "Medicinal uses of Naphthalene",
+                      "Structure of Phenanthrene",
+                      "Medicinal uses of Phenanthrene",
+                      "Structure of Anthracene",
+                      "Medicinal uses of Anthracene",
+                      "Structure of Diphenylmethane",
+                      "Medicinal uses of Diphenylmethane",
+                      "Structure of Triphenylmethane",
+                      "Medicinal uses of Triphenylmethane",
+                      "Derivatives of polynuclear hydrocarbons"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Cyclo Alkanes",
+                    "topics": [
+                      "Cyclo alkanes",
+                      "Stabilities of cyclo alkanes",
+                      "Baeyer’s strain theory",
+                      "Limitation of Baeyer’s strain theory",
+                      "Coulson and Moffitt’s modification",
+                      "Sachse Mohr’s theory",
+                      "Theory of strainless rings",
+                      "Reactions of cyclopropane",
+                      "Reactions of cyclobutane"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 77,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:43:53.398318+00:00",
+  "updated_at": null
+}

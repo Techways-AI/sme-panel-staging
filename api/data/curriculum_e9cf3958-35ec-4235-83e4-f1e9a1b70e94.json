@@ -1,0 +1,211 @@
+{
+  "id": "e9cf3958-35ec-4235-83e4-f1e9a1b70e94",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 5,
+            "subjects": [
+              {
+                "code": "BP505T",
+                "name": "Pharmaceutical Jurisprudence",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Drugs and Cosmetics Act, 1940 and its rules 1945 - Part I",
+                    "topics": [
+                      "Objectives of Drugs and Cosmetics Act 1940",
+                      "Definitions in Drugs and Cosmetics Act 1940",
+                      "Legal definitions of schedules to the Act and Rules",
+                      "Import of drugs",
+                      "Classes of drugs prohibited from import",
+                      "Classes of cosmetics prohibited from import",
+                      "Import under license or permit",
+                      "Offences and penalties related to import",
+                      "Manufacture of drugs",
+                      "Prohibition of manufacture of certain drugs",
+                      "Prohibition of sale of certain drugs",
+                      "Conditions for grant of license for manufacture of drugs",
+                      "Conditions of license for manufacture of drugs",
+                      "Manufacture of drugs for test",
+                      "Manufacture of drugs for examination",
+                      "Manufacture of drugs for analysis",
+                      "Manufacture of new drug",
+                      "Loan license",
+                      "Repacking license"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Drugs and Cosmetics Act, 1940 and its rules 1945 - Part II",
+                    "topics": [
+                      "Detailed study of Schedule G",
+                      "Detailed study of Schedule H",
+                      "Detailed study of Schedule M",
+                      "Detailed study of Schedule N",
+                      "Detailed study of Schedule P",
+                      "Detailed study of Schedule T",
+                      "Detailed study of Schedule U",
+                      "Detailed study of Schedule V",
+                      "Detailed study of Schedule X",
+                      "Detailed study of Schedule Y",
+                      "Detailed study of Part XII B",
+                      "Detailed study of Schedule F",
+                      "Detailed study of DMR (OA)",
+                      "Sale of Drugs",
+                      "Wholesale of drugs",
+                      "Retail sale of drugs",
+                      "Restricted license for sale of drugs",
+                      "Offences and penalties related to sale",
+                      "Labeling of drugs",
+                      "Packing of drugs",
+                      "General labeling requirements",
+                      "Specimen labels for drugs",
+                      "Specimen labels for cosmetics",
+                      "List of permitted colors",
+                      "Offences and penalties related to labeling",
+                      "Administration of the Act and Rules",
+                      "Drugs Technical Advisory Board",
+                      "Central drugs Laboratory",
+                      "Drugs Consultative Committee",
+                      "Government drug analysts",
+                      "Licensing authorities",
+                      "Controlling authorities",
+                      "Drugs Inspectors"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Pharmacy Act, Medicinal and Toilet Preparation Act, Narcotic Drugs Act",
+                    "topics": [
+                      "Pharmacy Act –1948",
+                      "Objectives of Pharmacy Act",
+                      "Definitions in Pharmacy Act",
+                      "Pharmacy Council of India",
+                      "Constitution of Pharmacy Council of India",
+                      "Functions of Pharmacy Council of India",
+                      "Education Regulations",
+                      "State pharmacy councils",
+                      "Joint state pharmacy councils",
+                      "Constitution of State pharmacy councils",
+                      "Functions of State pharmacy councils",
+                      "Registration of Pharmacists",
+                      "Offences and Penalties under Pharmacy Act",
+                      "Medicinal and Toilet Preparation Act –1955",
+                      "Objectives of Medicinal and Toilet Preparation Act",
+                      "Definitions in Medicinal and Toilet Preparation Act",
+                      "Licensing under Medicinal and Toilet Preparation Act",
+                      "Manufacture In bond",
+                      "Manufacture Outside bond",
+                      "Export of alcoholic preparations",
+                      "Manufacture of Ayurvedic preparations",
+                      "Manufacture of Homeopathic preparations",
+                      "Manufacture of Patent & Proprietary Preparations",
+                      "Offences and Penalties under Medicinal and Toilet Preparation Act",
+                      "Narcotic Drugs and Psychotropic substances Act-1985 and Rules",
+                      "Objectives of NDPS Act",
+                      "Definitions in NDPS Act",
+                      "Authorities and Officers under NDPS Act",
+                      "Constitution of Narcotic & Psychotropic Consultative Committee",
+                      "Functions of Narcotic & Psychotropic Consultative Committee",
+                      "National Fund for Controlling the Drug Abuse",
+                      "Prohibition under NDPS Act",
+                      "Control and Regulation under NDPS Act",
+                      "Opium poppy cultivation",
+                      "Production of poppy straw",
+                      "Manufacture of opium",
+                      "Sale of opium",
+                      "Export of opium",
+                      "Offences and Penalties under NDPS Act"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Drugs and Magic Remedies Act, Animal Ethics, and Drug Price Control",
+                    "topics": [
+                      "Drugs and Magic Remedies Act",
+                      "Objectives of Drugs and Magic Remedies Act",
+                      "Definitions in Drugs and Magic Remedies Act",
+                      "Prohibition of certain advertisements",
+                      "Classes of Exempted advertisements",
+                      "Offences and Penalties under Drugs and Magic Remedies Act",
+                      "Prevention of Cruelty to animals Act-1960",
+                      "Objectives of Prevention of Cruelty to animals Act",
+                      "Definitions in Prevention of Cruelty to animals Act",
+                      "Institutional Animal Ethics Committee",
+                      "CPCSEA guidelines for Breeding of Animals",
+                      "CPCSEA guidelines for Stocking of Animals",
+                      "Performance of Experiments on animals",
+                      "Transfer of animals for experiment",
+                      "Acquisition of animals for experiment",
+                      "Records of animal experiments",
+                      "Power to suspend registration",
+                      "Power to revoke registration",
+                      "Offences and Penalties under Prevention of Cruelty to animals Act",
+                      "National Pharmaceutical Pricing Authority",
+                      "Drugs Price Control Order (DPCO)- 2013",
+                      "Objectives of DPCO",
+                      "Definitions in DPCO",
+                      "Sale prices of bulk drugs",
+                      "Retail price of formulations",
+                      "Retail price of scheduled formulations",
+                      "Ceiling price of scheduled formulations",
+                      "National List of Essential Medicines (NLEM)"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmaceutical Legislations Review, Ethics, and IPR",
+                    "topics": [
+                      "Review of Pharmaceutical Legislations",
+                      "Introduction to Pharmaceutical Legislations",
+                      "Drugs enquiry committee",
+                      "Health survey and development committee",
+                      "Hathi committee",
+                      "Mudaliar committee",
+                      "Code of Pharmaceutical ethics",
+                      "Definition of Pharmaceutical ethics",
+                      "Pharmacist in relation to his job",
+                      "Pharmacist in relation to his trade",
+                      "Pharmacist in relation to medical profession",
+                      "Pharmacist in relation to his profession",
+                      "Pharmacist’s oath",
+                      "Medical Termination of Pregnancy Act",
+                      "Right to Information Act",
+                      "Introduction to Intellectual Property Rights (IPR)"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 5,
+    "subjects": 1,
+    "units": 5,
+    "topics": 135,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T10:13:33.023000+00:00",
+  "updated_at": null
+}

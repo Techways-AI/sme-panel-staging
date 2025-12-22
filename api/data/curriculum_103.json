@@ -1,0 +1,103 @@
+{
+  "id": 103,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS708",
+                "name": "QUALITY CONTROL AND STANDARDIZATION OF HERBALS (Open Elective - III)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Basic Tests and Evaluation Guidelines",
+                    "topics": [
+                      "Basic tests for pharmaceutical substances",
+                      "Basic tests for medicinal plants materials",
+                      "Basic tests for dosage forms",
+                      "WHO guidelines for quality control of herbal drugs",
+                      "Evaluation of commercial crude drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Quality Assurance, cGMP and GACP Guidelines",
+                    "topics": [
+                      "Quality assurance in herbal drug industry",
+                      "cGMP in traditional system of medicine",
+                      "GAP in traditional system of medicine",
+                      "GMP in traditional system of medicine",
+                      "GLP in traditional system of medicine",
+                      "WHO Guidelines on cGMP for Herbal Medicines",
+                      "WHO Guidelines on GACP for Medicinal Plants"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "EU and ICH Guidelines",
+                    "topics": [
+                      "EU guidelines for quality control of herbal drugs",
+                      "ICH guidelines for quality control of herbal drugs",
+                      "Research Guidelines for Evaluating Safety of Herbal Medicines",
+                      "Research Guidelines for Evaluating Efficacy of Herbal Medicines"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Stability Testing and Documentation",
+                    "topics": [
+                      "Stability testing of herbal medicines",
+                      "Application of chromatographic techniques in standardization",
+                      "Preparation of documents for new drug application",
+                      "Preparation of documents for export registration",
+                      "GMP requirements",
+                      "Drugs & Cosmetics Act provisions"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Regulatory Requirements and Standardization",
+                    "topics": [
+                      "Regulatory requirements for herbal medicines",
+                      "WHO guidelines on safety monitoring of herbal medicines",
+                      "Comparison of various Herbal Pharmacopoeias",
+                      "Role of chemical markers in standardization",
+                      "Role of biological markers in standardization"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 27,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:46:23.211408+00:00",
+  "updated_at": null
+}

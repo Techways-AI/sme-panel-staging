@@ -1,0 +1,177 @@
+{
+  "id": "e5438478-ac07-478e-b827-adf8d0b070b5",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "BP204T",
+                "name": "Pathophysiology",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Basic Principles of Cell Injury, Adaptation, Inflammation and Repair",
+                    "topics": [
+                      "Introduction to cell injury",
+                      "Definitions in pathophysiology",
+                      "Homeostasis",
+                      "Components of feedback systems",
+                      "Types of feedback systems",
+                      "Causes of cellular injury",
+                      "Pathogenesis of cell injury",
+                      "Cell membrane damage",
+                      "Mitochondrial damage",
+                      "Ribosome damage",
+                      "Nuclear damage",
+                      "Morphology of cell injury",
+                      "Adaptive changes",
+                      "Atrophy",
+                      "Hypertrophy",
+                      "Hyperplasia",
+                      "Metaplasia",
+                      "Dysplasia",
+                      "Cell swelling",
+                      "Intracellular accumulation",
+                      "Calcification",
+                      "Enzyme leakage",
+                      "Cell Death",
+                      "Acidosis",
+                      "Alkalosis",
+                      "Electrolyte imbalance",
+                      "Basic mechanism of inflammation",
+                      "Basic mechanism of repair",
+                      "Clinical signs of inflammation",
+                      "Different types of Inflammation",
+                      "Mechanism of Inflammation",
+                      "Alteration in vascular permeability",
+                      "Alteration in blood flow",
+                      "Migration of WBC’s",
+                      "Mediators of inflammation",
+                      "Basic principles of wound healing in the skin",
+                      "Pathophysiology of Atherosclerosis"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Cardiovascular, Respiratory and Renal Systems",
+                    "topics": [
+                      "Cardiovascular System",
+                      "Hypertension",
+                      "Congestive heart failure",
+                      "Ischemic heart disease",
+                      "Angina pectoris",
+                      "Myocardial infarction",
+                      "Atherosclerosis",
+                      "Arteriosclerosis",
+                      "Respiratory system",
+                      "Asthma",
+                      "Chronic obstructive airways diseases",
+                      "Renal system",
+                      "Acute renal failure",
+                      "Chronic renal failure"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Haematological, Endocrine, Nervous and Gastrointestinal Systems",
+                    "topics": [
+                      "Haematological Diseases",
+                      "Iron deficiency anemia",
+                      "Megaloblastic anemia",
+                      "Vitamin B12 deficiency anemia",
+                      "Folic acid deficiency anemia",
+                      "Sickle cell anemia",
+                      "Thalasemia",
+                      "Hereditary acquired anemia",
+                      "Hemophilia",
+                      "Endocrine system",
+                      "Diabetes mellitus",
+                      "Thyroid diseases",
+                      "Disorders of sex hormones",
+                      "Nervous system",
+                      "Epilepsy",
+                      "Parkinson’s disease",
+                      "Stroke",
+                      "Psychiatric disorders",
+                      "Depression",
+                      "Schizophrenia",
+                      "Alzheimer’s disease",
+                      "Gastrointestinal system",
+                      "Peptic Ulcer"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Gastrointestinal, Bone, Joint Diseases and Cancer",
+                    "topics": [
+                      "Inflammatory bowel diseases",
+                      "Jaundice",
+                      "Hepatitis A",
+                      "Hepatitis B",
+                      "Hepatitis C",
+                      "Hepatitis D",
+                      "Hepatitis E",
+                      "Hepatitis F",
+                      "Alcoholic liver disease",
+                      "Diseases of bones and joints",
+                      "Rheumatoid arthritis",
+                      "Osteoporosis",
+                      "Gout",
+                      "Principles of cancer",
+                      "Classification of cancer",
+                      "Etiology of cancer",
+                      "Pathogenesis of cancer"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Infectious and Sexually Transmitted Diseases",
+                    "topics": [
+                      "Infectious diseases",
+                      "Meningitis",
+                      "Typhoid",
+                      "Leprosy",
+                      "Tuberculosis",
+                      "Urinary tract infections",
+                      "Sexually transmitted diseases",
+                      "AIDS",
+                      "Syphilis",
+                      "Gonorrhea"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 101,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:54:36.862888+00:00",
+  "updated_at": null
+}

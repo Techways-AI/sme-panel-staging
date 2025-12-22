@@ -1,0 +1,167 @@
+{
+  "id": "8ed858ec-6a6f-42b6-91c9-0e9ee4a875c4",
+  "university": "JNTUH",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "BS204",
+                "name": "PATHOPHYSIOLOGY",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Basic Principles of Cell Injury, Adaptation and Inflammation",
+                    "topics": [
+                      "Basic principles of cell injury",
+                      "Definition of homeostasis",
+                      "Components of feedback systems",
+                      "Types of feedback systems",
+                      "Causes of cellular injury",
+                      "Pathogenesis of cell membrane damage",
+                      "Pathogenesis of mitochondrial damage",
+                      "Pathogenesis of ribosome damage",
+                      "Pathogenesis of nuclear damage",
+                      "Morphology of cell injury",
+                      "Adaptive changes",
+                      "Atrophy",
+                      "Hypertrophy",
+                      "Hyperplasia",
+                      "Metaplasia",
+                      "Dysplasia",
+                      "Cell swelling",
+                      "Intra cellular accumulation",
+                      "Calcification",
+                      "Enzyme leakage",
+                      "Cell death",
+                      "Acidosis",
+                      "Alkalosis",
+                      "Electrolyte imbalance",
+                      "Basic mechanism of inflammation",
+                      "Clinical signs of inflammation",
+                      "Types of inflammation",
+                      "Mechanism of inflammation",
+                      "Alteration in vascular permeability",
+                      "Alteration in blood flow",
+                      "Migration of WBC’s",
+                      "Mediators of inflammation",
+                      "Basic principles of wound healing in the skin",
+                      "Pathophysiology of atherosclerosis"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Cardiovascular, Respiratory and Renal Systems",
+                    "topics": [
+                      "Hypertension",
+                      "Congestive heart failure",
+                      "Ischemic heart disease",
+                      "Angina pectoris",
+                      "Myocardial infarction",
+                      "Atherosclerosis",
+                      "Arteriosclerosis",
+                      "Asthma",
+                      "Chronic obstructive airways diseases",
+                      "Acute renal failure",
+                      "Chronic renal failure"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Haematological, Endocrine and Nervous Systems",
+                    "topics": [
+                      "Iron deficiency anemia",
+                      "Megaloblastic anemia",
+                      "Sickle cell anemia",
+                      "Thalasemia",
+                      "Hereditary acquired anemia",
+                      "Hemophilia",
+                      "Diabetes mellitus",
+                      "Thyroid diseases",
+                      "Disorders of sex hormones",
+                      "Epilepsy",
+                      "Parkinson’s disease",
+                      "Stroke",
+                      "Psychiatric disorders",
+                      "Depression",
+                      "Schizophrenia",
+                      "Alzheimer’s disease",
+                      "Peptic ulcer"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Gastrointestinal, Bone, Joint Diseases and Cancer",
+                    "topics": [
+                      "Inflammatory bowel diseases",
+                      "Jaundice",
+                      "Hepatitis A",
+                      "Hepatitis B",
+                      "Hepatitis C",
+                      "Hepatitis D",
+                      "Hepatitis E",
+                      "Hepatitis F",
+                      "Alcoholic liver disease",
+                      "Rheumatoid arthritis",
+                      "Osteoporosis",
+                      "Gout",
+                      "Principles of cancer",
+                      "Classification of cancer",
+                      "Etiology of cancer",
+                      "Pathogenesis of cancer"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Infectious and Sexually Transmitted Diseases",
+                    "topics": [
+                      "Meningitis",
+                      "Typhoid",
+                      "Leprosy",
+                      "Tuberculosis",
+                      "Urinary tract infections",
+                      "SARS virus",
+                      "COVID 19",
+                      "Conjunctivitis",
+                      "Measles",
+                      "Sexually transmitted diseases",
+                      "AIDS",
+                      "Syphilis",
+                      "Gonorrhea"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 91,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T09:24:04.319217+00:00",
+  "updated_at": null
+}

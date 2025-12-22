@@ -1,0 +1,30 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 101,
+      "has_header": true,
+      "semantic_header": "<<<PAGE_BREAK>>>",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS101: Human Anatomy and Physiology I",
+      "unit": "Unit 2",
+      "topic": "test",
+      "folder_path": "bpharmacy/1-1/PS101: Human Anatomy and Physiology I/Unit 2/test",
+      "source_file": "Introduction_to_HTML.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753795262-08510b55.pdf",
+      "processing_timestamp": "2025-07-29T18:51:59.579247",
+      "headers": [
+        "<<<PAGE_BREAK>>>",
+        "<<<PAGE_BREAK>>>"
+      ],
+      "block_type": null
+    },
+    "length": 101
+  }
+]

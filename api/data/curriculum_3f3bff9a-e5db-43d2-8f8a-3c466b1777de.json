@@ -1,0 +1,180 @@
+{
+  "id": "3f3bff9a-e5db-43d2-8f8a-3c466b1777de",
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "BS203",
+                "name": "BIOCHEMISTRY",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Carbohydrate Metabolism and Biological Oxidation",
+                    "topics": [
+                      "Carbohydrate metabolism",
+                      "Glycolysis pathway",
+                      "Energetics of glycolysis",
+                      "Significance of glycolysis",
+                      "Citric acid cycle pathway",
+                      "Energetics of citric acid cycle",
+                      "Significance of citric acid cycle",
+                      "HMP shunt",
+                      "Significance of HMP shunt",
+                      "Glucose-6-Phosphate dehydrogenase (G6PD) deficiency",
+                      "Glycogen metabolism pathways",
+                      "Glycogen storage diseases (GSD)",
+                      "Gluconeogenesis pathway",
+                      "Significance of gluconeogenesis",
+                      "Hormonal regulation of blood glucose level",
+                      "Diabetes mellitus",
+                      "Biological oxidation",
+                      "Electron transport chain (ETC)",
+                      "Mechanism of ETC",
+                      "Oxidative phosphorylation",
+                      "Mechanism of oxidative phosphorylation",
+                      "Substrate level phosphorylation",
+                      "Inhibitors of ETC",
+                      "Inhibitors of oxidative phosphorylation",
+                      "Uncouplers of oxidative phosphorylation"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Lipid Metabolism",
+                    "topics": [
+                      "Lipid metabolism",
+                      "Beta-Oxidation of saturated fatty acid (Palmitic acid)",
+                      "Formation of ketone bodies",
+                      "Utilization of ketone bodies",
+                      "Ketoacidosis",
+                      "De novo synthesis of fatty acids (Palmitic acid)",
+                      "Biological significance of cholesterol",
+                      "Conversion of cholesterol into bile acids",
+                      "Conversion of cholesterol into steroid hormone",
+                      "Conversion of cholesterol into vitamin D",
+                      "Disorders of lipid metabolism",
+                      "Hypercholesterolemia",
+                      "Atherosclerosis",
+                      "Fatty liver",
+                      "Obesity"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Amino Acid Metabolism",
+                    "topics": [
+                      "Amino acid metabolism",
+                      "General reactions of amino acid metabolism",
+                      "Transamination",
+                      "Deamination",
+                      "Decarboxylation",
+                      "Urea cycle",
+                      "Disorders of urea cycle",
+                      "Catabolism of phenylalanine",
+                      "Catabolism of tyrosine",
+                      "Metabolic disorders of phenylalanine",
+                      "Metabolic disorders of tyrosine",
+                      "Phenylketonuria",
+                      "Albinism",
+                      "Alkaptonuria",
+                      "Tyrosinemia",
+                      "Synthesis of 5-HT",
+                      "Significance of 5-HT",
+                      "Synthesis of melatonin",
+                      "Significance of melatonin",
+                      "Synthesis of dopamine",
+                      "Significance of dopamine",
+                      "Synthesis of noradrenaline",
+                      "Significance of noradrenaline",
+                      "Synthesis of adrenaline",
+                      "Significance of adrenaline",
+                      "Catabolism of heme",
+                      "Hyperbilirubinemia",
+                      "Jaundice"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Nucleic Acid Metabolism and Genetic Information Transfer",
+                    "topics": [
+                      "Nucleic acid metabolism",
+                      "Biosynthesis of purine nucleotides",
+                      "Biosynthesis of pyrimidine nucleotides",
+                      "Catabolism of purine nucleotides",
+                      "Hyperuricemia",
+                      "Gout disease",
+                      "Organization of mammalian genome",
+                      "Genetic information transfer",
+                      "Structure of DNA",
+                      "Functions of DNA",
+                      "Structure of RNA",
+                      "Functions of RNA",
+                      "DNA replication (semi conservative model)",
+                      "Transcription (RNA synthesis)",
+                      "Genetic code",
+                      "Translation (Protein synthesis)",
+                      "Inhibitors of protein synthesis"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Enzymes",
+                    "topics": [
+                      "Introduction to enzymes",
+                      "Properties of enzymes",
+                      "Nomenclature of enzymes",
+                      "IUB classification of enzymes",
+                      "Enzyme kinetics",
+                      "Michaelis plot",
+                      "Line Weaver Burke plot",
+                      "Enzyme inhibitors",
+                      "Regulation of enzymes",
+                      "Enzyme induction",
+                      "Enzyme repression",
+                      "Allosteric enzymes regulation",
+                      "Therapeutic applications of enzymes",
+                      "Diagnostic applications of enzymes",
+                      "Therapeutic applications of isoenzymes",
+                      "Diagnostic applications of isoenzymes",
+                      "Coenzymes",
+                      "Structure of coenzymes",
+                      "Biochemical functions of coenzymes"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 104,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T09:12:20.088631+00:00",
+  "updated_at": null
+}

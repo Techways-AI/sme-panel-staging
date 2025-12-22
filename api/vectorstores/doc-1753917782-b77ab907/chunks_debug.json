@@ -1,0 +1,29 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "Introduction to Web Servers and Server Products",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "text",
+      "is_semantic": true,
+      "is_table": false,
+      "chunk_size": 47,
+      "has_header": true,
+      "semantic_header": "Introduction to Web Servers and Server Products",
+      "headers": [
+        "Introduction to Web Servers and Server Products"
+      ],
+      "course": "bpharmacy",
+      "year_semester": "1-2",
+      "subject": "CS205: Computer Applications in Pharmacy",
+      "unit": "Unit 2",
+      "topic": "Introduction to Web Servers and Server Products",
+      "folder_path": "bpharmacy/1-2/CS205: Computer Applications in Pharmacy/Unit 2/Introduction to Web Servers and Server Products",
+      "source_file": "Introduction_to_Web_Servers_and_Server_Products.docx",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme clone\\SME-pannel\\backend\\temp\\doc-1753917782-b77ab907.docx",
+      "processing_timestamp": "2025-08-01T17:58:21.628818",
+      "block_type": null
+    },
+    "length": 47
+  }
+]

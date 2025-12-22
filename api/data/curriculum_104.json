@@ -1,0 +1,131 @@
+{
+  "id": 104,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS807",
+                "name": "ADVANCED INSTRUMENTATION TECHNIQUES (Open Elective - IV)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Nuclear Magnetic Resonance Spectroscopy and Mass Spectrometry",
+                    "topics": [
+                      "Principles of H-NMR spectroscopy",
+                      "Principles of C-NMR spectroscopy",
+                      "Chemical shift",
+                      "Factors affecting chemical shift",
+                      "Coupling constant",
+                      "Spin-spin coupling",
+                      "Relaxation",
+                      "Instrumentation of NMR spectroscopy",
+                      "Applications of NMR spectroscopy",
+                      "Principles of Mass Spectrometry",
+                      "Fragmentation",
+                      "Electron impact ionization",
+                      "Chemical ionization",
+                      "Instrumentation of Mass Spectrometry",
+                      "Applications of Mass Spectrometry"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Thermal Methods of Analysis and X-Ray Diffraction Methods",
+                    "topics": [
+                      "Principles of Thermogravimetric Analysis (TGA)",
+                      "Instrumentation of TGA",
+                      "Applications of TGA",
+                      "Principles of Differential Thermal Analysis (DTA)",
+                      "Instrumentation of DTA",
+                      "Applications of DTA",
+                      "Principles of Differential Scanning Calorimetry (DSC)",
+                      "Instrumentation of DSC",
+                      "Applications of DSC",
+                      "Origin of X-rays",
+                      "Basic aspects of crystals",
+                      "X-ray Crystallography",
+                      "Rotating crystal technique",
+                      "Single crystal diffraction",
+                      "Powder diffraction",
+                      "Applications of X-Ray Diffraction Methods"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Calibration and Validation",
+                    "topics": [
+                      "Calibration as per ICH guidelines",
+                      "Validation as per ICH guidelines",
+                      "Calibration as per USFDA guidelines",
+                      "Validation as per USFDA guidelines",
+                      "Calibration of Electronic balance",
+                      "Calibration of UV-Visible spectrophotometer",
+                      "Calibration of IR spectrophotometer",
+                      "Calibration of Fluorimeter",
+                      "Calibration of Flame Photometer",
+                      "Calibration of HPLC",
+                      "Calibration of GC"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Radio Immune Assay and Extraction Techniques",
+                    "topics": [
+                      "Importance of Radio immune assay",
+                      "Components of Radio immune assay",
+                      "Principle of Radio immune assay",
+                      "Methods of Radio immune assay",
+                      "Limitations of Radio immune assay",
+                      "Applications of Radio immune assay",
+                      "General principle of solid phase extraction",
+                      "Procedure of solid phase extraction",
+                      "General principle of liquid-liquid extraction",
+                      "Procedure of liquid-liquid extraction"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Hyphenated Techniques",
+                    "topics": [
+                      "LC-MS/MS technique",
+                      "GC-MS/MS technique",
+                      "HPTLC-MS technique"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 55,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:47:06.099394+00:00",
+  "updated_at": null
+}

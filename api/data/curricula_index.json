@@ -1,0 +1,3182 @@
+[
+  {
+    "id": "7b006095-6bec-4497-9de0-eadce68a0916",
+    "display_name": "jntuh R25",
+    "university": "jntuh",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T07:00:12.224543+00:00"
+  },
+  {
+    "id": "8a342a0c-be42-4851-b29e-761673255449",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:13:34.877304+00:00"
+  },
+  {
+    "id": "2b013ad4-45cd-42e9-8f0e-74855afbd6bd",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:13:57.972724+00:00"
+  },
+  {
+    "id": "466c0c84-6a69-4147-8999-4928fe3a03a6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:14:21.328613+00:00"
+  },
+  {
+    "id": "0486114a-f18e-4571-992e-0003bccd7d98",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:18:08.989776+00:00"
+  },
+  {
+    "id": "a1da3cb1-ea2e-4b93-9785-b0a485ccbb2c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:18:23.688291+00:00"
+  },
+  {
+    "id": "300d3e64-0fda-42ad-871b-3277cf92b324",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:19:02.671827+00:00"
+  },
+  {
+    "id": "e3947650-cd78-4446-994e-77e2a1e9a29a",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:19:52.619881+00:00"
+  },
+  {
+    "id": "98993ba3-fb81-442e-aa78-03b3b6be70d4",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:20:41.927711+00:00"
+  },
+  {
+    "id": "09e3c269-71ef-4cc2-9763-67400bcd113b",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:20:57.468485+00:00"
+  },
+  {
+    "id": "e5a39016-c1f9-48e8-9f4b-8fe3367c57d8",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:35:41.488472+00:00"
+  },
+  {
+    "id": "1e5eafa6-8f1d-4d29-a963-d12bfd1c4751",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:54:30.138286+00:00"
+  },
+  {
+    "id": "14a91802-adfb-4b01-b54f-3c8f9e0a30df",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:54:43.214063+00:00"
+  },
+  {
+    "id": "89759619-b5f4-4fa5-95d4-0b91b7a9352d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:55:01.731963+00:00"
+  },
+  {
+    "id": "eccc579b-6e99-4ffb-a994-b939957554da",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:56:38.454047+00:00"
+  },
+  {
+    "id": "66bac2cd-be65-40d2-a195-37a74024377a",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T07:57:04.483240+00:00"
+  },
+  {
+    "id": "6bfbd109-eebe-4198-bbe0-52967ba35806",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:01:03.392770+00:00"
+  },
+  {
+    "id": "9c6b99f3-9c0e-42ed-92c5-daed1d23859e",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:10:09.212917+00:00"
+  },
+  {
+    "id": "1c46f908-ca0f-417f-a9a2-80189d748a58",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:12:02.812119+00:00"
+  },
+  {
+    "id": "8650321a-8c1b-4126-8f52-f5ad366bf3c6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:21:25.155319+00:00"
+  },
+  {
+    "id": "e8b3626c-92bb-4b12-8a61-d5a6525cfaff",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:34:01.604869+00:00"
+  },
+  {
+    "id": "9525ca80-a680-477d-ad77-aee337d7c6aa",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:35:05.533179+00:00"
+  },
+  {
+    "id": "8bbb0dcc-2d75-4545-8fec-5f7ec8c7b88f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:35:05.626834+00:00"
+  },
+  {
+    "id": "bd34d0ca-c8c6-4bac-ad63-c4bc2f193a2f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:35:05.770793+00:00"
+  },
+  {
+    "id": "ecfbce2c-5aa4-47f0-b5e8-3d9e286438d4",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:14.505459+00:00"
+  },
+  {
+    "id": "6307263e-c8b2-4e60-8f11-489417db3a7e",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:14.612747+00:00"
+  },
+  {
+    "id": "aa272f1b-1ae3-44a5-9b65-9f1072855c2d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:14.727762+00:00"
+  },
+  {
+    "id": "453af4b7-23ce-452a-87af-686127bbabf6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:14.847936+00:00"
+  },
+  {
+    "id": "2e2150eb-457c-4641-8356-476140db2f58",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:14.966616+00:00"
+  },
+  {
+    "id": "0b9a1790-0193-4322-96b9-48a8b2d49c46",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:15.078638+00:00"
+  },
+  {
+    "id": "7ed451b8-266b-49a5-8248-2b7a38a208b0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:36:15.212681+00:00"
+  },
+  {
+    "id": "6295f62d-3211-4002-bdfa-ae40bb4fcec0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:12.732920+00:00"
+  },
+  {
+    "id": "40cf8684-a8bf-42df-a5e7-04f38d491a64",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:12.806619+00:00"
+  },
+  {
+    "id": "dc919010-7226-4fc6-96c3-2919e8fea0b3",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:12.926027+00:00"
+  },
+  {
+    "id": "2aa4d54b-7c8c-493c-a2dd-a26aaf082179",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:13.041226+00:00"
+  },
+  {
+    "id": "a5a9460b-0284-418d-997d-936dc534c4b9",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:13.143654+00:00"
+  },
+  {
+    "id": "b09958d6-9646-4414-9be2-3aafdb2375f0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:13.258195+00:00"
+  },
+  {
+    "id": "14535977-5c25-4756-ad73-bb6885667326",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:34.829225+00:00"
+  },
+  {
+    "id": "850bd5ae-a11e-4339-b539-f428d553804f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:34.899334+00:00"
+  },
+  {
+    "id": "cf7b6377-2e92-44fd-958b-9e2d346b0f08",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:34.999672+00:00"
+  },
+  {
+    "id": "9fac0ca9-505d-4222-a5a4-2112d1696db6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T08:50:35.116089+00:00"
+  },
+  {
+    "id": "7dc285eb-aa90-4e79-8d10-fbab17263705",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:19.569784+00:00"
+  },
+  {
+    "id": "5c4cd1f4-625d-4290-9b95-b6e7a11261f0",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:19.638448+00:00"
+  },
+  {
+    "id": "7be2d024-a8ff-4692-8ca4-d24595fc47de",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:19.736091+00:00"
+  },
+  {
+    "id": "e2124648-5a76-43a8-882b-9bb49926612e",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:19.850240+00:00"
+  },
+  {
+    "id": "68427870-9812-444e-a43b-a140111696b8",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:19.967448+00:00"
+  },
+  {
+    "id": "13dc943e-e739-484e-937a-ae1c91152086",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:20.094886+00:00"
+  },
+  {
+    "id": "43be23c0-40fc-4597-9798-0c4471f3c1be",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T08:51:20.209331+00:00"
+  },
+  {
+    "id": "3f3bff9a-e5db-43d2-8f8a-3c466b1777de",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:12:20.088631+00:00"
+  },
+  {
+    "id": "549797d5-b4ba-4125-9141-0b5946c229d8",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:12:20.146639+00:00"
+  },
+  {
+    "id": "8f997ee8-6c0c-4371-8463-72eaf80f2b73",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:12:20.251534+00:00"
+  },
+  {
+    "id": "99da0155-e3b4-4ee3-bfee-7e3ef8e0e4a3",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:12:20.344818+00:00"
+  },
+  {
+    "id": "14ab70cc-8270-4ee9-8eea-6a39816f3d2c",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:12:20.464984+00:00"
+  },
+  {
+    "id": "39862efd-6f22-445f-9f4f-de4bac5fbf34",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:04.025060+00:00"
+  },
+  {
+    "id": "6357100e-c253-4e43-808c-42ea7cbf0df0",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:04.083814+00:00"
+  },
+  {
+    "id": "e46ca27b-7976-4099-b35f-251818686765",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:04.195345+00:00"
+  },
+  {
+    "id": "8ed858ec-6a6f-42b6-91c9-0e9ee4a875c4",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:04.319217+00:00"
+  },
+  {
+    "id": "91036e5c-aef6-4956-99c9-952888e2e52d",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:04.413236+00:00"
+  },
+  {
+    "id": "aae177e7-db05-47ca-94b9-912a513ed734",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:23.922230+00:00"
+  },
+  {
+    "id": "a1db9f75-7308-4b7e-ad1c-8ed0a0cf5490",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:24.017249+00:00"
+  },
+  {
+    "id": "d9846333-33b5-413a-a211-8d4d161b45c4",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:24.138958+00:00"
+  },
+  {
+    "id": "08cf18e6-4d1e-42c9-b664-bd80d2b13a52",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T09:24:24.240714+00:00"
+  },
+  {
+    "id": "3a7ae997-401d-4c50-803b-3eccfb1f516c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T14:33:09.034679+00:00"
+  },
+  {
+    "id": "0e53e05c-37c4-400f-a420-f354034eee54",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T14:33:09.108528+00:00"
+  },
+  {
+    "id": "56f6f27a-834f-4196-9f6c-895efb9c1327",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T14:33:09.238476+00:00"
+  },
+  {
+    "id": "df1f5acd-525e-42ea-af37-66e694093b0b",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T14:33:09.388408+00:00"
+  },
+  {
+    "id": "e79a8957-61fd-40e1-9ba5-0c1d6c369936",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-12T14:33:09.654758+00:00"
+  },
+  {
+    "id": "8b7b8ee3-4051-4f8c-b832-33c99f692c36",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T14:34:42.533304+00:00"
+  },
+  {
+    "id": "59d6ac86-7f32-47a3-9673-ac0466a76b4d",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T14:34:42.665964+00:00"
+  },
+  {
+    "id": "6305f330-4ab7-4f4e-b076-4cfc3d2d1fd8",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T14:34:42.762086+00:00"
+  },
+  {
+    "id": "5ab0331b-8006-4cd6-9c23-9fc1410bf853",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T14:34:42.893009+00:00"
+  },
+  {
+    "id": "ae75747b-d20a-4870-8614-4b47e94b23aa",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-12T14:34:43.002484+00:00"
+  },
+  {
+    "id": "e61e79df-042f-45fa-9601-8842378b9d61",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T10:13:32.750523+00:00"
+  },
+  {
+    "id": "0935feff-d883-4151-9525-b64ee68efe17",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T10:13:32.859038+00:00"
+  },
+  {
+    "id": "e9cf3958-35ec-4235-83e4-f1e9a1b70e94",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T10:13:33.023000+00:00"
+  },
+  {
+    "id": "4144fd31-eeb1-4ef3-87e6-f12a627f44c7",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T10:13:33.412043+00:00"
+  },
+  {
+    "id": "2ae2d9b5-db7a-4eba-8cbe-964d8d73415d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T10:13:33.581062+00:00"
+  },
+  {
+    "id": "b559adcb-85c1-4950-a88d-b019c36a8aab",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:22.346058+00:00"
+  },
+  {
+    "id": "8c8df403-8d9d-42c4-8991-0330bec78a71",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:22.419136+00:00"
+  },
+  {
+    "id": "9ab91cb2-5e4f-481d-bee0-730d39090460",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:22.668848+00:00"
+  },
+  {
+    "id": "ec40a3a5-7c46-490c-a4fd-0880038e5c99",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:22.830571+00:00"
+  },
+  {
+    "id": "f4206c3e-749e-411d-b15d-5f9a2c5fc21a",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:22.960154+00:00"
+  },
+  {
+    "id": "54c6d8f4-3ac6-4d30-88fb-52fb6983f071",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.077864+00:00"
+  },
+  {
+    "id": "634aa4b0-798d-4418-b6ad-8bd38dacb54a",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.212604+00:00"
+  },
+  {
+    "id": "928777fc-0148-41ee-b316-b6532ce8fd40",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.320153+00:00"
+  },
+  {
+    "id": "94848245-7406-4c0b-85b1-bea949ebaf39",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.431388+00:00"
+  },
+  {
+    "id": "d3343354-41f1-4528-ae0d-b9e5e715b4dd",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.554598+00:00"
+  },
+  {
+    "id": "1b137e52-0b76-4e48-abe1-984abc8cbe4d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.661688+00:00"
+  },
+  {
+    "id": "b90cddc7-ce74-4054-bca8-3f35e10d8df0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.766873+00:00"
+  },
+  {
+    "id": "16d32744-d762-4366-8c96-b7d30da6b64a",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-13T11:09:23.908635+00:00"
+  },
+  {
+    "id": "aba77a3d-0bd9-417f-bc3f-aa43b23ddac2",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:04:33.456218+00:00"
+  },
+  {
+    "id": "1c9c2d59-609e-432f-a8d6-cce6ae7c9cca",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:21:08.783489+00:00"
+  },
+  {
+    "id": "d3090387-405a-456b-8bfd-00ba41d1d5cb",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:21:30.338391+00:00"
+  },
+  {
+    "id": "6b6137b7-bbb3-4713-b742-b7a49f0d47d7",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:22:52.584739+00:00"
+  },
+  {
+    "id": "9e5f19a2-27bd-4b03-9bb2-8da7511408bd",
+    "display_name": "JNTUH R25",
+    "university": "JNTUH",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:25:15.756516+00:00"
+  },
+  {
+    "id": "0a355b35-a833-4806-be86-b86ca348111d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:36:53.875025+00:00"
+  },
+  {
+    "id": "ed9f29e1-5823-4028-a3cf-4054d5a64191",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:42:35.307428+00:00"
+  },
+  {
+    "id": "34c11c4c-db9a-4349-a1a6-8fc8635e9172",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:42:35.435858+00:00"
+  },
+  {
+    "id": "a066bc7c-cc03-4e92-90be-6d5b7d646adc",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:42:36.017981+00:00"
+  },
+  {
+    "id": "5f334ad3-c3db-4278-a1fa-96a7584f5aaa",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:42:36.219111+00:00"
+  },
+  {
+    "id": "8976733e-dfab-4312-b0cd-2c9fd4dea1c1",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:45:35.491104+00:00"
+  },
+  {
+    "id": "f7977dab-1641-4cd3-a3c5-523e32a30de6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:45:35.649044+00:00"
+  },
+  {
+    "id": "c8c935c7-9ae3-4dd1-a836-f044f6722a62",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:45:35.829275+00:00"
+  },
+  {
+    "id": "93f12ce3-cace-4e9b-9e30-40164ee45c96",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:45:35.973438+00:00"
+  },
+  {
+    "id": "3aa1735f-d6ec-4e70-b5a9-2b0d4825ac34",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:35.809316+00:00"
+  },
+  {
+    "id": "e544bb65-5d1b-4ab8-890b-0be7f50e259e",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:35.881677+00:00"
+  },
+  {
+    "id": "23599751-cd8f-4010-86ce-f7691c33b7fa",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:36.055228+00:00"
+  },
+  {
+    "id": "813beded-de32-4158-bcf6-f6e47f45ebaa",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:36.200808+00:00"
+  },
+  {
+    "id": "32d6e08d-4e47-424a-a55f-2a08b134339b",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:36.305755+00:00"
+  },
+  {
+    "id": "97fdbf08-c755-4743-9005-430482e3abd8",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:36.420270+00:00"
+  },
+  {
+    "id": "01833df0-0f7d-4c20-bbe5-ce099da5177c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:36.560312+00:00"
+  },
+  {
+    "id": "178659ca-cd7c-4cae-bd5b-edf84315f0e0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:56.893448+00:00"
+  },
+  {
+    "id": "33128969-8268-453e-a327-7a659af20fc8",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:57.054729+00:00"
+  },
+  {
+    "id": "2fa748b4-36bc-4fe4-a558-443b2891b38f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:57.561536+00:00"
+  },
+  {
+    "id": "19347744-22b2-436c-9d14-cc73ac630d90",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:57.685590+00:00"
+  },
+  {
+    "id": "e35562f2-9ba0-4035-b9db-c91743571530",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:57.793239+00:00"
+  },
+  {
+    "id": "b21380b0-6708-474e-8dce-189b56fae3b5",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:58.380304+00:00"
+  },
+  {
+    "id": "23906e32-882a-473e-91ca-93510d5a8c2d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:46:58.496742+00:00"
+  },
+  {
+    "id": "3859cf03-f91a-45a7-a7e4-2f78bade8667",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.069212+00:00"
+  },
+  {
+    "id": "884f7269-3cc1-451b-9073-ce8ed40e2a78",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.137585+00:00"
+  },
+  {
+    "id": "4a271523-0202-47d7-9e11-6d4c4957c66c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.274182+00:00"
+  },
+  {
+    "id": "8e318d35-fb5c-4082-b4dc-9cd683dc18b6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.374993+00:00"
+  },
+  {
+    "id": "7d9d7c74-98e4-47ca-9159-f7a37bc96927",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.497631+00:00"
+  },
+  {
+    "id": "dfa1a1db-1eba-42ef-bdbf-1ca0d1396e80",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.655155+00:00"
+  },
+  {
+    "id": "b5f4ea5f-3ae7-4493-8fe6-9f8f3e7b00e6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:47:35.812836+00:00"
+  },
+  {
+    "id": "616d5753-9706-4e31-9828-46688212bf75",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:48:21.530827+00:00"
+  },
+  {
+    "id": "8282dfac-14aa-4572-8b4a-6859843ea25c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:48:21.689690+00:00"
+  },
+  {
+    "id": "ce0c6f3b-195a-4962-9ed9-6ea7b46e5a43",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:48:21.840137+00:00"
+  },
+  {
+    "id": "0d375fbb-9259-4a1b-a0a1-2b46bfa931c9",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:48:22.072204+00:00"
+  },
+  {
+    "id": "214dd1e4-d9af-4729-926e-7d1b43b6cf05",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:48:22.221662+00:00"
+  },
+  {
+    "id": "7d7ddc16-1373-4a61-9649-766762c70177",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T06:48:22.623458+00:00"
+  },
+  {
+    "id": "9c2e7863-0edf-45a6-b10b-9e990a3380c9",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:52:52.093467+00:00"
+  },
+  {
+    "id": "fe385290-240e-4512-a19f-ec7be09b2d97",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:52:52.262846+00:00"
+  },
+  {
+    "id": "4548f382-56c2-48f2-8e45-7c913f23f5f3",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:52:52.424444+00:00"
+  },
+  {
+    "id": "af848834-15ec-4760-89e9-c01b9ca6f123",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:52:52.558340+00:00"
+  },
+  {
+    "id": "c66946fb-93b4-40c3-9f72-dd8d45c08d36",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:52:52.707893+00:00"
+  },
+  {
+    "id": "057508c0-d25e-4b63-af5c-119b9d8a5599",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:52:52.845912+00:00"
+  },
+  {
+    "id": "56fcf43a-3941-4ab5-b2f2-ad390daf209c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:53:59.813900+00:00"
+  },
+  {
+    "id": "1e6a4f28-172c-4c6a-9992-ba4fa93a6c4b",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:53:59.903003+00:00"
+  },
+  {
+    "id": "c7b6b64d-024d-41e2-a061-3d8121567358",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:00.013176+00:00"
+  },
+  {
+    "id": "ea9ce716-4a3b-4465-8f25-f80b6d3b755f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:00.204382+00:00"
+  },
+  {
+    "id": "f09f152a-66c4-4f8d-a5ac-f80588ed217d",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:00.318436+00:00"
+  },
+  {
+    "id": "977c6342-962c-4cb1-8530-23580ed7945e",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:00.449955+00:00"
+  },
+  {
+    "id": "91bdcae5-44c0-48b9-91d6-04c1e5dc2aa3",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:00.554154+00:00"
+  },
+  {
+    "id": "c85bca3e-176a-44ce-b2f0-40219692f191",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:36.342268+00:00"
+  },
+  {
+    "id": "31512cae-9144-4451-90c8-c124dd50b210",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:36.465729+00:00"
+  },
+  {
+    "id": "64f3f06e-2649-4d44-9215-a6509eea05b2",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:36.660322+00:00"
+  },
+  {
+    "id": "9fef51a1-6df1-43dc-9bf4-517292f89443",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:36.762994+00:00"
+  },
+  {
+    "id": "e5438478-ac07-478e-b827-adf8d0b070b5",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:36.862888+00:00"
+  },
+  {
+    "id": "2ac4244a-9af7-4d87-a50d-eed487be83f7",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T06:54:36.987220+00:00"
+  },
+  {
+    "id": "e003ec2e-86a5-4037-b388-e52eba77f925",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:06:42.902817+00:00"
+  },
+  {
+    "id": "33832d27-374e-452a-929e-ba0c052541b0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:06:43.062565+00:00"
+  },
+  {
+    "id": "214f4ed9-6608-4161-8f81-44f17b5e15c8",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:06:43.429831+00:00"
+  },
+  {
+    "id": "0939f4d9-5ba6-4bd6-b788-0b1d07fa6e6f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:06:43.542107+00:00"
+  },
+  {
+    "id": "686bdc43-1c22-4264-8b51-e1ed121e6298",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:38.330511+00:00"
+  },
+  {
+    "id": "f0989e57-1a16-4fde-89ed-46e524b4d1a9",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:38.544291+00:00"
+  },
+  {
+    "id": "718010ec-e7d1-457c-bd34-646d1d8f23a1",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:38.702909+00:00"
+  },
+  {
+    "id": "520ff3d9-95e8-4875-b1b3-8fbdf64286b9",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:38.837215+00:00"
+  },
+  {
+    "id": "7da5e897-e0cf-494f-afc6-35913847309f",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:38.969436+00:00"
+  },
+  {
+    "id": "bc1677ae-6a51-4b30-8f63-f06a52f615c5",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:56.192632+00:00"
+  },
+  {
+    "id": "440d445f-51a2-48a4-85f2-3d65e32bae3b",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:56.358325+00:00"
+  },
+  {
+    "id": "87b61269-fc04-4cf8-805b-02def9468620",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:56.625608+00:00"
+  },
+  {
+    "id": "1877b5ee-6baf-42e9-83f6-76b2cf1d0b08",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:56.761062+00:00"
+  },
+  {
+    "id": "5acee02e-1f87-485d-9698-c4a56320bcc5",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:08:56.945180+00:00"
+  },
+  {
+    "id": "ef655c37-6e2f-41cb-8976-a671fa9ef34e",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:12.108492+00:00"
+  },
+  {
+    "id": "16aca361-9158-4fb6-af62-b53ae3f910fb",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:12.257543+00:00"
+  },
+  {
+    "id": "db303b35-1a43-482e-9c62-60eab4145880",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:12.391035+00:00"
+  },
+  {
+    "id": "ba6437df-2fda-4cc0-83ba-5d8b68ddc5c0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:12.547231+00:00"
+  },
+  {
+    "id": "ea8da9e3-1d13-4a23-b11a-2596d6b2ab5b",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:12.752981+00:00"
+  },
+  {
+    "id": "41c931ef-66e0-4516-b6e5-433bbac7dfed",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:12.867545+00:00"
+  },
+  {
+    "id": "d2ee5204-a856-48b8-a58e-909f6221ebfc",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:33.310570+00:00"
+  },
+  {
+    "id": "e2f14721-fa32-47db-8368-a1471050d082",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:33.371719+00:00"
+  },
+  {
+    "id": "4c986418-41d0-43dc-804d-de27472314b4",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:33.510673+00:00"
+  },
+  {
+    "id": "25803f6e-e53f-4aa1-b53e-3bc428496bf0",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:33.680446+00:00"
+  },
+  {
+    "id": "58ce64ef-8e27-4c98-9659-459c732a4545",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:50.935620+00:00"
+  },
+  {
+    "id": "728a2c31-a195-455a-91bd-f195627880b2",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.065369+00:00"
+  },
+  {
+    "id": "c775c71d-7380-4141-9b87-4b9099707001",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.217107+00:00"
+  },
+  {
+    "id": "6482d8b4-04f3-46df-aa7a-621654f42ba6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.350185+00:00"
+  },
+  {
+    "id": "6c76281f-e1f9-4e6b-b6b3-8d8479d70fcc",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.502578+00:00"
+  },
+  {
+    "id": "f25b95cc-692d-4142-b408-d59701c20fbf",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.630872+00:00"
+  },
+  {
+    "id": "6b83322d-9f6c-4533-b784-f1d50fb79735",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.754643+00:00"
+  },
+  {
+    "id": "2f0b5a26-6d27-45c3-81c4-2b37174baae4",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:51.876157+00:00"
+  },
+  {
+    "id": "17d5d915-05c6-43c4-bbd4-1682b5ee49c6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:52.260885+00:00"
+  },
+  {
+    "id": "b36e463a-c110-401e-87e5-a9698cb88672",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:52.581087+00:00"
+  },
+  {
+    "id": "5bec069d-1e19-4daf-95c4-0ddb0dbcd527",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:52.723360+00:00"
+  },
+  {
+    "id": "9d446443-04bf-4327-a0f4-0599beddb6d3",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:53.093203+00:00"
+  },
+  {
+    "id": "a0cc0afc-5a05-4ca9-8ce3-c4c3798871a8",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:09:53.209857+00:00"
+  },
+  {
+    "id": "61a4ad32-6acb-40ab-8e34-08fd83003826",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:34.194649+00:00"
+  },
+  {
+    "id": "28636b8b-df19-4dc1-83c6-6a53cc5a6bbe",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:34.288703+00:00"
+  },
+  {
+    "id": "bb89ebb8-8eee-4598-aa4b-b6b4c931dda1",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:34.438225+00:00"
+  },
+  {
+    "id": "1d41e054-9391-44bb-9bc7-88ca4a3942ba",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:34.555824+00:00"
+  },
+  {
+    "id": "d4199f84-04d4-468f-9650-54bd9983337c",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:34.768071+00:00"
+  },
+  {
+    "id": "d294336c-7ae7-4766-aa3d-73abd0ab92aa",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:34.885565+00:00"
+  },
+  {
+    "id": "2ca3a5bd-79dc-4094-a279-2ecbcf791d8e",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:10:35.014616+00:00"
+  },
+  {
+    "id": "33000859-4bd1-4b5e-9121-8b344caba345",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:04.490399+00:00"
+  },
+  {
+    "id": "0f4ef48c-209e-4c37-aa8b-7ab8ddcbea31",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:04.638585+00:00"
+  },
+  {
+    "id": "b8c546dd-5abe-4dee-ae58-52b5e040f4b6",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:04.837180+00:00"
+  },
+  {
+    "id": "107b690a-54c6-494b-bafa-40f00021a883",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:05.103140+00:00"
+  },
+  {
+    "id": "00487759-7c7f-452c-bdc3-024f56fd108f",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:05.225112+00:00"
+  },
+  {
+    "id": "ef797f00-b6f2-4ac9-a693-e78bc77316bd",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:40.498004+00:00"
+  },
+  {
+    "id": "bc36e49e-cc86-408c-92d1-dc5101ee9df7",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:40.671401+00:00"
+  },
+  {
+    "id": "7ad59e9f-1939-4a02-b290-1e256db9205a",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:40.815101+00:00"
+  },
+  {
+    "id": "24b32779-8e5d-49e4-9338-925ad98e186c",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:12:40.935961+00:00"
+  },
+  {
+    "id": "25528bc1-039b-45c5-975c-884c1860ac9e",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:27:01.087329+00:00"
+  },
+  {
+    "id": "8c46abe6-3f01-4e15-bf7e-fd084e278377",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:27:01.223205+00:00"
+  },
+  {
+    "id": "f5551ff9-b00d-4b00-9c9d-54e3a60f56ba",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:27:01.357790+00:00"
+  },
+  {
+    "id": "90d7157a-3036-44c5-bba7-650045297ca3",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:27:01.493149+00:00"
+  },
+  {
+    "id": "a360ec25-6aa8-461a-8f6f-65d1f7cc88f4",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:27:01.624309+00:00"
+  },
+  {
+    "id": "1",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.291350+00:00"
+  },
+  {
+    "id": "2",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.364507+00:00"
+  },
+  {
+    "id": "3",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.456654+00:00"
+  },
+  {
+    "id": "4",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.562691+00:00"
+  },
+  {
+    "id": "5",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.677226+00:00"
+  },
+  {
+    "id": "6",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.791986+00:00"
+  },
+  {
+    "id": "7",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:20.896171+00:00"
+  },
+  {
+    "id": "8",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:39.575921+00:00"
+  },
+  {
+    "id": "9",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:39.913616+00:00"
+  },
+  {
+    "id": "10",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:40.062936+00:00"
+  },
+  {
+    "id": "11",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:40.213321+00:00"
+  },
+  {
+    "id": "12",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:40.371408+00:00"
+  },
+  {
+    "id": "13",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:40.532930+00:00"
+  },
+  {
+    "id": "14",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:55.918071+00:00"
+  },
+  {
+    "id": "15",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:56.089902+00:00"
+  },
+  {
+    "id": "16",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:56.538387+00:00"
+  },
+  {
+    "id": "17",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:34:58.950050+00:00"
+  },
+  {
+    "id": "18",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:14.536439+00:00"
+  },
+  {
+    "id": "19",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:14.754963+00:00"
+  },
+  {
+    "id": "20",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:14.983213+00:00"
+  },
+  {
+    "id": "21",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:15.136607+00:00"
+  },
+  {
+    "id": "22",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:15.479890+00:00"
+  },
+  {
+    "id": "23",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:27.490984+00:00"
+  },
+  {
+    "id": "24",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:27.634692+00:00"
+  },
+  {
+    "id": "25",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:27.834514+00:00"
+  },
+  {
+    "id": "26",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:27.989713+00:00"
+  },
+  {
+    "id": "27",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:28.139182+00:00"
+  },
+  {
+    "id": "28",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:40.892328+00:00"
+  },
+  {
+    "id": "29",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:41.210015+00:00"
+  },
+  {
+    "id": "30",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:41.473565+00:00"
+  },
+  {
+    "id": "31",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:41.746333+00:00"
+  },
+  {
+    "id": "32",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:41.888742+00:00"
+  },
+  {
+    "id": "33",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:42.062991+00:00"
+  },
+  {
+    "id": "34",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:52.558582+00:00"
+  },
+  {
+    "id": "35",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:52.858775+00:00"
+  },
+  {
+    "id": "36",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:53.082103+00:00"
+  },
+  {
+    "id": "37",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:35:53.588265+00:00"
+  },
+  {
+    "id": "38",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:05.773880+00:00"
+  },
+  {
+    "id": "39",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:06.091608+00:00"
+  },
+  {
+    "id": "40",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:06.379652+00:00"
+  },
+  {
+    "id": "41",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:06.842611+00:00"
+  },
+  {
+    "id": "42",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:07.170379+00:00"
+  },
+  {
+    "id": "43",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:07.356102+00:00"
+  },
+  {
+    "id": "44",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:07.705580+00:00"
+  },
+  {
+    "id": "45",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:08.517102+00:00"
+  },
+  {
+    "id": "46",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:08.931069+00:00"
+  },
+  {
+    "id": "47",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:09.190740+00:00"
+  },
+  {
+    "id": "48",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:09.350603+00:00"
+  },
+  {
+    "id": "49",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:09.562982+00:00"
+  },
+  {
+    "id": "50",
+    "display_name": "PCI Master",
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm",
+    "curriculum_type": "pci",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:09.826935+00:00"
+  },
+  {
+    "id": "51",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:49.662414+00:00"
+  },
+  {
+    "id": "52",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:49.723023+00:00"
+  },
+  {
+    "id": "53",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:49.839408+00:00"
+  },
+  {
+    "id": "54",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:49.946557+00:00"
+  },
+  {
+    "id": "55",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:50.054569+00:00"
+  },
+  {
+    "id": "56",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:50.185666+00:00"
+  },
+  {
+    "id": "57",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:36:50.297829+00:00"
+  },
+  {
+    "id": "58",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:37:04.715072+00:00"
+  },
+  {
+    "id": "59",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:37:04.930393+00:00"
+  },
+  {
+    "id": "60",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:37:05.119948+00:00"
+  },
+  {
+    "id": "61",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:37:05.365911+00:00"
+  },
+  {
+    "id": "62",
+    "display_name": "Jawaharlal Nehru Technological University Hyderabad R22",
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:37:05.567747+00:00"
+  },
+  {
+    "id": "63",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:41:27.770571+00:00"
+  },
+  {
+    "id": "64",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:41:27.917856+00:00"
+  },
+  {
+    "id": "65",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:41:28.095072+00:00"
+  },
+  {
+    "id": "66",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:41:28.233769+00:00"
+  },
+  {
+    "id": "67",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:41:28.386989+00:00"
+  },
+  {
+    "id": "68",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:43:53.090535+00:00"
+  },
+  {
+    "id": "69",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:43:53.226895+00:00"
+  },
+  {
+    "id": "70",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:43:53.398318+00:00"
+  },
+  {
+    "id": "71",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:43:53.572774+00:00"
+  },
+  {
+    "id": "72",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:11.051017+00:00"
+  },
+  {
+    "id": "73",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:11.245729+00:00"
+  },
+  {
+    "id": "74",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:11.422426+00:00"
+  },
+  {
+    "id": "75",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:11.557240+00:00"
+  },
+  {
+    "id": "76",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:11.697885+00:00"
+  },
+  {
+    "id": "77",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.080734+00:00"
+  },
+  {
+    "id": "78",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.231657+00:00"
+  },
+  {
+    "id": "79",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.396745+00:00"
+  },
+  {
+    "id": "80",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.535517+00:00"
+  },
+  {
+    "id": "81",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.669444+00:00"
+  },
+  {
+    "id": "82",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.832627+00:00"
+  },
+  {
+    "id": "83",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:34.986543+00:00"
+  },
+  {
+    "id": "84",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:35.499852+00:00"
+  },
+  {
+    "id": "85",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:44:35.867498+00:00"
+  },
+  {
+    "id": "86",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:24.497494+00:00"
+  },
+  {
+    "id": "87",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:24.648628+00:00"
+  },
+  {
+    "id": "88",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:24.834952+00:00"
+  },
+  {
+    "id": "89",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:24.995145+00:00"
+  },
+  {
+    "id": "90",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:25.145383+00:00"
+  },
+  {
+    "id": "91",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:25.325123+00:00"
+  },
+  {
+    "id": "92",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:25.525141+00:00"
+  },
+  {
+    "id": "93",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:25.925394+00:00"
+  },
+  {
+    "id": "94",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:45:26.287914+00:00"
+  },
+  {
+    "id": "95",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:21.275710+00:00"
+  },
+  {
+    "id": "96",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:21.448769+00:00"
+  },
+  {
+    "id": "97",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:21.626700+00:00"
+  },
+  {
+    "id": "98",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:21.849128+00:00"
+  },
+  {
+    "id": "99",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:22.019729+00:00"
+  },
+  {
+    "id": "100",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:22.238572+00:00"
+  },
+  {
+    "id": "101",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:22.406573+00:00"
+  },
+  {
+    "id": "102",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:22.805679+00:00"
+  },
+  {
+    "id": "103",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:46:23.211408+00:00"
+  },
+  {
+    "id": "104",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:06.099394+00:00"
+  },
+  {
+    "id": "105",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:06.252751+00:00"
+  },
+  {
+    "id": "106",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:06.402451+00:00"
+  },
+  {
+    "id": "107",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:06.540246+00:00"
+  },
+  {
+    "id": "108",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:06.687723+00:00"
+  },
+  {
+    "id": "109",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:06.840828+00:00"
+  },
+  {
+    "id": "110",
+    "display_name": "JNTHU R25",
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm",
+    "curriculum_type": "university",
+    "status": "active",
+    "created_at": "2025-12-16T07:47:07.005253+00:00"
+  }
+]

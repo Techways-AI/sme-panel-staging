@@ -1,0 +1,173 @@
+{
+  "id": "16d32744-d762-4366-8c96-b7d30da6b64a",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP802T",
+                "name": "Social and Preventive Pharmacy",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Concept of Health and Disease, Social and Health Education",
+                    "topics": [
+                      "Definition of public health",
+                      "Concepts of public health",
+                      "Evaluation of public health",
+                      "Concept of prevention of disease",
+                      "Concept of control of disease",
+                      "Social causes of diseases",
+                      "Social problems of the sick",
+                      "Food in relation to nutrition",
+                      "Food in relation to health",
+                      "Balanced diet",
+                      "Nutritional deficiencies",
+                      "Vitamin deficiencies",
+                      "Malnutrition",
+                      "Prevention of malnutrition",
+                      "Sociology and health",
+                      "Socio cultural factors related to health",
+                      "Socio cultural factors related to disease",
+                      "Impact of urbanization on health",
+                      "Impact of urbanization on disease",
+                      "Poverty and health",
+                      "Personal hygiene",
+                      "Health care",
+                      "Avoidable habits"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Preventive Medicine",
+                    "topics": [
+                      "General principles of prevention of diseases",
+                      "General principles of control of diseases",
+                      "Prevention of cholera",
+                      "Control of cholera",
+                      "Prevention of SARS",
+                      "Control of SARS",
+                      "Prevention of Ebola virus",
+                      "Control of Ebola virus",
+                      "Prevention of influenza",
+                      "Control of influenza",
+                      "Prevention of acute respiratory infections",
+                      "Control of acute respiratory infections",
+                      "Prevention of malaria",
+                      "Control of malaria",
+                      "Prevention of chicken guinea",
+                      "Control of chicken guinea",
+                      "Prevention of dengue",
+                      "Control of dengue",
+                      "Prevention of lymphatic filariasis",
+                      "Control of lymphatic filariasis",
+                      "Prevention of pneumonia",
+                      "Control of pneumonia",
+                      "Prevention of hypertension",
+                      "Control of hypertension",
+                      "Prevention of diabetes mellitus",
+                      "Control of diabetes mellitus",
+                      "Prevention of cancer",
+                      "Control of cancer",
+                      "Prevention of drug addiction",
+                      "Control of drug addiction",
+                      "Prevention of drug substance abuse",
+                      "Control of drug substance abuse"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "National Health Programs - I",
+                    "topics": [
+                      "Objectives of HIV AND AIDS control programme",
+                      "Functioning of HIV AND AIDS control programme",
+                      "Outcome of HIV AND AIDS control programme",
+                      "Objectives of TB control programme",
+                      "Functioning of TB control programme",
+                      "Outcome of TB control programme",
+                      "Objectives of Integrated disease surveillance program (IDSP)",
+                      "Functioning of Integrated disease surveillance program (IDSP)",
+                      "Outcome of Integrated disease surveillance program (IDSP)",
+                      "Objectives of National leprosy control programme",
+                      "Functioning of National leprosy control programme",
+                      "Outcome of National leprosy control programme",
+                      "Objectives of National mental health program",
+                      "Functioning of National mental health program",
+                      "Outcome of National mental health program",
+                      "Objectives of National programme for prevention and control of deafness",
+                      "Functioning of National programme for prevention and control of deafness",
+                      "Outcome of National programme for prevention and control of deafness",
+                      "Objectives of Universal immunization programme",
+                      "Functioning of Universal immunization programme",
+                      "Outcome of Universal immunization programme",
+                      "Objectives of National programme for control of blindness",
+                      "Functioning of National programme for control of blindness",
+                      "Outcome of National programme for control of blindness",
+                      "Objectives of Pulse polio programme",
+                      "Functioning of Pulse polio programme",
+                      "Outcome of Pulse polio programme"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "National Health Programs - II",
+                    "topics": [
+                      "National health intervention programme for mother and child",
+                      "National family welfare programme",
+                      "National tobacco control programme",
+                      "National Malaria Prevention Program",
+                      "National programme for the health care for the elderly",
+                      "Social health programme",
+                      "Role of WHO in Indian national program"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Community Services",
+                    "topics": [
+                      "Community services in rural health",
+                      "Community services in urban health",
+                      "Community services in school health",
+                      "Functions of PHC",
+                      "Improvement in rural sanitation",
+                      "National urban health mission",
+                      "Health promotion in school",
+                      "Health education in school"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 97,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T11:09:23.908635+00:00",
+  "updated_at": null
+}

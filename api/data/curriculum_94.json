@@ -1,0 +1,99 @@
+{
+  "id": 94,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS608",
+                "name": "SCREENING METHODS IN PHARMACOLOGY (Open Elective - II)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Laboratory Animals and Regulations",
+                    "topics": [
+                      "Care of laboratory animals",
+                      "Handling of laboratory animals",
+                      "Breeding technique of laboratory animals",
+                      "Regulations for laboratory animals",
+                      "CPSCEA guidelines",
+                      "Alternative to animal studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Toxicity Tests",
+                    "topics": [
+                      "Toxicity test",
+                      "OECD guidelines",
+                      "Determination of LD50",
+                      "Acute toxicity studies",
+                      "Sub-acute toxicity studies",
+                      "Chronic toxicity studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Screening of CNS Drugs",
+                    "topics": [
+                      "Organization of screening for pharmacological activity of new substances",
+                      "Evaluation of antipsychotics",
+                      "Evaluation of antiepileptics",
+                      "Evaluation of antidepressants"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Screening of Drugs for Metabolic and CVS Disorders",
+                    "topics": [
+                      "Screening methods for anti-diabetic drugs",
+                      "Screening methods for antiulcer drugs",
+                      "Screening methods for drugs for CHF",
+                      "Screening methods for anti-hypertensive drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Screening of Drugs for Inflammation and Pain",
+                    "topics": [
+                      "Screening methods for anti-inflammatory drugs",
+                      "Screening methods for analgesic drugs",
+                      "Screening methods for antipyretic drugs"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 23,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:26.287914+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,119 @@
+{
+  "id": 77,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS507",
+                "name": "CELL AND MOLECULAR BIOLOGY (Open Elective - I)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Cell and Molecular Biology",
+                    "topics": [
+                      "Definitions of cell biology",
+                      "Definitions of molecular biology",
+                      "Basics of cell biology",
+                      "Basics of molecular biology",
+                      "Applications of cell biology",
+                      "Applications of molecular biology",
+                      "History of cell biology",
+                      "History of molecular biology",
+                      "Cell theory",
+                      "Properties of cells",
+                      "Properties of cell membrane",
+                      "Prokaryotic cells",
+                      "Eukaryotic cells",
+                      "Comparison between prokaryotic and eukaryotic cells",
+                      "Cellular reproduction"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "DNA and RNA",
+                    "topics": [
+                      "DNA structure",
+                      "Flow of molecular structure",
+                      "Functions of DNA",
+                      "Structure of RNA",
+                      "Comparison between DNA and RNA",
+                      "Types of RNA",
+                      "Transcription",
+                      "Translation"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Proteins",
+                    "topics": [
+                      "Definition of proteins",
+                      "Amino acids",
+                      "Structure of proteins",
+                      "Regularities in protein pathways",
+                      "Cellular processes",
+                      "Positive control of protein synthesis",
+                      "Significance of protein synthesis"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Genetics and Cell Cycle",
+                    "topics": [
+                      "Science of genetics",
+                      "Transgenics",
+                      "Genomic analysis",
+                      "Cell cycle analysis",
+                      "Mitosis",
+                      "Meiosis",
+                      "Cellular activities",
+                      "Cell cycle checkpoints"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Cell Signaling",
+                    "topics": [
+                      "Introduction to cell signals",
+                      "Receptors for cell signals",
+                      "Overview of signaling pathways",
+                      "Misregulation of signaling pathways",
+                      "Functioning of protein-kinases"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 43,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:34.080734+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,205 @@
+{
+  "id": "28636b8b-df19-4dc1-83c6-6a53cc5a6bbe",
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS101",
+                "name": "HUMAN ANATOMY AND PHYSIOLOGY - I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Human Body and Cellular/Tissue Organization",
+                    "topics": [
+                      "Introduction to human body",
+                      "Definition of anatomy",
+                      "Scope of anatomy",
+                      "Definition of physiology",
+                      "Scope of physiology",
+                      "Levels of structural organization",
+                      "Body systems",
+                      "Basic life processes",
+                      "Homeostasis",
+                      "Basic anatomical terminology",
+                      "Cellular level of organization",
+                      "Structure of cell",
+                      "Functions of cell",
+                      "Transport across cell membrane",
+                      "Cell division",
+                      "Cell junctions",
+                      "General principles of cell communication",
+                      "Intracellular signaling pathway activation",
+                      "Extracellular signal molecule",
+                      "Forms of intracellular signaling",
+                      "Contact-dependent signaling",
+                      "Paracrine signaling",
+                      "Synaptic signaling",
+                      "Endocrine signaling",
+                      "Tissue level of organization",
+                      "Classification of tissues",
+                      "Structure of epithelial tissue",
+                      "Location of epithelial tissue",
+                      "Functions of epithelial tissue",
+                      "Structure of muscular tissue",
+                      "Location of muscular tissue",
+                      "Functions of muscular tissue",
+                      "Structure of nervous tissue",
+                      "Location of nervous tissue",
+                      "Functions of nervous tissue",
+                      "Structure of connective tissue",
+                      "Location of connective tissue",
+                      "Functions of connective tissue"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Integumentary and Skeletal Systems",
+                    "topics": [
+                      "Integumentary system",
+                      "Structure of skin",
+                      "Functions of skin",
+                      "Skeletal system",
+                      "Divisions of skeletal system",
+                      "Types of bone",
+                      "Salient features of bones of axial skeletal system",
+                      "Functions of bones of axial skeletal system",
+                      "Salient features of bones of appendicular skeletal system",
+                      "Functions of bones of appendicular skeletal system",
+                      "Organization of skeletal muscle",
+                      "Physiology of muscle contraction",
+                      "Neuromuscular junction",
+                      "Joints",
+                      "Structural classification of joints",
+                      "Functional classification of joints",
+                      "Types of joint movements",
+                      "Articulation of joints"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Nervous System and Central Nervous System",
+                    "topics": [
+                      "Organization of nervous system",
+                      "Neuron",
+                      "Neuroglia",
+                      "Classification of nerve fibre",
+                      "Properties of nerve fibre",
+                      "Electrophysiology",
+                      "Action potential",
+                      "Nerve impulse",
+                      "Receptors",
+                      "Synapse",
+                      "Neurotransmitters",
+                      "Central nervous system",
+                      "Meninges",
+                      "Ventricles of brain",
+                      "Cerebrospinal fluid",
+                      "Structure of cerebrum",
+                      "Functions of cerebrum",
+                      "Structure of brain stem",
+                      "Functions of brain stem",
+                      "Structure of cerebellum",
+                      "Functions of cerebellum",
+                      "Spinal cord",
+                      "Gross structure of spinal cord",
+                      "Functions of afferent nerve tracts",
+                      "Functions of efferent nerve tracts",
+                      "Reflex activity"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Peripheral Nervous System and Special Senses",
+                    "topics": [
+                      "Peripheral nervous system",
+                      "Classification of peripheral nervous system",
+                      "Structure of sympathetic nervous system",
+                      "Functions of sympathetic nervous system",
+                      "Structure of parasympathetic nervous system",
+                      "Functions of parasympathetic nervous system",
+                      "Origin of spinal nerves",
+                      "Functions of spinal nerves",
+                      "Origin of cranial nerves",
+                      "Functions of cranial nerves",
+                      "Special senses",
+                      "Structure of eye",
+                      "Functions of eye",
+                      "Disorders of eye",
+                      "Structure of ear",
+                      "Functions of ear",
+                      "Disorders of ear",
+                      "Structure of nose",
+                      "Functions of nose",
+                      "Disorders of nose",
+                      "Structure of tongue",
+                      "Functions of tongue",
+                      "Disorders of tongue"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Endocrine System",
+                    "topics": [
+                      "Endocrine system",
+                      "Classification of hormones",
+                      "Mechanism of hormone action",
+                      "Structure of pituitary gland",
+                      "Functions of pituitary gland",
+                      "Disorders of pituitary gland",
+                      "Structure of thyroid gland",
+                      "Functions of thyroid gland",
+                      "Disorders of thyroid gland",
+                      "Structure of parathyroid gland",
+                      "Functions of parathyroid gland",
+                      "Disorders of parathyroid gland",
+                      "Structure of adrenal gland",
+                      "Functions of adrenal gland",
+                      "Disorders of adrenal gland",
+                      "Structure of pancreas",
+                      "Functions of pancreas",
+                      "Disorders of pancreas",
+                      "Structure of pineal gland",
+                      "Functions of pineal gland",
+                      "Disorders of pineal gland",
+                      "Structure of thymus",
+                      "Functions of thymus",
+                      "Disorders of thymus"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 129,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:10:34.288703+00:00",
+  "updated_at": null
+}

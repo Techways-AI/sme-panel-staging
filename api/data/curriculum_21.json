@@ -1,0 +1,178 @@
+{
+  "id": 21,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 4,
+            "subjects": [
+              {
+                "code": "BP404T",
+                "name": "Pharmacology-I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "General Pharmacology - Introduction and Pharmacokinetics",
+                    "topics": [
+                      "Introduction to Pharmacology",
+                      "Definition of pharmacology",
+                      "Historical landmarks of pharmacology",
+                      "Scope of pharmacology",
+                      "Nature of drugs",
+                      "Sources of drugs",
+                      "Essential drugs concept",
+                      "Routes of drug administration",
+                      "Agonists",
+                      "Antagonists",
+                      "Competitive antagonists",
+                      "Non-competitive antagonists",
+                      "Spare receptors",
+                      "Drug addiction",
+                      "Drug tolerance",
+                      "Drug dependence",
+                      "Tachyphylaxis",
+                      "Idiosyncrasy",
+                      "Drug allergy",
+                      "Pharmacokinetics",
+                      "Membrane transport of drugs",
+                      "Absorption of drugs",
+                      "Distribution of drugs",
+                      "Metabolism of drugs",
+                      "Excretion of drugs",
+                      "Enzyme induction",
+                      "Enzyme inhibition",
+                      "Kinetics of elimination"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "General Pharmacology - Pharmacodynamics and Drug Discovery",
+                    "topics": [
+                      "Pharmacodynamics",
+                      "Principles of drug action",
+                      "Mechanisms of drug action",
+                      "Receptor theories",
+                      "Classification of receptors",
+                      "Regulation of receptors",
+                      "Drug-receptor interactions",
+                      "Signal transduction mechanisms",
+                      "G-protein–coupled receptors",
+                      "Ion channel receptors",
+                      "Transmembrane enzyme linked receptors",
+                      "Transmembrane JAK-STAT binding receptors",
+                      "Receptors that regulate transcription factors",
+                      "Dose response relationship",
+                      "Therapeutic index",
+                      "Combined effects of drugs",
+                      "Factors modifying drug action",
+                      "Adverse drug reactions",
+                      "Drug interactions",
+                      "Pharmacokinetic drug interactions",
+                      "Pharmacodynamic drug interactions",
+                      "Drug discovery",
+                      "Clinical evaluation of new drugs",
+                      "Drug discovery phase",
+                      "Preclinical evaluation phase",
+                      "Clinical trial phase",
+                      "Phases of clinical trials",
+                      "Pharmacovigilance"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Pharmacology of Drugs Acting on Peripheral Nervous System",
+                    "topics": [
+                      "Pharmacology of drugs acting on peripheral nervous system",
+                      "Organization of autonomic nervous system",
+                      "Function of autonomic nervous system",
+                      "Neurohumoral transmission",
+                      "Co-transmission",
+                      "Classification of neurotransmitters",
+                      "Parasympathomimetics",
+                      "Parasympatholytics",
+                      "Sympathomimetics",
+                      "Sympatholytics",
+                      "Neuromuscular blocking agents",
+                      "Peripheral skeletal muscle relaxants",
+                      "Local anesthetic agents",
+                      "Drugs used in myasthenia gravis",
+                      "Drugs used in glaucoma"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Pharmacology of Drugs Acting on Central Nervous System - I",
+                    "topics": [
+                      "Pharmacology of drugs acting on central nervous system",
+                      "Neurohumoral transmission in the CNS",
+                      "GABA as neurotransmitter",
+                      "Glutamate as neurotransmitter",
+                      "Glycine as neurotransmitter",
+                      "Serotonin as neurotransmitter",
+                      "Dopamine as neurotransmitter",
+                      "General anesthetics",
+                      "Pre-anesthetics",
+                      "Sedatives",
+                      "Hypnotics",
+                      "Centrally acting muscle relaxants",
+                      "Anti-epileptics",
+                      "Alcohols",
+                      "Disulfiram"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmacology of Drugs Acting on Central Nervous System - II",
+                    "topics": [
+                      "Psychopharmacological agents",
+                      "Antipsychotics",
+                      "Antidepressants",
+                      "Anti-anxiety agents",
+                      "Anti-manics",
+                      "Hallucinogens",
+                      "Drugs used in Parkinson's disease",
+                      "Drugs used in Alzheimer’s disease",
+                      "CNS stimulants",
+                      "Nootropics",
+                      "Opioid analgesics",
+                      "Opioid antagonists",
+                      "Drug addiction",
+                      "Drug abuse",
+                      "Tolerance",
+                      "Dependence"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 4,
+    "subjects": 1,
+    "units": 5,
+    "topics": 102,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:35:15.136607+00:00",
+  "updated_at": null
+}

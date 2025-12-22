@@ -1,0 +1,104 @@
+{
+  "id": "b90cddc7-ce74-4054-bca8-3f35e10d8df0",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP806ET",
+                "name": "Quality Control and Standardization of Herbals",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Basic Tests and WHO Guidelines",
+                    "topics": [
+                      "Basic tests for pharmaceutical substances",
+                      "Basic tests for medicinal plants materials",
+                      "Basic tests for dosage forms",
+                      "WHO guidelines for quality control of herbal drugs",
+                      "Evaluation of commercial crude drugs intended for use"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Quality Assurance in Herbal Drug Industry",
+                    "topics": [
+                      "Quality assurance in herbal drug industry",
+                      "cGMP in traditional system of medicine",
+                      "GAP in traditional system of medicine",
+                      "GMP in traditional system of medicine",
+                      "GLP in traditional system of medicine",
+                      "WHO Guidelines on cGMP for Herbal Medicines",
+                      "WHO Guidelines on GACP for Medicinal Plants"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "EU and ICH Guidelines",
+                    "topics": [
+                      "EU guidelines for quality control of herbal drugs",
+                      "ICH guidelines for quality control of herbal drugs",
+                      "Research Guidelines for Evaluating the Safety of Herbal Medicines",
+                      "Research Guidelines for Evaluating the Efficacy of Herbal Medicines"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Stability Testing and Standardization",
+                    "topics": [
+                      "Stability testing of herbal medicines",
+                      "Application of chromatographic techniques in standardization of herbal products",
+                      "Preparation of documents for new drug application",
+                      "Preparation of documents for export registration",
+                      "GMP requirements",
+                      "Drugs & Cosmetics Act provisions"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Regulatory Requirements and Pharmacovigilance",
+                    "topics": [
+                      "Regulatory requirements for herbal medicines",
+                      "WHO guidelines on safety monitoring of herbal medicines",
+                      "Pharmacovigilance systems for herbal medicines",
+                      "Comparison of various Herbal Pharmacopoeias",
+                      "Role of chemical markers in standardization of herbal products",
+                      "Role of biological markers in standardization of herbal products"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 28,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T11:09:23.766873+00:00",
+  "updated_at": null
+}

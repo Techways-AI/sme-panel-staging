@@ -1,0 +1,31 @@
+{
+  "num_chunks": 4,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-29T17:41:54.874366",
+  "document_info": {
+    "fileName": "ORAL_REHYDRATION_SALT.docx",
+    "fileSize": "13.6 KB",
+    "uploadDate": "2025-07-29 17:41:39"
+  },
+  "chunking_stats": {
+    "total_chunks": 4,
+    "semantic_chunks": 1,
+    "table_chunks": 3,
+    "text_chunks": 0,
+    "average_chunk_size": 881.75,
+    "chunk_types": {
+      "table": 3,
+      "text": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS109: Pharmaceutical Analysis I lab",
+    "unitName": "Unit 2",
+    "topic": "introduction",
+    "fullPath": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction"
+  }
+}

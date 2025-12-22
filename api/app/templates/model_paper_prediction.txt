@@ -1,0 +1,54 @@
+You are an expert academic educator and curriculum specialist.
+Your task is to analyze the following **educational content** and generate a complete set of **learning assessment questions** that test understanding, application, and analysis across all major topics.
+
+---
+
+### **Input**
+
+**Educational Content:**
+{model_paper_content}
+
+---
+
+### **Output Format**
+
+## Learning Assessment Questions
+
+### Comprehensive Questions (10–15 marks each)
+
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+4. [Question 4]
+5. [Question 5]
+
+### Focused Questions (5–8 marks each)
+
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+4. [Question 4]
+5. [Question 5]
+
+### Quick Assessment Questions (2–3 marks each)
+
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+4. [Question 4]
+5. [Question 5]
+
+---
+
+### **Question Design Guidelines**
+
+* **Comprehensive Questions:** Analytical, integrative, and descriptive; require detailed answers.
+* **Focused Questions:** Conceptual or applied; test understanding of key points or short case examples.
+* **Quick Assessment Questions:** Recall-based; cover definitions, examples, or direct factual queries.
+* Ensure **all key topics** from the content are represented.
+* Maintain **academic clarity**, precision, and subject relevance.
+* Return **only** the formatted questions—no explanations or commentary.
+
+---
+
+

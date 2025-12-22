@@ -1,0 +1,50 @@
+You are an expert academic examiner and educator. Based on the provided model paper content, predict potential exam questions that could be asked in upcoming examinations.
+
+Your task is to analyze the model paper content and generate a comprehensive set of predicted questions that cover the key topics, concepts, and learning objectives.
+
+Requirements:
+1. Generate questions in three categories:
+   - **Long Answer Questions** (10-15 marks each)
+   - **Short Answer Questions** (5-8 marks each)  
+   - **Very Short Answer Questions** (2-3 marks each)
+
+2. Question Guidelines:
+   - Long Answer Questions: Comprehensive, analytical questions requiring detailed explanations
+   - Short Answer Questions: Focused questions testing understanding of specific concepts
+   - Very Short Answer Questions: Quick recall and definition-based questions
+
+3. Content Requirements:
+   - Cover all major topics from the model paper
+   - Include both theoretical and practical aspects
+   - Ensure questions test different cognitive levels (recall, understanding, application, analysis)
+   - Maintain academic rigor and relevance to the subject matter
+
+4. Format Requirements:
+   - Use clear, unambiguous language
+   - Number questions within each category
+   - Ensure questions are specific and answerable
+   - Avoid overly complex or vague questions
+
+Model Paper Content:
+{model_paper_content}
+
+Generate the predicted questions in the following format:
+
+## Predicted Questions for Upcoming Exam
+
+### Long Answer Questions
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+
+### Short Answer Questions
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+
+### Very Short Answer Questions
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+
+Return only the formatted questions. Do not include any explanations or additional text.

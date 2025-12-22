@@ -1,0 +1,22 @@
+[
+  {
+    "id": "b916154c-0a0f-454e-a637-1fad19c5eb28",
+    "user_id": "sme@durranis.ai",
+    "document_id": "doc-1756126069-579231a5",
+    "notes_content": "Generated notes for document doc-1756126069-579231a5",
+    "course_name": "bpharmacy",
+    "subject_name": "BS203: Biochemistry",
+    "unit_name": "Unit 1",
+    "topic": "Carbohydrate Metabolism",
+    "document_name": "Document doc-1756126069-579231a5",
+    "content_length": 0,
+    "notes_length": 52,
+    "s3_key": "",
+    "notes_metadata": {
+      "generated": true,
+      "generation_method": "placeholder"
+    },
+    "created_at": "2025-08-26T14:13:49.219069",
+    "updated_at": "2025-08-26T14:13:49.219088"
+  }
+]

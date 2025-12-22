@@ -1,0 +1,140 @@
+{
+  "id": 79,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "MC500",
+                "name": "ENVIRONMENTAL SCIENCES",
+                "type": "theory",
+                "category": "mandatory course",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Natural Resources",
+                    "topics": [
+                      "The Multidisciplinary nature of environmental studies",
+                      "Natural Resources",
+                      "Renewable resources",
+                      "Non-renewable resources",
+                      "Natural resources and associated problems",
+                      "Forest resources",
+                      "Water resources",
+                      "Mineral resources",
+                      "Food resources",
+                      "Energy resources",
+                      "Land resources",
+                      "Role of an individual in conservation of natural resources"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Ecosystems",
+                    "topics": [
+                      "Concept of an ecosystem",
+                      "Structure of an ecosystem",
+                      "Function of an ecosystem",
+                      "Forest ecosystem",
+                      "Grassland ecosystem",
+                      "Desert ecosystem",
+                      "Aquatic ecosystems"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Biodiversity and Biotic Resources",
+                    "topics": [
+                      "Introduction to Biodiversity",
+                      "Definition of biodiversity",
+                      "Genetic diversity",
+                      "Species diversity",
+                      "Ecosystem diversity",
+                      "Value of biodiversity",
+                      "Consumptive use of biodiversity",
+                      "Productive use of biodiversity",
+                      "Social value of biodiversity",
+                      "Ethical value of biodiversity",
+                      "Aesthetic value of biodiversity",
+                      "Optional value of biodiversity",
+                      "India as a mega diversity nation",
+                      "Hot spots of biodiversity",
+                      "Threats to biodiversity",
+                      "Habitat loss",
+                      "Poaching of wildlife",
+                      "Man-wildlife conflicts",
+                      "Conservation of biodiversity",
+                      "In-Situ conservation",
+                      "Ex-situ conservation",
+                      "National Biodiversity act"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Environmental Pollution",
+                    "topics": [
+                      "Air pollution",
+                      "Water pollution",
+                      "Soil pollution",
+                      "Noise Pollution"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Environmental Policy and Sustainable Future",
+                    "topics": [
+                      "Environmental Policy",
+                      "Environmental Legislation",
+                      "Environmental Impact Assessment (EIA)",
+                      "Environmental Protection act",
+                      "Air Act- 1981",
+                      "Water Act",
+                      "Forest Act",
+                      "Wild life Act",
+                      "Concept of Sustainable Development",
+                      "Population and its explosion",
+                      "Crazy Consumerism",
+                      "Environmental Education",
+                      "Urban Sprawl",
+                      "Human health",
+                      "Environmental Ethics",
+                      "Concept of Green Building",
+                      "Ecological Foot Print",
+                      "Life Cycle assessment (LCA)",
+                      "Low carbon life style"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 64,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:34.396745+00:00",
+  "updated_at": null
+}

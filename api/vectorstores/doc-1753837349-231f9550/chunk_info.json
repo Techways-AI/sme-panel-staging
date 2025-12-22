@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-08-01T18:00:53.230244",
+  "document_info": {
+    "fileName": "Databases.docx",
+    "fileSize": "3186.9 KB",
+    "uploadDate": "2025-07-30 01:02:29"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 0,
+    "table_chunks": 1,
+    "text_chunks": 0,
+    "average_chunk_size": 339.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-2",
+    "subjectName": "CS205: Computer Applications in Pharmacy",
+    "unitName": "Unit 2",
+    "topic": "Databases",
+    "fullPath": "bpharmacy/1-2/CS205: Computer Applications in Pharmacy/Unit 2/Databases"
+  }
+}

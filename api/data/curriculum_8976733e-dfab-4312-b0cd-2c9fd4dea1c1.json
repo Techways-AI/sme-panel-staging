@@ -1,0 +1,153 @@
+{
+  "id": "8976733e-dfab-4312-b0cd-2c9fd4dea1c1",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 7,
+            "subjects": [
+              {
+                "code": "BP702T",
+                "name": "Industrial Pharmacy II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pilot Plant Scale Up Techniques",
+                    "topics": [
+                      "General considerations for pilot plant scale up",
+                      "Significance of personnel requirements",
+                      "Significance of space requirements",
+                      "Significance of raw materials",
+                      "Pilot plant scale up considerations for solids",
+                      "Pilot plant scale up considerations for liquid orals",
+                      "Pilot plant scale up considerations for semi solids",
+                      "Documentation for pilot plant scale up",
+                      "SUPAC guidelines",
+                      "Introduction to platform technology"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Technology Development and Transfer",
+                    "topics": [
+                      "WHO guidelines for Technology Transfer (TT)",
+                      "Terminology of Technology Transfer",
+                      "Technology transfer protocol",
+                      "Quality risk management",
+                      "Transfer from R & D to production (Process)",
+                      "Transfer from R & D to production (Packaging)",
+                      "Transfer from R & D to production (Cleaning)",
+                      "Granularity of TT Process for API",
+                      "Granularity of TT Process for excipients",
+                      "Granularity of TT Process for finished products",
+                      "Granularity of TT Process for packaging materials",
+                      "Documentation for Technology Transfer",
+                      "Premises and equipments for Technology Transfer",
+                      "Qualification and validation in Technology Transfer",
+                      "Quality control in Technology Transfer",
+                      "Analytical method transfer",
+                      "Approved regulatory bodies and agencies",
+                      "Commercialization practical aspects",
+                      "Commercialization problems (case studies)",
+                      "TT agencies in India - APCTD",
+                      "TT agencies in India - NRDC",
+                      "TT agencies in India - TIFAC",
+                      "TT agencies in India - BCIL",
+                      "TT agencies in India - TBSE / SIDBI",
+                      "TT related documentation - confidentiality agreement",
+                      "TT related documentation - licensing",
+                      "TT related documentation - MoUs",
+                      "Legal issues in Technology Transfer"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Regulatory Affairs",
+                    "topics": [
+                      "Introduction to Regulatory Affairs",
+                      "Historical overview of Regulatory Affairs",
+                      "Regulatory authorities",
+                      "Role of Regulatory affairs department",
+                      "Responsibility of Regulatory Affairs Professionals",
+                      "Drug Development Teams",
+                      "Non-Clinical Drug Development",
+                      "Pharmacology in drug approval",
+                      "Drug Metabolism in drug approval",
+                      "Toxicology in drug approval",
+                      "General considerations of Investigational New Drug (IND) Application",
+                      "Investigator’s Brochure (IB)",
+                      "New Drug Application (NDA)",
+                      "Clinical research",
+                      "BE studies",
+                      "Clinical Research Protocols",
+                      "Biostatistics in Pharmaceutical Product Development",
+                      "Data Presentation for FDA Submissions",
+                      "Management of Clinical Studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Quality Management Systems",
+                    "topics": [
+                      "Quality management & Certifications",
+                      "Concept of Quality",
+                      "Total Quality Management",
+                      "Quality by Design (QbD)",
+                      "Six Sigma concept",
+                      "Out of Specifications (OOS)",
+                      "Change control",
+                      "Introduction to ISO 9000 series of quality systems standards",
+                      "ISO 14000",
+                      "NABL",
+                      "GLP"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Indian Regulatory Requirements",
+                    "topics": [
+                      "Central Drug Standard Control Organization (CDSCO)",
+                      "State Licensing Authority",
+                      "Organization of CDSCO",
+                      "Responsibilities of CDSCO",
+                      "Organization of State Licensing Authority",
+                      "Responsibilities of State Licensing Authority",
+                      "Certificate of Pharmaceutical Product (COPP)",
+                      "Regulatory requirements for New Drugs",
+                      "Approval procedures for New Drugs"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 7,
+    "subjects": 1,
+    "units": 5,
+    "topics": 77,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:45:35.491104+00:00",
+  "updated_at": null
+}

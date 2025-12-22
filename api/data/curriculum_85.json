@@ -1,0 +1,137 @@
+{
+  "id": 85,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS503",
+                "name": "PHARMACOLOGY - II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pharmacology of drugs acting on cardio vascular system - I",
+                    "topics": [
+                      "Introduction to hemodynamic of heart",
+                      "Introduction to electrophysiology of heart",
+                      "Drugs used in congestive heart failure",
+                      "Anti-hypertensive drugs",
+                      "Anti-anginal drugs",
+                      "Anti-arrhythmic drugs",
+                      "Anti-hyperlipidemic drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Pharmacology of drugs acting on cardio vascular system - II and Urinary System",
+                    "topics": [
+                      "Drug used in the therapy of shock",
+                      "Hematinics",
+                      "Coagulants",
+                      "Anticoagulants",
+                      "Fibrinolytics",
+                      "Anti-platelet drugs",
+                      "Plasma volume expanders",
+                      "Diuretics",
+                      "Anti-diuretics"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Autocoids and related drugs",
+                    "topics": [
+                      "Introduction to autacoids",
+                      "Classification of autacoids",
+                      "Histamine",
+                      "Histamine antagonists",
+                      "5-HT",
+                      "5-HT antagonists",
+                      "Prostaglandins",
+                      "Thromboxanes",
+                      "Leukotrienes",
+                      "Angiotensin",
+                      "Bradykinin",
+                      "Substance P",
+                      "Non-steroidal anti-inflammatory agents",
+                      "Anti-gout drugs",
+                      "Antirheumatic drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Pharmacology of drugs acting on endocrine system - I",
+                    "topics": [
+                      "Basic concepts in endocrine pharmacology",
+                      "Anterior Pituitary hormones analogues",
+                      "Anterior Pituitary hormones inhibitors",
+                      "Thyroid hormones analogues",
+                      "Thyroid hormones inhibitors",
+                      "Hormones regulating plasma calcium level",
+                      "Parathormone",
+                      "Calcitonin",
+                      "Vitamin-D",
+                      "Insulin",
+                      "Oral Hypoglycemic agents",
+                      "Glucagon",
+                      "ACTH",
+                      "Corticosteroids"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmacology of drugs acting on endocrine system - II and Bioassay",
+                    "topics": [
+                      "Androgens",
+                      "Anabolic steroids",
+                      "Estrogens",
+                      "Progesterone",
+                      "Oral contraceptives",
+                      "Drugs acting on the uterus",
+                      "Principles of bioassay",
+                      "Applications of bioassay",
+                      "Types of bioassay",
+                      "Bioassay of insulin",
+                      "Bioassay of oxytocin",
+                      "Bioassay of vasopressin",
+                      "Bioassay of ACTH",
+                      "Bioassay of d-tubocurarine",
+                      "Bioassay of digitalis",
+                      "Bioassay of histamine"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 61,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:35.867498+00:00",
+  "updated_at": null
+}

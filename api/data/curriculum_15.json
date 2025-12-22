@@ -1,0 +1,170 @@
+{
+  "id": 15,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 3,
+            "subjects": [
+              {
+                "code": "BP303T",
+                "name": "Pharmaceutical Microbiology",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Microbiology and Bacteria",
+                    "topics": [
+                      "Introduction to microbiology",
+                      "History of microbiology",
+                      "Branches of microbiology",
+                      "Scope of microbiology",
+                      "Importance of microbiology",
+                      "Introduction to Prokaryotes",
+                      "Introduction to Eukaryotes",
+                      "Ultra-structure of bacteria",
+                      "Morphological classification of bacteria",
+                      "Nutritional requirements of bacteria",
+                      "Raw materials used for culture media",
+                      "Physical parameters for bacterial growth",
+                      "Bacterial growth curve",
+                      "Isolation methods for pure cultures",
+                      "Preservation methods for pure cultures",
+                      "Cultivation of anaerobes",
+                      "Quantitative measurement of bacterial growth",
+                      "Total bacterial count",
+                      "Viable bacterial count",
+                      "Phase contrast microscopy",
+                      "Dark field microscopy",
+                      "Electron microscopy"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Identification, Staining, and Sterilization",
+                    "topics": [
+                      "Identification of bacteria using staining techniques",
+                      "Simple staining",
+                      "Gram’s staining",
+                      "Acid fast staining",
+                      "Biochemical tests for bacteria",
+                      "IMViC tests",
+                      "Principle of sterilization methods",
+                      "Procedure of sterilization methods",
+                      "Merits of sterilization methods",
+                      "Demerits of sterilization methods",
+                      "Applications of sterilization methods",
+                      "Physical method of sterilization",
+                      "Chemical method of sterilization",
+                      "Gaseous method of sterilization",
+                      "Radiation method of sterilization",
+                      "Mechanical method of sterilization",
+                      "Evaluation of the efficiency of sterilization methods",
+                      "Equipments employed in large scale sterilization",
+                      "Sterility indicators"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Fungi, Viruses, Disinfection and Sterility Testing",
+                    "topics": [
+                      "Morphology of Fungi",
+                      "Classification of Fungi",
+                      "Reproduction of Fungi",
+                      "Cultivation of Fungi",
+                      "Morphology of Viruses",
+                      "Classification of Viruses",
+                      "Replication of Viruses",
+                      "Cultivation of Viruses",
+                      "Classification of disinfectants",
+                      "Mode of action of disinfectants",
+                      "Factors influencing disinfection",
+                      "Antiseptics",
+                      "Evaluation of antiseptics",
+                      "Bacteriostatic action",
+                      "Bactericidal action",
+                      "Evaluation of bactericidal action",
+                      "Evaluation of bacteriostatic action",
+                      "Sterility testing of products",
+                      "Sterility testing of solid products",
+                      "Sterility testing of liquid products",
+                      "Sterility testing of ophthalmic products",
+                      "Sterility testing according to IP",
+                      "Sterility testing according to BP",
+                      "Sterility testing according to USP"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Aseptic Area and Microbiological Assays",
+                    "topics": [
+                      "Designing of aseptic area",
+                      "Laminar flow equipments",
+                      "Sources of contamination in an aseptic area",
+                      "Methods of prevention of contamination in aseptic area",
+                      "Clean area classification",
+                      "Principles of microbiological assay",
+                      "Methods of microbiological assay",
+                      "Microbiological assay of antibiotics",
+                      "Standardization of antibiotics",
+                      "Microbiological assay of vitamins",
+                      "Standardization of vitamins",
+                      "Microbiological assay of amino acids",
+                      "Standardization of amino acids",
+                      "Assessment of a new antibiotic"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Spoilage, Preservation and Cell Culture",
+                    "topics": [
+                      "Types of spoilage",
+                      "Factors affecting microbial spoilage of pharmaceutical products",
+                      "Sources of microbial contaminants",
+                      "Types of microbial contaminants",
+                      "Assessment of microbial contamination",
+                      "Assessment of microbial spoilage",
+                      "Preservation of pharmaceutical products using antimicrobial agents",
+                      "Evaluation of microbial stability of formulations",
+                      "Growth of animal cells in culture",
+                      "General procedure for cell culture",
+                      "Primary cell cultures",
+                      "Established cell cultures",
+                      "Transformed cell cultures",
+                      "Application of cell cultures in pharmaceutical industry",
+                      "Application of cell cultures in research"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 3,
+    "subjects": 1,
+    "units": 5,
+    "topics": 94,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:34:56.089902+00:00",
+  "updated_at": null
+}

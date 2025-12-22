@@ -1,0 +1,30 @@
+{
+  "num_chunks": 2,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-30T09:26:39.310865",
+  "document_info": {
+    "fileName": "BPharm_Core_Subjects_MCQ.pdf",
+    "fileSize": "3.3 KB",
+    "uploadDate": "2025-07-30 09:17:07"
+  },
+  "chunking_stats": {
+    "total_chunks": 2,
+    "semantic_chunks": 2,
+    "table_chunks": 2,
+    "text_chunks": -2,
+    "average_chunk_size": 946.0,
+    "chunk_types": {
+      "table": 2
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS109: Pharmaceutical Analysis I lab",
+    "unitName": "Unit 1",
+    "topic": "test",
+    "fullPath": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 1/test"
+  }
+}

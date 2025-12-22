@@ -1,0 +1,181 @@
+{
+  "id": 55,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS103",
+                "name": "PHARMACEUTICS",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Historical Background and Dosage Forms",
+                    "topics": [
+                      "History of profession of Pharmacy in India",
+                      "Pharmacy education in India",
+                      "Pharmacy industry in India",
+                      "Pharmacy organization in India",
+                      "Pharmacy as a career",
+                      "Introduction to IP",
+                      "Introduction to BP",
+                      "Introduction to USP",
+                      "Introduction to Extra Pharmacopoeia",
+                      "Introduction to dosage forms",
+                      "Classification of dosage forms",
+                      "Definitions of dosage forms",
+                      "Definition of prescription",
+                      "Parts of prescription",
+                      "Handling of prescription",
+                      "Errors in prescription",
+                      "Definition of posology",
+                      "Factors affecting posology",
+                      "Pediatric dose calculations based on age",
+                      "Pediatric dose calculations based on body weight",
+                      "Pediatric dose calculations based on body surface area"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Pharmaceutical Calculations, Powders and Liquid Dosage Forms",
+                    "topics": [
+                      "Imperial system of weights and measures",
+                      "Metric system of weights and measures",
+                      "Calculations involving percentage solutions",
+                      "Calculations involving alligation",
+                      "Calculations involving proof spirit",
+                      "Calculations involving isotonic solutions based on freezing point",
+                      "Calculations involving isotonic solutions based on molecular weight",
+                      "Definition of powders",
+                      "Classification of powders",
+                      "Advantages of powders",
+                      "Disadvantages of powders",
+                      "Simple powders",
+                      "Compound powders",
+                      "Official preparations of powders",
+                      "Dusting powders",
+                      "Effervescent powders",
+                      "Efflorescent powders",
+                      "Hygroscopic powders",
+                      "Eutectic mixtures",
+                      "Geometric dilutions",
+                      "Advantages of liquid dosage forms",
+                      "Disadvantages of liquid dosage forms",
+                      "Excipients used in liquid dosage forms",
+                      "Solubility enhancement techniques"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Monophasic and Biphasic Liquids",
+                    "topics": [
+                      "Definition of gargles",
+                      "Preparation of gargles",
+                      "Definition of mouthwashes",
+                      "Preparation of mouthwashes",
+                      "Definition of throat paints",
+                      "Preparation of throat paints",
+                      "Definition of eardrops",
+                      "Preparation of eardrops",
+                      "Definition of nasal drops",
+                      "Preparation of nasal drops",
+                      "Definition of enemas",
+                      "Preparation of enemas",
+                      "Definition of syrups",
+                      "Preparation of syrups",
+                      "Definition of elixirs",
+                      "Preparation of elixirs",
+                      "Definition of liniments",
+                      "Preparation of liniments",
+                      "Definition of lotions",
+                      "Preparation of lotions",
+                      "Definition of suspensions",
+                      "Advantages of suspensions",
+                      "Disadvantages of suspensions",
+                      "Classification of suspensions",
+                      "Preparation of suspensions",
+                      "Flocculated suspensions",
+                      "Deflocculated suspensions",
+                      "Stability problems in suspensions",
+                      "Methods to overcome stability problems in suspensions",
+                      "Definition of emulsions",
+                      "Classification of emulsions",
+                      "Emulsifying agents",
+                      "Test for identification of emulsion type",
+                      "Preparation of emulsions",
+                      "Stability problems in emulsions",
+                      "Methods to overcome stability problems in emulsions"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Suppositories and Pharmaceutical Incompatibilities",
+                    "topics": [
+                      "Definition of suppositories",
+                      "Types of suppositories",
+                      "Advantages of suppositories",
+                      "Disadvantages of suppositories",
+                      "Types of suppository bases",
+                      "Methods of preparation of suppositories",
+                      "Displacement value",
+                      "Calculations of displacement value",
+                      "Evaluation of suppositories",
+                      "Definition of pharmaceutical incompatibility",
+                      "Classification of pharmaceutical incompatibilities",
+                      "Physical incompatibility",
+                      "Chemical incompatibility",
+                      "Therapeutic incompatibility"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Semisolid Dosage Forms",
+                    "topics": [
+                      "Definitions of semisolid dosage forms",
+                      "Classification of semisolid dosage forms",
+                      "Mechanisms of dermal penetration of drugs",
+                      "Factors influencing dermal penetration of drugs",
+                      "Preparation of ointments",
+                      "Preparation of pastes",
+                      "Preparation of creams",
+                      "Preparation of gels",
+                      "Excipients used in semi solid dosage forms",
+                      "Evaluation of semi solid dosages forms"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 105,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:36:50.054569+00:00",
+  "updated_at": null
+}

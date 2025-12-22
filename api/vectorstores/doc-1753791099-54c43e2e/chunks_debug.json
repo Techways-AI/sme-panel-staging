@@ -1,0 +1,79 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "MINUKURI  SHIVA  SAIRAM  REDDY\n\ud83d\udcde+91 9392289626  |  shivasairamreddy123@gmail.com  | Hyderabad,  Telangana\nCAREER  OBJECTIVE\nDriven  professional  eager  to apply  my skills  in a dynamic  environment,  focusing  on innovation  and growth  to deliver\nimpactful results and contribute to organizational...",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 924,
+      "has_header": true,
+      "semantic_header": "MINUKURI  SHIVA  SAIRAM  REDDY",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "shivasai_resume__(1).pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-54c43e2e.pdf",
+      "processing_timestamp": "2025-07-29T17:49:46.784572",
+      "headers": [
+        "MINUKURI  SHIVA  SAIRAM  REDDY"
+      ],
+      "block_type": null
+    },
+    "length": 924
+  },
+  {
+    "chunk_id": 1,
+    "text_preview": "\u25cf Implemented RAG (Retrieval Augmented Generation) with FAISS ve ctor database for intelligent document search\nand Q&A.\nCoconut Farming AI Assistant \u2013 Conversational AI for Agriculture\n\u25cf Designed  a Telugu voice -enabled frontend using Gradio, and developed backend services with FastAPI, integrating...",
+    "metadata": {
+      "chunk_id": 1,
+      "chunk_type": "text",
+      "is_semantic": false,
+      "is_table": false,
+      "chunk_size": 957,
+      "has_header": false,
+      "semantic_header": null,
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "shivasai_resume__(1).pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-54c43e2e.pdf",
+      "processing_timestamp": "2025-07-29T17:49:46.784572",
+      "headers": [],
+      "block_type": null
+    },
+    "length": 957
+  },
+  {
+    "chunk_id": 2,
+    "text_preview": "\u25cf Authenticated  for active  participation  in a 36-hour  AR/VR  hackathon,  organized  by DeepLoop  Technologies.\n\u25cf Google  Cloud  Study  Jam:  Certified  for completing  Cloud  Computing  Foundation  and Generative  AI Pathways  through\nGoogle Developer Student Club in 2023.\n\u25cf Verified  for course...",
+    "metadata": {
+      "chunk_id": 2,
+      "chunk_type": "table",
+      "is_semantic": false,
+      "is_table": true,
+      "chunk_size": 495,
+      "has_header": false,
+      "semantic_header": null,
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "shivasai_resume__(1).pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-54c43e2e.pdf",
+      "processing_timestamp": "2025-07-29T17:49:46.784572",
+      "headers": [],
+      "block_type": null
+    },
+    "length": 495
+  }
+]

@@ -1,0 +1,140 @@
+{
+  "id": "8282dfac-14aa-4572-8b4a-6859843ea25c",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "BP205T",
+                "name": "Computer Applications in Pharmacy",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Number Systems and Information Systems",
+                    "topics": [
+                      "Number system",
+                      "Binary number system",
+                      "Decimal number system",
+                      "Octal number system",
+                      "Hexadecimal number system",
+                      "Conversion of decimal to binary",
+                      "Conversion of binary to decimal",
+                      "Conversion of octal to binary",
+                      "Binary addition",
+                      "Binary subtraction",
+                      "One’s complement method",
+                      "Two’s complement method",
+                      "Binary multiplication",
+                      "Binary division",
+                      "Concept of Information Systems",
+                      "Concept of Software",
+                      "Information gathering",
+                      "Requirement analysis",
+                      "Feasibility analysis",
+                      "Data flow diagrams",
+                      "Process specifications",
+                      "Input design",
+                      "Output design",
+                      "Process life cycle",
+                      "Planning the project",
+                      "Managing the project"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Web Technologies and Databases",
+                    "topics": [
+                      "Web technologies",
+                      "Introduction to HTML",
+                      "Introduction to XML",
+                      "Introduction to CSS",
+                      "Introduction to Programming languages",
+                      "Introduction to web servers",
+                      "Server Products",
+                      "Introduction to databases",
+                      "MYSQL",
+                      "MS ACCESS",
+                      "Pharmacy Drug database"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Application of Computers in Pharmacy",
+                    "topics": [
+                      "Application of computers in Pharmacy",
+                      "Drug information storage",
+                      "Drug information retrieval",
+                      "Pharmacokinetics",
+                      "Mathematical model in Drug design",
+                      "Hospital Pharmacy",
+                      "Clinical Pharmacy",
+                      "Electronic Prescribing (EP) systems",
+                      "Electronic discharge systems",
+                      "Barcode medicine identification",
+                      "Automated dispensing of drugs",
+                      "Mobile technology in pharmacy",
+                      "Adherence monitoring",
+                      "Diagnostic System",
+                      "Lab-diagnostic System",
+                      "Patient Monitoring System",
+                      "Pharma Information System"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Bioinformatics",
+                    "topics": [
+                      "Bioinformatics",
+                      "Introduction to Bioinformatics",
+                      "Objectives of Bioinformatics",
+                      "Bioinformatics Databases",
+                      "Concept of Bioinformatics",
+                      "Impact of Bioinformatics in Vaccine Discovery"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Computers in Preclinical Development",
+                    "topics": [
+                      "Computers as data analysis in Preclinical development",
+                      "Chromatographic data analysis (CDS)",
+                      "Laboratory Information management System (LIMS)",
+                      "Text Information Management System (TIMS)"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 64,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:48:21.689690+00:00",
+  "updated_at": null
+}

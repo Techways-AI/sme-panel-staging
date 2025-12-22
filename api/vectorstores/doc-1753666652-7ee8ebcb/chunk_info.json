@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-28T12:39:12.841304",
+  "document_info": {
+    "fileName": "Carbohydrate_Metabolism.pdf",
+    "fileSize": "5717.2 KB",
+    "uploadDate": "2025-07-28 01:37:32"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 1,
+    "table_chunks": 1,
+    "text_chunks": -1,
+    "average_chunk_size": 135.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-2",
+    "subjectName": "BS203: Biochemistry",
+    "unitName": "Unit 1",
+    "topic": "Carbohydrate Metabolism",
+    "fullPath": "bpharmacy/1-2/BS203: Biochemistry/Unit 1/Carbohydrate Metabolism"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "id": 29,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 6,
+            "subjects": [
+              {
+                "code": "BP603T",
+                "name": "Herbal Drug Technology",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Herbs as Raw Materials and Indian Systems of Medicine",
+                    "topics": [
+                      "Definition of herb",
+                      "Definition of herbal medicine",
+                      "Definition of herbal medicinal product",
+                      "Definition of herbal drug preparation",
+                      "Source of Herbs",
+                      "Selection of herbal materials",
+                      "Identification of herbal materials",
+                      "Authentication of herbal materials",
+                      "Processing of herbal raw material",
+                      "Biodynamic Agriculture",
+                      "Good agricultural practices in cultivation of medicinal plants",
+                      "Organic farming",
+                      "Pest management in medicinal plants",
+                      "Biopesticides",
+                      "Bioinsecticides",
+                      "Basic principles involved in Ayurveda",
+                      "Basic principles involved in Siddha",
+                      "Basic principles involved in Unani",
+                      "Basic principles involved in Homeopathy",
+                      "Preparation of Aristas",
+                      "Standardization of Aristas",
+                      "Preparation of Asawas",
+                      "Standardization of Asawas",
+                      "Preparation of Ghutika",
+                      "Standardization of Ghutika",
+                      "Preparation of Churna",
+                      "Standardization of Churna",
+                      "Preparation of Lehya",
+                      "Standardization of Lehya",
+                      "Preparation of Bhasma",
+                      "Standardization of Bhasma"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Nutraceuticals and Herb-Drug Interactions",
+                    "topics": [
+                      "General aspects of Nutraceuticals",
+                      "Market of Nutraceuticals",
+                      "Growth of Nutraceuticals",
+                      "Scope of Nutraceuticals",
+                      "Types of Nutraceutical products",
+                      "Role of Nutraceuticals in Diabetes",
+                      "Role of Nutraceuticals in CVS diseases",
+                      "Role of Nutraceuticals in Cancer",
+                      "Role of Nutraceuticals in Irritable bowel syndrome",
+                      "Role of Nutraceuticals in Gastro intestinal diseases",
+                      "Alfaalfa as health food",
+                      "Chicory as health food",
+                      "Ginger as health food",
+                      "Fenugreek as health food",
+                      "Garlic as health food",
+                      "Honey as health food",
+                      "Amla as health food",
+                      "Ginseng as health food",
+                      "Ashwagandha as health food",
+                      "Spirulina as health food",
+                      "General introduction to Herbal-Drug interaction",
+                      "General introduction to Herb-Food interaction",
+                      "Classification of Herbal-Drug interaction",
+                      "Side effects and interactions of Hypercium",
+                      "Side effects and interactions of kava-kava",
+                      "Side effects and interactions of Ginkobiloba",
+                      "Side effects and interactions of Ginseng",
+                      "Side effects and interactions of Garlic",
+                      "Side effects and interactions of Pepper",
+                      "Side effects and interactions of Ephedra"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Herbal Cosmetics, Excipients and Formulations",
+                    "topics": [
+                      "Sources of fixed oils for herbal cosmetics",
+                      "Sources of waxes for herbal cosmetics",
+                      "Sources of gums for herbal cosmetics",
+                      "Sources of colours for herbal cosmetics",
+                      "Sources of perfumes for herbal cosmetics",
+                      "Sources of protective agents for herbal cosmetics",
+                      "Sources of bleaching agents for herbal cosmetics",
+                      "Sources of antioxidants for herbal cosmetics",
+                      "Herbal skin care products",
+                      "Herbal hair care products",
+                      "Herbal oral hygiene products",
+                      "Significance of herbal excipients",
+                      "Herbal colorants",
+                      "Herbal sweeteners",
+                      "Herbal binders",
+                      "Herbal diluents",
+                      "Herbal viscosity builders",
+                      "Herbal disintegrants",
+                      "Herbal flavors",
+                      "Herbal perfumes",
+                      "Conventional herbal formulations",
+                      "Herbal syrups",
+                      "Herbal mixtures",
+                      "Herbal tablets",
+                      "Novel herbal dosage forms",
+                      "Phytosomes"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Evaluation, Patenting and Regulatory Requirements",
+                    "topics": [
+                      "WHO guidelines for assessment of herbal drugs",
+                      "ICH guidelines for assessment of herbal drugs",
+                      "Stability testing of herbal drugs",
+                      "Definition of Patent",
+                      "Definition of IPR",
+                      "Definition of Farmers right",
+                      "Definition of Breeder’s right",
+                      "Definition of Bioprospecting",
+                      "Definition of Biopiracy",
+                      "Patenting aspects of Traditional Knowledge",
+                      "Patenting aspects of Natural Products",
+                      "Case study of Curcuma patenting",
+                      "Case study of Neem patenting",
+                      "Regulations in India for ASU drugs",
+                      "ASU DTAB",
+                      "ASU DCC",
+                      "Regulation of manufacture of ASU drugs",
+                      "Schedule Z of Drugs & Cosmetics Act"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Herbal Industry and Schedule T",
+                    "topics": [
+                      "General Introduction to Herbal Industry",
+                      "Present scope of Herbal drugs industry",
+                      "Future prospects of Herbal drugs industry",
+                      "Plant based industries in India",
+                      "Institutions involved in medicinal plants in India",
+                      "Schedule T",
+                      "Good Manufacturing Practice of Indian systems of medicine",
+                      "Components of GMP (Schedule – T)",
+                      "Objectives of Schedule T",
+                      "Infrastructural requirements under Schedule T",
+                      "Working space requirements under Schedule T",
+                      "Storage area requirements under Schedule T",
+                      "Machinery and equipments under Schedule T",
+                      "Standard operating procedures under Schedule T",
+                      "Health and hygiene under Schedule T",
+                      "Documentation and records under Schedule T"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 6,
+    "subjects": 1,
+    "units": 5,
+    "topics": 121,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:35:41.210015+00:00",
+  "updated_at": null
+}

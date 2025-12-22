@@ -1,0 +1,190 @@
+{
+  "id": "1e5eafa6-8f1d-4d29-a963-d12bfd1c4751",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "BP201T",
+                "name": "Human Anatomy and Physiology-II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Nervous System",
+                    "topics": [
+                      "Organization of nervous system",
+                      "Neuron",
+                      "Neuroglia",
+                      "Classification of nerve fibre",
+                      "Properties of nerve fibre",
+                      "Electrophysiology",
+                      "Action potential",
+                      "Nerve impulse",
+                      "Receptors",
+                      "Synapse",
+                      "Neurotransmitters",
+                      "Central nervous system",
+                      "Meninges",
+                      "Ventricles of brain",
+                      "Cerebrospinal fluid",
+                      "Structure of brain",
+                      "Functions of brain",
+                      "Cerebrum",
+                      "Brain stem",
+                      "Cerebellum",
+                      "Spinal cord",
+                      "Gross structure of spinal cord",
+                      "Functions of afferent nerve tracts",
+                      "Functions of efferent nerve tracts",
+                      "Reflex activity"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Digestive System and Energetics",
+                    "topics": [
+                      "Digestive system",
+                      "Anatomy of GI Tract",
+                      "Anatomy of stomach",
+                      "Functions of stomach",
+                      "Acid production in the stomach",
+                      "Regulation of acid production through parasympathetic nervous system",
+                      "Pepsin role in protein digestion",
+                      "Anatomy of small intestine",
+                      "Functions of small intestine",
+                      "Anatomy of large intestine",
+                      "Functions of large intestine",
+                      "Anatomy of salivary glands",
+                      "Functions of salivary glands",
+                      "Anatomy of pancreas",
+                      "Functions of pancreas",
+                      "Anatomy of liver",
+                      "Functions of liver",
+                      "Movements of GIT",
+                      "Digestion of nutrients",
+                      "Absorption of nutrients",
+                      "Disorders of GIT",
+                      "Energetics",
+                      "Formation of ATP",
+                      "Role of ATP",
+                      "Creatinine Phosphate",
+                      "Basal Metabolic Rate (BMR)"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Respiratory and Urinary Systems",
+                    "topics": [
+                      "Respiratory system",
+                      "Anatomy of respiratory system",
+                      "Anatomy of lungs",
+                      "Mechanism of respiration",
+                      "Regulation of respiration",
+                      "Lung Volumes",
+                      "Lung capacities",
+                      "Transport of respiratory gases",
+                      "Artificial respiration",
+                      "Resuscitation methods",
+                      "Urinary system",
+                      "Anatomy of urinary tract",
+                      "Anatomy of kidney",
+                      "Anatomy of nephrons",
+                      "Functions of kidney",
+                      "Functions of urinary tract",
+                      "Physiology of urine formation",
+                      "Micturition reflex",
+                      "Role of kidneys in acid base balance",
+                      "Role of RAS in kidney",
+                      "Disorders of kidney"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Endocrine System",
+                    "topics": [
+                      "Endocrine system",
+                      "Classification of hormones",
+                      "Mechanism of hormone action",
+                      "Structure of pituitary gland",
+                      "Functions of pituitary gland",
+                      "Disorders of pituitary gland",
+                      "Structure of thyroid gland",
+                      "Functions of thyroid gland",
+                      "Disorders of thyroid gland",
+                      "Structure of parathyroid gland",
+                      "Functions of parathyroid gland",
+                      "Disorders of parathyroid gland",
+                      "Structure of adrenal gland",
+                      "Functions of adrenal gland",
+                      "Disorders of adrenal gland",
+                      "Structure of pancreas",
+                      "Functions of pancreas",
+                      "Disorders of pancreas",
+                      "Structure of pineal gland",
+                      "Functions of pineal gland",
+                      "Disorders of pineal gland",
+                      "Structure of thymus",
+                      "Functions of thymus",
+                      "Disorders of thymus"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Reproductive System and Genetics",
+                    "topics": [
+                      "Reproductive system",
+                      "Anatomy of male reproductive system",
+                      "Anatomy of female reproductive system",
+                      "Functions of male reproductive system",
+                      "Functions of female reproductive system",
+                      "Sex hormones",
+                      "Physiology of menstruation",
+                      "Fertilization",
+                      "Spermatogenesis",
+                      "Oogenesis",
+                      "Pregnancy",
+                      "Parturition",
+                      "Introduction to genetics",
+                      "Chromosomes",
+                      "Genes",
+                      "DNA",
+                      "Protein synthesis",
+                      "Genetic pattern of inheritance"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 114,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T07:54:30.138286+00:00",
+  "updated_at": null
+}

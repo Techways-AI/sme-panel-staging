@@ -3,5 +3,11 @@
 This repository contains the staging environment for the SME Panel application.
 
 ## Purpose
-- Testing before production
-- Internal usage
+- Used for testing before production
+- Internal access only
+
+## Branches
+- main: stable staging code
+
+## Setup
+Instructions will be added.

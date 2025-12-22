@@ -1,0 +1,153 @@
+{
+  "id": 78,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS508",
+                "name": "COSMETIC SCIENCE (Open Elective - I)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Classification, Excipients, Skin, Hair and Oral Cavity",
+                    "topics": [
+                      "Classification of cosmetic products",
+                      "Classification of cosmeceutical products",
+                      "Cosmetic excipients",
+                      "Surfactants in cosmetics",
+                      "Rheology modifiers in cosmetics",
+                      "Humectants in cosmetics",
+                      "Emollients in cosmetics",
+                      "Preservatives in cosmetics",
+                      "Basic structure of skin",
+                      "Functions of skin",
+                      "Basic structure of hair",
+                      "Hair growth cycle",
+                      "Common problems associated with teeth",
+                      "Common problems associated with gums"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Formulation of Skin, Hair and Oral Care Products",
+                    "topics": [
+                      "Principles of formulation of skin care products",
+                      "Building blocks of skin care products",
+                      "Face wash",
+                      "Moisturizing cream",
+                      "Cold Cream",
+                      "Vanishing cream",
+                      "Relative skin sensory of skin care creams",
+                      "Advantages of skin care creams",
+                      "Disadvantages of skin care creams",
+                      "Application of skin care products in cosmeceuticals",
+                      "Principles of formulation of Hair care products",
+                      "Building blocks of Hair care products",
+                      "Conditioning shampoo",
+                      "Hair conditioners",
+                      "Antidandruff shampoo",
+                      "Hair oils",
+                      "Chemistry of Para-phylene diamine based hair dye",
+                      "Formulation of Para-phylene diamine based hair dye",
+                      "Principles of formulation of oral care products",
+                      "Building blocks of oral care products",
+                      "Toothpaste for bleeding gums",
+                      "Toothpaste for sensitive teeth",
+                      "Teeth whitening",
+                      "Mouthwash"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Sun Protection, Herbal Cosmetics and Analysis",
+                    "topics": [
+                      "Sun protection",
+                      "Classification of Sunscreens",
+                      "Sun Protection Factor (SPF)",
+                      "Role of herbs in cosmetics",
+                      "Aloe in skin care",
+                      "Turmeric in skin care",
+                      "Henna in hair care",
+                      "Amla in hair care",
+                      "Neem in oral care",
+                      "Clove in oral care",
+                      "Analytical cosmetics",
+                      "BIS specification for shampoo",
+                      "Analytical methods for shampoo",
+                      "BIS specification for skin-cream",
+                      "Analytical methods for skin-cream",
+                      "BIS specification for toothpaste",
+                      "Analytical methods for toothpaste"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Regulations and Cosmetic Evaluation",
+                    "topics": [
+                      "Definition of cosmetics as per Indian regulations",
+                      "Definition of cosmetics as per EU regulations",
+                      "Evolution of cosmeceuticals from cosmetics",
+                      "Cosmetics as quasi drugs",
+                      "Cosmetics as OTC drugs",
+                      "Principles of Cosmetic Evaluation",
+                      "Principle of sebumeter",
+                      "Principle of corneometer",
+                      "Measurement of Transepidermal Water Loss (TEWL)",
+                      "Measurement of Skin Color",
+                      "Measurement of Hair tensile strength",
+                      "Measurement of Hair combing properties",
+                      "Soaps",
+                      "Syndet bars",
+                      "Evolution of soaps and syndet bars",
+                      "Skin benefits of soaps and syndet bars"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Skin Types and Terminologies",
+                    "topics": [
+                      "Oily skin",
+                      "Dry skin",
+                      "Causes leading to dry skin",
+                      "Skin moisturization",
+                      "Definition of Comedogenic",
+                      "Definition of dermatitis"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 77,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:34.231657+00:00",
+  "updated_at": null
+}

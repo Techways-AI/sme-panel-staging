@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-29T11:25:16.061654",
+  "document_info": {
+    "fileName": "Introduction_to_HTML.pdf",
+    "fileSize": "4223.1 KB",
+    "uploadDate": "2025-07-29 11:24:01"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 1,
+    "table_chunks": 1,
+    "text_chunks": -1,
+    "average_chunk_size": 101.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS110: Pharmaceutics lab",
+    "unitName": "Unit 1",
+    "topic": "test",
+    "fullPath": "bpharmacy/1-1/PS110: Pharmaceutics lab/Unit 1/test"
+  }
+}

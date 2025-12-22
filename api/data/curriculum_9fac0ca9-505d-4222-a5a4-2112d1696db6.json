@@ -1,0 +1,165 @@
+{
+  "id": "9fac0ca9-505d-4222-a5a4-2112d1696db6",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 3,
+            "subjects": [
+              {
+                "code": "BP302T",
+                "name": "Physical Pharmaceutics-I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Solubility of Drugs",
+                    "topics": [
+                      "Solubility of drugs",
+                      "Solubility expressions",
+                      "Mechanisms of solute solvent interactions",
+                      "Ideal solubility parameters",
+                      "Solvation",
+                      "Association",
+                      "Quantitative approach to factors influencing solubility of drugs",
+                      "Diffusion principles in biological systems",
+                      "Solubility of gas in liquids",
+                      "Solubility of liquids in liquids",
+                      "Binary solutions",
+                      "Ideal solutions",
+                      "Raoult’s law",
+                      "Real solutions",
+                      "Partially miscible liquids",
+                      "Critical solution temperature",
+                      "Applications of critical solution temperature",
+                      "Distribution law",
+                      "Limitations of distribution law",
+                      "Applications of distribution law"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "States of Matter and Physicochemical Properties",
+                    "topics": [
+                      "States of matter",
+                      "Properties of matter",
+                      "Changes in the state of matter",
+                      "Latent heats",
+                      "Vapour pressure",
+                      "Sublimation critical point",
+                      "Eutectic mixtures",
+                      "Gases",
+                      "Aerosols",
+                      "Inhalers",
+                      "Relative humidity",
+                      "Liquid complexes",
+                      "Liquid crystals",
+                      "Glassy states",
+                      "Crystalline solids",
+                      "Amorphous solids",
+                      "Polymorphism",
+                      "Physicochemical properties of drug molecules",
+                      "Refractive index",
+                      "Determination of refractive index",
+                      "Applications of refractive index",
+                      "Optical rotation",
+                      "Determination of optical rotation",
+                      "Applications of optical rotation",
+                      "Dielectric constant",
+                      "Determination of dielectric constant",
+                      "Applications of dielectric constant",
+                      "Dipole moment",
+                      "Determination of dipole moment",
+                      "Applications of dipole moment",
+                      "Dissociation constant",
+                      "Determination of dissociation constant",
+                      "Applications of dissociation constant"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Surface and Interfacial Phenomenon",
+                    "topics": [
+                      "Surface phenomenon",
+                      "Interfacial phenomenon",
+                      "Liquid interface",
+                      "Surface tension",
+                      "Interfacial tension",
+                      "Surface free energy",
+                      "Measurement of surface tension",
+                      "Measurement of interfacial tension",
+                      "Spreading coefficient",
+                      "Adsorption at liquid interfaces",
+                      "Surface active agents",
+                      "HLB Scale",
+                      "Solubilisation",
+                      "Detergency",
+                      "Adsorption at solid interface"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Complexation and Protein Binding",
+                    "topics": [
+                      "Complexation",
+                      "Introduction to complexation",
+                      "Classification of complexation",
+                      "Applications of complexation",
+                      "Methods of analysis of complexation",
+                      "Protein binding",
+                      "Complexation and drug action",
+                      "Crystalline structures of complexes",
+                      "Thermodynamic treatment of stability constants"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "pH, Buffers and Isotonic Solutions",
+                    "topics": [
+                      "pH",
+                      "Buffers",
+                      "Isotonic solutions",
+                      "Sorensen’s pH scale",
+                      "Electrometric pH determination",
+                      "Calorimetric pH determination",
+                      "Applications of buffers",
+                      "Buffer equation",
+                      "Buffer capacity",
+                      "Buffers in pharmaceutical systems",
+                      "Buffers in biological systems",
+                      "Buffered isotonic solutions"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 3,
+    "subjects": 1,
+    "units": 5,
+    "topics": 89,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T08:50:35.116089+00:00",
+  "updated_at": null
+}

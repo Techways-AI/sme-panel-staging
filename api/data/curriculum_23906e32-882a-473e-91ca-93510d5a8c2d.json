@@ -1,0 +1,183 @@
+{
+  "id": "23906e32-882a-473e-91ca-93510d5a8c2d",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "BP106RMT",
+                "name": "Remedial Mathematics",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Partial Fraction, Logarithms, Functions, and Limits",
+                    "topics": [
+                      "Partial fraction",
+                      "Introduction to partial fraction",
+                      "Polynomials",
+                      "Rational fractions",
+                      "Proper fractions",
+                      "Improper fractions",
+                      "Resolving into partial fraction",
+                      "Application of partial fraction in chemical kinetics",
+                      "Application of partial fraction in pharmacokinetics",
+                      "Logarithms",
+                      "Introduction to logarithms",
+                      "Definition of logarithms",
+                      "Theorems of logarithms",
+                      "Properties of logarithms",
+                      "Common logarithms",
+                      "Characteristic of logarithms",
+                      "Mantissa of logarithms",
+                      "Application of logarithm to solve pharmaceutical problems",
+                      "Functions",
+                      "Real valued function",
+                      "Classification of real valued functions",
+                      "Limits and continuity",
+                      "Introduction to limits",
+                      "Limit of a function",
+                      "Definition of limit of a function",
+                      "Standard limits"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Matrices and Determinant",
+                    "topics": [
+                      "Matrices and Determinant",
+                      "Introduction to matrices",
+                      "Types of matrices",
+                      "Operation on matrices",
+                      "Transpose of a matrix",
+                      "Matrix multiplication",
+                      "Determinants",
+                      "Properties of determinants",
+                      "Product of determinants",
+                      "Minors",
+                      "Co-factors",
+                      "Adjoint of a square matrix",
+                      "Singular matrices",
+                      "Non-singular matrices",
+                      "Inverse of a matrix",
+                      "Solution of system of linear equations using matrix method",
+                      "Cramer’s rule",
+                      "Characteristic equation of a square matrix",
+                      "Roots of a square matrix",
+                      "Cayley–Hamilton theorem",
+                      "Application of matrices in solving pharmacokinetic equations"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Calculus",
+                    "topics": [
+                      "Calculus",
+                      "Differentiation",
+                      "Introduction to differentiation",
+                      "Derivative of a function",
+                      "Derivative of a constant",
+                      "Derivative of a product of a constant and a function",
+                      "Derivative of sum of two functions",
+                      "Derivative of difference of two functions",
+                      "Derivative of product of two functions",
+                      "Product formula",
+                      "Derivative of quotient of two functions",
+                      "Quotient formula",
+                      "Derivative of x^n",
+                      "Derivative of e^x",
+                      "Derivative of loge x",
+                      "Derivative of a^x",
+                      "Derivative of trigonometric functions",
+                      "Successive differentiation",
+                      "Conditions for a function to be a maximum",
+                      "Conditions for a function to be a minimum",
+                      "Applications of differentiation"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Analytical Geometry and Integration",
+                    "topics": [
+                      "Analytical Geometry",
+                      "Introduction to analytical geometry",
+                      "Signs of the coordinates",
+                      "Distance formula",
+                      "Straight Line",
+                      "Slope of a straight line",
+                      "Conditions for parallelism of two lines",
+                      "Conditions for perpendicularity of two lines",
+                      "Slope of a line joining two points",
+                      "Slope-intercept form of a straight line",
+                      "Integration",
+                      "Introduction to integration",
+                      "Definition of integration",
+                      "Standard integration formulae",
+                      "Rules of integration",
+                      "Method of substitution",
+                      "Method of partial fractions",
+                      "Integration by parts",
+                      "Definite integrals",
+                      "Applications of integration"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Differential Equations and Laplace Transform",
+                    "topics": [
+                      "Differential Equations",
+                      "Basic definitions of differential equations",
+                      "Order of differential equations",
+                      "Degree of differential equations",
+                      "Equations in separable form",
+                      "Homogeneous equations",
+                      "Linear differential equations",
+                      "Exact equations",
+                      "Application of differential equations in solving pharmacokinetic equations",
+                      "Laplace Transform",
+                      "Introduction to Laplace transform",
+                      "Definition of Laplace transform",
+                      "Properties of Laplace transform",
+                      "Laplace transforms of elementary functions",
+                      "Inverse Laplace transforms",
+                      "Laplace transform of derivatives",
+                      "Application of Laplace transform to solve linear differential equations",
+                      "Application of Laplace transform in chemical kinetics",
+                      "Application of Laplace transform in pharmacokinetics"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 107,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:46:58.496742+00:00",
+  "updated_at": null
+}

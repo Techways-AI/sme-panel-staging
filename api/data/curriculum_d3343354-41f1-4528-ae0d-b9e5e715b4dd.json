@@ -1,0 +1,136 @@
+{
+  "id": "d3343354-41f1-4528-ae0d-b9e5e715b4dd",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP810ET",
+                "name": "Pharmacological Screening Methods",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Laboratory Animals and Guidelines",
+                    "topics": [
+                      "CPCSEA guidelines",
+                      "OECD guidelines for maintenance of laboratory animals",
+                      "OECD guidelines for breeding of laboratory animals",
+                      "OECD guidelines for conduct of experiments on laboratory animals",
+                      "Description of common lab animals",
+                      "Applications of different species of animals",
+                      "Applications of different strains of animals",
+                      "Popular transgenic animals",
+                      "Popular mutant animals",
+                      "Techniques for collection of blood in laboratory animals",
+                      "Common routes of drug administration in laboratory animals",
+                      "Techniques of euthanasia"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Preclinical Screening Models - CNS and Others",
+                    "topics": [
+                      "Dose selection for preclinical studies",
+                      "Dose calculation for preclinical studies",
+                      "Dose conversions for preclinical studies",
+                      "Preparation of drug solution/suspensions",
+                      "Grouping of animals",
+                      "Importance of sham negative control groups",
+                      "Importance of positive control groups",
+                      "Rationale for selection of animal species for the study",
+                      "Rationale for selection of sex of animals for the study",
+                      "Screening animal models for Diuretics",
+                      "Screening animal models for Nootropics",
+                      "Screening animal models for Anti-Parkinson’s",
+                      "Screening animal models for Antiasthmatics",
+                      "Screening animal models for Analgesic activity",
+                      "Screening animal models for Antipyretic activity",
+                      "Screening animal models for Anti-inflammatory activity",
+                      "Screening animal models for General anaesthetics",
+                      "Screening animal models for Sedative and hypnotics",
+                      "Screening animal models for Antipsychotic activity",
+                      "Screening animal models for Antidepressant activity",
+                      "Screening animal models for Antiepileptic activity",
+                      "Screening animal models for Alzheimer’s disease"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Preclinical Screening Models - ANS",
+                    "topics": [
+                      "Screening animal models for Sympathomimetics",
+                      "Screening animal models for Sympatholytics",
+                      "Screening animal models for Parasympathomimetics",
+                      "Screening animal models for Parasympatholytics",
+                      "Screening animal models for Skeletal muscle relaxants",
+                      "Screening animal models for Drugs acting on eye",
+                      "Screening animal models for Local anaesthetics"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Preclinical Screening Models - CVS and Others",
+                    "topics": [
+                      "Screening animal models for Antihypertensives",
+                      "Screening animal models for Diuretics (CVS context)",
+                      "Screening animal models for Antiarrhythmic",
+                      "Screening animal models for Antidyslepidemic",
+                      "Screening animal models for Anti aggregatory",
+                      "Screening animal models for Coagulants",
+                      "Screening animal models for Anticoagulants",
+                      "Screening animal models for Antiulcer drugs",
+                      "Screening animal models for Antidiabetic drugs",
+                      "Screening animal models for Anticancer drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Research Methodology and Bio-statistics",
+                    "topics": [
+                      "Selection of research topic",
+                      "Review of literature",
+                      "Research hypothesis",
+                      "Study design",
+                      "Pre-clinical data analysis using Students ‘t’ test",
+                      "Pre-clinical data analysis using One-way ANOVA",
+                      "Interpretation of pre-clinical data using Students ‘t’ test",
+                      "Interpretation of pre-clinical data using One-way ANOVA",
+                      "Graphical representation of data"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 60,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T11:09:23.554598+00:00",
+  "updated_at": null
+}

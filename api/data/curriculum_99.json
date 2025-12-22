@@ -1,0 +1,126 @@
+{
+  "id": 99,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS706",
+                "name": "PHARMACEUTICAL REGULATORY SCIENCE (Open Elective - III)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "New Drug Discovery and Development",
+                    "topics": [
+                      "Stages of drug discovery",
+                      "Drug development process",
+                      "Pre-clinical studies",
+                      "Non-clinical activities",
+                      "Clinical studies",
+                      "Innovator drugs",
+                      "Generic drugs",
+                      "Concept of generics",
+                      "Generic drug product development"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Regulatory Approval Process and Authorities",
+                    "topics": [
+                      "Approval process for Investigational New Drug (IND)",
+                      "Timelines for Investigational New Drug (IND)",
+                      "Approval process for New Drug Application (NDA)",
+                      "Timelines for New Drug Application (NDA)",
+                      "Approval process for Abbreviated New Drug Application (ANDA)",
+                      "Timelines for Abbreviated New Drug Application (ANDA)",
+                      "Changes to an approved NDA",
+                      "Changes to an approved ANDA",
+                      "Regulatory authority of United States",
+                      "Regulatory authority of European Union",
+                      "Regulatory authority of Australia",
+                      "Regulatory authority of Japan",
+                      "Regulatory authority of Canada"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Registration of Indian Drug Product in Overseas Market",
+                    "topics": [
+                      "Procedure for export of pharmaceutical products",
+                      "Technical documentation for export",
+                      "Drug Master Files (DMF)",
+                      "Common Technical Document (CTD)",
+                      "Electronic Common Technical Document (eCTD)",
+                      "ASEAN Common Technical Document (ACTD)"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Clinical Trials",
+                    "topics": [
+                      "Developing clinical trial protocols",
+                      "Institutional Review Board formation",
+                      "Institutional Review Board working procedures",
+                      "Independent Ethics committee formation",
+                      "Independent Ethics committee working procedures",
+                      "Informed consent process",
+                      "Informed consent procedures",
+                      "GCP obligations of Investigators",
+                      "GCP obligations of Sponsors",
+                      "GCP obligations of Monitors",
+                      "Managing clinical trials",
+                      "Monitoring clinical trials",
+                      "Pharmacovigilance in clinical trials"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Regulatory Concepts",
+                    "topics": [
+                      "Basic regulatory terminologies",
+                      "Regulatory guidance",
+                      "Regulatory guidelines",
+                      "Regulations",
+                      "Regulatory laws and acts",
+                      "Orange book",
+                      "Federal Register",
+                      "Code of Federal Regulatory",
+                      "Purple book"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 50,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:46:22.019729+00:00",
+  "updated_at": null
+}

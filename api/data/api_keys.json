@@ -1,0 +1,38 @@
+{
+  "e081bada6cfd388b8acceb4d5755e25b07ef74b46a33ab4974b8fd3997ad0b19": {
+    "name": "Internal Server-to-Server AI Access",
+    "description": "Lifetime API key for internal server-to-server communication, scoped to /api/ai/ask and /api/ai/suggest-prompts endpoints",
+    "allowed_endpoints": [
+      "/api/ai/ask",
+      "/api/ai/suggest-prompts"
+    ],
+    "created_at": "2025-08-20T13:59:34.423297",
+    "last_used": null,
+    "usage_count": 0,
+    "is_active": true
+  },
+  "a8f652f0626ed4a22a860c9321dae5b1afb46a47fd6f247fea6f28d93b3a57cc": {
+    "name": "Internal Server-to-Server AI Access",
+    "description": "Lifetime API key for internal server-to-server communication, scoped to /api/ai/ask and /api/ai/suggest-prompts endpoints",
+    "allowed_endpoints": [
+      "/api/ai/ask",
+      "/api/ai/suggest-prompts"
+    ],
+    "created_at": "2025-08-20T13:59:54.680651",
+    "last_used": null,
+    "usage_count": 0,
+    "is_active": true
+  },
+  "72c6a6ab4235933bcdb696c2a84c3b0ff72d7bf5fcf0b9bbe51f363708d6e344": {
+    "name": "Internal Server-to-Server AI Access",
+    "description": "Lifetime API key for internal server-to-server communication, scoped to /api/ai/ask and /api/ai/suggest-prompts endpoints",
+    "allowed_endpoints": [
+      "/api/ai/ask",
+      "/api/ai/suggest-prompts"
+    ],
+    "created_at": "2025-08-20T14:00:35.008900",
+    "last_used": "2025-12-20T07:48:44.182276",
+    "usage_count": 22,
+    "is_active": true
+  }
+}

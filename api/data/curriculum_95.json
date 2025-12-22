@@ -1,0 +1,185 @@
+{
+  "id": 95,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS702",
+                "name": "INDUSTRIAL PHARMACY - II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pilot Plant Scale Up and Industrial Safety",
+                    "topics": [
+                      "General considerations for pilot plant scale up",
+                      "Significance of personnel requirements",
+                      "Space requirements for pilot plant",
+                      "Raw materials for pilot plant",
+                      "Pilot plant scale up considerations for solids",
+                      "Pilot plant scale up considerations for liquid orals",
+                      "Pilot plant scale up considerations for semi solids",
+                      "Documentation for pilot plant scale up",
+                      "SUPAC guidelines",
+                      "Introduction to Platform technology",
+                      "Plant location",
+                      "Industrial hazards",
+                      "Plant safety",
+                      "Plant Layout",
+                      "Utilities in pharmaceutical plant",
+                      "Services in pharmaceutical plant",
+                      "Mechanical hazards",
+                      "Chemical hazards",
+                      "Fire hazards",
+                      "Explosive hazards",
+                      "Safety from hazards",
+                      "Materials of pharmaceutical plant construction",
+                      "Factors affecting material selection for pharmaceutical plant construction",
+                      "Corrosion",
+                      "Prevention of corrosion",
+                      "Theories of corrosion",
+                      "Types of corrosion",
+                      "Ferrous metals",
+                      "Nonferrous metals",
+                      "Inorganic non metals",
+                      "Organic non metals",
+                      "Material handling systems",
+                      "Objectives of Material handling systems",
+                      "Applications of Material handling systems",
+                      "Belt conveyors",
+                      "Screw conveyors",
+                      "Pneumatic conveyors"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Technology Development and Transfer",
+                    "topics": [
+                      "WHO guidelines for Technology Transfer",
+                      "Terminologies in Technology Transfer",
+                      "Technology transfer protocol",
+                      "Quality risk management",
+                      "Transfer from R & D to production",
+                      "Process transfer",
+                      "Packaging transfer",
+                      "Cleaning transfer",
+                      "Granularity of TT Process for API",
+                      "Granularity of TT Process for excipients",
+                      "Granularity of TT Process for finished products",
+                      "Granularity of TT Process for packing materials",
+                      "Documentation in Technology Transfer",
+                      "Premises and equipments in Technology Transfer",
+                      "Qualification and validation in Technology Transfer",
+                      "Quality control in Technology Transfer",
+                      "Analytical method transfer",
+                      "Approved regulatory bodies",
+                      "Agencies for Technology Transfer",
+                      "Commercialization practical aspects",
+                      "Commercialization problems",
+                      "TOT agencies in India",
+                      "APCTD",
+                      "NRDC",
+                      "TIFAC",
+                      "BCIL",
+                      "TBSE / SIDBI",
+                      "Technology of Transfer related documentation",
+                      "Confidentiality agreements",
+                      "Licensing",
+                      "MoUs",
+                      "Legal issues in Technology Transfer"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Regulatory Affairs and Drug Approval",
+                    "topics": [
+                      "Introduction to Regulatory Affairs",
+                      "Historical overview of Regulatory Affairs",
+                      "Regulatory authorities",
+                      "Role of Regulatory affairs department",
+                      "Responsibility of Regulatory Affairs Professionals",
+                      "Drug Development Teams",
+                      "Non-Clinical Drug Development",
+                      "Pharmacology in drug development",
+                      "Drug Metabolism in drug development",
+                      "Toxicology in drug development",
+                      "Investigational New Drug (IND) Application",
+                      "Investigator’s Brochure (IB)",
+                      "New Drug Application (NDA)",
+                      "Clinical research",
+                      "BE studies",
+                      "Clinical Research Protocols",
+                      "Biostatistics in Pharmaceutical Product Development",
+                      "Data Presentation for FDA Submissions",
+                      "Management of Clinical Studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Quality Management Systems",
+                    "topics": [
+                      "Quality management systems",
+                      "Quality management",
+                      "Certifications",
+                      "Concept of Quality",
+                      "Total Quality Management",
+                      "Quality by design",
+                      "Six Sigma concept",
+                      "Out of Specifications (OOS)",
+                      "Change control",
+                      "ISO 9000 series of quality systems standards",
+                      "ISO 14000",
+                      "NABL",
+                      "GLP"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Indian Regulatory Requirements",
+                    "topics": [
+                      "Central Drug Standard Control Organization (CDSCO)",
+                      "State Licensing Authority",
+                      "Organization of CDSCO",
+                      "Responsibilities of CDSCO",
+                      "Common Technical Document (CTD)",
+                      "Certificate of Pharmaceutical Product (COPP)",
+                      "Regulatory requirements for New Drugs",
+                      "Approval procedures for New Drugs"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 109,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:46:21.275710+00:00",
+  "updated_at": null
+}

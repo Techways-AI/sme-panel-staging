@@ -1,0 +1,122 @@
+{
+  "id": 87,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS604",
+                "name": "BIOPHARMACEUTICS AND PHARMACOKINETICS",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Biopharmaceutics and Absorption",
+                    "topics": [
+                      "Introduction to Biopharmaceutics",
+                      "Mechanisms of drug absorption through GIT",
+                      "Factors influencing drug absorption though GIT",
+                      "Absorption of drug from transmucosal route",
+                      "Absorption of drug from transdermal route",
+                      "Distribution of drugs",
+                      "Tissue permeability of drugs",
+                      "Binding of drugs",
+                      "Apparent volume of drug distribution",
+                      "Protein binding of drugs",
+                      "Factors affecting protein-drug binding",
+                      "Kinetics of protein binding",
+                      "Clinical significance of protein binding of drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Metabolism, Excretion and Bioavailability",
+                    "topics": [
+                      "Drug metabolism",
+                      "Basic understanding of metabolic pathways",
+                      "Renal excretion of drugs",
+                      "Factors affecting renal excretion of drugs",
+                      "Renal clearance",
+                      "Non renal routes of drug excretion",
+                      "Objectives of bioavailability studies",
+                      "Absolute bioavailability",
+                      "Relative bioavailability",
+                      "Measurement of bioavailability",
+                      "In-vitro drug dissolution models",
+                      "Bioequivalence studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Pharmacokinetics Models",
+                    "topics": [
+                      "Introduction to Pharmacokinetics models",
+                      "Compartment models",
+                      "Non-compartment models",
+                      "Physiological models",
+                      "One compartment open model",
+                      "Intravenous Injection (Bolus) kinetics",
+                      "Intravenous infusion kinetics",
+                      "Extra vascular administration kinetics",
+                      "Calculation of Ka from plasma data",
+                      "Calculation of KE from plasma data",
+                      "Calculation of Ka from urinary excretion data",
+                      "Calculation of KE from urinary excretion data"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Multicompartment Models and Multiple Dosage Regimens",
+                    "topics": [
+                      "Two compartment open model",
+                      "IV bolus kinetics in two compartment model",
+                      "Multiple Dosage Regimens",
+                      "Repititive Intravenous injections",
+                      "One Compartment Open Model for multiple dosage"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Nonlinear Pharmacokinetics",
+                    "topics": [
+                      "Introduction to Nonlinear Pharmacokinetics",
+                      "Factors causing Non-linearity",
+                      "Michaelis-menton method of estimating parameters",
+                      "Biotransformation of drugs"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 46,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:24.648628+00:00",
+  "updated_at": null
+}

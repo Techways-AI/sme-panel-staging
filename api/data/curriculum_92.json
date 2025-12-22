@@ -1,0 +1,147 @@
+{
+  "id": 92,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS606",
+                "name": "PHARMACEUTICAL BIOTECHNOLOGY (Open Elective - II)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Biotechnology and Enzymes",
+                    "topics": [
+                      "Introduction to Biotechnology",
+                      "Biotechnology in Pharmaceutical Sciences",
+                      "Methods of enzyme immobilization",
+                      "Applications of enzyme immobilization",
+                      "Working of biosensors",
+                      "Applications of biosensors in Pharmaceutical Industries",
+                      "Introduction to Protein Engineering",
+                      "Use of microbes in industry",
+                      "Production of Amylase",
+                      "Production of Catalase",
+                      "Production of Peroxidase",
+                      "Production of Lipase",
+                      "Production of Protease",
+                      "Production of Penicillinase",
+                      "Basic principles of genetic engineering"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Genetic Engineering and Recombinant DNA Technology",
+                    "topics": [
+                      "Study of cloning vectors",
+                      "Study of restriction endonucleases",
+                      "Study of DNA ligase",
+                      "Recombinant DNA technology",
+                      "Application of genetic engineering in medicine",
+                      "Production of Interferon by r DNA technology",
+                      "Production of Hepatitis-B vaccine by r DNA technology",
+                      "Production of Insulin by r DNA technology",
+                      "Introduction to PCR"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Immunology and Vaccines",
+                    "topics": [
+                      "Structure of Immunoglobulins",
+                      "Structure of MHC",
+                      "Function of MHC",
+                      "Humoral immunity",
+                      "Cellular immunity",
+                      "Hypersensitivity reactions",
+                      "Immune stimulation",
+                      "Immune suppressions",
+                      "Preparation of bacterial vaccines",
+                      "Preparation of toxoids",
+                      "Preparation of viral vaccines",
+                      "Preparation of antitoxins",
+                      "Preparation of serum-immune blood derivatives",
+                      "Storage conditions of official vaccines",
+                      "Stability of official vaccines",
+                      "Production of Hybridoma",
+                      "Purification of Hybridoma",
+                      "Applications of Hybridoma technology"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Microbial Genetics and Blotting Techniques",
+                    "topics": [
+                      "ELISA technique",
+                      "Western blotting technique",
+                      "Southern blotting technique",
+                      "Genetic organization of Eukaryotes",
+                      "Genetic organization of Prokaryotes",
+                      "Microbial transformation",
+                      "Microbial transduction",
+                      "Microbial conjugation",
+                      "Plasmids",
+                      "Transposons",
+                      "Introduction to Microbial biotransformation",
+                      "Applications of Microbial biotransformation",
+                      "Mutation"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Fermentation Technology",
+                    "topics": [
+                      "Types of mutation",
+                      "Types of mutants",
+                      "Fermentation methods",
+                      "General requirements for fermentation",
+                      "Study of fermentation media",
+                      "Fermentation equipments",
+                      "Sterilization methods in fermentation",
+                      "Aeration process in fermentation",
+                      "Stirring process in fermentation",
+                      "Large scale production fermenter design",
+                      "Fermenter controls",
+                      "Production of penicillins",
+                      "Production of citric acid",
+                      "Production of Vitamin B12",
+                      "Production of Glutamic acid",
+                      "Production of Griseofulvin"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 71,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:25.525141+00:00",
+  "updated_at": null
+}

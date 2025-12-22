@@ -1,0 +1,176 @@
+{
+  "id": "7be2d024-a8ff-4692-8ca4-d24595fc47de",
+  "university": "JNTUH",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS102",
+                "name": "PHARMACEUTICAL ANALYSIS - I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pharmaceutical Analysis and Errors",
+                    "topics": [
+                      "Definition of pharmaceutical analysis",
+                      "Scope of pharmaceutical analysis",
+                      "Different techniques of analysis",
+                      "Methods of expressing concentration",
+                      "Primary standards",
+                      "Secondary standards",
+                      "Preparation of oxalic acid standard solution",
+                      "Standardization of oxalic acid",
+                      "Preparation of sodium hydroxide standard solution",
+                      "Standardization of sodium hydroxide",
+                      "Preparation of hydrochloric acid standard solution",
+                      "Standardization of hydrochloric acid",
+                      "Preparation of sodium thiosulphate standard solution",
+                      "Standardization of sodium thiosulphate",
+                      "Preparation of sulphuric acid standard solution",
+                      "Standardization of sulphuric acid",
+                      "Preparation of potassium permanganate standard solution",
+                      "Standardization of potassium permanganate",
+                      "Preparation of ceric ammonium sulphate standard solution",
+                      "Standardization of ceric ammonium sulphate",
+                      "Errors",
+                      "Sources of errors",
+                      "Types of errors",
+                      "Methods of minimizing errors",
+                      "Accuracy",
+                      "Precision",
+                      "Significant figures"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Acid Base and Non-Aqueous Titrations",
+                    "topics": [
+                      "Acid base titration",
+                      "Theories of acid base indicators",
+                      "Classification of acid base titrations",
+                      "Theory of titrations of strong acids and bases",
+                      "Theory of titrations of weak acids and bases",
+                      "Theory of titrations of very weak acids and bases",
+                      "Neutralization curves",
+                      "Non-aqueous titration",
+                      "Solvents for non-aqueous titration",
+                      "Acidimetry in non-aqueous titration",
+                      "Alkalimetry in non-aqueous titration",
+                      "Estimation of Sodium benzoate",
+                      "Estimation of Ephedrine HCl"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Precipitation, Complexometric and Gravimetric Analysis",
+                    "topics": [
+                      "Precipitation titrations",
+                      "Mohr’s method",
+                      "Volhard’s method",
+                      "Modified Volhard’s method",
+                      "Fajans method",
+                      "Estimation of sodium chloride",
+                      "Complexometric titration",
+                      "Classification of complexometric titrations",
+                      "Metal ion indicators",
+                      "Masking reagents",
+                      "Demasking reagents",
+                      "Estimation of Magnesium sulphate",
+                      "Estimation of calcium gluconate",
+                      "Gravimetry",
+                      "Principle of gravimetry",
+                      "Steps involved in gravimetric analysis",
+                      "Purity of the precipitate",
+                      "Co-precipitation",
+                      "Post-precipitation",
+                      "Estimation of barium sulphate"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Redox Titrations",
+                    "topics": [
+                      "Redox titrations",
+                      "Concepts of oxidation",
+                      "Concepts of reduction",
+                      "Types of redox titrations",
+                      "Principles of redox titrations",
+                      "Applications of redox titrations",
+                      "Cerimetry",
+                      "Iodimetry",
+                      "Iodometry",
+                      "Bromatometry",
+                      "Dichrometry",
+                      "Titration with potassium iodate"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Electrochemical Methods of Analysis",
+                    "topics": [
+                      "Electrochemical methods of analysis",
+                      "Conductometry",
+                      "Introduction to conductometry",
+                      "Conductivity cell",
+                      "Conductometric titrations",
+                      "Applications of conductometry",
+                      "Potentiometry",
+                      "Electrochemical cell",
+                      "Reference electrodes",
+                      "Construction of Standard hydrogen electrode",
+                      "Working of Standard hydrogen electrode",
+                      "Construction of silver chloride electrode",
+                      "Working of silver chloride electrode",
+                      "Construction of calomel electrode",
+                      "Working of calomel electrode",
+                      "Indicator electrodes",
+                      "Metal electrodes",
+                      "Glass electrode",
+                      "Methods to determine end point of potentiometric titration",
+                      "Applications of potentiometry",
+                      "Polarography",
+                      "Principle of polarography",
+                      "Ilkovic equation",
+                      "Construction of dropping mercury electrode",
+                      "Working of dropping mercury electrode",
+                      "Construction of rotating platinum electrode",
+                      "Working of rotating platinum electrode",
+                      "Applications of polarography"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 100,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T08:51:19.736091+00:00",
+  "updated_at": null
+}

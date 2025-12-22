@@ -1,0 +1,136 @@
+{
+  "id": 38,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP811ET",
+                "name": "Advanced Instrumentation Techniques",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Nuclear Magnetic Resonance Spectroscopy and Mass Spectrometry",
+                    "topics": [
+                      "Principles of H-NMR spectroscopy",
+                      "Principles of C-NMR spectroscopy",
+                      "Chemical shift",
+                      "Factors affecting chemical shift",
+                      "Coupling constant",
+                      "Spin-spin coupling",
+                      "Relaxation",
+                      "Instrumentation of NMR spectroscopy",
+                      "Applications of NMR spectroscopy",
+                      "Principles of Mass Spectrometry",
+                      "Fragmentation in Mass Spectrometry",
+                      "Electron impact ionization",
+                      "Chemical ionization",
+                      "MALDI ionization",
+                      "FAB ionization",
+                      "Time of flight analyzer",
+                      "Quadrupole analyzer",
+                      "Instrumentation of Mass Spectrometry",
+                      "Applications of Mass Spectrometry"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Thermal Methods of Analysis and X-Ray Diffraction Methods",
+                    "topics": [
+                      "Principles of Thermogravimetric Analysis (TGA)",
+                      "Instrumentation of Thermogravimetric Analysis (TGA)",
+                      "Applications of Thermogravimetric Analysis (TGA)",
+                      "Principles of Differential Thermal Analysis (DTA)",
+                      "Instrumentation of Differential Thermal Analysis (DTA)",
+                      "Applications of Differential Thermal Analysis (DTA)",
+                      "Principles of Differential Scanning Calorimetry (DSC)",
+                      "Instrumentation of Differential Scanning Calorimetry (DSC)",
+                      "Applications of Differential Scanning Calorimetry (DSC)",
+                      "Origin of X-rays",
+                      "Basic aspects of crystals",
+                      "X-ray Crystallography",
+                      "Rotating crystal technique",
+                      "Single crystal diffraction",
+                      "Powder diffraction",
+                      "Structural elucidation using X-ray diffraction",
+                      "Applications of X-ray diffraction"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Calibration and Validation",
+                    "topics": [
+                      "Calibration guidelines as per ICH",
+                      "Validation guidelines as per ICH",
+                      "Calibration guidelines as per USFDA",
+                      "Validation guidelines as per USFDA",
+                      "Calibration of Electronic balance",
+                      "Calibration of UV-Visible spectrophotometer",
+                      "Calibration of IR spectrophotometer",
+                      "Calibration of Fluorimeter",
+                      "Calibration of Flame Photometer",
+                      "Calibration of HPLC",
+                      "Calibration of GC"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Radio Immuno Assay and Extraction Techniques",
+                    "topics": [
+                      "Importance of Radio immuno assay",
+                      "Components of Radio immuno assay",
+                      "Principle of Radio immuno assay",
+                      "Methods of Radio immuno assay",
+                      "Limitations of Radio immuno assay",
+                      "Applications of Radio immuno assay",
+                      "Principle of solid phase extraction",
+                      "Procedure of solid phase extraction",
+                      "Principle of liquid-liquid extraction",
+                      "Procedure of liquid-liquid extraction"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Hyphenated Techniques",
+                    "topics": [
+                      "LC-MS/MS technique",
+                      "GC-MS/MS technique",
+                      "HPTLC-MS technique"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 60,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:36:05.773880+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,159 @@
+{
+  "id": 76,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS402",
+                "name": "PHYSICAL PHARMACEUTICS - II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Drug Stability",
+                    "topics": [
+                      "Reaction kinetics",
+                      "Zero order kinetics",
+                      "Pseudo-zero order kinetics",
+                      "First order kinetics",
+                      "Second order kinetics",
+                      "Units of basic rate constants",
+                      "Determination of reaction order",
+                      "Physical factors influencing chemical degradation",
+                      "Chemical factors influencing chemical degradation",
+                      "Effect of temperature on degradation",
+                      "Effect of solvent on degradation",
+                      "Effect of ionic strength on degradation",
+                      "Effect of dielectric constant on degradation",
+                      "Specific acid base catalysis",
+                      "General acid base catalysis",
+                      "Numerical problems in drug stability",
+                      "Stabilization against hydrolysis",
+                      "Stabilization against oxidation",
+                      "Accelerated stability testing",
+                      "Expiration dating of pharmaceutical dosage forms",
+                      "Photolytic degradation",
+                      "Prevention of photolytic degradation"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Rheology and Deformation of Solids",
+                    "topics": [
+                      "Rheology",
+                      "Newtonian systems",
+                      "Law of flow",
+                      "Kinematic viscosity",
+                      "Effect of temperature on viscosity",
+                      "Non-Newtonian systems",
+                      "Pseudoplastic systems",
+                      "Dilatant systems",
+                      "Plastic systems",
+                      "Thixotropy",
+                      "Thixotropy in formulation",
+                      "Determination of viscosity",
+                      "Capillary viscometer",
+                      "Falling Sphere viscometer",
+                      "Rotational viscometers",
+                      "Deformation of solids",
+                      "Plastic deformation",
+                      "Elastic deformation",
+                      "Heckel equation",
+                      "Stress",
+                      "Strain",
+                      "Elastic Modulus"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Coarse Dispersion",
+                    "topics": [
+                      "Suspension",
+                      "Interfacial properties of suspended particles",
+                      "Settling in suspensions",
+                      "Formulation of suspensions",
+                      "Emulsions",
+                      "Theories of emulsification",
+                      "Microemulsion",
+                      "Multiple emulsions",
+                      "Physical stability of emulsions",
+                      "Preservation of emulsions",
+                      "Rheological properties of emulsions",
+                      "Phase equilibria",
+                      "Emulsion formulation"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Surface and Interfacial Phenomenon",
+                    "topics": [
+                      "Liquid interface",
+                      "Surface tension",
+                      "Interfacial tension",
+                      "Surface free energy",
+                      "Measurement of surface tension",
+                      "Measurement of interfacial tension",
+                      "Spreading coefficient",
+                      "Adsorption at liquid interfaces",
+                      "Surface active agents",
+                      "HLB Scale",
+                      "Solubilisation",
+                      "Detergency",
+                      "Adsorption at solid interface"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Colloidal Dispersions",
+                    "topics": [
+                      "Classification of dispersed systems",
+                      "General characteristics of dispersed systems",
+                      "Size of colloidal particles",
+                      "Shapes of colloidal particles",
+                      "Classification of colloids",
+                      "Comparative account of properties of colloids",
+                      "Optical properties of colloids",
+                      "Kinetic properties of colloids",
+                      "Electrical properties of colloids",
+                      "Effect of electrolytes on colloids",
+                      "Coacervation",
+                      "Peptization",
+                      "Protective action of colloids"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 83,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:11.697885+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,169 @@
+{
+  "id": "8f997ee8-6c0c-4371-8463-72eaf80f2b73",
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS201",
+                "name": "HUMAN ANATOMY AND PHYSIOLOGY-II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Body Fluids, Blood and Lymphatic System",
+                    "topics": [
+                      "Body fluids",
+                      "Composition of blood",
+                      "Functions of blood",
+                      "Hemopoiesis",
+                      "Formation of hemoglobin",
+                      "Anemia",
+                      "Mechanisms of coagulation",
+                      "Blood grouping",
+                      "Rh factors",
+                      "Blood transfusion",
+                      "Significance of blood transfusion",
+                      "Disorders of blood",
+                      "Reticulo endothelial system",
+                      "Lymphatic organs",
+                      "Lymphatic tissues",
+                      "Lymphatic vessels",
+                      "Lymph circulation",
+                      "Functions of lymphatic system"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Cardiovascular System",
+                    "topics": [
+                      "Anatomy of heart",
+                      "Blood circulation",
+                      "Structure of blood vessels",
+                      "Functions of blood vessels",
+                      "Structure of artery",
+                      "Functions of artery",
+                      "Structure of vein",
+                      "Functions of vein",
+                      "Structure of capillaries",
+                      "Functions of capillaries",
+                      "Elements of conduction system of heart",
+                      "Heart beat",
+                      "Regulation of heart beat by autonomic nervous system",
+                      "Cardiac output",
+                      "Cardiac cycle",
+                      "Regulation of blood pressure",
+                      "Pulse",
+                      "Electrocardiogram (ECG)",
+                      "Disorders of heart"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Digestive System and Respiratory System Anatomy",
+                    "topics": [
+                      "Anatomy of GI Tract",
+                      "Anatomy of stomach",
+                      "Functions of stomach",
+                      "Acid production in the stomach",
+                      "Regulation of acid production through parasympathetic nervous system",
+                      "Pepsin role in protein digestion",
+                      "Anatomy of small intestine",
+                      "Functions of small intestine",
+                      "Anatomy of large intestine",
+                      "Functions of large intestine",
+                      "Anatomy of salivary glands",
+                      "Functions of salivary glands",
+                      "Anatomy of pancreas",
+                      "Functions of pancreas",
+                      "Anatomy of liver",
+                      "Functions of liver",
+                      "Movements of GIT",
+                      "Digestion of nutrients",
+                      "Absorption of nutrients",
+                      "Disorders of GIT",
+                      "Anatomy of respiratory system",
+                      "Anatomy of lungs",
+                      "Mechanism of respiration",
+                      "Regulation of respiration"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Respiratory System Physiology and Urinary System",
+                    "topics": [
+                      "Lung volumes",
+                      "Lung capacities",
+                      "Transport of respiratory gases",
+                      "Artificial respiration",
+                      "Resuscitation methods",
+                      "Anatomy of urinary tract",
+                      "Anatomy of kidney",
+                      "Anatomy of nephrons",
+                      "Functions of kidney",
+                      "Functions of urinary tract",
+                      "Physiology of urine formation",
+                      "Micturition reflex",
+                      "Role of kidneys in acid base balance",
+                      "Role of Renin-Angiotensin System (RAS) in kidney",
+                      "Disorders of kidney"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Reproductive System and Genetics",
+                    "topics": [
+                      "Anatomy of male reproductive system",
+                      "Functions of male reproductive system",
+                      "Anatomy of female reproductive system",
+                      "Functions of female reproductive system",
+                      "Sex hormones",
+                      "Physiology of menstruation",
+                      "Fertilization",
+                      "Spermatogenesis",
+                      "Oogenesis",
+                      "Pregnancy",
+                      "Parturition",
+                      "Introduction to genetics",
+                      "Chromosomes",
+                      "Genes",
+                      "DNA",
+                      "Protein synthesis",
+                      "Genetic pattern of inheritance"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 93,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T09:12:20.251534+00:00",
+  "updated_at": null
+}

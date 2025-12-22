@@ -1,0 +1,111 @@
+{
+  "id": "928777fc-0148-41ee-b316-b6532ce8fd40",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP813ET",
+                "name": "Pharmaceutical Product Development",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Pharmaceutical Product Development",
+                    "topics": [
+                      "Introduction to pharmaceutical product development",
+                      "Objectives of pharmaceutical product development",
+                      "Regulations related to preformulation",
+                      "Regulations related to formulation development",
+                      "Regulations related to stability assessment",
+                      "Regulations related to manufacturing of dosage forms",
+                      "Regulations related to quality control testing of dosage forms"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Pharmaceutical Excipients - I",
+                    "topics": [
+                      "Solvents",
+                      "Solubilizers",
+                      "Cyclodextrins",
+                      "Applications of Cyclodextrins",
+                      "Non-ionic surfactants",
+                      "Applications of Non-ionic surfactants",
+                      "Polyethylene glycols",
+                      "Sorbitols",
+                      "Suspending agents",
+                      "Emulsifying agents",
+                      "Semi solid excipients"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Pharmaceutical Excipients - II",
+                    "topics": [
+                      "Tablet excipients",
+                      "Capsule excipients",
+                      "Directly compressible vehicles",
+                      "Coat materials",
+                      "Excipients in parenteral products",
+                      "Excipients in aerosol products",
+                      "Excipients for formulation of NDDS",
+                      "Selection of excipients in pharmaceutical formulations",
+                      "Industrial applications of excipients"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Optimization Techniques",
+                    "topics": [
+                      "Optimization techniques in pharmaceutical product development",
+                      "Optimization by factorial designs",
+                      "Applications of factorial designs",
+                      "Quality by Design (QbD)",
+                      "Application of QbD in pharmaceutical product development"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Packaging Materials",
+                    "topics": [
+                      "Selection of packaging materials for pharmaceutical product development",
+                      "Quality control testing of packaging materials",
+                      "Regulatory considerations for packaging materials"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 35,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-13T11:09:23.320153+00:00",
+  "updated_at": null
+}

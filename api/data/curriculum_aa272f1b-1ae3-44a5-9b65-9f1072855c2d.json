@@ -1,0 +1,177 @@
+{
+  "id": "aa272f1b-1ae3-44a5-9b65-9f1072855c2d",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "BP102T",
+                "name": "Pharmaceutical Analysis",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pharmaceutical Analysis Fundamentals and Errors",
+                    "topics": [
+                      "Definition of pharmaceutical analysis",
+                      "Scope of pharmaceutical analysis",
+                      "Different techniques of analysis",
+                      "Methods of expressing concentration",
+                      "Primary standards",
+                      "Secondary standards",
+                      "Preparation and standardization of oxalic acid",
+                      "Preparation and standardization of sodium hydroxide",
+                      "Preparation and standardization of hydrochloric acid",
+                      "Preparation and standardization of sodium thiosulphate",
+                      "Preparation and standardization of sulphuric acid",
+                      "Preparation and standardization of potassium permanganate",
+                      "Preparation and standardization of ceric ammonium sulphate",
+                      "Sources of errors",
+                      "Types of errors",
+                      "Methods of minimizing errors",
+                      "Accuracy",
+                      "Precision",
+                      "Significant figures",
+                      "Pharmacopoeia",
+                      "Sources of impurities in medicinal agents",
+                      "Limit tests"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Acid Base and Non-Aqueous Titrations",
+                    "topics": [
+                      "Acid base titration",
+                      "Theories of acid base indicators",
+                      "Classification of acid base titrations",
+                      "Theory of titrations of strong acids and bases",
+                      "Theory of titrations of weak acids and bases",
+                      "Theory of titrations of very weak acids and bases",
+                      "Neutralization curves",
+                      "Non aqueous titration",
+                      "Solvents in non-aqueous titration",
+                      "Acidimetry titration",
+                      "Alkalimetry titration",
+                      "Estimation of Sodium benzoate",
+                      "Estimation of Ephedrine HCl"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Precipitation, Complexometric, Gravimetric and Diazotisation Titrations",
+                    "topics": [
+                      "Precipitation titrations",
+                      "Mohr’s method",
+                      "Volhard’s method",
+                      "Modified Volhard’s method",
+                      "Fajans method",
+                      "Estimation of sodium chloride",
+                      "Complexometric titration",
+                      "Classification of complexometric titration",
+                      "Metal ion indicators",
+                      "Masking reagents",
+                      "Demasking reagents",
+                      "Estimation of Magnesium sulphate",
+                      "Estimation of Calcium gluconate",
+                      "Gravimetry",
+                      "Principle of gravimetric analysis",
+                      "Steps involved in gravimetric analysis",
+                      "Purity of the precipitate",
+                      "Co-precipitation",
+                      "Post precipitation",
+                      "Estimation of barium sulphate",
+                      "Basic principles of diazotisation titration",
+                      "Methods of diazotisation titration",
+                      "Applications of diazotisation titration"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Redox Titrations",
+                    "topics": [
+                      "Redox titrations",
+                      "Concepts of oxidation",
+                      "Concepts of reduction",
+                      "Types of redox titrations",
+                      "Cerimetry",
+                      "Principle of Cerimetry",
+                      "Applications of Cerimetry",
+                      "Iodimetry",
+                      "Principle of Iodimetry",
+                      "Applications of Iodimetry",
+                      "Iodometry",
+                      "Principle of Iodometry",
+                      "Applications of Iodometry",
+                      "Bromatometry",
+                      "Principle of Bromatometry",
+                      "Applications of Bromatometry",
+                      "Dichrometry",
+                      "Principle of Dichrometry",
+                      "Applications of Dichrometry",
+                      "Titration with potassium iodate",
+                      "Principle of titration with potassium iodate",
+                      "Applications of titration with potassium iodate"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Electrochemical Methods of Analysis",
+                    "topics": [
+                      "Electrochemical methods of analysis",
+                      "Introduction to Conductometry",
+                      "Conductivity cell",
+                      "Conductometric titrations",
+                      "Applications of Conductometry",
+                      "Potentiometry",
+                      "Electrochemical cell",
+                      "Construction and working of Standard hydrogen electrode",
+                      "Construction and working of silver chloride electrode",
+                      "Construction and working of calomel electrode",
+                      "Indicator electrodes",
+                      "Metal electrodes",
+                      "Glass electrode",
+                      "Methods to determine end point of potentiometric titration",
+                      "Applications of Potentiometry",
+                      "Polarography",
+                      "Principle of Polarography",
+                      "Ilkovic equation",
+                      "Construction and working of dropping mercury electrode",
+                      "Construction and working of rotating platinum electrode",
+                      "Applications of Polarography"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 101,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T08:36:14.727762+00:00",
+  "updated_at": null
+}

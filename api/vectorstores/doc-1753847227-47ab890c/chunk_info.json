@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-30T09:23:10.666287",
+  "document_info": {
+    "fileName": "250200038242-1.pdf",
+    "fileSize": "1675.7 KB",
+    "uploadDate": "2025-07-30 09:17:07"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 1,
+    "table_chunks": 1,
+    "text_chunks": -1,
+    "average_chunk_size": 67.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS109: Pharmaceutical Analysis I lab",
+    "unitName": "Unit 1",
+    "topic": "test",
+    "fullPath": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 1/test"
+  }
+}

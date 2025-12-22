@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-29T18:52:09.650377",
+  "document_info": {
+    "fileName": "Introduction_to_HTML.pdf",
+    "fileSize": "4223.1 KB",
+    "uploadDate": "2025-07-29 18:51:02"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 1,
+    "table_chunks": 1,
+    "text_chunks": -1,
+    "average_chunk_size": 101.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS101: Human Anatomy and Physiology I",
+    "unitName": "Unit 2",
+    "topic": "test",
+    "fullPath": "bpharmacy/1-1/PS101: Human Anatomy and Physiology I/Unit 2/test"
+  }
+}

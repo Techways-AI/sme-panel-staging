@@ -1,0 +1,181 @@
+{
+  "id": 39,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP801T",
+                "name": "Biostatistics and Research Methodology",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction, Central Tendency, Dispersion, and Correlation",
+                    "topics": [
+                      "Introduction to Statistics",
+                      "Introduction to Biostatistics",
+                      "Frequency distribution",
+                      "Measures of central tendency",
+                      "Mean",
+                      "Median",
+                      "Mode",
+                      "Pharmaceutical examples of central tendency",
+                      "Measures of dispersion",
+                      "Range",
+                      "Standard deviation",
+                      "Pharmaceutical problems involving dispersion",
+                      "Definition of Correlation",
+                      "Karl Pearson’s coefficient of correlation",
+                      "Multiple correlation",
+                      "Pharmaceutical examples of correlation"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Regression, Probability, Sampling, and Parametric Tests",
+                    "topics": [
+                      "Regression",
+                      "Curve fitting by method of least squares",
+                      "Fitting the line y= a + bx",
+                      "Fitting the line x = a + by",
+                      "Multiple regression",
+                      "Standard error of regression",
+                      "Pharmaceutical examples of regression",
+                      "Definition of probability",
+                      "Binomial distribution",
+                      "Properties of Binomial distribution",
+                      "Normal distribution",
+                      "Properties of Normal distribution",
+                      "Poisson’s distribution",
+                      "Properties of Poisson’s distribution",
+                      "Probability problems",
+                      "Sample",
+                      "Population",
+                      "Large sample",
+                      "Small sample",
+                      "Null hypothesis",
+                      "Alternative hypothesis",
+                      "Sampling",
+                      "Essence of sampling",
+                      "Types of sampling",
+                      "Type I Error",
+                      "Type II Error",
+                      "Standard error of mean (SEM)",
+                      "Pharmaceutical examples of sampling",
+                      "Parametric tests",
+                      "t-test",
+                      "Sample t-test",
+                      "Pooled t-test",
+                      "Unpaired t-test",
+                      "Paired t-test",
+                      "ANOVA",
+                      "One way ANOVA",
+                      "Two way ANOVA",
+                      "Least Significance difference"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Non-Parametric Tests, Research Methodology, and Graphs",
+                    "topics": [
+                      "Non Parametric tests",
+                      "Wilcoxon Rank Sum Test",
+                      "Mann-Whitney U test",
+                      "Kruskal-Wallis test",
+                      "Friedman Test",
+                      "Introduction to Research",
+                      "Need for research",
+                      "Need for design of Experiments",
+                      "Experiential Design Technique",
+                      "Plagiarism",
+                      "Histogram",
+                      "Pie Chart",
+                      "Cubic Graph",
+                      "Response surface plot",
+                      "Counter Plot graph",
+                      "Designing the research methodology",
+                      "Sample size determination",
+                      "Power of a study",
+                      "Report writing",
+                      "Presentation of data",
+                      "Research Protocol",
+                      "Cohorts studies",
+                      "Observational studies",
+                      "Experimental studies",
+                      "Designing clinical trial",
+                      "Phases of clinical trials"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Regression Modeling and Statistical Software",
+                    "topics": [
+                      "Blocking system for Two-level factorials",
+                      "Confounding system for Two-level factorials",
+                      "Regression modeling",
+                      "Hypothesis testing in Simple regression models",
+                      "Hypothesis testing in Multiple regression models",
+                      "Introduction to Practical components of Industrial problems",
+                      "Introduction to Practical components of Clinical Trials problems",
+                      "Statistical Analysis Using Excel",
+                      "Statistical Analysis Using SPSS",
+                      "Statistical Analysis Using MINITAB",
+                      "Statistical Analysis Using Design of Experiments",
+                      "Statistical Analysis Using R",
+                      "Online Statistical Software’s for Industrial approach",
+                      "Online Statistical Software’s for Clinical trial approach"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Design and Analysis of Experiments",
+                    "topics": [
+                      "Design of experiments",
+                      "Analysis of experiments",
+                      "Factorial Design",
+                      "Definition of Factorial Design",
+                      "2^2 factorial design",
+                      "2^3 factorial design",
+                      "Advantage of factorial design",
+                      "Response Surface methodology",
+                      "Central composite design",
+                      "Historical design",
+                      "Optimization Techniques"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 105,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:36:06.091608+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,156 @@
+{
+  "id": "5bec069d-1e19-4daf-95c4-0ddb0dbcd527",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP805T",
+                "name": "Pharmacovigilance",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Pharmacovigilance and Adverse Drug Reactions",
+                    "topics": [
+                      "History of Pharmacovigilance",
+                      "Development of Pharmacovigilance",
+                      "Importance of safety monitoring of Medicine",
+                      "WHO international drug monitoring programme",
+                      "Pharmacovigilance Program of India(PvPI)",
+                      "Definitions of adverse drug reactions (ADRs)",
+                      "Classification of adverse drug reactions (ADRs)",
+                      "Detection of adverse drug reactions",
+                      "Reporting of adverse drug reactions",
+                      "Methods in Causality assessment",
+                      "Severity assessment of ADRs",
+                      "Seriousness assessment of ADRs",
+                      "Predictability assessment of ADRs",
+                      "Preventability assessment of ADRs",
+                      "Management of adverse drug reactions",
+                      "Terminologies of adverse medication related events",
+                      "Regulatory terminologies in pharmacovigilance"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Drug and Disease Classification, Coding, and Programme Establishment",
+                    "topics": [
+                      "Anatomical classification of drugs",
+                      "Therapeutic classification of drugs",
+                      "Chemical classification of drugs",
+                      "International classification of diseases",
+                      "Daily defined doses",
+                      "International Non proprietary Names for drugs",
+                      "WHO adverse reaction terminologies",
+                      "MedDRA",
+                      "Standardised MedDRA queries",
+                      "WHO drug dictionary",
+                      "Eudravigilance medicinal product dictionary",
+                      "Basic drug information resources",
+                      "Specialised resources for ADRs",
+                      "Establishing pharmacovigilance programme in a hospital",
+                      "Establishment of drug safety department in industry",
+                      "Operation of drug safety department in industry",
+                      "Contract Research Organisations (CROs)",
+                      "Establishing a national pharmacovigilance programme"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Vaccine Safety, Methods, and Communication",
+                    "topics": [
+                      "Vaccine Pharmacovigilance",
+                      "Vaccination failure",
+                      "Adverse events following immunization",
+                      "Passive surveillance",
+                      "Spontaneous reports",
+                      "Case series",
+                      "Stimulated reporting",
+                      "Active surveillance",
+                      "Sentinel sites",
+                      "Drug event monitoring",
+                      "Registries",
+                      "Comparative observational studies",
+                      "Cross sectional study",
+                      "Case control study",
+                      "Cohort study",
+                      "Targeted clinical investigations",
+                      "Effective communication in Pharmacovigilance",
+                      "Communication in Drug Safety Crisis management",
+                      "Communicating with Regulatory Agencies",
+                      "Communicating with Business Partners",
+                      "Communicating with Healthcare facilities",
+                      "Communicating with Media"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Safety Data Generation and ICH Guidelines",
+                    "topics": [
+                      "Safety data generation in Pre clinical phase",
+                      "Safety data generation in Clinical phase",
+                      "Safety data generation in Post approval phase (PMS)",
+                      "Organization of ICH",
+                      "Objectives of ICH",
+                      "Expedited reporting",
+                      "Individual case safety reports",
+                      "Periodic safety update reports",
+                      "Post approval expedited reporting",
+                      "Pharmacovigilance planning",
+                      "Good clinical practice in pharmacovigilance studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmacogenomics, Special Populations, CIOMS and CDSCO",
+                    "topics": [
+                      "Pharmacogenomics of adverse drug reactions",
+                      "Genetics related ADR with example focusing PK parameters",
+                      "Drug safety evaluation in Paediatrics",
+                      "Drug safety evaluation in Pregnancy",
+                      "Drug safety evaluation in lactation",
+                      "Drug safety evaluation in Geriatrics",
+                      "CIOMS Working Groups",
+                      "CIOMS Form",
+                      "CDSCO (India) and Pharmacovigilance",
+                      "D&C Act and Pharmacovigilance",
+                      "Schedule Y and Pharmacovigilance",
+                      "Differences in Indian and global pharmacovigilance requirements"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 80,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:09:52.723360+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,186 @@
+{
+  "id": "32d6e08d-4e47-424a-a55f-2a08b134339b",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "BP103T",
+                "name": "Pharmaceutics- I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "History of Pharmacy, Dosage Forms, and Prescription",
+                    "topics": [
+                      "Historical background of profession of pharmacy",
+                      "History of profession of Pharmacy in India in relation to pharmacy education",
+                      "History of profession of Pharmacy in India in relation to industry",
+                      "History of profession of Pharmacy in India in relation to organization",
+                      "Pharmacy as a career",
+                      "Introduction to IP (Indian Pharmacopoeia)",
+                      "Introduction to BP (British Pharmacopoeia)",
+                      "Introduction to USP (United States Pharmacopoeia)",
+                      "Introduction to Extra Pharmacopoeia",
+                      "Introduction to dosage forms",
+                      "Classification of dosage forms",
+                      "Definitions of dosage forms",
+                      "Definition of prescription",
+                      "Parts of prescription",
+                      "Handling of Prescription",
+                      "Errors in prescription",
+                      "Definition of posology",
+                      "Factors affecting posology",
+                      "Pediatric dose calculations based on age",
+                      "Pediatric dose calculations based on body weight",
+                      "Pediatric dose calculations based on body surface area"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Pharmaceutical Calculations, Powders, and Liquid Dosage Forms",
+                    "topics": [
+                      "Pharmaceutical calculations",
+                      "Imperial system of weights and measures",
+                      "Metric system of weights and measures",
+                      "Calculations involving percentage solutions",
+                      "Alligation method",
+                      "Proof spirit calculations",
+                      "Isotonic solutions based on freezing point",
+                      "Isotonic solutions based on molecular weight",
+                      "Definition of powders",
+                      "Classification of powders",
+                      "Advantages of powders",
+                      "Disadvantages of powders",
+                      "Simple powders",
+                      "Compound powders",
+                      "Official preparations of powders",
+                      "Dusting powders",
+                      "Effervescent powders",
+                      "Efflorescent powders",
+                      "Hygroscopic powders",
+                      "Eutectic mixtures",
+                      "Geometric dilutions",
+                      "Liquid dosage forms",
+                      "Advantages of liquid dosage forms",
+                      "Disadvantages of liquid dosage forms",
+                      "Excipients used in formulation of liquid dosage forms",
+                      "Solubility enhancement techniques"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Monophasic and Biphasic Liquids",
+                    "topics": [
+                      "Monophasic liquids",
+                      "Definition of Gargles",
+                      "Preparation of Gargles",
+                      "Definition of Mouthwashes",
+                      "Preparation of Mouthwashes",
+                      "Definition of Throat Paint",
+                      "Preparation of Throat Paint",
+                      "Definition of Eardrops",
+                      "Preparation of Eardrops",
+                      "Definition of Nasal drops",
+                      "Preparation of Nasal drops",
+                      "Definition of Enemas",
+                      "Preparation of Enemas",
+                      "Definition of Syrups",
+                      "Preparation of Syrups",
+                      "Definition of Elixirs",
+                      "Preparation of Elixirs",
+                      "Definition of Liniments",
+                      "Preparation of Liniments",
+                      "Definition of Lotions",
+                      "Preparation of Lotions",
+                      "Biphasic liquids",
+                      "Definition of suspensions",
+                      "Advantages of suspensions",
+                      "Disadvantages of suspensions",
+                      "Classifications of suspensions",
+                      "Preparation of suspensions",
+                      "Flocculated suspension",
+                      "Deflocculated suspension",
+                      "Stability problems of suspensions",
+                      "Methods to overcome stability problems of suspensions",
+                      "Definition of emulsions",
+                      "Classification of emulsions",
+                      "Emulsifying agents",
+                      "Test for identification of type of emulsion",
+                      "Methods of preparation of emulsions",
+                      "Stability problems of emulsions",
+                      "Methods to overcome stability problems of emulsions"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Suppositories and Pharmaceutical Incompatibilities",
+                    "topics": [
+                      "Definition of suppositories",
+                      "Types of suppositories",
+                      "Advantages of suppositories",
+                      "Disadvantages of suppositories",
+                      "Types of suppository bases",
+                      "Methods of preparation of suppositories",
+                      "Displacement value",
+                      "Calculation of displacement value",
+                      "Evaluation of suppositories",
+                      "Definition of pharmaceutical incompatibilities",
+                      "Classification of pharmaceutical incompatibilities",
+                      "Physical incompatibilities",
+                      "Chemical incompatibilities",
+                      "Therapeutic incompatibilities"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Semisolid Dosage Forms",
+                    "topics": [
+                      "Semisolid dosage forms",
+                      "Definitions of semisolid dosage forms",
+                      "Classification of semisolid dosage forms",
+                      "Mechanisms of dermal penetration of drugs",
+                      "Factors influencing dermal penetration of drugs",
+                      "Preparation of ointments",
+                      "Preparation of pastes",
+                      "Preparation of creams",
+                      "Preparation of gels",
+                      "Excipients used in semi solid dosage forms",
+                      "Evaluation of semi solid dosage forms"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 110,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:46:36.305755+00:00",
+  "updated_at": null
+}

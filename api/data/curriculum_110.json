@@ -1,0 +1,110 @@
+{
+  "id": 110,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS806",
+                "name": "EXPERIMENTAL PHARMACOLOGY (Open Elective - IV)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Laboratory Animals and Techniques",
+                    "topics": [
+                      "Description of laboratory animals",
+                      "Applications of different species of laboratory animals",
+                      "Applications of different strains of laboratory animals",
+                      "Transgenic animals",
+                      "Mutant animals",
+                      "Techniques for collection of blood",
+                      "Common routes of drug administration in laboratory animals",
+                      "Techniques of euthanasia"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Preclinical Screening Models and Basics",
+                    "topics": [
+                      "Dose selection in preclinical screening",
+                      "Dose calculation in preclinical screening",
+                      "Dose conversion in preclinical screening",
+                      "Preparation of drug solution",
+                      "Preparation of drug suspensions",
+                      "Grouping of animals",
+                      "Importance of sham negative control groups",
+                      "Importance of positive control groups"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Screening Models for ANS Activity",
+                    "topics": [
+                      "Preclinical screening models for ANS activity",
+                      "Preclinical screening models for sympathomimetics",
+                      "Preclinical screening models for sympatholytics",
+                      "Preclinical screening models for parasympathomimetics",
+                      "Preclinical screening models for parasympatholytics",
+                      "Preclinical screening models for skeletal muscle relaxants"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Screening Models for Diuretics, Anticoagulants and Anticancer",
+                    "topics": [
+                      "Preclinical screening models for diuretics",
+                      "Preclinical screening models for anticoagulants",
+                      "Preclinical screening models for anticancer activities"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Research Methodology and Bio-statistics",
+                    "topics": [
+                      "Research methodology",
+                      "Bio-statistics",
+                      "Selection of research topic",
+                      "Review of literature",
+                      "Research hypothesis",
+                      "Study design",
+                      "Interpretation using Student’t’ test",
+                      "Interpretation using One-way ANOVA",
+                      "Graphical representation of data"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 34,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:47:07.005253+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,166 @@
+{
+  "id": "e79a8957-61fd-40e1-9ba5-0c1d6c369936",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 4,
+            "subjects": [
+              {
+                "code": "BP403T",
+                "name": "Physical Pharmaceutics-II",
+                "type": "theory",
+                "units": [
+                  {
+                    "title": "Colloidal Dispersions",
+                    "number": "Unit I",
+                    "topics": [
+                      "Classification of dispersed systems",
+                      "General characteristics of dispersed systems",
+                      "Size of colloidal particles",
+                      "Shapes of colloidal particles",
+                      "Classification of colloids",
+                      "General properties of colloids",
+                      "Optical properties of colloids",
+                      "Kinetic properties of colloids",
+                      "Electrical properties of colloids",
+                      "Effect of electrolytes on colloids",
+                      "Coacervation",
+                      "Peptization",
+                      "Protective action"
+                    ]
+                  },
+                  {
+                    "title": "Rheology and Deformation of Solids",
+                    "number": "Unit II",
+                    "topics": [
+                      "Rheology",
+                      "Newtonian systems",
+                      "Law of flow",
+                      "Kinematic viscosity",
+                      "Effect of temperature on viscosity",
+                      "Non-Newtonian systems",
+                      "Pseudoplastic flow",
+                      "Dilatant flow",
+                      "Plastic flow",
+                      "Thixotropy",
+                      "Thixotropy in formulation",
+                      "Determination of viscosity",
+                      "Capillary viscometer",
+                      "Falling Sphere viscometer",
+                      "Rotational viscometers",
+                      "Deformation of solids",
+                      "Plastic deformation",
+                      "Elastic deformation",
+                      "Heckel equation",
+                      "Stress",
+                      "Strain",
+                      "Elastic Modulus"
+                    ]
+                  },
+                  {
+                    "title": "Coarse Dispersion",
+                    "number": "Unit III",
+                    "topics": [
+                      "Suspension",
+                      "Interfacial properties of suspended particles",
+                      "Settling in suspensions",
+                      "Formulation of flocculated suspensions",
+                      "Formulation of deflocculated suspensions",
+                      "Emulsions",
+                      "Theories of emulsification",
+                      "Microemulsion",
+                      "Multiple emulsions",
+                      "Stability of emulsions",
+                      "Preservation of emulsions",
+                      "Rheological properties of emulsions",
+                      "Emulsion formulation by HLB method"
+                    ]
+                  },
+                  {
+                    "title": "Micromeretics",
+                    "number": "Unit IV",
+                    "topics": [
+                      "Particle size distribution",
+                      "Mean particle size",
+                      "Number distribution",
+                      "Weight distribution",
+                      "Particle number",
+                      "Methods for determining particle size",
+                      "Counting method for particle size",
+                      "Separation method for particle size",
+                      "Particle shape",
+                      "Specific surface",
+                      "Methods for determining surface area",
+                      "Permeability method for surface area",
+                      "Adsorption method for surface area",
+                      "Derived properties of powders",
+                      "Porosity",
+                      "Packing arrangement",
+                      "Densities of powders",
+                      "Bulkiness of powders",
+                      "Flow properties of powders"
+                    ]
+                  },
+                  {
+                    "title": "Drug Stability",
+                    "number": "Unit V",
+                    "topics": [
+                      "Drug stability",
+                      "Reaction kinetics",
+                      "Zero order reaction",
+                      "Pseudo-zero order reaction",
+                      "First order reaction",
+                      "Second order reaction",
+                      "Units of basic rate constants",
+                      "Determination of reaction order",
+                      "Physical factors influencing chemical degradation of pharmaceutical product",
+                      "Chemical factors influencing chemical degradation of pharmaceutical product",
+                      "Influence of temperature on degradation",
+                      "Influence of solvent on degradation",
+                      "Influence of ionic strength on degradation",
+                      "Influence of dielectric constant on degradation",
+                      "Specific acid base catalysis",
+                      "General acid base catalysis",
+                      "Simple numerical problems on stability",
+                      "Stabilization of medicinal agents against hydrolysis",
+                      "Stabilization of medicinal agents against oxidation",
+                      "Accelerated stability testing",
+                      "Expiration dating of pharmaceutical dosage forms",
+                      "Photolytic degradation",
+                      "Prevention of photolytic degradation"
+                    ]
+                  }
+                ],
+                "category": "core"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 4,
+    "subjects": 1,
+    "units": 5,
+    "topics": 90,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T14:33:09.654758+00:00",
+  "updated_at": "2025-12-13T10:12:38.465829+00:00"
+}

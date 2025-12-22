@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-08-01T18:00:59.556649",
+  "document_info": {
+    "fileName": "XML_CSS_\u2013_Cascading_Style_Sheets.docx",
+    "fileSize": "3477.7 KB",
+    "uploadDate": "2025-07-30 01:20:53"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 0,
+    "table_chunks": 1,
+    "text_chunks": 0,
+    "average_chunk_size": 328.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-2",
+    "subjectName": "CS205: Computer Applications in Pharmacy",
+    "unitName": "Unit 2",
+    "topic": "XML CSS \u2013 Cascading Style Sheets",
+    "fullPath": "bpharmacy/1-2/CS205: Computer Applications in Pharmacy/Unit 2/XML CSS \u2013 Cascading Style Sheets"
+  }
+}

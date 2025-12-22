@@ -1,0 +1,30 @@
+{
+  "num_chunks": 10,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-22T19:38:13.417199",
+  "document_info": {
+    "fileName": "functions_of_the_Major_Physiological_Ions.pdf",
+    "fileSize": "119.1 KB",
+    "uploadDate": "2025-06-30 15:06:35"
+  },
+  "chunking_stats": {
+    "total_chunks": 10,
+    "semantic_chunks": 5,
+    "table_chunks": 10,
+    "text_chunks": -5,
+    "average_chunk_size": 930.2,
+    "chunk_types": {
+      "table": 10
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS101: Human Anatomy and Physiology I",
+    "unitName": "Unit 2",
+    "topic": "test1",
+    "fullPath": "bpharmacy/1-1/PS101: Human Anatomy and Physiology I/Unit 2/test1"
+  }
+}

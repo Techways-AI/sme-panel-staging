@@ -1,0 +1,30 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 135,
+      "has_header": true,
+      "semantic_header": "<<<PAGE_BREAK>>>",
+      "course": "bpharmacy",
+      "year_semester": "1-2",
+      "subject": "BS203: Biochemistry",
+      "unit": "Unit 1",
+      "topic": "Carbohydrate Metabolism",
+      "folder_path": "bpharmacy/1-2/BS203: Biochemistry/Unit 1/Carbohydrate Metabolism",
+      "source_file": "Carbohydrate_Metabolism.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753666652-7ee8ebcb.pdf",
+      "processing_timestamp": "2025-07-28T12:38:36.767378",
+      "headers": [
+        "<<<PAGE_BREAK>>>",
+        "<<<PAGE_BREAK>>>"
+      ],
+      "block_type": null
+    },
+    "length": 135
+  }
+]

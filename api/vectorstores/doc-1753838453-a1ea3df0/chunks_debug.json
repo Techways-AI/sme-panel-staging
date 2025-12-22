@@ -1,0 +1,27 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |  |  |\n|  |  |  |  |  |\n|  |  |  |  |  |\n|  |  |  |  |  |\n|  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |  |  |\n|  |\n|  |  |\n|  |  |\n|  ...",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": false,
+      "is_table": true,
+      "chunk_size": 328,
+      "has_header": false,
+      "semantic_header": null,
+      "headers": [],
+      "course": "bpharmacy",
+      "year_semester": "1-2",
+      "subject": "CS205: Computer Applications in Pharmacy",
+      "unit": "Unit 2",
+      "topic": "XML CSS \u2013 Cascading Style Sheets",
+      "folder_path": "bpharmacy/1-2/CS205: Computer Applications in Pharmacy/Unit 2/XML CSS \u2013 Cascading Style Sheets",
+      "source_file": "XML_CSS_\u2013_Cascading_Style_Sheets.docx",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme clone\\SME-pannel\\backend\\temp\\doc-1753838453-a1ea3df0.docx",
+      "processing_timestamp": "2025-08-01T18:00:54.898492",
+      "block_type": null
+    },
+    "length": 328
+  }
+]

@@ -1,0 +1,149 @@
+{
+  "id": "41c931ef-66e0-4516-b6e5-433bbac7dfed",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 6,
+            "subjects": [
+              {
+                "code": "BP602T",
+                "name": "Pharmacology-III",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pharmacology of Drugs Acting on Respiratory and Gastrointestinal Systems",
+                    "topics": [
+                      "Pharmacology of drugs acting on Respiratory system",
+                      "Anti-asthmatic drugs",
+                      "Drugs used in the management of COPD",
+                      "Expectorants",
+                      "Antitussives",
+                      "Nasal decongestants",
+                      "Respiratory stimulants",
+                      "Pharmacology of drugs acting on the Gastrointestinal Tract",
+                      "Antiulcer agents",
+                      "Drugs for constipation",
+                      "Drugs for diarrhoea",
+                      "Appetite stimulants",
+                      "Appetite suppressants",
+                      "Digestants",
+                      "Carminatives",
+                      "Emetics",
+                      "Anti-emetics"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Chemotherapy - I",
+                    "topics": [
+                      "Chemotherapy",
+                      "General principles of chemotherapy",
+                      "Sulfonamides",
+                      "Cotrimoxazole",
+                      "Antibiotics",
+                      "Penicillins",
+                      "Cephalosporins",
+                      "Chloramphenicol",
+                      "Macrolides",
+                      "Quinolones",
+                      "Fluoroquinolins",
+                      "Tetracycline",
+                      "Aminoglycosides"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Chemotherapy - II",
+                    "topics": [
+                      "Antitubercular agents",
+                      "Antileprotic agents",
+                      "Antifungal agents",
+                      "Antiviral drugs",
+                      "Anthelmintics",
+                      "Antimalarial drugs",
+                      "Antiamoebic agents"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Chemotherapy - III and Immunopharmacology",
+                    "topics": [
+                      "Urinary tract infections",
+                      "Sexually transmitted diseases",
+                      "Chemotherapy of malignancy",
+                      "Immunopharmacology",
+                      "Immunostimulants",
+                      "Immunosuppressants",
+                      "Protein drugs",
+                      "Monoclonal antibodies",
+                      "Target drugs to antigen",
+                      "Biosimilars"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Principles of Toxicology and Chronopharmacology",
+                    "topics": [
+                      "Principles of toxicology",
+                      "Definition of acute toxicity",
+                      "Definition of subacute toxicity",
+                      "Definition of chronic toxicity",
+                      "Definition of genotoxicity",
+                      "Definition of carcinogenicity",
+                      "Definition of teratogenicity",
+                      "Definition of mutagenicity",
+                      "General principles of treatment of poisoning",
+                      "Clinical symptoms of barbiturate poisoning",
+                      "Management of barbiturate poisoning",
+                      "Clinical symptoms of morphine poisoning",
+                      "Management of morphine poisoning",
+                      "Clinical symptoms of organophosphosphorus compound poisoning",
+                      "Management of organophosphosphorus compound poisoning",
+                      "Clinical symptoms of lead poisoning",
+                      "Management of lead poisoning",
+                      "Clinical symptoms of mercury poisoning",
+                      "Management of mercury poisoning",
+                      "Clinical symptoms of arsenic poisoning",
+                      "Management of arsenic poisoning",
+                      "Chronopharmacology",
+                      "Definition of rhythm",
+                      "Definition of cycles",
+                      "Biological clock",
+                      "Significance of biological clock leading to chronotherapy"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 6,
+    "subjects": 1,
+    "units": 5,
+    "topics": 73,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:09:12.867545+00:00",
+  "updated_at": null
+}

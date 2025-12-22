@@ -1,0 +1,202 @@
+{
+  "id": "6305f330-4ab7-4f4e-b076-4cfc3d2d1fd8",
+  "university": "JNTUH",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PC404",
+                "name": "PHARMACOGNOSY AND PHYTOCHEMISTRY - I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Pharmacognosy and Classification of Drugs",
+                    "topics": [
+                      "Definition of Pharmacognosy",
+                      "History of Pharmacognosy",
+                      "Scope of Pharmacognosy",
+                      "Development of Pharmacognosy",
+                      "Sources of Drugs - Plants",
+                      "Sources of Drugs - Animals",
+                      "Sources of Drugs - Marine",
+                      "Sources of Drugs - Tissue culture",
+                      "Organized drugs",
+                      "Unorganized drugs",
+                      "Dried latex",
+                      "Dried juices",
+                      "Dried extracts",
+                      "Gums",
+                      "Mucilages",
+                      "Oleoresins",
+                      "Oleo-gum-resins",
+                      "Alphabetical classification of drugs",
+                      "Morphological classification of drugs",
+                      "Taxonomical classification of drugs",
+                      "Chemical classification of drugs",
+                      "Pharmacological classification of drugs",
+                      "Chemo classification of drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Cultivation, Processing, Storage and Quality Control of Drugs",
+                    "topics": [
+                      "Cultivation of drugs of natural origin",
+                      "Collection of drugs of natural origin",
+                      "Processing of drugs of natural origin",
+                      "Storage of drugs of natural origin",
+                      "Factors influencing cultivation of medicinal plants",
+                      "Plant hormones",
+                      "Applications of plant hormones",
+                      "Polyploidy in medicinal plants",
+                      "Mutation in medicinal plants",
+                      "Hybridization in medicinal plants",
+                      "Adulteration of drugs of natural origin",
+                      "Organoleptic evaluation of drugs",
+                      "Microscopic evaluation of drugs",
+                      "Physical evaluation of drugs",
+                      "Chemical evaluation of drugs",
+                      "Biological evaluation of drugs",
+                      "Quantitative microscopy of crude drugs",
+                      "Lycopodium spore method",
+                      "Leaf constants",
+                      "Camera lucida",
+                      "Diagrams of microscopic objects to scale"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Plant Products, Primary Metabolites and Marine Drugs",
+                    "topics": [
+                      "Biological source of Cotton",
+                      "Chemical nature of Cotton",
+                      "Uses of Cotton",
+                      "Biological source of Jute",
+                      "Chemical nature of Jute",
+                      "Uses of Jute",
+                      "Biological source of Hemp",
+                      "Chemical nature of Hemp",
+                      "Uses of Hemp",
+                      "Hallucinogens",
+                      "Teratogens",
+                      "Natural allergens",
+                      "Primary metabolites",
+                      "Chemistry of Carbohydrates",
+                      "Sources of Carbohydrates",
+                      "Preparation of Carbohydrates",
+                      "Evaluation of Carbohydrates",
+                      "Preservation of Carbohydrates",
+                      "Storage of Carbohydrates",
+                      "Therapeutic uses of Carbohydrates",
+                      "Acacia",
+                      "Agar",
+                      "Tragacanth",
+                      "Honey",
+                      "Proteins",
+                      "Enzymes",
+                      "Gelatin",
+                      "Casein",
+                      "Proteolytic enzymes",
+                      "Papain",
+                      "Bromelain",
+                      "Serratiopeptidase",
+                      "Urokinase",
+                      "Streptokinase",
+                      "Pepsin",
+                      "Lipids",
+                      "Waxes",
+                      "Fats",
+                      "Fixed oils",
+                      "Castor oil",
+                      "Chaulmoogra oil",
+                      "Wool Fat",
+                      "Bees Wax",
+                      "Novel medicinal agents from marine sources"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Pharmacognosy in Various Systems of Medicine and Secondary Metabolites",
+                    "topics": [
+                      "Role of Pharmacognosy in allopathy",
+                      "Role of Pharmacognosy in Ayurveda",
+                      "Role of Pharmacognosy in Unani",
+                      "Role of Pharmacognosy in Siddha",
+                      "Role of Pharmacognosy in Homeopathy",
+                      "Role of Pharmacognosy in Naturopathy",
+                      "Introduction to secondary metabolites",
+                      "Definition of Alkaloids",
+                      "Classification of Alkaloids",
+                      "Properties of Alkaloids",
+                      "Test for identification of Alkaloids",
+                      "Definition of Glycosides",
+                      "Classification of Glycosides",
+                      "Properties of Glycosides",
+                      "Test for identification of Glycosides",
+                      "Definition of Flavonoids",
+                      "Classification of Flavonoids",
+                      "Properties of Flavonoids",
+                      "Test for identification of Flavonoids",
+                      "Definition of Tannins",
+                      "Classification of Tannins",
+                      "Properties of Tannins",
+                      "Test for identification of Tannins",
+                      "Definition of Volatile oil",
+                      "Classification of Volatile oil",
+                      "Properties of Volatile oil",
+                      "Test for identification of Volatile oil",
+                      "Definition of Resins",
+                      "Classification of Resins",
+                      "Properties of Resins",
+                      "Test for identification of Resins"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Plant Tissue Culture",
+                    "topics": [
+                      "Historical development of plant tissue culture",
+                      "Types of plant tissue cultures",
+                      "Nutritional requirements for plant tissue culture",
+                      "Growth of plant tissue culture",
+                      "Maintenance of plant tissue culture",
+                      "Applications of plant tissue culture in pharmacognosy",
+                      "Edible vaccines"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 126,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T14:34:42.762086+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,50 @@
+You are an expert academic educator and curriculum specialist. Based on the provided educational content, generate comprehensive learning assessment questions that cover the key topics and concepts.
+
+Your task is to analyze the educational content and create a structured set of assessment questions that test understanding of the material.
+
+Requirements:
+1. Generate questions in three categories:
+   - **Comprehensive Questions** (10-15 marks each)
+   - **Focused Questions** (5-8 marks each)  
+   - **Quick Assessment Questions** (2-3 marks each)
+
+2. Question Guidelines:
+   - Comprehensive Questions: Detailed analytical questions requiring thorough explanations
+   - Focused Questions: Targeted questions testing understanding of specific concepts
+   - Quick Assessment Questions: Brief recall and definition-based questions
+
+3. Content Requirements:
+   - Cover all major topics from the educational material
+   - Include both theoretical and practical aspects
+   - Ensure questions test different cognitive levels (recall, understanding, application, analysis)
+   - Maintain academic rigor and relevance to the subject matter
+
+4. Format Requirements:
+   - Use clear, unambiguous language
+   - Number questions within each category
+   - Ensure questions are specific and answerable
+   - Avoid overly complex or vague questions
+
+Educational Content:
+{model_paper_text}
+
+Generate the assessment questions in the following format:
+
+## Learning Assessment Questions
+
+### Comprehensive Questions
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+
+### Focused Questions
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+
+### Quick Assessment Questions
+1. [Question 1]
+2. [Question 2]
+3. [Question 3]
+
+Return only the formatted questions. Do not include any explanations or additional text.

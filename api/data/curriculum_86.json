@@ -1,0 +1,146 @@
+{
+  "id": 86,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS607",
+                "name": "BIOINFORMATICS (Open Elective - II)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Foundations of Bioinformatics",
+                    "topics": [
+                      "Historical perspective of Bioinformatics",
+                      "Nucleic acid sequence data",
+                      "Protein sequence data",
+                      "Protein structure data",
+                      "Genome variation data",
+                      "Gene expression data",
+                      "Proteomic data",
+                      "Metabolic pathways data",
+                      "Metabolic networks data",
+                      "Free online bioinformatics tools",
+                      "Downloadable free bioinformatics tools",
+                      "Bioinformatics software packages",
+                      "Bioinformatics web portals",
+                      "Role of internet in Bioinformatics"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Sequence Comparison Methods",
+                    "topics": [
+                      "Basics of sequence alignment",
+                      "Match in sequence alignment",
+                      "Mismatch in sequence alignment",
+                      "Gaps in sequence alignment",
+                      "Gap penalties",
+                      "Linear gap penalties",
+                      "Affine gap penalties",
+                      "Sequence identity",
+                      "Sequence similarity",
+                      "Sequence homology",
+                      "Orthologs",
+                      "Paralogs",
+                      "Xenologs",
+                      "DNA Vs protein sequence alignment",
+                      "Permissible replacement in alignment",
+                      "Similarity score",
+                      "PAM scoring matrix",
+                      "BLOSUM scoring matrix",
+                      "Multiple-sequence alignment (MSA)",
+                      "Significance of MSA"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Genomic Applications",
+                    "topics": [
+                      "Bioinformatics for genome sequencing",
+                      "First generation methods of genome sequencing",
+                      "Next generation methods of genome sequencing",
+                      "De-novo genome sequencing",
+                      "Reference based genome sequencing",
+                      "Genome assembly reads",
+                      "Genome assembly contigs",
+                      "Genome assembly scaffolds",
+                      "Transcript profiling",
+                      "Expression microarrays",
+                      "Gene array",
+                      "Oligo array",
+                      "Transcriptome sequencing",
+                      "RNA-seq analysis",
+                      "Small RNA sequencing",
+                      "Small RNA analysis"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Genome Maps, Markers and Medical Applications",
+                    "topics": [
+                      "Identification of SSR markers",
+                      "Identification of STS markers",
+                      "Identification of SNP markers",
+                      "Linkage maps",
+                      "Physical maps",
+                      "Genome browsers",
+                      "Understanding diseases using bioinformatics",
+                      "Identification of disease genes",
+                      "Disease diagnostics using bioinformatics",
+                      "Overview of drug discovery using bioinformatics",
+                      "Pharmacogenomics"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Proteomic and Metabolomic Applications",
+                    "topics": [
+                      "Protein profiling",
+                      "2D gels",
+                      "Protein fingerprinting",
+                      "Protein identification",
+                      "Protein structure analysis",
+                      "Protein structure visualization",
+                      "Protein secondary structure prediction",
+                      "Protein tertiary structure prediction",
+                      "Homology modelling"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 70,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:24.497494+00:00",
+  "updated_at": null
+}

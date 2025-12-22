@@ -1,0 +1,56 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "B.Pharmacy Core Subjects - MCQs (Based on PCI Syllabus)\nYear I - Semester I\nSubject: Human Anatomy and Physiology I\nQ1. What is the basic structural unit of the human body?\n- Tissue\n- Organ\n- Cell\n- System\nCorrect Answer: Cell\nQ2. Which body system is primarily responsible for transporting nutrients...",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 992,
+      "has_header": true,
+      "semantic_header": "Year I - Semester I",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 3",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 3/introduction",
+      "source_file": "BPharm_Core_Subjects_MCQ.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753786083-533851e7.pdf",
+      "processing_timestamp": "2025-07-29T16:19:11.757431",
+      "headers": [
+        "Year I - Semester I"
+      ],
+      "block_type": null
+    },
+    "length": 992
+  },
+  {
+    "chunk_id": 1,
+    "text_preview": "- 700-900 nm\nCorrect Answer: 200-400 nm\nSubject: Pharmaceutics\nQ1. Which dosage form is designed to release the drug slowly over time?\n- Tablet\n- Capsule\n- Sustained release\n- Solution\nCorrect Answer: Sustained release\nQ2. What is the main role of excipients in formulations?\n- Act as active ingredie...",
+    "metadata": {
+      "chunk_id": 1,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 900,
+      "has_header": true,
+      "semantic_header": "- 700-900 nm",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 3",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 3/introduction",
+      "source_file": "BPharm_Core_Subjects_MCQ.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753786083-533851e7.pdf",
+      "processing_timestamp": "2025-07-29T16:19:11.757431",
+      "headers": [
+        "- 700-900 nm"
+      ],
+      "block_type": null
+    },
+    "length": 900
+  }
+]

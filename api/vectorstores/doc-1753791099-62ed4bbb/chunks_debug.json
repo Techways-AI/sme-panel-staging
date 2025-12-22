@@ -1,0 +1,104 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "SAMPATHKASOJI\n\ud83d\udcde\n+917993515160|\n\u2709\nkasojisampath1104@gmail.com|Nizamabad,Telangana\nCAREEROBJECTIVETogrowanddevelopincareerbyconvertingmyideasintosuccessfulresultsandtoenhanceandutilizemy-educationalandprofessionalskillsinanenvironmentthatprovidesachallengingcareerforthedevelopmen t-ofselfandtoachievet...",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 992,
+      "has_header": true,
+      "semantic_header": "SAMPATHKASOJI",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "Sampath_Kasoji.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-62ed4bbb.pdf",
+      "processing_timestamp": "2025-07-29T17:49:29.357245",
+      "headers": [
+        "SAMPATHKASOJI"
+      ],
+      "block_type": null
+    },
+    "length": 992
+  },
+  {
+    "chunk_id": 1,
+    "text_preview": "\u25cfDevelopedthe\"KPIDevSecOps\"projectfromscratchincollaborationwithacolleague.UtilizedReact-TS,TailwindCSS,andtheExperianstandardReactlibrarycalledWayfarer.\n\u25cfActivelyworkingonthe\"KPIDevsecops\"project,tooktheleadindevelopingkeymodulesandactivelyenhancingprojectfunctionalityandusability.\nPROJECTSDevelope...",
+    "metadata": {
+      "chunk_id": 1,
+      "chunk_type": "table",
+      "is_semantic": false,
+      "is_table": true,
+      "chunk_size": 956,
+      "has_header": false,
+      "semantic_header": null,
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "Sampath_Kasoji.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-62ed4bbb.pdf",
+      "processing_timestamp": "2025-07-29T17:49:29.357245",
+      "headers": [],
+      "block_type": null
+    },
+    "length": 956
+  },
+  {
+    "chunk_id": 2,
+    "text_preview": "\u25cfUserscanviewthedetailsofthedatastoredandcanviewthetransactionhistoryintheirblockchainaccount.GITHUB:https://github.com/Sampath00/Securing_Data_with_Blockchain_using_IPFS\nEDUCATIONBachelorofTechnology:Comput erScienceandEngineeringJul2020-Aug2023K e s h a vM e m o r i a lI n s t i t u t eo fT e c h ...",
+    "metadata": {
+      "chunk_id": 2,
+      "chunk_type": "text",
+      "is_semantic": false,
+      "is_table": false,
+      "chunk_size": 946,
+      "has_header": false,
+      "semantic_header": null,
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "Sampath_Kasoji.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-62ed4bbb.pdf",
+      "processing_timestamp": "2025-07-29T17:49:29.357245",
+      "headers": [],
+      "block_type": null
+    },
+    "length": 946
+  },
+  {
+    "chunk_id": 3,
+    "text_preview": "\u25cfSolvedmorethan750+problemsinLeetCodeandparticipatedinseveralleetcodecontests-Sampath1804",
+    "metadata": {
+      "chunk_id": 3,
+      "chunk_type": "text",
+      "is_semantic": false,
+      "is_table": false,
+      "chunk_size": 89,
+      "has_header": false,
+      "semantic_header": null,
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS109: Pharmaceutical Analysis I lab",
+      "unit": "Unit 2",
+      "topic": "introduction",
+      "folder_path": "bpharmacy/1-1/PS109: Pharmaceutical Analysis I lab/Unit 2/introduction",
+      "source_file": "Sampath_Kasoji.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753791099-62ed4bbb.pdf",
+      "processing_timestamp": "2025-07-29T17:49:29.357245",
+      "headers": [],
+      "block_type": null
+    },
+    "length": 89
+  }
+]

@@ -1,0 +1,183 @@
+{
+  "id": "34c11c4c-db9a-4349-a1a6-8fc8635e9172",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 7,
+            "subjects": [
+              {
+                "code": "BP701T",
+                "name": "Instrumental Methods of Analysis",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "UV Visible Spectroscopy and Fluorimetry",
+                    "topics": [
+                      "Electronic transitions",
+                      "Chromophores",
+                      "Auxochromes",
+                      "Spectral shifts",
+                      "Solvent effect on absorption spectra",
+                      "Beer and Lambert’s law",
+                      "Derivation of Beer and Lambert’s law",
+                      "Deviations of Beer and Lambert’s law",
+                      "Sources of radiation in UV visible spectroscopy",
+                      "Wavelength selectors in UV visible spectroscopy",
+                      "Sample cells in UV visible spectroscopy",
+                      "Photo tube detector",
+                      "Photomultiplier tube detector",
+                      "Photo voltaic cell detector",
+                      "Silicon Photodiode detector",
+                      "Spectrophotometric titrations",
+                      "Single component analysis",
+                      "Multi component analysis",
+                      "Theory of fluorimetry",
+                      "Concept of singlet electronic state",
+                      "Concept of doublet electronic state",
+                      "Concept of triplet electronic state",
+                      "Internal conversions in fluorimetry",
+                      "External conversions in fluorimetry",
+                      "Factors affecting fluorescence",
+                      "Quenching in fluorimetry",
+                      "Instrumentation of fluorimetry",
+                      "Applications of fluorimetry"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "IR Spectroscopy, Flame Photometry, Atomic Absorption Spectroscopy and Nepheloturbidometry",
+                    "topics": [
+                      "Introduction to IR spectroscopy",
+                      "Fundamental modes of vibrations in poly atomic molecules",
+                      "Sample handling in IR spectroscopy",
+                      "Factors affecting vibrations in IR spectroscopy",
+                      "Sources of radiation in IR spectroscopy",
+                      "Wavelength selectors in IR spectroscopy",
+                      "Golay cell detector",
+                      "Bolometer detector",
+                      "Thermocouple detector",
+                      "Thermister detector",
+                      "Pyroelectric detector",
+                      "Applications of IR spectroscopy",
+                      "Principle of Flame Photometry",
+                      "Interferences in Flame Photometry",
+                      "Instrumentation of Flame Photometry",
+                      "Applications of Flame Photometry",
+                      "Principle of Atomic absorption spectroscopy",
+                      "Interferences in Atomic absorption spectroscopy",
+                      "Instrumentation of Atomic absorption spectroscopy",
+                      "Applications of Atomic absorption spectroscopy",
+                      "Principle of Nepheloturbidometry",
+                      "Instrumentation of Nepheloturbidometry",
+                      "Applications of Nepheloturbidometry"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Introduction to Chromatography and Electrophoresis",
+                    "topics": [
+                      "Introduction to chromatography",
+                      "Methodology of adsorption column chromatography",
+                      "Advantages of adsorption column chromatography",
+                      "Disadvantages of adsorption column chromatography",
+                      "Applications of adsorption column chromatography",
+                      "Methodology of partition column chromatography",
+                      "Advantages of partition column chromatography",
+                      "Disadvantages of partition column chromatography",
+                      "Applications of partition column chromatography",
+                      "Introduction to Thin layer chromatography",
+                      "Principle of Thin layer chromatography",
+                      "Methodology of Thin layer chromatography",
+                      "Rf values in Thin layer chromatography",
+                      "Advantages of Thin layer chromatography",
+                      "Disadvantages of Thin layer chromatography",
+                      "Applications of Thin layer chromatography",
+                      "Introduction to Paper chromatography",
+                      "Methodology of Paper chromatography",
+                      "Development techniques in Paper chromatography",
+                      "Advantages of Paper chromatography",
+                      "Disadvantages of Paper chromatography",
+                      "Applications of Paper chromatography",
+                      "Introduction to Electrophoresis",
+                      "Factors affecting electrophoretic mobility",
+                      "Techniques of paper electrophoresis",
+                      "Techniques of gel electrophoresis",
+                      "Techniques of capillary electrophoresis",
+                      "Applications of electrophoresis"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Gas Chromatography and High Performance Liquid Chromatography",
+                    "topics": [
+                      "Introduction to Gas chromatography",
+                      "Theory of Gas chromatography",
+                      "Instrumentation of Gas chromatography",
+                      "Derivatization in Gas chromatography",
+                      "Temperature programming in Gas chromatography",
+                      "Advantages of Gas chromatography",
+                      "Disadvantages of Gas chromatography",
+                      "Applications of Gas chromatography",
+                      "Introduction to HPLC",
+                      "Theory of HPLC",
+                      "Instrumentation of HPLC",
+                      "Advantages of HPLC",
+                      "Applications of HPLC"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Ion Exchange, Gel and Affinity Chromatography",
+                    "topics": [
+                      "Introduction to Ion exchange chromatography",
+                      "Classification of ion exchange resins",
+                      "Properties of ion exchange resins",
+                      "Mechanism of ion exchange process",
+                      "Factors affecting ion exchange",
+                      "Methodology of Ion exchange chromatography",
+                      "Applications of Ion exchange chromatography",
+                      "Introduction to Gel chromatography",
+                      "Theory of Gel chromatography",
+                      "Instrumentation of Gel chromatography",
+                      "Applications of Gel chromatography",
+                      "Introduction to Affinity chromatography",
+                      "Theory of Affinity chromatography",
+                      "Instrumentation of Affinity chromatography",
+                      "Applications of Affinity chromatography"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "PCI",
+    "regulation": "Master",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 7,
+    "subjects": 1,
+    "units": 5,
+    "topics": 107,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:42:35.435858+00:00",
+  "updated_at": null
+}

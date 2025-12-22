@@ -1,0 +1,96 @@
+{
+  "id": "64f3f06e-2649-4d44-9215-a6509eea05b2",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "BP206T",
+                "name": "Environmental Sciences",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Multidisciplinary Nature of Environmental Studies and Natural Resources",
+                    "topics": [
+                      "The Multidisciplinary nature of environmental studies",
+                      "Natural Resources",
+                      "Renewable resources",
+                      "Non-renewable resources",
+                      "Natural resources and associated problems",
+                      "Forest resources",
+                      "Water resources",
+                      "Mineral resources",
+                      "Food resources",
+                      "Energy resources",
+                      "Land resources",
+                      "Role of an individual in conservation of natural resources"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Ecosystems",
+                    "topics": [
+                      "Ecosystems",
+                      "Concept of an ecosystem",
+                      "Structure of an ecosystem",
+                      "Function of an ecosystem",
+                      "Types of ecosystems",
+                      "Characteristic features of ecosystems",
+                      "Forest ecosystem",
+                      "Grassland ecosystem",
+                      "Desert ecosystem",
+                      "Aquatic ecosystems",
+                      "Pond ecosystem",
+                      "Stream ecosystem",
+                      "Lake ecosystem",
+                      "River ecosystem",
+                      "Ocean ecosystem",
+                      "Estuary ecosystem"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Environmental Pollution",
+                    "topics": [
+                      "Environmental Pollution",
+                      "Air pollution",
+                      "Water pollution",
+                      "Soil pollution"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 3,
+    "topics": 32,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:54:36.660322+00:00",
+  "updated_at": null
+}

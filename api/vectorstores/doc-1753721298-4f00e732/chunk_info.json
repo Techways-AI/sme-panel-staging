@@ -1,0 +1,31 @@
+{
+  "num_chunks": 4,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-29T11:12:01.596376",
+  "document_info": {
+    "fileName": "2ecf12fe-a701-44d8-8016-0e85bbe8c568.docx",
+    "fileSize": "13.6 KB",
+    "uploadDate": "2025-07-28 16:48:18"
+  },
+  "chunking_stats": {
+    "total_chunks": 4,
+    "semantic_chunks": 1,
+    "table_chunks": 3,
+    "text_chunks": 0,
+    "average_chunk_size": 881.75,
+    "chunk_types": {
+      "table": 3,
+      "text": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS101: Human Anatomy and Physiology I",
+    "unitName": "Unit 1",
+    "topic": "test",
+    "fullPath": "bpharmacy/1-1/PS101: Human Anatomy and Physiology I/Unit 1/test"
+  }
+}

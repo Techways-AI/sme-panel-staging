@@ -1,0 +1,157 @@
+{
+  "id": 88,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS605",
+                "name": "PHARMACEUTICAL QUALITY ASSURANCE (Open Elective - II)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Quality Management Concepts and Guidelines",
+                    "topics": [
+                      "Definition of Quality control",
+                      "Concept of Quality control",
+                      "Definition of Quality assurance",
+                      "Concept of Quality assurance",
+                      "Definition of GMP",
+                      "Concept of GMP",
+                      "Definition of Total Quality Management (TQM)",
+                      "Elements of TQM",
+                      "Philosophies of TQM",
+                      "Purpose of ICH Guidelines",
+                      "Participants of ICH Guidelines",
+                      "Process of harmonization in ICH",
+                      "Overview of QSEM",
+                      "Q-series guidelines",
+                      "Definition of Quality by design (QbD)",
+                      "Overview of QbD program",
+                      "Elements of QbD program",
+                      "Overview of ISO 9000",
+                      "Benefits of ISO 9000",
+                      "Elements of ISO 9000",
+                      "Overview of ISO 14000",
+                      "Benefits of ISO 14000",
+                      "Elements of ISO 14000",
+                      "Introduction to NABL accreditation",
+                      "Principles of NABL accreditation"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Organization, Personnel, Premises and Equipments",
+                    "topics": [
+                      "Personnel responsibilities",
+                      "Personnel training",
+                      "Personnel hygiene",
+                      "Personnel records",
+                      "Design of premises",
+                      "Construction of premises",
+                      "Plant layout",
+                      "Maintenance of premises",
+                      "Sanitation of premises",
+                      "Environmental control of premises",
+                      "Utilities of premises",
+                      "Maintenance of sterile areas",
+                      "Control of contamination",
+                      "Equipments selection",
+                      "Purchase specifications for equipments",
+                      "Maintenance of equipments",
+                      "Purchase specifications for raw materials",
+                      "Maintenance of stores for raw materials"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Quality Control and Good Laboratory Practices",
+                    "topics": [
+                      "Quality control test for glass containers",
+                      "Quality control test for plastic containers",
+                      "Quality control test for rubber closures",
+                      "General Provisions of GLP",
+                      "Organization and Personnel in GLP",
+                      "Facilities in GLP",
+                      "Equipment in GLP",
+                      "Testing Facilities Operation in GLP",
+                      "Test and Control Articles in GLP",
+                      "Protocol for Conduct of a Nonclinical Laboratory Study",
+                      "Records and Reports in GLP",
+                      "Disqualification of Testing Facilities"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Complaints, Returns and Documentation",
+                    "topics": [
+                      "Complaints handling",
+                      "Evaluation of complaints",
+                      "Handling of return goods",
+                      "Recalling of goods",
+                      "Waste disposal",
+                      "Batch Formula Record",
+                      "Master Formula Record",
+                      "Standard Operating Procedures (SOP)",
+                      "Quality audit",
+                      "Quality Review",
+                      "Quality documentation",
+                      "Reports maintenance",
+                      "Documents maintenance",
+                      "Distribution records"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Calibration, Validation and Warehousing",
+                    "topics": [
+                      "Introduction to calibration",
+                      "Introduction to validation",
+                      "General principles of calibration",
+                      "General principles of qualification",
+                      "General principles of validation",
+                      "Importance of validation",
+                      "Scope of validation",
+                      "Types of validation",
+                      "Validation master plan",
+                      "Calibration of pH meter",
+                      "Calibration of UV-Visible spectrophotometer",
+                      "Good warehousing practices"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 81,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:24.834952+00:00",
+  "updated_at": null
+}

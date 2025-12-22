@@ -1,0 +1,31 @@
+### Operating system
+.DS_Store
+Thumbs.db
+
+### Environment and dependency directories
+api/venv/
+api/.venv/
+web/node_modules/
+.venv/
+
+### Build and cache output
+web/.next/
+web/.turbo/
+web/.vercel/
+
+### Logs and local settings
+*.log
+.env
+.env.*
+
+### Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+### Misc
+*.swp
+*.swo
+*.tmp
+

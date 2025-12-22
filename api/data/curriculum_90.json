@@ -1,0 +1,144 @@
+{
+  "id": 90,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "MC600",
+                "name": "HUMAN VALUES AND PROFESSIONAL ETHICS",
+                "type": "theory",
+                "category": "mandatory course",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Professional Ethics",
+                    "topics": [
+                      "Basic Concepts of ethics",
+                      "Governing Ethics",
+                      "Personal Ethics",
+                      "Professional Ethics",
+                      "Ethical Dilemmas",
+                      "Life Skills",
+                      "Emotional Intelligence",
+                      "Thoughts of Ethics",
+                      "Value Education",
+                      "Dimensions of Ethics",
+                      "Profession and professionalism",
+                      "Professional Associations",
+                      "Professional Risks",
+                      "Professional Accountabilities",
+                      "Professional Success",
+                      "Relationship between Ethics and Profession"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Basic Theories",
+                    "topics": [
+                      "Basic Ethical Principles",
+                      "Moral Developments",
+                      "Deontology",
+                      "Utilitarianism",
+                      "Virtue Theory",
+                      "Rights Theory",
+                      "Casuist Theory",
+                      "Moral Absolution",
+                      "Moral Rationalism",
+                      "Moral Pluralism",
+                      "Ethical Egoism",
+                      "Feminist Consequentialism",
+                      "Moral Issues",
+                      "Moral Dilemmas",
+                      "Moral Autonomy"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Professional Ethics in Pharmacy",
+                    "topics": [
+                      "Introduction to code of pharmaceutical ethics",
+                      "Objectives of pharmaceutical ethics",
+                      "Pharmacist in relation to his job",
+                      "Pharmacist in relation to his trade",
+                      "Pharmacist in relation to his profession",
+                      "Pharmacist in relation to medicinal professions",
+                      "Pharmacists’ oath"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Work Place Rights, Responsibilities and Research Ethics",
+                    "topics": [
+                      "Work Place Rights",
+                      "Work Place Responsibilities",
+                      "Ethics in changing domains of Research",
+                      "Engineers and Managers ethics",
+                      "Organizational Complaint Procedure",
+                      "Difference of Professional Judgment within the Nuclear Regulatory Commission",
+                      "The Hanford Nuclear Reservation case study",
+                      "US government wide definition of research misconduct",
+                      "Research misconduct distinguished from mistakes and errors",
+                      "History of attention to research misconduct",
+                      "Fostering responsible conduct",
+                      "Responsible authorship",
+                      "Reviewing in research",
+                      "Editing in research"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Global Issues in Professional Ethics",
+                    "topics": [
+                      "Current Scenario of Global issues",
+                      "Technology Globalization of MNCs",
+                      "International Trade",
+                      "World Summits",
+                      "Business Ethics",
+                      "Corporate Governance",
+                      "Sustainable Development Ecosystem",
+                      "Energy Concerns",
+                      "Ozone Deflection",
+                      "Pollution",
+                      "Ethics in Manufacturing",
+                      "Ethics in Marketing",
+                      "Media Ethics",
+                      "War Ethics",
+                      "Bio Ethics",
+                      "Intellectual Property Rights"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 68,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:25.145383+00:00",
+  "updated_at": null
+}

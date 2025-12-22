@@ -1,0 +1,188 @@
+{
+  "id": "b21380b0-6708-474e-8dce-189b56fae3b5",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "BP106RBT",
+                "name": "Remedial Biology",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Living World, Morphology and Anatomy of Flowering Plants",
+                    "topics": [
+                      "Living world",
+                      "Definition of living organisms",
+                      "Characters of living organisms",
+                      "Diversity in the living world",
+                      "Binomial nomenclature",
+                      "Five kingdoms of life",
+                      "Basis of classification of five kingdoms",
+                      "Salient features of Monera",
+                      "Salient features of Protista",
+                      "Salient features of Fungi",
+                      "Salient features of Animalia",
+                      "Salient features of Plantae",
+                      "Virus",
+                      "Morphology of flowering plants",
+                      "Morphology of root",
+                      "Morphology of stem",
+                      "Morphology of inflorescence",
+                      "Morphology of flower",
+                      "Morphology of leaf",
+                      "Morphology of fruit",
+                      "Morphology of seed",
+                      "General anatomy of root of monocotyledons",
+                      "General anatomy of root of dicotyledons",
+                      "General anatomy of stem of monocotyledons",
+                      "General anatomy of stem of dicotyledons",
+                      "General anatomy of leaf of monocotyledons",
+                      "General anatomy of leaf of dicotyledons"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Body Fluids, Circulation, Digestion and Respiration",
+                    "topics": [
+                      "Body fluids and circulation",
+                      "Composition of blood",
+                      "Blood groups",
+                      "Coagulation of blood",
+                      "Composition of lymph",
+                      "Functions of lymph",
+                      "Human circulatory system",
+                      "Structure of human heart",
+                      "Structure of blood vessels",
+                      "Cardiac cycle",
+                      "Cardiac output",
+                      "Electrocardiogram (ECG)",
+                      "Digestion and Absorption",
+                      "Human alimentary canal",
+                      "Digestive glands",
+                      "Role of digestive enzymes",
+                      "Digestion of food",
+                      "Absorption of digested food",
+                      "Assimilation of digested food",
+                      "Breathing and respiration",
+                      "Human respiratory system",
+                      "Mechanism of breathing",
+                      "Regulation of breathing",
+                      "Exchange of gases",
+                      "Transport of gases",
+                      "Regulation of respiration",
+                      "Respiratory volumes"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Excretion, Neural Control, Chemical Coordination and Reproduction",
+                    "topics": [
+                      "Excretory products and their elimination",
+                      "Modes of excretion",
+                      "Structure of human excretory system",
+                      "Functions of human excretory system",
+                      "Urine formation",
+                      "Rennin angiotensin system",
+                      "Neural control and coordination",
+                      "Definition of nervous system",
+                      "Classification of nervous system",
+                      "Structure of a neuron",
+                      "Generation of nerve impulse",
+                      "Conduction of nerve impulse",
+                      "Structure of brain",
+                      "Structure of spinal cord",
+                      "Functions of cerebrum",
+                      "Functions of cerebellum",
+                      "Functions of hypothalamus",
+                      "Functions of medulla oblongata",
+                      "Chemical coordination and regulation",
+                      "Endocrine glands",
+                      "Secretions of endocrine glands",
+                      "Functions of hormones secreted by endocrine glands",
+                      "Human reproduction",
+                      "Parts of female reproductive system",
+                      "Parts of male reproductive system",
+                      "Spermatogenesis",
+                      "Oogenesis",
+                      "Menstrual cycle"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Plants and Mineral Nutrition, Photosynthesis",
+                    "topics": [
+                      "Plants and mineral nutrition",
+                      "Essential mineral nutrients",
+                      "Macro nutrients",
+                      "Micro nutrients",
+                      "Nitrogen metabolism",
+                      "Nitrogen cycle",
+                      "Biological nitrogen fixation",
+                      "Photosynthesis",
+                      "Autotrophic nutrition",
+                      "Photosynthetic pigments",
+                      "Factors affecting photosynthesis"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Plant Respiration, Growth, Cell and Tissues",
+                    "topics": [
+                      "Plant respiration",
+                      "Glycolysis",
+                      "Fermentation (anaerobic)",
+                      "Plant growth and development",
+                      "Phases of plant growth",
+                      "Rate of plant growth",
+                      "Condition of growth",
+                      "Introduction to plant growth regulators",
+                      "Cell - The unit of life",
+                      "Structure of cell",
+                      "Functions of cell",
+                      "Structure of cell organelles",
+                      "Functions of cell organelles",
+                      "Cell division",
+                      "Tissues",
+                      "Definition of tissues",
+                      "Types of tissues",
+                      "Location of tissues",
+                      "Functions of tissues"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 112,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T06:46:58.380304+00:00",
+  "updated_at": null
+}

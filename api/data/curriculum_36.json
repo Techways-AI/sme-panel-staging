@@ -1,0 +1,157 @@
+{
+  "id": 36,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 7,
+            "subjects": [
+              {
+                "code": "BP704T",
+                "name": "Novel Drug Delivery Systems",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Controlled Drug Delivery Systems and Polymers",
+                    "topics": [
+                      "Introduction to controlled drug delivery systems",
+                      "Terminology of controlled drug delivery systems",
+                      "Definitions of controlled drug delivery systems",
+                      "Rationale of controlled drug delivery systems",
+                      "Advantages of controlled drug delivery systems",
+                      "Disadvantages of controlled drug delivery systems",
+                      "Selection of drug candidates for controlled drug delivery",
+                      "Design of controlled release formulations based on diffusion",
+                      "Design of controlled release formulations based on dissolution",
+                      "Design of controlled release formulations based on ion exchange principles",
+                      "Physicochemical properties of drugs relevant to controlled release",
+                      "Biological properties of drugs relevant to controlled release",
+                      "Introduction to polymers",
+                      "Classification of polymers",
+                      "Properties of polymers",
+                      "Advantages of polymers in controlled release",
+                      "Application of polymers in formulation of controlled release drug delivery systems"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Microencapsulation, Mucosal and Implantable Drug Delivery Systems",
+                    "topics": [
+                      "Definition of microencapsulation",
+                      "Advantages of microencapsulation",
+                      "Disadvantages of microencapsulation",
+                      "Microspheres",
+                      "Microcapsules",
+                      "Microparticles",
+                      "Methods of microencapsulation",
+                      "Applications of microencapsulation",
+                      "Introduction to mucosal drug delivery system",
+                      "Principles of bioadhesion",
+                      "Principles of mucoadhesion",
+                      "Concepts of mucosal drug delivery",
+                      "Advantages of mucosal drug delivery",
+                      "Disadvantages of mucosal drug delivery",
+                      "Transmucosal permeability",
+                      "Formulation considerations of buccal delivery systems",
+                      "Introduction to implantable drug delivery systems",
+                      "Advantages of implantable drug delivery systems",
+                      "Disadvantages of implantable drug delivery systems",
+                      "Concept of implants",
+                      "Concept of osmotic pump"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Transdermal, Gastroretentive and Nasopulmonary Drug Delivery Systems",
+                    "topics": [
+                      "Introduction to transdermal drug delivery systems",
+                      "Permeation through skin",
+                      "Factors affecting permeation",
+                      "Permeation enhancers",
+                      "Basic components of TDDS",
+                      "Formulation approaches for TDDS",
+                      "Introduction to gastroretentive drug delivery systems",
+                      "Advantages of GRDDS",
+                      "Disadvantages of GRDDS",
+                      "Floating GRDDS",
+                      "High density GRDDS",
+                      "Inflatable GRDDS",
+                      "Gastroadhesive GRDDS",
+                      "Applications of GRDDS",
+                      "Introduction to nasal route of drug delivery",
+                      "Introduction to pulmonary route of drug delivery",
+                      "Formulation of dry powder inhalers",
+                      "Formulation of metered dose inhalers",
+                      "Formulation of nasal sprays",
+                      "Formulation of nebulizers"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Targeted Drug Delivery",
+                    "topics": [
+                      "Concepts of targeted drug delivery",
+                      "Approaches for targeted drug delivery",
+                      "Advantages of targeted drug delivery",
+                      "Disadvantages of targeted drug delivery",
+                      "Introduction to liposomes",
+                      "Introduction to niosomes",
+                      "Introduction to nanoparticles",
+                      "Introduction to monoclonal antibodies",
+                      "Applications of liposomes",
+                      "Applications of niosomes",
+                      "Applications of nanoparticles",
+                      "Applications of monoclonal antibodies"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Ocular and Intrauterine Drug Delivery Systems",
+                    "topics": [
+                      "Introduction to ocular drug delivery systems",
+                      "Intra ocular barriers",
+                      "Methods to overcome intra ocular barriers",
+                      "Preliminary study of ocular drug delivery",
+                      "Ocular formulations",
+                      "Ocuserts",
+                      "Introduction to intrauterine drug delivery systems",
+                      "Advantages of intrauterine drug delivery systems",
+                      "Disadvantages of intrauterine drug delivery systems",
+                      "Development of intra uterine devices (IUDs)",
+                      "Applications of intra uterine devices"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 7,
+    "subjects": 1,
+    "units": 5,
+    "topics": 81,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:35:53.082103+00:00",
+  "updated_at": null
+}

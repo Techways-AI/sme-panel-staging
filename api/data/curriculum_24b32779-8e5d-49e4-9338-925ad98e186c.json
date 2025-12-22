@@ -1,0 +1,163 @@
+{
+  "id": "24b32779-8e5d-49e4-9338-925ad98e186c",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS302",
+                "name": "PHYSICAL PHARMACEUTICS - I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "States of Matter and Physicochemical Properties",
+                    "topics": [
+                      "State of matter",
+                      "Changes in the state of matter",
+                      "Latent heats",
+                      "Vapour pressure",
+                      "Sublimation critical point",
+                      "Eutectic mixtures",
+                      "Gases",
+                      "Aerosols",
+                      "Inhalers",
+                      "Relative humidity",
+                      "Liquid complexes",
+                      "Liquid crystals",
+                      "Glassy states",
+                      "Solid-crystalline state",
+                      "Amorphous solids",
+                      "Polymorphism",
+                      "Physicochemical properties of drug molecules",
+                      "Refractive index",
+                      "Optical rotation",
+                      "Dielectric constant",
+                      "Dipole moment",
+                      "Dissociation constant",
+                      "Determination of physicochemical properties",
+                      "Applications of physicochemical properties"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Solubility of Drugs",
+                    "topics": [
+                      "Solubility expressions",
+                      "Mechanisms of solute solvent interactions",
+                      "Ideal solubility parameters",
+                      "Solvation",
+                      "Association",
+                      "Factors influencing solubility of drugs",
+                      "Dissolution",
+                      "Drug release",
+                      "Diffusion principles in biological systems",
+                      "Solubility of gas in liquids",
+                      "Solubility of liquids in liquids",
+                      "Binary solutions",
+                      "Ideal solutions",
+                      "Raoult’s law",
+                      "Real solutions",
+                      "Azeotropic mixtures",
+                      "Fractional distillation",
+                      "Partially miscible liquids",
+                      "Critical solution temperature (CST)",
+                      "Applications of Critical solution temperature",
+                      "Distribution law",
+                      "Limitations of Distribution law",
+                      "Applications of Distribution law"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Micromeretics",
+                    "topics": [
+                      "Particle size",
+                      "Particle size distribution",
+                      "Average particle size",
+                      "Number distribution",
+                      "Weight distribution",
+                      "Particle number",
+                      "Methods for determining particle size",
+                      "Counting method",
+                      "Separation method",
+                      "Particle shape",
+                      "Specific surface",
+                      "Methods for determining surface area",
+                      "Permeability",
+                      "Adsorption",
+                      "Derived properties of powders",
+                      "Porosity",
+                      "Packing arrangement",
+                      "Densities",
+                      "Bulkiness",
+                      "Flow properties"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Complexation and Protein Binding",
+                    "topics": [
+                      "Introduction to Complexation",
+                      "Classification of Complexation",
+                      "Applications of Complexation",
+                      "Methods of analysis of complexes",
+                      "Protein binding",
+                      "Complexation and drug action",
+                      "Crystalline structures of complexes",
+                      "Thermodynamic treatment of stability constants"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "pH, Buffers and Isotonic Solutions",
+                    "topics": [
+                      "Sorensen’s pH scale",
+                      "Electrometric pH determination",
+                      "Calorimetric pH determination",
+                      "Applications of buffers",
+                      "Buffer equation",
+                      "Buffer capacity",
+                      "Buffers in pharmaceutical systems",
+                      "Buffers in biological systems",
+                      "Buffered isotonic solutions",
+                      "Isotonicity",
+                      "Colligative properties",
+                      "Determination of tonicity"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 87,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:12:40.935961+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 101,
+      "has_header": true,
+      "semantic_header": "<<<PAGE_BREAK>>>",
+      "course": "bpharmacy",
+      "year_semester": "1-1",
+      "subject": "PS110: Pharmaceutics lab",
+      "unit": "Unit 1",
+      "topic": "test",
+      "folder_path": "bpharmacy/1-1/PS110: Pharmaceutics lab/Unit 1/test",
+      "source_file": "Introduction_to_HTML.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme back\\SME-pannel\\backend\\temp\\doc-1753785855-5fa6e1c8.pdf",
+      "processing_timestamp": "2025-07-29T16:15:30.123955",
+      "headers": [
+        "<<<PAGE_BREAK>>>",
+        "<<<PAGE_BREAK>>>"
+      ],
+      "block_type": null
+    },
+    "length": 101
+  }
+]

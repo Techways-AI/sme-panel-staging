@@ -1,0 +1,176 @@
+{
+  "id": 75,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PC403",
+                "name": "PHARMACOLOGY - I",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "General Pharmacology",
+                    "topics": [
+                      "Introduction to Pharmacology",
+                      "Definition of Pharmacology",
+                      "Historical landmarks of Pharmacology",
+                      "Scope of Pharmacology",
+                      "Nature of drugs",
+                      "Source of drugs",
+                      "Essential drugs concept",
+                      "Routes of drug administration",
+                      "Pharmacodynamics",
+                      "Principles of drug action",
+                      "Mechanisms of drug action",
+                      "Receptor theories",
+                      "Classification of receptors",
+                      "Regulation of receptors",
+                      "Drug receptors interactions",
+                      "Signal transduction mechanisms",
+                      "G-protein–coupled receptors",
+                      "Ion channel receptor",
+                      "Transmembrane enzyme linked receptors",
+                      "Transmembrane JAK-STAT binding receptor",
+                      "Receptors that regulate transcription factors",
+                      "Dose response relationship",
+                      "Therapeutic index",
+                      "Combined effects of drugs",
+                      "Factors modifying drug action",
+                      "Pharmacokinetics",
+                      "Membrane transport",
+                      "Absorption of drugs",
+                      "Distribution of drugs",
+                      "Metabolism of drugs",
+                      "Excretion of drugs",
+                      "Enzyme induction",
+                      "Enzyme inhibition",
+                      "Kinetics of elimination"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Adverse Drug Reactions, Drug Interactions and Drug Discovery",
+                    "topics": [
+                      "Agonists",
+                      "Antagonists",
+                      "Competitive antagonists",
+                      "Noncompetitive antagonists",
+                      "Spare receptors",
+                      "Addiction",
+                      "Tolerance",
+                      "Dependence",
+                      "Tachyphylaxis",
+                      "Idiosyncrasy",
+                      "Allergy",
+                      "Adverse drug reactions",
+                      "Drug interactions",
+                      "Pharmacokinetic drug interactions",
+                      "Pharmacodynamic drug interactions",
+                      "Drug discovery",
+                      "Clinical evaluation of new drugs",
+                      "Drug discovery phase",
+                      "Preclinical evaluation phase",
+                      "Clinical trial phase",
+                      "Phases of clinical trials",
+                      "Pharmacovigilance"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Pharmacology of Peripheral Nervous System",
+                    "topics": [
+                      "Organization of ANS",
+                      "Function of ANS",
+                      "Neurohumoral transmission",
+                      "Co-transmission",
+                      "Classification of neurotransmitters",
+                      "Parasympathomimetics",
+                      "Parasympatholytics",
+                      "Sympathomimetics",
+                      "Sympatholytics",
+                      "Neuromuscular blocking agents",
+                      "Skeletal muscle relaxants",
+                      "Local anesthetic agents",
+                      "Drugs used in myasthenia gravis",
+                      "Drugs used in glaucoma"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Pharmacology of Central Nervous System - I",
+                    "topics": [
+                      "Neurohumoral transmission in the CNS",
+                      "GABA neurotransmitter",
+                      "Glutamate neurotransmitter",
+                      "Glycine neurotransmitter",
+                      "Serotonin neurotransmitter",
+                      "Dopamine neurotransmitter",
+                      "General anesthetics",
+                      "Pre-anesthetics",
+                      "Sedatives",
+                      "Hypnotics",
+                      "Centrally acting muscle relaxants",
+                      "Anti-epileptics",
+                      "Alcohols",
+                      "Disulfiram"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmacology of Central Nervous System - II",
+                    "topics": [
+                      "Psychopharmacological agents",
+                      "Antipsychotics",
+                      "Antidepressants",
+                      "Anti-anxiety agents",
+                      "Anti-manics",
+                      "Hallucinogens",
+                      "Drugs used in Parkinsons disease",
+                      "Drugs used in Alzheimer’s disease",
+                      "CNS stimulants",
+                      "Nootropics",
+                      "Opioid analgesics",
+                      "Opioid antagonists",
+                      "Drug addiction",
+                      "Drug abuse",
+                      "Drug tolerance",
+                      "Drug dependence"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 100,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:11.557240+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,167 @@
+{
+  "id": "59d6ac86-7f32-47a3-9673-ac0466a76b4d",
+  "university": "JNTUH",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS401",
+                "name": "PHARMACEUTICAL ORGANIC CHEMISTRY – III",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Stereo Isomerism",
+                    "topics": [
+                      "Stereo isomerism",
+                      "Optical isomerism",
+                      "Optical activity",
+                      "Enantiomerism",
+                      "Diastereoisomerism",
+                      "Meso compounds",
+                      "Elements of symmetry",
+                      "Chiral molecules",
+                      "Achiral molecules",
+                      "DL system of nomenclature of optical isomers",
+                      "Sequence rules",
+                      "RS system of nomenclature of optical isomers",
+                      "Reactions of chiral molecules",
+                      "Racemic modification",
+                      "Resolution of racemic mixture",
+                      "Asymmetric synthesis",
+                      "Partial asymmetric synthesis",
+                      "Absolute asymmetric synthesis"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Geometrical Isomerism",
+                    "topics": [
+                      "Geometrical isomerism",
+                      "Nomenclature of geometrical isomers",
+                      "Cis Trans system",
+                      "EZ system",
+                      "Syn Anti system",
+                      "Methods of determination of configuration of geometrical isomers",
+                      "Conformational isomerism in Ethane",
+                      "Conformational isomerism in n-Butane",
+                      "Conformational isomerism in Cyclohexane",
+                      "Stereo isomerism in biphenyl compounds",
+                      "Atropisomerism",
+                      "Conditions for optical activity in biphenyl compounds",
+                      "Stereospecific reactions",
+                      "Stereoselective reactions"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Heterocyclic Compounds with One Hetero Atom",
+                    "topics": [
+                      "Nomenclature of heterocyclic compounds",
+                      "Classification of heterocyclic compounds",
+                      "Synthesis of Pyrrole",
+                      "Reactions of Pyrrole",
+                      "Medicinal uses of Pyrrole",
+                      "Synthesis of Furan",
+                      "Reactions of Furan",
+                      "Medicinal uses of Furan",
+                      "Synthesis of Thiophene",
+                      "Reactions of Thiophene",
+                      "Medicinal uses of Thiophene",
+                      "Relative aromaticity of Pyrrole, Furan and Thiophene",
+                      "Reactivity of Pyrrole, Furan and Thiophene"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Heterocyclic Compounds with Two Hetero Atoms and Others",
+                    "topics": [
+                      "Synthesis of Pyrazole",
+                      "Reactions of Pyrazole",
+                      "Medicinal uses of Pyrazole",
+                      "Synthesis of Imidazole",
+                      "Reactions of Imidazole",
+                      "Medicinal uses of Imidazole",
+                      "Synthesis of Oxazole",
+                      "Reactions of Oxazole",
+                      "Medicinal uses of Oxazole",
+                      "Synthesis of Thiazole",
+                      "Reactions of Thiazole",
+                      "Medicinal uses of Thiazole",
+                      "Synthesis of Pyridine",
+                      "Reactions of Pyridine",
+                      "Medicinal uses of Pyridine",
+                      "Basicity of pyridine",
+                      "Synthesis of Quinoline",
+                      "Reactions of Quinoline",
+                      "Medicinal uses of Quinoline",
+                      "Synthesis of Isoquinoline",
+                      "Reactions of Isoquinoline",
+                      "Medicinal uses of Isoquinoline",
+                      "Synthesis of Acridine",
+                      "Reactions of Acridine",
+                      "Medicinal uses of Acridine",
+                      "Synthesis of Indole",
+                      "Reactions of Indole",
+                      "Medicinal uses of Indole",
+                      "Synthesis of Pyrimidine",
+                      "Medicinal uses of Pyrimidine",
+                      "Synthesis of Purine",
+                      "Medicinal uses of Purine",
+                      "Synthesis of azepines",
+                      "Medicinal uses of azepines"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Reactions of Synthetic Importance",
+                    "topics": [
+                      "Metal hydride reduction",
+                      "Reduction with NaBH4",
+                      "Reduction with LiAlH4",
+                      "Clemmensen reduction",
+                      "Birch reduction",
+                      "Wolff Kishner reduction",
+                      "Oppenauer-oxidation",
+                      "Dakin reaction",
+                      "Beckmanns rearrangement",
+                      "Schmidt rearrangement",
+                      "Pinocol-Pinocolone rearrangement",
+                      "Claisen-Schmidt condensation"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 2,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 91,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T14:34:42.665964+00:00",
+  "updated_at": null
+}

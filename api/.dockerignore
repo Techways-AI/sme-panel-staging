@@ -1,0 +1,18 @@
+# Ignore build and VCS artifacts
+.git
+.gitignore
+.github
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.vscode
+.idea
+*.log
+logs
+venv
+.venv
+.DS_Store
+

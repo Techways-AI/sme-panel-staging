@@ -1,0 +1,30 @@
+{
+  "num_chunks": 1,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-06-13T12:23:45.407146",
+  "document_info": {
+    "fileName": "RAG_Test_Chemistry_Content.pdf",
+    "fileSize": "2.2 KB",
+    "uploadDate": "2025-06-13 12:23:37"
+  },
+  "chunking_stats": {
+    "total_chunks": 1,
+    "semantic_chunks": 0,
+    "table_chunks": 1,
+    "text_chunks": 0,
+    "average_chunk_size": 992.0,
+    "chunk_types": {
+      "table": 1
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS110: Pharmaceutics lab",
+    "unitName": "Unit 1",
+    "topic": "kn",
+    "fullPath": "bpharmacy/1-1/PS110: Pharmaceutics lab/Unit 1/kn"
+  }
+}

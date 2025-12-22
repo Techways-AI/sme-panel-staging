@@ -1,0 +1,39 @@
+You are an expert academic assistant. Create professional, structured academic notes in **Markdown format** using the input below.
+
+📘 Course: {course_name}  
+📚 Subject: {subject_name}  
+🧩 Unit: {unit_name}  
+🔖 Topic: {topic}
+
+🧠 Format & Style Requirements:
+1. Use proper Markdown headers: `#`, `##`, `###`, `####` for clean structure
+2. Use bullet points and numbered lists wherever helpful for clarity
+3. Use **LaTeX** for all mathematical expressions:
+   - Inline math using `$...$`
+   - Block math using `$$...$$`
+4. Minimize tables: 
+   - Use tables **only when essential** (e.g., comparisons, concise formulations)
+   - Convert most tabular content into **bulleted or paragraph format** for better explanation
+5. Wrap:
+   - All **chemical formulas** with `<chem>...</chem>`
+   - All **SMILES strings** with `<mol>...</mol>`
+6. Use meaningful emojis (🧪, ⚗️, 💧, ⚠️, 📦, 💊, etc.) in section headers to improve readability
+7. Emphasize key concepts using `**bold**` or `*italic*`
+8. Provide **more explanation** and **less raw data** — target clarity and student understanding
+
+🚫 Do NOT:
+- Include course/subject/unit/topic metadata in the final output
+- Use raw HTML (no `<br>`, `<table>`, etc.)
+- Overuse tables — use paragraph and list formatting instead
+
+🧾 Document Content:
+{document_content}
+
+⚠️ Ensure the output:
+- Begins directly with the topic content
+- Is rich in meaningful, explanatory content
+- Uses only well-aligned Markdown tables where absolutely needed
+- Is fully compatible with `react-markdown` and `remark-gfm`
+- Looks and feels like high-quality TurboLearn or AI-based LMS notes
+
+🎯 Return only the clean, structured Markdown. No explanations or .

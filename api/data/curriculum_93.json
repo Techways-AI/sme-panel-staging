@@ -1,0 +1,146 @@
+{
+  "id": 93,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS602",
+                "name": "PHARMACOLOGY - III",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pharmacology of drugs acting on Respiratory system and Gastrointestinal Tract",
+                    "topics": [
+                      "Anti-asthmatic drugs",
+                      "Drugs used in the management of COPD",
+                      "Expectorants",
+                      "Antitussives",
+                      "Nasal decongestants",
+                      "Respiratory stimulants",
+                      "Antiulcer agents",
+                      "Drugs for constipation",
+                      "Drugs for diarrhoea",
+                      "Appetite stimulants",
+                      "Appetite suppressants",
+                      "Digestants",
+                      "Carminatives",
+                      "Emetics",
+                      "Anti-emetics"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Antimicrobial Agents",
+                    "topics": [
+                      "General principles of chemotherapy",
+                      "Sulfonamides",
+                      "Cotrimoxazole",
+                      "Penicillins",
+                      "Cephalosporins",
+                      "Chloramphenicol",
+                      "Macrolides",
+                      "Quinolones",
+                      "Fluoroquinolins",
+                      "Tetracycline",
+                      "Aminoglycosides"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Chemotherapy of Infectious Diseases",
+                    "topics": [
+                      "Antitubercular agents",
+                      "Antifungal agents",
+                      "Antiviral drugs",
+                      "Antileprotic agents",
+                      "Anthelmintics",
+                      "Antimalarial drugs",
+                      "Antiamoebic agents",
+                      "Drugs for Urinary tract infections",
+                      "Drugs for sexually transmitted diseases"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Antimalignancy and Immunopharmacology",
+                    "topics": [
+                      "Types of malignancy",
+                      "Chemotherapy of cancer",
+                      "Immunostimulants",
+                      "Immunosuppressants",
+                      "Protein drugs",
+                      "Monoclonal antibodies",
+                      "Target drugs to antigen",
+                      "Biosimilars"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Principles of Toxicology",
+                    "topics": [
+                      "Definition of acute toxicity",
+                      "Basic knowledge of acute toxicity",
+                      "Definition of subacute toxicity",
+                      "Basic knowledge of subacute toxicity",
+                      "Definition of chronic toxicity",
+                      "Basic knowledge of chronic toxicity",
+                      "Definition of genotoxicity",
+                      "Basic knowledge of genotoxicity",
+                      "Definition of carcinogenicity",
+                      "Basic knowledge of carcinogenicity",
+                      "Definition of teratogenicity",
+                      "Basic knowledge of teratogenicity",
+                      "Definition of mutagenicity",
+                      "Basic knowledge of mutagenicity",
+                      "General principles of treatment of poisoning",
+                      "Clinical symptoms of barbiturates poisoning",
+                      "Management of barbiturates poisoning",
+                      "Clinical symptoms of morphine poisoning",
+                      "Management of morphine poisoning",
+                      "Clinical symptoms of organophosphorus compound poisoning",
+                      "Management of organophosphorus compound poisoning",
+                      "Clinical symptoms of lead poisoning",
+                      "Management of lead poisoning",
+                      "Clinical symptoms of mercury poisoning",
+                      "Management of mercury poisoning",
+                      "Clinical symptoms of arsenic poisoning",
+                      "Management of arsenic poisoning"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 2,
+    "subjects": 1,
+    "units": 5,
+    "topics": 70,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:45:25.925394+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,135 @@
+{
+  "id": 28,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 6,
+            "subjects": [
+              {
+                "code": "BP604T",
+                "name": "Biopharmaceutics and Pharmacokinetics",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Biopharmaceutics, Absorption and Distribution",
+                    "topics": [
+                      "Introduction to Biopharmaceutics",
+                      "Mechanisms of drug absorption through GIT",
+                      "Factors influencing drug absorption through GIT",
+                      "Absorption of drug from Non per oral extra-vascular routes",
+                      "Tissue permeability of drugs",
+                      "Binding of drugs",
+                      "Apparent volume of drug distribution",
+                      "Plasma protein binding of drugs",
+                      "Tissue protein binding of drugs",
+                      "Factors affecting protein-drug binding",
+                      "Kinetics of protein binding",
+                      "Clinical significance of protein binding of drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Elimination, Bioavailability and Bioequivalence",
+                    "topics": [
+                      "Drug metabolism",
+                      "Basic understanding of metabolic pathways",
+                      "Renal excretion of drugs",
+                      "Factors affecting renal excretion of drugs",
+                      "Renal clearance",
+                      "Non renal routes of drug excretion",
+                      "Definition of bioavailability",
+                      "Objectives of bioavailability",
+                      "Absolute bioavailability",
+                      "Relative bioavailability",
+                      "Measurement of bioavailability",
+                      "In-vitro drug dissolution models",
+                      "In-vitro-in-vivo correlations",
+                      "Bioequivalence studies",
+                      "Methods to enhance dissolution rates of poorly soluble drugs",
+                      "Methods to enhance bioavailability of poorly soluble drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Pharmacokinetics and One Compartment Open Model",
+                    "topics": [
+                      "Definition of Pharmacokinetics",
+                      "Introduction to Pharmacokinetics",
+                      "Compartment models",
+                      "Non compartment models",
+                      "Physiological models",
+                      "One compartment open model",
+                      "Intravenous Injection (Bolus) pharmacokinetics",
+                      "Intravenous infusion pharmacokinetics",
+                      "Extra vascular administration pharmacokinetics",
+                      "Definition of KE",
+                      "Definition of t1/2",
+                      "Definition of Vd",
+                      "Definition of AUC",
+                      "Definition of Ka",
+                      "Definition of Clt",
+                      "Definition of CLR",
+                      "Methods of elimination",
+                      "Significance of pharmacokinetic parameters",
+                      "Application of pharmacokinetic parameters"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Multicompartment Models and Multiple Dosing",
+                    "topics": [
+                      "Two compartment open model",
+                      "IV bolus kinetics in two compartment model",
+                      "Kinetics of multiple dosing",
+                      "Steady state drug levels",
+                      "Calculation of loading dose",
+                      "Calculation of maintenance dose",
+                      "Significance of loading dose in clinical settings",
+                      "Significance of maintenance dose in clinical settings"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Nonlinear Pharmacokinetics",
+                    "topics": [
+                      "Introduction to nonlinear pharmacokinetics",
+                      "Factors causing Non-linearity",
+                      "Michaelis-menton method of estimating parameters",
+                      "Explanation of nonlinear pharmacokinetics with example of drugs"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 6,
+    "subjects": 1,
+    "units": 5,
+    "topics": 59,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:35:40.892328+00:00",
+  "updated_at": null
+}

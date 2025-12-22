@@ -1,0 +1,204 @@
+{
+  "id": 100,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS707",
+                "name": "PHARMACOVIGILANCE (Open Elective - III)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Pharmacovigilance and Adverse Drug Reactions",
+                    "topics": [
+                      "History of Pharmacovigilance",
+                      "Development of Pharmacovigilance",
+                      "Importance of safety monitoring of Medicine",
+                      "WHO international drug monitoring programme",
+                      "Pharmacovigilance Program of India (PvPI)",
+                      "Definitions of ADRs",
+                      "Classification of ADRs",
+                      "Detection of ADRs",
+                      "Reporting of ADRs",
+                      "Methods in Causality assessment",
+                      "Severity assessment of ADRs",
+                      "Seriousness assessment of ADRs",
+                      "Predictability assessment of ADRs",
+                      "Preventability assessment of ADRs",
+                      "Terminologies of adverse medication related events",
+                      "Regulatory terminologies"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Drug and Disease Classification and Pharmacovigilance Programme",
+                    "topics": [
+                      "Anatomical classification of drugs",
+                      "Therapeutic classification of drugs",
+                      "Chemical classification of drugs",
+                      "International classification of diseases",
+                      "Daily defined doses",
+                      "WHO adverse reaction terminologies",
+                      "MedDRA",
+                      "Standardized MedDRA queries",
+                      "WHO drug dictionary",
+                      "Basic drug information resources",
+                      "Establishing pharmacovigilance in a hospital",
+                      "Establishment of drug safety department in industry",
+                      "Operation of drug safety department in industry",
+                      "Contract Research Organizations (CROs)"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Vaccine Safety Surveillance and Pharmacovigilance Methods",
+                    "topics": [
+                      "Vaccine Pharmacovigilance",
+                      "Vaccination failure",
+                      "Adverse events following immunization",
+                      "Passive surveillance",
+                      "Spontaneous reports",
+                      "Case series",
+                      "Stimulated reporting",
+                      "Active surveillance",
+                      "Sentinel sites",
+                      "Drug event monitoring",
+                      "Registries",
+                      "Comparative observational studies",
+                      "Cross sectional study",
+                      "Case control study",
+                      "Cohort study",
+                      "Targeted clinical investigations"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Safety Data Generation and ICH Guidelines",
+                    "topics": [
+                      "Statistical methods for evaluating medication safety data",
+                      "Safety data generation in pre-clinical phase",
+                      "Safety data generation in clinical phase",
+                      "Safety data generation in post approval phase",
+                      "Organization of ICH",
+                      "Objectives of ICH",
+                      "Expedited reporting",
+                      "Individual case safety reports",
+                      "Periodic safety update reports",
+                      "Post approval expedited reporting",
+                      "Pharmacovigilance planning",
+                      "Good clinical practice in pharmacovigilance studies"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmacogenomics and Special Population",
+                    "topics": [
+                      "Pharmacogenomics of adverse drug reactions",
+                      "Drug safety evaluation in pediatrics",
+                      "Drug safety evaluation in pregnancy",
+                      "Drug safety evaluation in lactation",
+                      "Drug safety evaluation in geriatrics"
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "PS708",
+                "name": "QUALITY CONTROL AND STANDARDIZATION OF HERBALS (Open Elective - III)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Basic Tests and Guidelines for Herbal Drugs",
+                    "topics": [
+                      "Basic tests for pharmaceutical substances",
+                      "Basic tests for medicinal plants materials",
+                      "Basic tests for dosage forms",
+                      "WHO guidelines for quality control of herbal drugs",
+                      "Evaluation of commercial crude drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Quality Assurance in Herbal Drug Industry",
+                    "topics": [
+                      "Quality assurance in herbal drug industry",
+                      "cGMP in traditional system of medicine",
+                      "GAP in traditional system of medicine",
+                      "GMP in traditional system of medicine",
+                      "GLP in traditional system of medicine",
+                      "WHO Guidelines on cGMP for Herbal Medicines",
+                      "WHO Guidelines on GACP for Medicinal Plants"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "EU and ICH Guidelines",
+                    "topics": [
+                      "EU guidelines for quality control of herbal drugs",
+                      "ICH guidelines for quality control of herbal drugs",
+                      "Research Guidelines for Evaluating Safety of Herbal Medicines",
+                      "Research Guidelines for Evaluating Efficacy of Herbal Medicines"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Stability Testing and Chromatographic Techniques",
+                    "topics": [
+                      "Stability testing of herbal medicines",
+                      "Application of chromatographic techniques in standardization",
+                      "Preparation of documents for new drug application",
+                      "Preparation of documents for export registration",
+                      "GMP requirements",
+                      "Drugs & Cosmetics Act provisions"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Regulatory Requirements and Safety Monitoring",
+                    "topics": [
+                      "Regulatory requirements for herbal medicines",
+                      "WHO guidelines on safety monitoring of herbal medicines",
+                      "Comparison of Herbal Pharmacopoeias",
+                      "Role of chemical markers in standardization",
+                      "Role of biological markers in standardization"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 1,
+    "subjects": 2,
+    "units": 10,
+    "topics": 90,
+    "theory": 0,
+    "practical": 0,
+    "electives": 2
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:46:22.238572+00:00",
+  "updated_at": null
+}

@@ -1,0 +1,200 @@
+{
+  "id": 96,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS701",
+                "name": "INSTRUMENTAL METHODS OF ANALYSIS",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "UV Visible Spectroscopy and Fluorimetry",
+                    "topics": [
+                      "UV Visible spectroscopy",
+                      "Electronic transitions",
+                      "Chromophores",
+                      "Auxochromes",
+                      "Spectral shifts",
+                      "Solvent effect on absorption spectra",
+                      "Beer and Lambert’s law",
+                      "Derivation of Beer-Lambert’s law",
+                      "Deviations of Beer-Lambert’s law",
+                      "Instrumentation of UV Visible spectroscopy",
+                      "Sources of radiation for UV Visible spectroscopy",
+                      "Wavelength selectors for UV Visible spectroscopy",
+                      "Sample cells for UV Visible spectroscopy",
+                      "Detectors for UV Visible spectroscopy",
+                      "Photo tube",
+                      "Photomultiplier tube",
+                      "Photo voltaic cell",
+                      "Silicon Photodiode",
+                      "Applications of UV Visible spectroscopy",
+                      "Spectrophotometric titrations",
+                      "Single component analysis",
+                      "Multi component analysis",
+                      "Fluorimetry",
+                      "Theory of Fluorimetry",
+                      "Concepts of singlet electronic states",
+                      "Concepts of doublet electronic states",
+                      "Concepts of triplet electronic states",
+                      "Internal conversions in Fluorimetry",
+                      "External conversions in Fluorimetry",
+                      "Factors affecting fluorescence",
+                      "Quenching",
+                      "Instrumentation of Fluorimetry",
+                      "Applications of Fluorimetry"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "IR Spectroscopy, Flame Photometry and Atomic Absorption Spectroscopy",
+                    "topics": [
+                      "IR spectroscopy",
+                      "Introduction to IR spectroscopy",
+                      "Fundamental modes of vibrations in poly atomic molecules",
+                      "Sample handling in IR spectroscopy",
+                      "Factors affecting vibrations",
+                      "Instrumentation of IR spectroscopy",
+                      "Sources of radiation for IR spectroscopy",
+                      "Wavelength selectors for IR spectroscopy",
+                      "Detectors for IR spectroscopy",
+                      "Golay cell",
+                      "Bolometer",
+                      "Thermocouple",
+                      "Thermistor",
+                      "Pyroelectric detector",
+                      "Applications of IR spectroscopy",
+                      "Flame Photometry",
+                      "Principle of Flame Photometry",
+                      "Interferences in Flame Photometry",
+                      "Instrumentation of Flame Photometry",
+                      "Applications of Flame Photometry",
+                      "Atomic absorption spectroscopy",
+                      "Principle of Atomic absorption spectroscopy",
+                      "Interferences in Atomic absorption spectroscopy",
+                      "Instrumentation of Atomic absorption spectroscopy",
+                      "Applications of Atomic absorption spectroscopy",
+                      "Nepheloturbidometry",
+                      "Principle of Nepheloturbidometry",
+                      "Instrumentation of Nepheloturbidometry",
+                      "Applications of Nepheloturbidometry"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Introduction to Chromatography, TLC, Paper Chromatography and Electrophoresis",
+                    "topics": [
+                      "Introduction to chromatography",
+                      "Adsorption column chromatography",
+                      "Partition column chromatography",
+                      "Methodology of column chromatography",
+                      "Advantages of column chromatography",
+                      "Disadvantages of column chromatography",
+                      "Applications of column chromatography",
+                      "Thin layer chromatography (TLC)",
+                      "Introduction to TLC",
+                      "Principle of TLC",
+                      "Methodology of TLC",
+                      "Rf values",
+                      "Advantages of TLC",
+                      "Disadvantages of TLC",
+                      "Applications of TLC",
+                      "Paper chromatography",
+                      "Introduction to Paper chromatography",
+                      "Methodology of Paper chromatography",
+                      "Development techniques of Paper chromatography",
+                      "Advantages of Paper chromatography",
+                      "Disadvantages of Paper chromatography",
+                      "Applications of Paper chromatography",
+                      "Electrophoresis",
+                      "Introduction to Electrophoresis",
+                      "Factors affecting electrophoretic mobility",
+                      "Techniques of paper electrophoresis",
+                      "Techniques of gel electrophoresis",
+                      "Techniques of capillary electrophoresis",
+                      "Applications of electrophoresis"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Gas Chromatography and HPLC",
+                    "topics": [
+                      "Gas chromatography",
+                      "Introduction to Gas chromatography",
+                      "Theory of Gas chromatography",
+                      "Instrumentation of Gas chromatography",
+                      "Derivatization in Gas chromatography",
+                      "Temperature programming in Gas chromatography",
+                      "Advantages of Gas chromatography",
+                      "Disadvantages of Gas chromatography",
+                      "Applications of Gas chromatography",
+                      "High performance liquid chromatography (HPLC)",
+                      "Introduction to HPLC",
+                      "Theory of HPLC",
+                      "Instrumentation of HPLC",
+                      "Advantages of HPLC",
+                      "Applications of HPLC"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Ion Exchange, Gel and Affinity Chromatography",
+                    "topics": [
+                      "Ion exchange chromatography",
+                      "Introduction to Ion exchange chromatography",
+                      "Classification of ion exchange resins",
+                      "Properties of ion exchange resins",
+                      "Mechanism of ion exchange process",
+                      "Factors affecting ion exchange",
+                      "Methodology of Ion exchange chromatography",
+                      "Applications of Ion exchange chromatography",
+                      "Gel chromatography",
+                      "Introduction to Gel chromatography",
+                      "Theory of Gel chromatography",
+                      "Instrumentation of Gel chromatography",
+                      "Applications of Gel chromatography",
+                      "Affinity chromatography",
+                      "Introduction to Affinity chromatography",
+                      "Theory of Affinity chromatography",
+                      "Instrumentation of Affinity chromatography",
+                      "Applications of Affinity chromatography"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 124,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:46:21.448769+00:00",
+  "updated_at": null
+}

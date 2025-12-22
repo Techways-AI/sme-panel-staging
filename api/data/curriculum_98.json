@@ -1,0 +1,157 @@
+{
+  "id": 98,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS705",
+                "name": "PHARMACEUTICAL MARKETING (Open Elective - III)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Marketing Concepts and Pharmaceutical Market",
+                    "topics": [
+                      "Definition of marketing",
+                      "General concepts of marketing",
+                      "Scope of marketing",
+                      "Distinction between marketing & selling",
+                      "Marketing environment",
+                      "Industry analysis",
+                      "Competitive analysis",
+                      "Analyzing consumer buying behavior",
+                      "Industrial buying behavior",
+                      "Quantitative aspects of pharmaceutical market",
+                      "Qualitative aspects of pharmaceutical market",
+                      "Size of pharmaceutical market",
+                      "Composition of pharmaceutical market",
+                      "Demographic descriptions of consumer",
+                      "Socio-psychological characteristics of consumer",
+                      "Market segmentation",
+                      "Market targeting",
+                      "Consumer profile",
+                      "Motivation of physician prescribing",
+                      "Prescribing habits of physician",
+                      "Patients' choice of physician",
+                      "Patients' choice of retail pharmacist",
+                      "Analyzing the Market",
+                      "Role of market research"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Product Decision",
+                    "topics": [
+                      "Meaning of product decision",
+                      "Classification of product",
+                      "Product line decisions",
+                      "Product mix decisions",
+                      "Product life cycle",
+                      "Product portfolio analysis",
+                      "Product positioning",
+                      "New product decisions",
+                      "Product branding decisions",
+                      "Packaging decisions",
+                      "Labeling decisions",
+                      "Product management in pharmaceutical industry"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Promotion",
+                    "topics": [
+                      "Meaning of promotion",
+                      "Methods of promotion",
+                      "Determinants of promotional mix",
+                      "Promotional budget",
+                      "Overview of personal selling",
+                      "Overview of advertising",
+                      "Overview of direct mail",
+                      "Overview of journals",
+                      "Overview of sampling",
+                      "Overview of retailing",
+                      "Overview of medical exhibition",
+                      "Overview of public relations",
+                      "Online promotional techniques for OTC Products"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Pharmaceutical Marketing Channels and Professional Sales Representative",
+                    "topics": [
+                      "Designing marketing channel",
+                      "Channel members",
+                      "Selecting appropriate channel",
+                      "Conflict in channels",
+                      "Physical distribution management",
+                      "Strategic importance of physical distribution management",
+                      "Tasks in physical distribution management",
+                      "Duties of Professional sales representative (PSR)",
+                      "Purpose of detailing",
+                      "Selection of PSR",
+                      "Training of PSR",
+                      "Supervising of PSR",
+                      "Norms for customer calls",
+                      "Motivating PSR",
+                      "Evaluating PSR",
+                      "Compensation of PSR",
+                      "Future prospects of PSR"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pricing and Emerging Concepts in Marketing",
+                    "topics": [
+                      "Meaning of pricing",
+                      "Importance of pricing",
+                      "Objectives of pricing",
+                      "Determinants of price",
+                      "Pricing methods",
+                      "Pricing strategies",
+                      "Issues in price management in pharmaceutical industry",
+                      "Overview of DPCO",
+                      "Overview of NPPA",
+                      "Vertical Marketing",
+                      "Horizontal Marketing",
+                      "Rural Marketing",
+                      "Consumerism",
+                      "Industrial Marketing",
+                      "Global Marketing"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 81,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:46:21.849128+00:00",
+  "updated_at": null
+}

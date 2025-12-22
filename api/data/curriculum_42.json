@@ -1,0 +1,182 @@
+{
+  "id": 42,
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 8,
+            "subjects": [
+              {
+                "code": "BP809ET",
+                "name": "Cosmetic Science",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Classification, Excipients, Skin, Hair and Oral Cavity",
+                    "topics": [
+                      "Classification of cosmetic products",
+                      "Classification of cosmeceutical products",
+                      "Definition of cosmetics as per Indian regulations",
+                      "Definition of cosmetics as per EU regulations",
+                      "Evolution of cosmeceuticals from cosmetics",
+                      "Cosmetics as quasi drugs",
+                      "Cosmetics as OTC drugs",
+                      "Cosmetic excipients",
+                      "Surfactants in cosmetics",
+                      "Rheology modifiers in cosmetics",
+                      "Humectants in cosmetics",
+                      "Emollients in cosmetics",
+                      "Preservatives in cosmetics",
+                      "Classification of cosmetic excipients",
+                      "Application of cosmetic excipients",
+                      "Basic structure of skin",
+                      "Function of skin",
+                      "Basic structure of hair",
+                      "Hair growth cycle",
+                      "Common problems associated with teeth",
+                      "Common problems associated with gums"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Principles of Formulation and Building Blocks",
+                    "topics": [
+                      "Principles of formulation of face wash",
+                      "Building blocks of face wash",
+                      "Principles of formulation of moisturizing cream",
+                      "Building blocks of moisturizing cream",
+                      "Principles of formulation of cold cream",
+                      "Building blocks of cold cream",
+                      "Advantages of cold cream",
+                      "Disadvantages of cold cream",
+                      "Principles of formulation of vanishing cream",
+                      "Building blocks of vanishing cream",
+                      "Advantages of vanishing cream",
+                      "Disadvantages of vanishing cream",
+                      "Application of skin care products in formulation of cosmeceuticals",
+                      "Antiperspirants",
+                      "Deodorants",
+                      "Actives in antiperspirants",
+                      "Mechanism of action of antiperspirants",
+                      "Actives in deodorants",
+                      "Mechanism of action of deodorants",
+                      "Principles of formulation of conditioning shampoo",
+                      "Building blocks of conditioning shampoo",
+                      "Principles of formulation of hair conditioner",
+                      "Building blocks of hair conditioner",
+                      "Principles of formulation of anti-dandruff shampoo",
+                      "Building blocks of anti-dandruff shampoo",
+                      "Principles of formulation of hair oils",
+                      "Building blocks of hair oils",
+                      "Chemistry of Para-phenylene diamine based hair dye",
+                      "Formulation of Para-phenylene diamine based hair dye",
+                      "Principles of formulation of toothpaste for bleeding gums",
+                      "Building blocks of toothpaste for bleeding gums",
+                      "Principles of formulation of toothpaste for sensitive teeth",
+                      "Building blocks of toothpaste for sensitive teeth",
+                      "Principles of formulation of teeth whitening products",
+                      "Building blocks of teeth whitening products",
+                      "Principles of formulation of mouthwash",
+                      "Building blocks of mouthwash"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Sun Protection, Herbal Cosmetics and Analysis",
+                    "topics": [
+                      "Sun protection",
+                      "Classification of Sunscreens",
+                      "Sun Protection Factor (SPF)",
+                      "Role of herbs in cosmetics",
+                      "Role of Aloe in skin care",
+                      "Role of turmeric in skin care",
+                      "Role of Henna in hair care",
+                      "Role of amla in hair care",
+                      "Role of Neem in oral care",
+                      "Role of clove in oral care",
+                      "Analytical cosmetics",
+                      "BIS specification for shampoo",
+                      "Analytical methods for shampoo",
+                      "BIS specification for skin-cream",
+                      "Analytical methods for skin-cream",
+                      "BIS specification for toothpaste",
+                      "Analytical methods for toothpaste"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Principles of Cosmetic Evaluation and Soaps",
+                    "topics": [
+                      "Principles of Cosmetic Evaluation",
+                      "Principles of sebumeter",
+                      "Principles of corneometer",
+                      "Measurement of TEWL (Transepidermal Water Loss)",
+                      "Measurement of Skin Color",
+                      "Measurement of Hair tensile strength",
+                      "Measurement of Hair combing properties",
+                      "Soaps",
+                      "Syndet bars",
+                      "Evolution of soaps",
+                      "Evolution of syndet bars",
+                      "Skin benefits of soaps",
+                      "Skin benefits of syndet bars"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Skin Types, Cosmetic Problems and Solutions",
+                    "topics": [
+                      "Oily skin",
+                      "Dry skin",
+                      "Causes leading to dry skin",
+                      "Skin moisturisation",
+                      "Comedogenic",
+                      "Dermatitis",
+                      "Cosmetic problems associated with Hair",
+                      "Cosmetic problems associated with scalp",
+                      "Dandruff",
+                      "Causes of Hair fall",
+                      "Cosmetic problems associated with skin",
+                      "Blemishes",
+                      "Wrinkles",
+                      "Acne",
+                      "Prickly heat",
+                      "Body odor",
+                      "Actives in antiperspirants and deodorants",
+                      "Mechanism of action of antiperspirants and deodorants"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 8,
+    "subjects": 1,
+    "units": 5,
+    "topics": 106,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:36:07.170379+00:00",
+  "updated_at": null
+}

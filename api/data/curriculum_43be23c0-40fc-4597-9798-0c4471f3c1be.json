@@ -1,0 +1,125 @@
+{
+  "id": "43be23c0-40fc-4597-9798-0c4471f3c1be",
+  "university": "JNTUH",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 1,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "BS107",
+                "name": "REMEDIAL MATHEMATICS",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Matrices and Determinant",
+                    "topics": [
+                      "Introduction to matrices",
+                      "Types of matrices",
+                      "Operation on matrices",
+                      "Transpose of a matrix",
+                      "Matrix Multiplication",
+                      "Determinants",
+                      "Properties of determinants",
+                      "Product of determinants",
+                      "Singular matrices",
+                      "Non-singular matrices",
+                      "Inverse of a matrix",
+                      "Solution of system of linear equations using Gauss Elimination method"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Logarithms and Functions",
+                    "topics": [
+                      "Introduction to logarithms",
+                      "Definition of logarithms",
+                      "Theorems of logarithms",
+                      "Properties of logarithms",
+                      "Common logarithms",
+                      "Characteristic of logarithms",
+                      "Mantissa of logarithms",
+                      "Application of logarithm to solve pharmaceutical problems",
+                      "Real Valued function",
+                      "Classification of real valued functions"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Calculus",
+                    "topics": [
+                      "Introduction to limits",
+                      "Limit of a function",
+                      "Definition of limit of a function",
+                      "Introduction to differentiation",
+                      "Properties of derivatives",
+                      "Finding derivative of a function using Standard Derivatives",
+                      "Derivative of the sum of two functions",
+                      "Derivative of the difference of two functions",
+                      "Derivative of the product of two functions",
+                      "Derivative of the quotient of two functions"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Integration",
+                    "topics": [
+                      "Introduction to integration",
+                      "Definition of integration",
+                      "Standard formulae of integration",
+                      "Rules of integration",
+                      "Method of substitution in integration",
+                      "Method of Partial fractions in integration",
+                      "Integration by parts",
+                      "Definite integrals",
+                      "Applications of integration"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Differential Equations",
+                    "topics": [
+                      "Basic definitions of differential equations",
+                      "Order of differential equations",
+                      "Degree of differential equations",
+                      "Equations in separable form",
+                      "Homogeneous equations",
+                      "Linear Differential equations",
+                      "Exact equations",
+                      "Application of differential equations in solving Pharmacokinetic equations"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Jawaharlal Nehru Technological University Hyderabad",
+    "regulation": "R22",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 49,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T08:51:20.209331+00:00",
+  "updated_at": null
+}

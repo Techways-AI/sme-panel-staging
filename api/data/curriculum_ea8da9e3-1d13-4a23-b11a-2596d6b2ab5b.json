@@ -1,0 +1,171 @@
+{
+  "id": "ea8da9e3-1d13-4a23-b11a-2596d6b2ab5b",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 6,
+            "subjects": [
+              {
+                "code": "BP606T",
+                "name": "Pharmaceutical Quality Assurance",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Quality Assurance, GMP, TQM, ICH, QbD, ISO and NABL",
+                    "topics": [
+                      "Definition of Quality control",
+                      "Concept of Quality control",
+                      "Definition of Quality assurance",
+                      "Concept of Quality assurance",
+                      "Definition of GMP",
+                      "Concept of GMP",
+                      "Definition of Total Quality Management (TQM)",
+                      "Elements of TQM",
+                      "Philosophies of TQM",
+                      "Purpose of ICH Guidelines",
+                      "Participants of ICH",
+                      "Process of harmonization",
+                      "Overview of QSEM",
+                      "ICH Q-series guidelines",
+                      "ICH stability testing guidelines",
+                      "Definition of Quality by design (QbD)",
+                      "Overview of QbD",
+                      "Elements of QbD program",
+                      "Tools of QbD",
+                      "Overview of ISO 9000",
+                      "Benefits of ISO 9000",
+                      "Elements of ISO 9000",
+                      "Steps for registration of ISO 9000",
+                      "Overview of ISO 14000",
+                      "Benefits of ISO 14000",
+                      "Elements of ISO 14000",
+                      "Steps for registration of ISO 14000",
+                      "Principles of NABL accreditation",
+                      "Procedures for NABL accreditation"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Organization, Personnel, Premises, Equipment and Raw Materials",
+                    "topics": [
+                      "Personnel responsibilities",
+                      "Personnel training",
+                      "Personnel hygiene",
+                      "Personal records",
+                      "Design of premises",
+                      "Construction of premises",
+                      "Plant layout",
+                      "Maintenance of premises",
+                      "Sanitation of premises",
+                      "Environmental control in premises",
+                      "Utilities in premises",
+                      "Maintenance of sterile areas",
+                      "Control of contamination",
+                      "Equipment selection",
+                      "Purchase specifications for equipment",
+                      "Maintenance of equipment",
+                      "Purchase specifications for raw materials",
+                      "Maintenance of stores for raw materials"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Quality Control and Good Laboratory Practices (GLP)",
+                    "topics": [
+                      "Quality control test for containers",
+                      "Quality control test for rubber closures",
+                      "Quality control test for secondary packing materials",
+                      "General Provisions of GLP",
+                      "Organization in GLP",
+                      "Personnel in GLP",
+                      "Facilities in GLP",
+                      "Equipment in GLP",
+                      "Testing Facilities Operation",
+                      "Test Articles in GLP",
+                      "Control Articles in GLP",
+                      "Protocol for Conduct of a Nonclinical Laboratory Study",
+                      "Records in GLP",
+                      "Reports in GLP",
+                      "Disqualification of Testing Facilities"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Complaints, Recalls and Documentation",
+                    "topics": [
+                      "Complaints",
+                      "Evaluation of complaints",
+                      "Handling of return goods",
+                      "Recalling of products",
+                      "Waste disposal",
+                      "Document maintenance in pharmaceutical industry",
+                      "Batch Formula Record (BFR)",
+                      "Master Formula Record (MFR)",
+                      "Standard Operating Procedure (SOP)",
+                      "Quality audit",
+                      "Quality Review",
+                      "Quality documentation",
+                      "Reports in pharmaceutical industry",
+                      "Documents in pharmaceutical industry",
+                      "Distribution records"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Calibration, Validation and Warehousing",
+                    "topics": [
+                      "Introduction to calibration",
+                      "Definition of calibration",
+                      "General principles of calibration",
+                      "Introduction to qualification",
+                      "Definition of qualification",
+                      "General principles of qualification",
+                      "Introduction to validation",
+                      "Definition of validation",
+                      "General principles of validation",
+                      "Importance of validation",
+                      "Scope of validation",
+                      "Types of validation",
+                      "Validation master plan",
+                      "Calibration of pH meter",
+                      "Qualification of UV-Visible spectrophotometer",
+                      "General principles of Analytical method Validation",
+                      "Good warehousing practice",
+                      "Materials management"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 6,
+    "subjects": 1,
+    "units": 5,
+    "topics": 95,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:09:12.752981+00:00",
+  "updated_at": null
+}

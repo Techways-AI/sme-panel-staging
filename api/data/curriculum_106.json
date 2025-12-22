@@ -1,0 +1,167 @@
+{
+  "id": 106,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 4,
+        "semesters": [
+          {
+            "semester": 2,
+            "subjects": [
+              {
+                "code": "PS805",
+                "name": "NANO TECHNOLOGY (Open Elective - IV)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Nanotechnology",
+                    "topics": [
+                      "Definition of nanotechnology",
+                      "History of nanotechnology",
+                      "Unique properties of nanomaterials",
+                      "Classification of nanomaterials"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Synthesis of Nanomaterials",
+                    "topics": [
+                      "Synthesis of Gold nanoparticles",
+                      "Synthesis of Magnetic nanoparticles",
+                      "Synthesis of Polymeric nanoparticles",
+                      "Synthesis of Liposomes",
+                      "Synthesis of Niosomes",
+                      "Synthesis of Micelles",
+                      "Synthesis of Aquasomes",
+                      "Synthesis of Nanoemulsions"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Biomedical Applications of Nanotechnology",
+                    "topics": [
+                      "Nanotechnology products for in vitro diagnostics",
+                      "Applications of nanotechnology in imaging",
+                      "Applications of nanotechnology in targeting"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Design of Nanomaterials for Drug Delivery",
+                    "topics": [
+                      "Design of nanomaterials for pulmonary drug delivery",
+                      "Design of nanomaterials for nasal drug delivery",
+                      "Design of nanomaterials for cardiovascular diseases",
+                      "Design of nanomaterials for localized drug delivery systems"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Characterization and Stability Studies",
+                    "topics": [
+                      "Characterization of nanomaterials",
+                      "Drug release studies of nanomaterials",
+                      "Stability studies of nanomaterials"
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "PS806",
+                "name": "EXPERIMENTAL PHARMACOLOGY (Open Elective - IV)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Laboratory Animals and Techniques",
+                    "topics": [
+                      "Description of laboratory animals",
+                      "Applications of different species of laboratory animals",
+                      "Applications of different strains of laboratory animals",
+                      "Transgenic animals",
+                      "Mutant animals",
+                      "Techniques for collection of blood",
+                      "Common routes of drug administration in laboratory animals",
+                      "Techniques of euthanasia"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Preclinical Screening Models and Basics",
+                    "topics": [
+                      "Dose selection in preclinical screening",
+                      "Dose calculation in preclinical screening",
+                      "Dose conversion in preclinical screening",
+                      "Preparation of drug solution",
+                      "Preparation of drug suspensions",
+                      "Grouping of animals",
+                      "Importance of sham negative control groups",
+                      "Importance of positive control groups"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Screening Models for ANS Activity",
+                    "topics": [
+                      "Preclinical screening models for sympathomimetics",
+                      "Preclinical screening models for sympatholytics",
+                      "Preclinical screening models for parasympathomimetics",
+                      "Preclinical screening models for parasympatholytics",
+                      "Preclinical screening models for skeletal muscle relaxants"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Screening Models for Diuretics, Anticoagulants and Anticancer",
+                    "topics": [
+                      "Preclinical screening models for diuretics",
+                      "Preclinical screening models for anticoagulants",
+                      "Preclinical screening models for anticancer activities"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Research Methodology and Bio-statistics",
+                    "topics": [
+                      "Selection of research topic",
+                      "Review of literature",
+                      "Research hypothesis",
+                      "Study design",
+                      "Interpretation using Student’t’ test",
+                      "Interpretation using One-way ANOVA",
+                      "Graphical representation of data"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 4,
+    "semesters": 2,
+    "subjects": 2,
+    "units": 10,
+    "topics": 53,
+    "theory": 0,
+    "practical": 0,
+    "electives": 2
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:47:06.402451+00:00",
+  "updated_at": null
+}

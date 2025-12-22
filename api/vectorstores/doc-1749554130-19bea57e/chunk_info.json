@@ -1,0 +1,30 @@
+{
+  "num_chunks": 10,
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "processing_timestamp": "2025-07-22T19:38:20.818191",
+  "document_info": {
+    "fileName": "functions_of_the_Major_Physiological_Ions.pdf",
+    "fileSize": "119.1 KB",
+    "uploadDate": "2025-06-10 11:15:30"
+  },
+  "chunking_stats": {
+    "total_chunks": 10,
+    "semantic_chunks": 5,
+    "table_chunks": 10,
+    "text_chunks": -5,
+    "average_chunk_size": 930.2,
+    "chunk_types": {
+      "table": 10
+    }
+  },
+  "block_types": {},
+  "folder_structure": {
+    "courseName": "bpharmacy",
+    "yearSemester": "1-1",
+    "subjectName": "PS102: Pharmaceutical Analysis I",
+    "unitName": "Unit 3",
+    "topic": "introduction",
+    "fullPath": "bpharmacy/1-1/PS102: Pharmaceutical Analysis I/Unit 3/introduction"
+  }
+}

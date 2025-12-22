@@ -1,0 +1,30 @@
+[
+  {
+    "chunk_id": 0,
+    "text_preview": "<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>\n<<<PAGE_BREAK>>>",
+    "metadata": {
+      "chunk_id": 0,
+      "chunk_type": "table",
+      "is_semantic": true,
+      "is_table": true,
+      "chunk_size": 67,
+      "has_header": true,
+      "semantic_header": "<<<PAGE_BREAK>>>",
+      "course": "bpharmacy",
+      "year_semester": "1-2",
+      "subject": "CS205: Computer Applications in Pharmacy",
+      "unit": "Unit 1",
+      "topic": "Information Gathering",
+      "folder_path": "bpharmacy/1-2/CS205: Computer Applications in Pharmacy/Unit 1/Information Gathering",
+      "source_file": "Information_Gathering.pdf",
+      "source_path": "C:\\Users\\91939\\Desktop\\sme clone\\SME-pannel\\backend\\temp\\doc-1753921142-ea58f3fa.pdf",
+      "processing_timestamp": "2025-08-01T17:31:58.746490",
+      "headers": [
+        "<<<PAGE_BREAK>>>",
+        "<<<PAGE_BREAK>>>"
+      ],
+      "block_type": null
+    },
+    "length": 67
+  }
+]

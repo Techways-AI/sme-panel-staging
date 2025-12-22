@@ -1,0 +1,107 @@
+{
+  "id": 80,
+  "university": "JNTHU",
+  "regulation": "R25",
+  "course": "B.Pharm",
+  "effective_year": "2025",
+  "curriculum_type": "university",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 1,
+            "subjects": [
+              {
+                "code": "PS505",
+                "name": "GENERIC PRODUCT DEVELOPMENT (Open Elective - I)",
+                "type": "theory",
+                "category": "elective",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Introduction to Generic Product Development",
+                    "topics": [
+                      "Concept of generic drug product development",
+                      "Hatch-Waxman act",
+                      "Amendments to Hatch-Waxman act",
+                      "History of generic product development in US"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Dosage Form Design and Development",
+                    "topics": [
+                      "Design of dosage form to meet equivalence to reference listed drug",
+                      "Product development steps",
+                      "Formula optimization",
+                      "Process optimization",
+                      "Packaging selection"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Analytical Method Development",
+                    "topics": [
+                      "Analytical method development for verification of active ingredient",
+                      "Analytical method development for validation of active ingredient",
+                      "Analytical method development for verification of impurities",
+                      "Analytical method development for validation of impurities",
+                      "Analytical method development for in-process samples",
+                      "Analytical method development for finished dosage forms"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Stability and Scale Up Studies",
+                    "topics": [
+                      "Stability studies on active ingredient",
+                      "Stability studies on finished dosage forms",
+                      "Accelerated stability studies",
+                      "Stability studies at different conditions",
+                      "Determination of expiration date",
+                      "Scale up studies to optimize manufacturing process",
+                      "Execution of exhibit batches"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Bioequivalence and Regulatory Affairs",
+                    "topics": [
+                      "Bioequivalence studies",
+                      "Designs of bioequivalence studies",
+                      "Bioequivalence criteria",
+                      "In-vitro tests to ensure bioequivalence",
+                      "Introduction to electronic Common Technical Document (eCTD)",
+                      "Modules of eCTD",
+                      "Important information in eCTD modules",
+                      "Drug product approval process in India",
+                      "Drug product approval process in US"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "JNTHU",
+    "regulation": "R25",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 31,
+    "theory": 0,
+    "practical": 0,
+    "electives": 1
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:44:34.535517+00:00",
+  "updated_at": null
+}

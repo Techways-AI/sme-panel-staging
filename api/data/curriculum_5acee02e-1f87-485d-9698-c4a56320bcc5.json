@@ -1,0 +1,140 @@
+{
+  "id": "5acee02e-1f87-485d-9698-c4a56320bcc5",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 3,
+        "semesters": [
+          {
+            "semester": 5,
+            "subjects": [
+              {
+                "code": "BP503T",
+                "name": "Pharmacology-II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Pharmacology of Drugs Acting on Cardiovascular System - I",
+                    "topics": [
+                      "Introduction to hemodynamics of heart",
+                      "Electrophysiology of heart",
+                      "Drugs used in congestive heart failure",
+                      "Anti-hypertensive drugs",
+                      "Anti-anginal drugs",
+                      "Anti-arrhythmic drugs",
+                      "Anti-hyperlipidemic drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Pharmacology of Drugs Acting on Cardiovascular and Urinary Systems",
+                    "topics": [
+                      "Drugs used in the therapy of shock",
+                      "Hematinics",
+                      "Coagulants",
+                      "Anticoagulants",
+                      "Fibrinolytics",
+                      "Anti-platelet drugs",
+                      "Plasma volume expanders",
+                      "Diuretics",
+                      "Anti-diuretics"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Autocoids and Related Drugs",
+                    "topics": [
+                      "Introduction to autacoids",
+                      "Classification of autacoids",
+                      "Histamine",
+                      "Histamine antagonists",
+                      "5-HT (Serotonin)",
+                      "5-HT antagonists",
+                      "Prostaglandins",
+                      "Thromboxanes",
+                      "Leukotrienes",
+                      "Angiotensin",
+                      "Bradykinin",
+                      "Substance P",
+                      "Non-steroidal anti-inflammatory agents",
+                      "Anti-gout drugs",
+                      "Antirheumatic drugs"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Pharmacology of Drugs Acting on Endocrine System - I",
+                    "topics": [
+                      "Basic concepts in endocrine pharmacology",
+                      "Anterior Pituitary hormones",
+                      "Analogues of anterior pituitary hormones",
+                      "Inhibitors of anterior pituitary hormones",
+                      "Thyroid hormones",
+                      "Analogues of thyroid hormones",
+                      "Inhibitors of thyroid hormones",
+                      "Hormones regulating plasma calcium level",
+                      "Parathormone",
+                      "Calcitonin",
+                      "Vitamin-D",
+                      "Insulin",
+                      "Oral Hypoglycemic agents",
+                      "Glucagon",
+                      "ACTH",
+                      "Corticosteroids"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Pharmacology of Drugs Acting on Endocrine System - II and Bioassay",
+                    "topics": [
+                      "Androgens",
+                      "Anabolic steroids",
+                      "Estrogens",
+                      "Progesterone",
+                      "Oral contraceptives",
+                      "Drugs acting on the uterus",
+                      "Principles of bioassay",
+                      "Applications of bioassay",
+                      "Types of bioassay",
+                      "Bioassay of insulin",
+                      "Bioassay of oxytocin",
+                      "Bioassay of vasopressin",
+                      "Bioassay of ACTH",
+                      "Bioassay of d-tubocurarine",
+                      "Bioassay of digitalis",
+                      "Bioassay of histamine",
+                      "Bioassay of 5-HT"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 3,
+    "semesters": 5,
+    "subjects": 1,
+    "units": 5,
+    "topics": 64,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-16T07:08:56.945180+00:00",
+  "updated_at": null
+}

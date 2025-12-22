@@ -1,0 +1,184 @@
+{
+  "id": "1c46f908-ca0f-417f-a9a2-80189d748a58",
+  "university": "PCI",
+  "regulation": "Master",
+  "course": "B.Pharm",
+  "effective_year": null,
+  "curriculum_type": "pci",
+  "curriculum_data": {
+    "years": [
+      {
+        "year": 2,
+        "semesters": [
+          {
+            "semester": 3,
+            "subjects": [
+              {
+                "code": "BP301T",
+                "name": "Pharmaceutical Organic Chemistry –II",
+                "type": "theory",
+                "category": "core",
+                "units": [
+                  {
+                    "number": "Unit I",
+                    "title": "Benzene and its Derivatives",
+                    "topics": [
+                      "Benzene",
+                      "Analytical evidences in the derivation of structure of benzene",
+                      "Synthetic evidences in the derivation of structure of benzene",
+                      "Orbital picture of benzene",
+                      "Resonance in benzene",
+                      "Aromatic characters of benzene",
+                      "Huckel’s rule",
+                      "Reactions of benzene",
+                      "Nitration of benzene",
+                      "Sulphonation of benzene",
+                      "Halogenation of benzene",
+                      "Reactivity of halogenation of benzene",
+                      "Friedelcrafts alkylation of benzene",
+                      "Reactivity of Friedelcrafts alkylation",
+                      "Limitations of Friedelcrafts alkylation",
+                      "Friedelcrafts acylation of benzene",
+                      "Substituents in benzene derivatives",
+                      "Effect of substituents on reactivity of mono substituted benzene compounds",
+                      "Effect of substituents on orientation of mono substituted benzene compounds",
+                      "Structure of DDT",
+                      "Medicinal uses of DDT",
+                      "Structure of Saccharin",
+                      "Medicinal uses of Saccharin",
+                      "Structure of BHC",
+                      "Medicinal uses of BHC",
+                      "Structure of Chloramine",
+                      "Medicinal uses of Chloramine"
+                    ]
+                  },
+                  {
+                    "number": "Unit II",
+                    "title": "Phenols, Aromatic Amines and Aromatic Acids",
+                    "topics": [
+                      "Phenols",
+                      "Methods of preparation of phenols",
+                      "Reactions of phenols",
+                      "Acidity of phenols",
+                      "Effect of substituents on acidity of phenols",
+                      "Qualitative tests for phenols",
+                      "Structure of phenol",
+                      "Uses of phenol",
+                      "Structure of cresols",
+                      "Uses of cresols",
+                      "Structure of resorcinol",
+                      "Uses of resorcinol",
+                      "Structure of naphthols",
+                      "Uses of naphthols",
+                      "Aromatic Amines",
+                      "Methods of preparation of aromatic amines",
+                      "Reactions of aromatic amines",
+                      "Basicity of aromatic amines",
+                      "Effect of substituents on basicity of aromatic amines",
+                      "Synthetic uses of aryl diazonium salts",
+                      "Aromatic Acids",
+                      "Methods of preparation of aromatic acids",
+                      "Reactions of aromatic acids",
+                      "Acidity of aromatic acids",
+                      "Effect of substituents on acidity of aromatic acids",
+                      "Reactions of benzoic acid"
+                    ]
+                  },
+                  {
+                    "number": "Unit III",
+                    "title": "Fats and Oils",
+                    "topics": [
+                      "Fats and oils",
+                      "Fatty acids",
+                      "Reactions of fatty acids",
+                      "Hydrolysis of oils",
+                      "Hydrogenation of oils",
+                      "Saponification of oils",
+                      "Rancidity of oils",
+                      "Drying oils",
+                      "Analytical constants of fats and oils",
+                      "Acid value",
+                      "Significance of Acid value",
+                      "Principle involved in determination of Acid value",
+                      "Saponification value",
+                      "Significance of Saponification value",
+                      "Principle involved in determination of Saponification value",
+                      "Ester value",
+                      "Significance of Ester value",
+                      "Principle involved in determination of Ester value",
+                      "Iodine value",
+                      "Significance of Iodine value",
+                      "Principle involved in determination of Iodine value",
+                      "Acetyl value",
+                      "Significance of Acetyl value",
+                      "Principle involved in determination of Acetyl value",
+                      "Reichert Meissl (RM) value",
+                      "Significance of Reichert Meissl value",
+                      "Principle involved in determination of Reichert Meissl value"
+                    ]
+                  },
+                  {
+                    "number": "Unit IV",
+                    "title": "Polynuclear Hydrocarbons",
+                    "topics": [
+                      "Polynuclear hydrocarbons",
+                      "Synthesis of polynuclear hydrocarbons",
+                      "Reactions of polynuclear hydrocarbons",
+                      "Structure of Naphthalene",
+                      "Medicinal uses of Naphthalene",
+                      "Derivatives of Naphthalene",
+                      "Structure of Phenanthrene",
+                      "Medicinal uses of Phenanthrene",
+                      "Derivatives of Phenanthrene",
+                      "Structure of Anthracene",
+                      "Medicinal uses of Anthracene",
+                      "Derivatives of Anthracene",
+                      "Structure of Diphenylmethane",
+                      "Medicinal uses of Diphenylmethane",
+                      "Derivatives of Diphenylmethane",
+                      "Structure of Triphenylmethane",
+                      "Medicinal uses of Triphenylmethane",
+                      "Derivatives of Triphenylmethane"
+                    ]
+                  },
+                  {
+                    "number": "Unit V",
+                    "title": "Cyclo Alkanes",
+                    "topics": [
+                      "Cyclo alkanes",
+                      "Methods of preparation of cyclo alkanes",
+                      "Stabilities of cyclo alkanes",
+                      "Baeyer’s strain theory",
+                      "Limitation of Baeyer’s strain theory",
+                      "Coulson and Moffitt’s modification",
+                      "Sachse Mohr’s theory",
+                      "Theory of strainless rings",
+                      "Reactions of cyclopropane",
+                      "Reactions of cyclobutane"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": "Generic University",
+    "regulation": "PCI Regulation",
+    "course": "B.Pharm"
+  },
+  "stats": {
+    "years": 1,
+    "semesters": 1,
+    "subjects": 1,
+    "units": 5,
+    "topics": 108,
+    "theory": 1,
+    "practical": 0,
+    "electives": 0
+  },
+  "status": "active",
+  "created_at": "2025-12-12T08:12:02.812119+00:00",
+  "updated_at": null
+}
