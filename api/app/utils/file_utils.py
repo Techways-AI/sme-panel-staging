@@ -7,7 +7,19 @@ import codecs
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
 from ..config.settings import DATA_DIR, VECTOR_STORES_DIR, VIDEOS_DIR
-from langchain.text_splitter import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter, TokenTextSplitter
+# LangChain splitters moved in newer versions; support both paths
+try:
+    from langchain_text_splitters import (
+        RecursiveCharacterTextSplitter,
+        MarkdownHeaderTextSplitter,
+        TokenTextSplitter,
+    )
+except ImportError:  # fallback for older langchain versions
+    from langchain.text_splitter import (
+        RecursiveCharacterTextSplitter,
+        MarkdownHeaderTextSplitter,
+        TokenTextSplitter,
+    )
 import pdfplumber
 import io
 import pandas as pd
