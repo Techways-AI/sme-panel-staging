@@ -14,8 +14,6 @@ IS_PRODUCTION = ENV == "production"
 
 # Read-only mode for database migration
 READ_ONLY_MODE = os.getenv("READ_ONLY_MODE", "false").lower() == "true"
-if READ_ONLY_MODE:
-    logger.warning("⚠️ READ_ONLY_MODE is ENABLED - All write operations (POST/PUT/PATCH/DELETE) are blocked")
 
 # Configure logging with UTF-8 support
 import io
@@ -64,6 +62,10 @@ logging.getLogger('uvicorn').setLevel(logging.INFO)
 logging.getLogger('fastapi').setLevel(logging.WARNING)
 
 logger = logging.getLogger(__name__)
+
+# Log read-only mode status after logger is initialized
+if READ_ONLY_MODE:
+    logger.warning("⚠️ READ_ONLY_MODE is ENABLED - All write operations (POST/PUT/PATCH/DELETE) are blocked")
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
