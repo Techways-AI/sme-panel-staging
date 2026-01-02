@@ -4,7 +4,7 @@
  */
 
 // API Base URL - Update this to match your backend deployment
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8001';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://sme-panel-staging-production.up.railway.app';
 // Token storage key
 const TOKEN_KEY = 'sme_access_token';
 const USER_KEY = 'sme_user';
