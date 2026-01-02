@@ -4,7 +4,7 @@
  */
 
 // API Base URL - Update this to match your backend deployment
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://sme-panel-staging-production.up.railway.app';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8001';
 // Token storage key
 const TOKEN_KEY = 'sme_access_token';
 const USER_KEY = 'sme_user';
@@ -252,6 +252,8 @@ export interface FolderStructure {
   subjectName: string;
   unitName: string;
   topic: string;
+  curriculum?: string; // e.g., "pci", "jntuh", "osmania"
+  university?: string; // e.g., "JNTUH", "Osmania"
 }
 
 export interface Document {
@@ -325,9 +327,77 @@ export interface DashboardSummaryResponse {
   };
 }
 
+export interface ContentCoverageResponse {
+  documents: {
+    count: number;
+    total: number;
+    percentage: number;
+  };
+  videos: {
+    count: number;
+    total: number;
+    percentage: number;
+  };
+  notes: {
+    count: number;
+    total: number;
+    percentage: number;
+  };
+  overall: number;
+}
+
+export interface SubjectCoverage {
+  code: string;
+  name: string;
+  year: number;
+  semester: number;
+  topics: number;
+  docs: number;
+  videos: number;
+  notes: number;
+}
+
+export interface SubjectCoverageResponse {
+  subjects: SubjectCoverage[];
+  curriculum: {
+    id: number;
+    display_name: string;
+    curriculum_type: string;
+  };
+}
+
+export interface YearCoverage {
+  year: string;
+  year_num: number;
+  semester1: number;
+  semester2: number;
+  percentage: number;
+}
+
+export interface YearCoverageResponse {
+  year_coverage: YearCoverage[];
+  curriculum: {
+    id: number;
+    display_name: string;
+    curriculum_type: string;
+  };
+}
+
 export const dashboardApi = {
   getSummary: async (): Promise<DashboardSummaryResponse> => {
     return apiRequest<DashboardSummaryResponse>('/api/dashboard/summary');
+  },
+  
+  getContentCoverage: async (curriculumId: number): Promise<ContentCoverageResponse> => {
+    return apiRequest<ContentCoverageResponse>(`/api/dashboard/content-coverage?curriculum_id=${curriculumId}`);
+  },
+  
+  getSubjectCoverage: async (curriculumId: number): Promise<SubjectCoverageResponse> => {
+    return apiRequest<SubjectCoverageResponse>(`/api/dashboard/subject-coverage?curriculum_id=${curriculumId}`);
+  },
+  
+  getYearCoverage: async (curriculumId: number): Promise<YearCoverageResponse> => {
+    return apiRequest<YearCoverageResponse>(`/api/dashboard/year-coverage?curriculum_id=${curriculumId}`);
   },
 };
 

@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Plus,
   Eye,
+  Loader2,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,34 +23,30 @@ import { cn } from "@/lib/utils"
 import * as XLSX from "xlsx"
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
+import { dashboardApi, curriculumApi, CurriculumResponse } from "@/lib/api"
 
-const universityOptions = [
-  { value: "pci", label: "PCI Master" },
-  { value: "jntuh", label: "JNTUH R20" },
-  { value: "osmania", label: "Osmania R19" },
-]
-
-const getStatsForUniversity = (university: string) => {
+// This function is kept as fallback but will be replaced by API data
+const getStatsForUniversityFallback = (university: string) => {
   if (university === "pci") {
     return {
-      documents: { count: 1147, total: 1847, percentage: 62 },
-      videos: { count: 517, total: 1847, percentage: 28 },
-      notes: { count: 1071, total: 1847, percentage: 58 },
-      overall: 62,
+      documents: { count: 0, total: 0, percentage: 0 },
+      videos: { count: 0, total: 0, percentage: 0 },
+      notes: { count: 0, total: 0, percentage: 0 },
+      overall: 0,
     }
   } else if (university === "jntuh") {
     return {
-      documents: { count: 980, total: 1520, percentage: 64 },
-      videos: { count: 450, total: 1520, percentage: 30 },
-      notes: { count: 920, total: 1520, percentage: 61 },
-      overall: 65,
+      documents: { count: 0, total: 0, percentage: 0 },
+      videos: { count: 0, total: 0, percentage: 0 },
+      notes: { count: 0, total: 0, percentage: 0 },
+      overall: 0,
     }
   } else {
     return {
-      documents: { count: 720, total: 1380, percentage: 52 },
-      videos: { count: 320, total: 1380, percentage: 23 },
-      notes: { count: 680, total: 1380, percentage: 49 },
-      overall: 48,
+      documents: { count: 0, total: 0, percentage: 0 },
+      videos: { count: 0, total: 0, percentage: 0 },
+      notes: { count: 0, total: 0, percentage: 0 },
+      overall: 0,
     }
   }
 }
@@ -79,72 +76,7 @@ const getYearCoverageForUniversity = (university: string) => {
   }
 }
 
-const subjects = [
-  {
-    code: "BP101T",
-    name: "Human Anatomy and Physiology I",
-    year: 1,
-    semester: 1,
-    topics: 45,
-    docs: 95,
-    videos: 80,
-    notes: 100,
-  },
-  {
-    code: "BP102T",
-    name: "Pharmaceutical Analysis I",
-    year: 1,
-    semester: 1,
-    topics: 38,
-    docs: 45,
-    videos: 20,
-    notes: 40,
-  },
-  { code: "BP103T", name: "Pharmaceutics I", year: 1, semester: 1, topics: 40, docs: 0, videos: 0, notes: 0 },
-  {
-    code: "BP104T",
-    name: "Pharmaceutical Inorganic Chemistry",
-    year: 1,
-    semester: 1,
-    topics: 35,
-    docs: 88,
-    videos: 65,
-    notes: 75,
-  },
-  { code: "BP105T", name: "Communication Skills", year: 1, semester: 2, topics: 20, docs: 100, videos: 90, notes: 100 },
-  {
-    code: "BP201T",
-    name: "Human Anatomy and Physiology II",
-    year: 2,
-    semester: 1,
-    topics: 42,
-    docs: 72,
-    videos: 55,
-    notes: 68,
-  },
-  {
-    code: "BP202T",
-    name: "Pharmaceutical Organic Chemistry I",
-    year: 2,
-    semester: 1,
-    topics: 48,
-    docs: 35,
-    videos: 15,
-    notes: 30,
-  },
-  { code: "BP203T", name: "Biochemistry", year: 2, semester: 2, topics: 38, docs: 60, videos: 40, notes: 55 },
-  { code: "BP305T", name: "Pharmacology I", year: 3, semester: 1, topics: 52, docs: 0, videos: 0, notes: 0 },
-  {
-    code: "BP401T",
-    name: "Pharmaceutical Jurisprudence",
-    year: 4,
-    semester: 1,
-    topics: 28,
-    docs: 25,
-    videos: 10,
-    notes: 20,
-  },
-]
+// Subjects are now fetched from API - see subjects state in ContentCoverageView component
 
 const gaps = {
   noContent: [
@@ -188,25 +120,218 @@ export function ContentCoverageView() {
   const [searchQuery, setSearchQuery] = React.useState("")
   const [sortBy, setSortBy] = React.useState<"name" | "docs" | "videos" | "notes">("name")
   const [showGaps, setShowGaps] = React.useState(true)
-  const [selectedUniversity, setSelectedUniversity] = React.useState("pci")
+  const [curricula, setCurricula] = React.useState<CurriculumResponse[]>([])
+  const [selectedCurriculumId, setSelectedCurriculumId] = React.useState<number | null>(null)
+  const [stats, setStats] = React.useState(getStatsForUniversityFallback("pci"))
+  const [loading, setLoading] = React.useState(false)
+  const [loadingCurricula, setLoadingCurricula] = React.useState(true)
+  const [subjects, setSubjects] = React.useState<any[]>([])
+  const [loadingSubjects, setLoadingSubjects] = React.useState(false)
+  const [yearCoverage, setYearCoverage] = React.useState<any[]>([])
+  const [loadingYearCoverage, setLoadingYearCoverage] = React.useState(false)
+  const [selectedYear, setSelectedYear] = React.useState<string>("all")
+  const [selectedSemester, setSelectedSemester] = React.useState<string>("all")
+  const [selectedSubject, setSelectedSubject] = React.useState<string>("all")
   const { toast } = useToast()
   const router = useRouter()
 
-  const stats = getStatsForUniversity(selectedUniversity)
-  const yearCoverage = getYearCoverageForUniversity(selectedUniversity)
+  // Fetch curricula from curriculum manager
+  React.useEffect(() => {
+    const fetchCurricula = async () => {
+      setLoadingCurricula(true)
+      try {
+        const response = await curriculumApi.getAll()
+        
+        // Deduplicate curricula by display_name, keeping the first occurrence
+        // This prevents showing multiple entries with the same name (e.g., multiple "PCI Master")
+        const seen = new Set<string>()
+        const uniqueCurricula: CurriculumResponse[] = []
+        
+        for (const curriculum of response.curricula) {
+          const displayName = curriculum.display_name
+          if (!seen.has(displayName)) {
+            seen.add(displayName)
+            uniqueCurricula.push(curriculum)
+          }
+        }
+        
+        setCurricula(uniqueCurricula)
+        
+        // Set default to first PCI curriculum, or first curriculum if no PCI
+        const pciCurriculum = uniqueCurricula.find(c => c.curriculum_type === "pci")
+        const defaultCurriculum = pciCurriculum || uniqueCurricula[0]
+        if (defaultCurriculum) {
+          setSelectedCurriculumId(defaultCurriculum.id)
+        }
+      } catch (error) {
+        console.error("Failed to fetch curricula:", error)
+        toast({
+          title: "Error",
+          description: "Failed to load curricula. Please refresh the page.",
+          variant: "destructive",
+        })
+      } finally {
+        setLoadingCurricula(false)
+      }
+    }
+
+    fetchCurricula()
+  }, [toast])
+
+  // Fetch content coverage data when curriculum changes
+  React.useEffect(() => {
+    // Only fetch if we have a valid curriculum ID (number)
+    if (!selectedCurriculumId || typeof selectedCurriculumId !== 'number' || isNaN(selectedCurriculumId)) {
+      return
+    }
+
+    const fetchContentCoverage = async () => {
+      setLoading(true)
+      try {
+        const coverageData = await dashboardApi.getContentCoverage(selectedCurriculumId)
+        setStats({
+          documents: {
+            count: coverageData.documents.count,
+            total: coverageData.documents.total,
+            percentage: Math.round(coverageData.documents.percentage),
+          },
+          videos: {
+            count: coverageData.videos.count,
+            total: coverageData.videos.total,
+            percentage: Math.round(coverageData.videos.percentage),
+          },
+          notes: {
+            count: coverageData.notes.count,
+            total: coverageData.notes.total,
+            percentage: Math.round(coverageData.notes.percentage),
+          },
+          overall: Math.round(coverageData.overall),
+        })
+      } catch (error) {
+        console.error("Failed to fetch content coverage:", error)
+        toast({
+          title: "Error",
+          description: "Failed to load content coverage data.",
+          variant: "destructive",
+        })
+        setStats(getStatsForUniversityFallback("pci"))
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchContentCoverage()
+  }, [selectedCurriculumId, toast])
+
+  // Fetch subject coverage data when curriculum changes
+  React.useEffect(() => {
+    // Only fetch if we have a valid curriculum ID (number)
+    if (!selectedCurriculumId || typeof selectedCurriculumId !== 'number' || isNaN(selectedCurriculumId)) {
+      return
+    }
+
+    const fetchSubjectCoverage = async () => {
+      setLoadingSubjects(true)
+      try {
+        const subjectData = await dashboardApi.getSubjectCoverage(selectedCurriculumId)
+        console.log("Subject coverage API response:", subjectData)
+        console.log(`Received ${subjectData.subjects.length} subjects`)
+        setSubjects(subjectData.subjects)
+      } catch (error) {
+        console.error("Failed to fetch subject coverage:", error)
+        toast({
+          title: "Error",
+          description: "Failed to load subject coverage data.",
+          variant: "destructive",
+        })
+        setSubjects([])
+      } finally {
+        setLoadingSubjects(false)
+      }
+    }
+
+    fetchSubjectCoverage()
+  }, [selectedCurriculumId, toast])
+
+  // Fetch year coverage data when curriculum changes
+  React.useEffect(() => {
+    // Only fetch if we have a valid curriculum ID (number)
+    if (!selectedCurriculumId || typeof selectedCurriculumId !== 'number' || isNaN(selectedCurriculumId)) {
+      return
+    }
+
+    const fetchYearCoverage = async () => {
+      setLoadingYearCoverage(true)
+      try {
+        const yearData = await dashboardApi.getYearCoverage(selectedCurriculumId)
+        setYearCoverage(yearData.year_coverage)
+      } catch (error) {
+        console.error("Failed to fetch year coverage:", error)
+        toast({
+          title: "Error",
+          description: "Failed to load year coverage data.",
+          variant: "destructive",
+        })
+        setYearCoverage([])
+      } finally {
+        setLoadingYearCoverage(false)
+      }
+    }
+
+    fetchYearCoverage()
+  }, [selectedCurriculumId, toast])
+
+  // Get selected curriculum object
+  const selectedCurriculum = curricula.find((c) => c.id === selectedCurriculumId)
+  const selectedUniversityLabel = selectedCurriculum?.display_name || "Select Curriculum"
+
+  // Get unique years, semesters, and subjects for dropdowns
+  const availableYears = React.useMemo(() => {
+    const years = new Set<number>()
+    subjects.forEach((s) => {
+      if (s.year) years.add(s.year)
+    })
+    return Array.from(years).sort()
+  }, [subjects])
+
+  const availableSemesters = React.useMemo(() => {
+    const semesters = new Set<number>()
+    subjects.forEach((s) => {
+      if (s.semester) semesters.add(s.semester)
+    })
+    return Array.from(semesters).sort()
+  }, [subjects])
+
+  const availableSubjects = React.useMemo(() => {
+    const subjectSet = new Set<string>()
+    subjects.forEach((s) => {
+      if (s.code) subjectSet.add(s.code)
+    })
+    return Array.from(subjectSet).sort()
+  }, [subjects])
 
   const filteredSubjects = subjects
-    .filter(
-      (s) =>
+    .filter((s) => {
+      // Search filter
+      const matchesSearch =
         s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        s.code.toLowerCase().includes(searchQuery.toLowerCase()),
-    )
+        s.code.toLowerCase().includes(searchQuery.toLowerCase())
+      
+      // Year filter
+      const matchesYear = selectedYear === "all" || s.year === Number.parseInt(selectedYear)
+      
+      // Semester filter
+      const matchesSemester = selectedSemester === "all" || s.semester === Number.parseInt(selectedSemester)
+      
+      // Subject filter
+      const matchesSubject = selectedSubject === "all" || s.code === selectedSubject
+      
+      return matchesSearch && matchesYear && matchesSemester && matchesSubject
+    })
     .sort((a, b) => {
       if (sortBy === "name") return a.name.localeCompare(b.name)
       return b[sortBy] - a[sortBy]
     })
-
-  const selectedUniversityLabel = universityOptions.find((u) => u.value === selectedUniversity)?.label || "PCI Master"
 
   const exportGapReport = () => {
     const workbook = XLSX.utils.book_new()
@@ -366,14 +491,23 @@ export function ContentCoverageView() {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Select value={selectedUniversity} onValueChange={setSelectedUniversity}>
+          <Select 
+            value={selectedCurriculumId?.toString() || ""} 
+            onValueChange={(value) => {
+              const id = parseInt(value, 10)
+              if (!isNaN(id)) {
+                setSelectedCurriculumId(id)
+              }
+            }}
+            disabled={loadingCurricula}
+          >
             <SelectTrigger className="w-[180px] bg-white">
-              <SelectValue placeholder="Select curriculum" />
+              <SelectValue placeholder={loadingCurricula ? "Loading..." : "Select curriculum"} />
             </SelectTrigger>
             <SelectContent>
-              {universityOptions.map((uni) => (
-                <SelectItem key={uni.value} value={uni.value}>
-                  {uni.label}
+              {curricula.map((curriculum) => (
+                <SelectItem key={curriculum.id} value={curriculum.id.toString()}>
+                  {curriculum.display_name}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -392,17 +526,28 @@ export function ContentCoverageView() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm text-neutral-500">Documents</p>
-                <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.documents.count.toLocaleString()}</p>
-                <p className="text-xs text-neutral-400 mt-1">of {stats.documents.total.toLocaleString()} topics</p>
+                {loading ? (
+                  <div className="flex items-center gap-2 mt-1">
+                    <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
+                    <span className="text-sm text-neutral-400">Loading...</span>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.documents.count.toLocaleString()}</p>
+                    <p className="text-xs text-neutral-400 mt-1">of {stats.documents.total.toLocaleString()} topics</p>
+                  </>
+                )}
               </div>
               <div className="h-10 w-10 rounded-lg bg-blue-100 flex items-center justify-center">
                 <FileText className="h-5 w-5 text-[#0294D0]" />
               </div>
             </div>
-            <div className="mt-4">
-              <ProgressBar percentage={stats.documents.percentage} color="bg-[#0294D0]" />
-              <p className="text-xs text-neutral-500 mt-1">{stats.documents.percentage}% coverage</p>
-            </div>
+            {!loading && (
+              <div className="mt-4">
+                <ProgressBar percentage={stats.documents.percentage} color="bg-[#0294D0]" />
+                <p className="text-xs text-neutral-500 mt-1">{stats.documents.percentage}% coverage</p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
@@ -411,17 +556,28 @@ export function ContentCoverageView() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm text-neutral-500">Videos</p>
-                <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.videos.count.toLocaleString()}</p>
-                <p className="text-xs text-neutral-400 mt-1">of {stats.videos.total.toLocaleString()} topics</p>
+                {loading ? (
+                  <div className="flex items-center gap-2 mt-1">
+                    <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
+                    <span className="text-sm text-neutral-400">Loading...</span>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.videos.count.toLocaleString()}</p>
+                    <p className="text-xs text-neutral-400 mt-1">of {stats.videos.total.toLocaleString()} topics</p>
+                  </>
+                )}
               </div>
               <div className="h-10 w-10 rounded-lg bg-red-100 flex items-center justify-center">
                 <Video className="h-5 w-5 text-[#F14A3B]" />
               </div>
             </div>
-            <div className="mt-4">
-              <ProgressBar percentage={stats.videos.percentage} color="bg-[#F14A3B]" />
-              <p className="text-xs text-neutral-500 mt-1">{stats.videos.percentage}% coverage</p>
-            </div>
+            {!loading && (
+              <div className="mt-4">
+                <ProgressBar percentage={stats.videos.percentage} color="bg-[#F14A3B]" />
+                <p className="text-xs text-neutral-500 mt-1">{stats.videos.percentage}% coverage</p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
@@ -430,17 +586,28 @@ export function ContentCoverageView() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm text-neutral-500">Notes</p>
-                <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.notes.count.toLocaleString()}</p>
-                <p className="text-xs text-neutral-400 mt-1">of {stats.notes.total.toLocaleString()} topics</p>
+                {loading ? (
+                  <div className="flex items-center gap-2 mt-1">
+                    <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
+                    <span className="text-sm text-neutral-400">Loading...</span>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.notes.count.toLocaleString()}</p>
+                    <p className="text-xs text-neutral-400 mt-1">of {stats.notes.total.toLocaleString()} topics</p>
+                  </>
+                )}
               </div>
               <div className="h-10 w-10 rounded-lg bg-cyan-100 flex items-center justify-center">
                 <BookOpen className="h-5 w-5 text-[#27C3F2]" />
               </div>
             </div>
-            <div className="mt-4">
-              <ProgressBar percentage={stats.notes.percentage} color="bg-[#27C3F2]" />
-              <p className="text-xs text-neutral-500 mt-1">{stats.notes.percentage}% coverage</p>
-            </div>
+            {!loading && (
+              <div className="mt-4">
+                <ProgressBar percentage={stats.notes.percentage} color="bg-[#27C3F2]" />
+                <p className="text-xs text-neutral-500 mt-1">{stats.notes.percentage}% coverage</p>
+              </div>
+            )}
           </CardContent>
         </Card>
 
@@ -449,16 +616,27 @@ export function ContentCoverageView() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm text-neutral-500">Overall Coverage</p>
-                <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.overall}%</p>
-                <p className="text-xs text-neutral-400 mt-1">across all content types</p>
+                {loading ? (
+                  <div className="flex items-center gap-2 mt-1">
+                    <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
+                    <span className="text-sm text-neutral-400">Loading...</span>
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-neutral-900 mt-1">{stats.overall}%</p>
+                    <p className="text-xs text-neutral-400 mt-1">across all content types</p>
+                  </>
+                )}
               </div>
               <div className="h-10 w-10 rounded-lg bg-green-100 flex items-center justify-center">
                 <BookOpen className="h-5 w-5 text-green-600" />
               </div>
             </div>
-            <div className="mt-4">
-              <ProgressBar percentage={stats.overall} color="bg-green-500" />
-            </div>
+            {!loading && (
+              <div className="mt-4">
+                <ProgressBar percentage={stats.overall} color="bg-green-500" />
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>
@@ -469,22 +647,33 @@ export function ContentCoverageView() {
           <CardTitle className="text-base">Coverage by Year</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {yearCoverage.map((year) => (
-            <div key={year.year} className="flex items-center gap-4">
-              <span className="w-16 text-sm font-medium text-neutral-700">{year.year}</span>
-              <div className="flex-1 h-6 bg-neutral-100 rounded-full overflow-hidden">
-                <div
-                  className={cn(
-                    "h-full rounded-full flex items-center justify-end pr-2 text-xs font-medium text-white transition-all",
-                    year.percentage >= 60 ? "bg-green-500" : year.percentage >= 40 ? "bg-amber-500" : "bg-red-500",
-                  )}
-                  style={{ width: `${year.percentage}%` }}
-                >
-                  {year.percentage}%
+          {loadingYearCoverage ? (
+            <div className="flex items-center justify-center py-10">
+              <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
+              <span className="ml-2 text-sm text-neutral-400">Loading year coverage...</span>
+            </div>
+          ) : yearCoverage.length === 0 ? (
+            <div className="text-center py-10 text-neutral-500">
+              No year coverage data available.
+            </div>
+          ) : (
+            yearCoverage.map((year) => (
+              <div key={year.year} className="flex items-center gap-4">
+                <span className="w-16 text-sm font-medium text-neutral-700">{year.year}</span>
+                <div className="flex-1 h-6 bg-neutral-100 rounded-full overflow-hidden">
+                  <div
+                    className={cn(
+                      "h-full rounded-full flex items-center justify-end pr-2 text-xs font-medium text-white transition-all",
+                      year.percentage >= 60 ? "bg-green-500" : year.percentage >= 40 ? "bg-amber-500" : "bg-red-500",
+                    )}
+                    style={{ width: `${Math.min(year.percentage, 100)}%` }}
+                  >
+                    {year.percentage}%
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </CardContent>
       </Card>
 
@@ -549,49 +738,106 @@ export function ContentCoverageView() {
       {/* Subject Coverage Table */}
       <Card>
         <CardHeader>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="flex flex-col gap-4">
             <CardTitle className="text-base">Subject Coverage</CardTitle>
-            <div className="relative w-full sm:w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
-              <Input
-                placeholder="Search subjects..."
-                className="pl-9 h-9"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
+                <Input
+                  placeholder="Search subjects..."
+                  className="pl-9 h-9"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              <Select value={selectedYear} onValueChange={(value) => {
+                setSelectedYear(value)
+                setSelectedSemester("all") // Reset semester when year changes
+              }}>
+                <SelectTrigger className="w-[140px] h-9">
+                  <SelectValue placeholder="All Years" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Years</SelectItem>
+                  {availableYears.map((year) => (
+                    <SelectItem key={year} value={year.toString()}>
+                      Year {year}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedSemester} onValueChange={setSelectedSemester}>
+                <SelectTrigger className="w-[160px] h-9">
+                  <SelectValue placeholder="All Semesters" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Semesters</SelectItem>
+                  {availableSemesters.map((sem) => (
+                    <SelectItem key={sem} value={sem.toString()}>
+                      Semester {sem}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedSubject} onValueChange={setSelectedSubject}>
+                <SelectTrigger className="w-[160px] h-9">
+                  <SelectValue placeholder="All Subjects" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Subjects</SelectItem>
+                  {availableSubjects.map((code) => {
+                    const subject = subjects.find((s) => s.code === code)
+                    return (
+                      <SelectItem key={code} value={code}>
+                        {code} - {subject?.name || ""}
+                      </SelectItem>
+                    )
+                  })}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-neutral-200">
-                  <th className="text-left py-3 px-2 text-xs font-medium text-neutral-500 uppercase">Subject</th>
-                  <th className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase">Topics</th>
-                  <th
-                    className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase cursor-pointer hover:text-neutral-700"
-                    onClick={() => setSortBy("docs")}
-                  >
-                    Docs {sortBy === "docs" && "↓"}
-                  </th>
-                  <th
-                    className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase cursor-pointer hover:text-neutral-700"
-                    onClick={() => setSortBy("videos")}
-                  >
-                    Videos {sortBy === "videos" && "↓"}
-                  </th>
-                  <th
-                    className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase cursor-pointer hover:text-neutral-700"
-                    onClick={() => setSortBy("notes")}
-                  >
-                    Notes {sortBy === "notes" && "↓"}
-                  </th>
-                  <th className="text-right py-3 px-2 text-xs font-medium text-neutral-500 uppercase">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredSubjects.map((subject) => (
+          {loadingSubjects ? (
+            <div className="flex items-center justify-center py-10">
+              <Loader2 className="h-6 w-6 animate-spin text-neutral-400" />
+              <span className="ml-2 text-sm text-neutral-400">Loading subjects...</span>
+            </div>
+          ) : filteredSubjects.length === 0 ? (
+            <div className="text-center py-10 text-neutral-500">
+              No subjects found matching your filters.
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-neutral-200">
+                    <th className="text-left py-3 px-2 text-xs font-medium text-neutral-500 uppercase">Subject</th>
+                    <th className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase">Topics</th>
+                    <th
+                      className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase cursor-pointer hover:text-neutral-700"
+                      onClick={() => setSortBy("docs")}
+                    >
+                      Docs {sortBy === "docs" && "↓"}
+                    </th>
+                    <th
+                      className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase cursor-pointer hover:text-neutral-700"
+                      onClick={() => setSortBy("videos")}
+                    >
+                      Videos {sortBy === "videos" && "↓"}
+                    </th>
+                    <th
+                      className="text-center py-3 px-2 text-xs font-medium text-neutral-500 uppercase cursor-pointer hover:text-neutral-700"
+                      onClick={() => setSortBy("notes")}
+                    >
+                      Notes {sortBy === "notes" && "↓"}
+                    </th>
+                    <th className="text-right py-3 px-2 text-xs font-medium text-neutral-500 uppercase">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredSubjects.map((subject) => (
                   <tr key={subject.code} className="border-b border-neutral-100 hover:bg-neutral-50">
                     <td className="py-3 px-2">
                       <div className="flex items-center gap-2">
@@ -635,10 +881,11 @@ export function ContentCoverageView() {
                       )}
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

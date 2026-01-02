@@ -73,6 +73,8 @@ type GroupedDocument = Document & { fileCount: number; allIds: string[] }
 
 export function DocumentsView() {
   const [documents, setDocuments] = React.useState<GroupedDocument[]>([])
+  // Store polling intervals to prevent multiple simultaneous polls
+  const pollingIntervalsRef = React.useRef<Map<string, NodeJS.Timeout>>(new Map())
   const [isLoading, setIsLoading] = React.useState(true)
   const [selectedIds, setSelectedIds] = React.useState<string[]>([])
   const [uploadOpen, setUploadOpen] = React.useState(false)
@@ -86,6 +88,16 @@ export function DocumentsView() {
   React.useEffect(() => {
     fetchDocuments()
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Cleanup polling intervals on unmount
+  React.useEffect(() => {
+    return () => {
+      pollingIntervalsRef.current.forEach((interval) => {
+        clearInterval(interval)
+      })
+      pollingIntervalsRef.current.clear()
+    }
   }, [])
 
   const fetchDocuments = async () => {
@@ -204,6 +216,15 @@ export function DocumentsView() {
     const doc = documents.find((d) => d.id === id)
     const idsToProcess = doc?.allIds || [id]
     
+    // Clear any existing polling intervals for these documents
+    idsToProcess.forEach((docId) => {
+      const existingInterval = pollingIntervalsRef.current.get(docId)
+      if (existingInterval) {
+        clearInterval(existingInterval)
+        pollingIntervalsRef.current.delete(docId)
+      }
+    })
+    
     // Immediately update UI to show processing state
     setDocuments((prev) =>
       prev.map((d) => {
@@ -235,26 +256,69 @@ export function DocumentsView() {
             idsToProcess.map((docId) => documentsApi.getStatus(docId))
           )
           
-          const allProcessed = statusChecks.every((status) => status.processed)
-          const anyProcessing = statusChecks.some((status) => status.processing)
+          // Log status for debugging (only in development)
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Status checks:', statusChecks.map(s => ({ 
+              id: s.id, 
+              processed: s.processed, 
+              processing: s.processing 
+            })))
+          }
           
-          if (allProcessed) {
+          // Check if all documents are processed (explicitly check for true)
+          const allProcessed = statusChecks.every((status) => Boolean(status.processed) === true)
+          // Check if any document is still processing (explicitly check for true)
+          const anyProcessing = statusChecks.some((status) => Boolean(status.processing) === true)
+          
+          // Stop polling if all documents are processed AND none are currently processing
+          if (allProcessed && !anyProcessing) {
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Processing complete, stopping poll')
+            }
             clearInterval(pollInterval)
+            // Clean up all intervals for these documents
+            idsToProcess.forEach((docId) => {
+              pollingIntervalsRef.current.delete(docId)
+            })
             await fetchDocuments()
             toast({ title: "Processing complete", description: "Documents have been processed successfully" })
+            return // Exit early to prevent further polling
           } else if (!anyProcessing && !allProcessed) {
             // Processing stopped but not completed - might be an error
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Processing stopped but not completed, stopping poll')
+            }
             clearInterval(pollInterval)
+            // Clean up all intervals for these documents
+            idsToProcess.forEach((docId) => {
+              pollingIntervalsRef.current.delete(docId)
+            })
             await fetchDocuments()
+            toast({ 
+              title: "Processing stopped", 
+              description: "Processing stopped unexpectedly. Please check the document status.", 
+              variant: "destructive" 
+            })
+            return // Exit early to prevent further polling
           }
         } catch (pollError) {
           console.error("Error polling status:", pollError)
+          // Don't stop polling on error, but log it
         }
       }, 2000) // Poll every 2 seconds
+      
+      // Store the interval for cleanup
+      idsToProcess.forEach((docId) => {
+        pollingIntervalsRef.current.set(docId, pollInterval)
+      })
       
       // Stop polling after 10 minutes (timeout)
       setTimeout(() => {
         clearInterval(pollInterval)
+        // Clean up all intervals for these documents
+        idsToProcess.forEach((docId) => {
+          pollingIntervalsRef.current.delete(docId)
+        })
         fetchDocuments() // Refresh to get final status
       }, 600000) // 10 minutes
       

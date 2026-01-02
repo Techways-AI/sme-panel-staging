@@ -12,7 +12,7 @@ import sys
 from app.config.settings import (
     API_TITLE, API_VERSION, API_DESCRIPTION,
     CORS_ORIGINS, CORS_METHODS, CORS_HEADERS, CORS_MAX_AGE,
-    DATA_DIR, VECTOR_STORES_DIR, VIDEOS_DIR, IS_PRODUCTION
+    DATA_DIR, VECTOR_STORES_DIR, VIDEOS_DIR, IS_PRODUCTION, READ_ONLY_MODE
 )
 from app.models.notes import Base
 from app.models.model_paper_prediction import ModelPaperPrediction
@@ -81,6 +81,29 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Add read-only mode middleware (blocks write operations during migration)
+@app.middleware("http")
+async def read_only_mode_middleware(request: Request, call_next):
+    """Block POST/PUT/PATCH/DELETE requests when READ_ONLY_MODE is enabled"""
+    if READ_ONLY_MODE and request.method in ["POST", "PUT", "PATCH", "DELETE"]:
+        # Allow health checks and read-only endpoints
+        if request.url.path in ["/", "/health", "/health/detailed", "/health/test", "/test", "/cors-test", "/auth-test"]:
+            return await call_next(request)
+        # Allow GET requests to pass through
+        if request.method == "GET":
+            return await call_next(request)
+        # Block all write operations
+        return JSONResponse(
+            status_code=503,
+            content={
+                "error": "Service temporarily in read-only mode",
+                "message": "The application is currently in read-only mode for database migration. Write operations are disabled.",
+                "read_only_mode": True,
+                "allowed_methods": ["GET", "OPTIONS"]
+            }
+        )
+    return await call_next(request)
 
 # Add request timing middleware
 @app.middleware("http")
@@ -315,7 +338,7 @@ async def test_endpoint():
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
         "cors_origins": CORS_ORIGINS,
-        "frontend_url": "https://app.durranis.ai",
+        "frontend_url": "http://localhost:3000",
         "environment": os.getenv("ENV", "unknown")
     }
 

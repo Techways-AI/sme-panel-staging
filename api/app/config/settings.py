@@ -12,6 +12,11 @@ load_dotenv()
 ENV = os.getenv("ENV", "development")
 IS_PRODUCTION = ENV == "production"
 
+# Read-only mode for database migration
+READ_ONLY_MODE = os.getenv("READ_ONLY_MODE", "false").lower() == "true"
+if READ_ONLY_MODE:
+    logger.warning("⚠️ READ_ONLY_MODE is ENABLED - All write operations (POST/PUT/PATCH/DELETE) are blocked")
+
 # Configure logging with UTF-8 support
 import io
 import sys
@@ -157,9 +162,9 @@ API_DESCRIPTION = "An AI-powered tutoring system with document and video managem
 
 # CORS Configuration
 CORS_ORIGINS = [
-    "https://app.durranis.ai",
-    "https://sme-panel-staging-production-67df.up.railway.app",
-    "https://sme-panel-staging-production.up.railway.app"
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:8001"
 ]
 
 # Function to clean and validate CORS origins

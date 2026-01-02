@@ -101,7 +101,7 @@ If you encounter CORS errors, ensure the backend has proper CORS settings in `ap
 ```python
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://app.durranis.ai"],  # Frontend URL
+    allow_origins=["http://localhost:3000"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

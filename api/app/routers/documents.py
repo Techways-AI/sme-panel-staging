@@ -456,6 +456,7 @@ def get_document(doc_id: str) -> Optional[Dict[str, Any]]:
 @router.post("/{doc_id}/process")
 async def process_document(doc_id: str, options: ProcessOptions = None, auth_result: dict = Depends(get_dual_auth_user)):
     """Process a document for RAG with timeout handling"""
+    global documents  # Declare global at the start of the function
     start_time = time.time()
     logger.info(f"Starting document processing for doc_id: {doc_id} at {datetime.now()}")
     logger.info(f"Current user: {auth_result.get('user_data', {}).get('sub', 'unknown')}")
@@ -463,6 +464,7 @@ async def process_document(doc_id: str, options: ProcessOptions = None, auth_res
     # Set timeout for entire operation (10 minutes)
     timeout_seconds = int(os.getenv("DOCUMENT_PROCESSING_TIMEOUT", "600"))
     
+    doc = None  # Initialize doc variable for error handling
     try:
         async with timeout_context(timeout_seconds, "document_processing"):
             # Get document info
@@ -790,14 +792,27 @@ async def process_document(doc_id: str, options: ProcessOptions = None, auth_res
                 logger.warning(f"Failed to save chunk metadata for document {doc_id}: {str(e)}")
                 # Don't fail the entire process if metadata saving fails
             
-            # Update document status
-            doc["processed"] = True
-            doc["processing"] = False
-            doc["total_chunks"] = len(chunks)
-            doc["totalChunks"] = len(chunks)
+            # Update document status - explicitly find and update in the global documents list
+            doc_index = next((i for i, d in enumerate(documents) if str(d.get("id")) == str(doc_id)), None)
+            if doc_index is not None:
+                documents[doc_index]["processed"] = True
+                documents[doc_index]["processing"] = False
+                documents[doc_index]["total_chunks"] = len(chunks)
+                documents[doc_index]["totalChunks"] = len(chunks)
+                if "processing_start_time" in documents[doc_index]:
+                    del documents[doc_index]["processing_start_time"]
+            else:
+                # Fallback: update the doc reference if not found in list
+                doc["processed"] = True
+                doc["processing"] = False
+                doc["total_chunks"] = len(chunks)
+                doc["totalChunks"] = len(chunks)
+                if "processing_start_time" in doc:
+                    del doc["processing_start_time"]
             
             # Save updated documents list to S3
             save_documents_metadata(documents)
+            logger.info(f"Document {doc_id} status updated: processed=True, processing=False")
             
             # Clean up temporary file
             if os.path.exists(temp_file):
@@ -833,10 +848,23 @@ async def process_document(doc_id: str, options: ProcessOptions = None, auth_res
         
         # Reset document processing state on error
         try:
-            if doc and doc.get("processing"):
-                doc["processing"] = False
-                doc["processing_start_time"] = None
+            # Reload documents from S3 to ensure we have the latest state
+            documents = load_documents_metadata()
+            # Find document in the list
+            doc_index = next((i for i, d in enumerate(documents) if str(d.get("id")) == str(doc_id)), None)
+            if doc_index is not None and documents[doc_index].get("processing"):
+                documents[doc_index]["processing"] = False
+                if "processing_start_time" in documents[doc_index]:
+                    del documents[doc_index]["processing_start_time"]
                 save_documents_metadata(documents)
+                logger.info(f"Document {doc_id} processing state reset due to error")
+            elif doc and doc.get("processing"):
+                # Fallback: update the doc reference if not found in list
+                doc["processing"] = False
+                if "processing_start_time" in doc:
+                    del doc["processing_start_time"]
+                save_documents_metadata(documents)
+                logger.info(f"Document {doc_id} processing state reset due to error (fallback)")
                 logger.info(f"Reset processing state for document {doc_id} after error")
         except Exception as reset_error:
             logger.error(f"Failed to reset processing state for document {doc_id}: {str(reset_error)}")
@@ -1021,6 +1049,9 @@ async def get_document_status(doc_id: str, auth_result: dict = Depends(get_dual_
     
     # Check if document has been processed
     is_processed = doc.get("processed", False)
+    
+    # Log status for debugging
+    logger.debug(f"Document {doc_id} status: processed={is_processed}, processing={is_processing}")
     
     # Check if vector store exists and is compatible
     vector_store_compatible = False

@@ -8,12 +8,6 @@ import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 import { documentsApi, videosApi, type Document as ApiDocument, type Video as ApiVideo } from "@/lib/api"
 
-const viewOptions = [
-  { value: "pci", label: "PCI Master" },
-  { value: "jntuh", label: "JNTUH R20" },
-  { value: "osmania", label: "Osmania R19" },
-]
-
 interface TreeItem {
   id: string
   name: string
@@ -21,9 +15,60 @@ interface TreeItem {
   children?: TreeItem[]
 }
 
-// Build tree in the flow: course (e.g. bpharmacy) → year-sem (e.g. 2-2) → subject
-function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeItem[] {
-  type SubjectEntry = { node: TreeItem }
+// University names mapping
+const UNIVERSITY_NAMES: Record<string, string> = {
+  pci: "PCI Master",
+  jntuh: "JNTUH R20",
+  osmania: "Osmania R19",
+}
+
+// Detect available curriculum types from data
+function detectAvailableCurricula(documents: ApiDocument[], videos: ApiVideo[]): string[] {
+  const availableCurricula = new Set<string>()
+  
+  const checkItem = (item: ApiDocument | ApiVideo) => {
+    const folder = item.folderStructure || {}
+    const curriculum = (folder.curriculum || "pci").toLowerCase()
+    const university = (folder.university || "").toLowerCase()
+    
+    // Check curriculum field
+    if (curriculum === "pci" || curriculum === "pci master") {
+      availableCurricula.add("pci")
+    } else if (curriculum === "jntuh" || curriculum === "jntuh r20") {
+      availableCurricula.add("jntuh")
+    } else if (curriculum === "osmania" || curriculum === "osmania r19") {
+      availableCurricula.add("osmania")
+    }
+    
+    // Check university field
+    if (university.includes("jntuh")) {
+      availableCurricula.add("jntuh")
+    } else if (university.includes("osmania")) {
+      availableCurricula.add("osmania")
+    }
+  }
+  
+  documents.forEach(checkItem)
+  videos.forEach(checkItem)
+  
+  // Always include PCI as default if no other curriculum is found
+  if (availableCurricula.size === 0) {
+    availableCurricula.add("pci")
+  }
+  
+  return Array.from(availableCurricula).sort()
+}
+
+// Build tree in the flow: course → year-sem → subject → unit → topic → documents/videos
+// Filters by curriculum type if specified
+function buildDirectoryTree(
+  documents: ApiDocument[],
+  videos: ApiVideo[],
+  curriculumFilter?: string
+): TreeItem[] {
+  type TopicEntry = { node: TreeItem; items: TreeItem[] }
+  type UnitEntry = { node: TreeItem; topics: Map<string, TopicEntry> }
+  type SubjectEntry = { node: TreeItem; units: Map<string, UnitEntry> }
   type YearEntry = { node: TreeItem; subjects: Map<string, SubjectEntry> }
   type CourseEntry = { node: TreeItem; years: Map<string, YearEntry> }
 
@@ -40,6 +85,26 @@ function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeI
     type: "document" | "video",
   ) => {
     const folder = item.folderStructure || ({} as ApiDocument["folderStructure"])
+    
+    // Filter by curriculum if specified
+    if (curriculumFilter) {
+      const itemCurriculum = (folder.curriculum || "pci").toLowerCase()
+      const itemUniversity = (folder.university || "").toLowerCase()
+      
+      let matches = false
+      if (curriculumFilter === "pci") {
+        matches = itemCurriculum === "pci" || itemCurriculum === "pci master" || itemCurriculum === ""
+      } else if (curriculumFilter === "jntuh") {
+        matches = itemCurriculum === "jntuh" || itemCurriculum === "jntuh r20" || itemUniversity.includes("jntuh")
+      } else if (curriculumFilter === "osmania") {
+        matches = itemCurriculum === "osmania" || itemCurriculum === "osmania r19" || itemUniversity.includes("osmania")
+      }
+      
+      if (!matches) {
+        return // Skip this item if it doesn't match the filter
+      }
+    }
+    
     const courseName = folder.courseName || "Unknown course"
 
     const yearSemesterRaw = folder.yearSemester || ""
@@ -48,7 +113,10 @@ function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeI
       yearPartRaw && semPartRaw ? `${yearPartRaw}-${semPartRaw}` : yearSemesterRaw || "Unknown"
 
     const subjectName = folder.subjectName || "Unknown Subject"
+    const unitName = folder.unitName || "Unknown Unit"
+    const topic = folder.topic || "Unknown Topic"
 
+    // Create course entry
     let courseEntry = courses.get(courseName)
     if (!courseEntry) {
       const courseNode: TreeItem = {
@@ -61,6 +129,7 @@ function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeI
       courses.set(courseName, courseEntry)
     }
 
+    // Create year-semester entry
     let yearEntry = courseEntry.years.get(yearSemLabel)
     if (!yearEntry) {
       const yearNode: TreeItem = {
@@ -74,6 +143,7 @@ function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeI
       courseEntry.node.children!.push(yearNode)
     }
 
+    // Create subject entry
     let subjectEntry = yearEntry.subjects.get(subjectName)
     if (!subjectEntry) {
       const subjectNode: TreeItem = {
@@ -82,18 +152,54 @@ function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeI
         type: "folder",
         children: [],
       }
-      subjectEntry = { node: subjectNode }
+      subjectEntry = { node: subjectNode, units: new Map() }
       yearEntry.subjects.set(subjectName, subjectEntry)
       yearEntry.node.children!.push(subjectNode)
     }
 
-    // In future we can attach actual documents/videos as children of the subject node.
-    // For now we only show up to subject level to match the desired flow.
+    // Create unit entry
+    let unitEntry = subjectEntry.units.get(unitName)
+    if (!unitEntry) {
+      const unitNode: TreeItem = {
+        id: `unit-${courseName}-${yearSemLabel}-${subjectName}-${unitName}`,
+        name: unitName,
+        type: "folder",
+        children: [],
+      }
+      unitEntry = { node: unitNode, topics: new Map() }
+      subjectEntry.units.set(unitName, unitEntry)
+      subjectEntry.node.children!.push(unitNode)
+    }
+
+    // Create topic entry
+    let topicEntry = unitEntry.topics.get(topic)
+    if (!topicEntry) {
+      const topicNode: TreeItem = {
+        id: `topic-${courseName}-${yearSemLabel}-${subjectName}-${unitName}-${topic}`,
+        name: topic,
+        type: "folder",
+        children: [],
+      }
+      topicEntry = { node: topicNode, items: [] }
+      unitEntry.topics.set(topic, topicEntry)
+      unitEntry.node.children!.push(topicNode)
+    }
+
+    // Add document/video as child of topic
+    const itemName = type === "document" ? item.fileName || "Untitled Document" : item.url || "Untitled Video"
+    const itemNode: TreeItem = {
+      id: `${type}-${item.id}`,
+      name: itemName,
+      type: type,
+    }
+    topicEntry.items.push(itemNode)
   }
 
+  // Process all documents and videos
   documents.forEach((doc) => addItem(doc, "document"))
   videos.forEach((video) => addItem(video, "video"))
 
+  // Sort function for year-semester labels
   const sortYearLabel = (label: string) => {
     const [y, s] = label.split("-")
     const yi = Number.parseInt(y || "0", 10)
@@ -101,12 +207,31 @@ function buildDirectoryTree(documents: ApiDocument[], videos: ApiVideo[]): TreeI
     return yi * 10 + si
   }
 
+  // Sort and build final tree structure
   return Array.from(courses.values())
     .map((courseEntry) => {
       const yearEntries = Array.from(courseEntry.years.entries())
         .sort((a, b) => sortYearLabel(a[0]) - sortYearLabel(b[0]))
         .map(([_, yearEntry]) => {
+          // Sort subjects
           yearEntry.node.children = yearEntry.node.children?.sort((a, b) => a.name.localeCompare(b.name))
+          
+          // Sort units within each subject
+          Array.from(yearEntry.subjects.values()).forEach((subjectEntry) => {
+            subjectEntry.node.children = subjectEntry.node.children?.sort((a, b) => a.name.localeCompare(b.name))
+            
+            // Sort topics within each unit
+            Array.from(subjectEntry.units.values()).forEach((unitEntry) => {
+              unitEntry.node.children = unitEntry.node.children?.sort((a, b) => a.name.localeCompare(b.name))
+              
+              // Sort items within each topic and attach to topic node
+              Array.from(unitEntry.topics.values()).forEach((topicEntry) => {
+                topicEntry.items.sort((a, b) => a.name.localeCompare(b.name))
+                topicEntry.node.children = topicEntry.items
+              })
+            })
+          })
+          
           return yearEntry.node
         })
 
@@ -357,11 +482,15 @@ function TreeNode({ item, level = 0 }: { item: TreeItem; level?: number }) {
 }
 
 export function DirectoryView() {
-  const [selectedView, setSelectedView] = React.useState("pci")
+  const [selectedView, setSelectedView] = React.useState<string>("pci")
   const [treeData, setTreeData] = React.useState<TreeItem[]>([])
+  const [availableCurricula, setAvailableCurricula] = React.useState<string[]>([])
+  const [allDocuments, setAllDocuments] = React.useState<ApiDocument[]>([])
+  const [allVideos, setAllVideos] = React.useState<ApiVideo[]>([])
   const [isLoading, setIsLoading] = React.useState(true)
   const [error, setError] = React.useState<string | null>(null)
 
+  // Load data and detect available curricula
   React.useEffect(() => {
     let isMounted = true
 
@@ -380,7 +509,23 @@ export function DirectoryView() {
         const docs = documentsResponse.documents || []
         const vids = videosResponse.videos || []
 
-        setTreeData(buildDirectoryTree(docs, vids))
+        // Store all data
+        setAllDocuments(docs)
+        setAllVideos(vids)
+
+        // Detect available curricula
+        const curricula = detectAvailableCurricula(docs, vids)
+        setAvailableCurricula(curricula)
+
+        // Set default selected view to first available curriculum if current selection is not available
+        if (curricula.length > 0) {
+          if (!curricula.includes(selectedView)) {
+            setSelectedView(curricula[0])
+          }
+        } else {
+          // No curricula found, set empty state
+          setSelectedView("")
+        }
       } catch (err: any) {
         if (!isMounted) return
         setError(err.message || "Failed to load directory data")
@@ -396,6 +541,28 @@ export function DirectoryView() {
       isMounted = false
     }
   }, [])
+
+  // Rebuild tree when selectedView changes
+  React.useEffect(() => {
+    if (allDocuments.length === 0 && allVideos.length === 0) {
+      setTreeData([])
+      return
+    }
+
+    // Only build tree if a valid curriculum is selected
+    if (selectedView && availableCurricula.includes(selectedView)) {
+      const filteredTree = buildDirectoryTree(allDocuments, allVideos, selectedView)
+      setTreeData(filteredTree)
+    } else {
+      setTreeData([])
+    }
+  }, [selectedView, allDocuments, allVideos, availableCurricula])
+
+  // Generate view options from available curricula
+  const viewOptions = availableCurricula.map((curriculum) => ({
+    value: curriculum,
+    label: UNIVERSITY_NAMES[curriculum] || curriculum,
+  }))
 
   const isUniversityView = selectedView !== "pci"
 
@@ -413,25 +580,27 @@ export function DirectoryView() {
         </Button>
       </div>
 
-      <div className="bg-white rounded-lg border p-4">
-        <p className="text-sm font-medium text-neutral-700 mb-3">View as:</p>
-        <RadioGroup value={selectedView} onValueChange={setSelectedView} className="flex flex-wrap gap-4">
-          {viewOptions.map((option) => (
-            <div key={option.value} className="flex items-center space-x-2">
-              <RadioGroupItem value={option.value} id={option.value} className="border-[#0294D0] text-[#0294D0]" />
-              <Label htmlFor={option.value} className="text-sm font-medium cursor-pointer text-neutral-700">
-                {option.label}
-              </Label>
-            </div>
-          ))}
-        </RadioGroup>
-      </div>
+      {viewOptions.length > 0 && (
+        <div className="bg-white rounded-lg border p-4">
+          <p className="text-sm font-medium text-neutral-700 mb-3">View as:</p>
+          <RadioGroup value={selectedView} onValueChange={setSelectedView} className="flex flex-wrap gap-4">
+            {viewOptions.map((option) => (
+              <div key={option.value} className="flex items-center space-x-2">
+                <RadioGroupItem value={option.value} id={option.value} className="border-[#0294D0] text-[#0294D0]" />
+                <Label htmlFor={option.value} className="text-sm font-medium cursor-pointer text-neutral-700">
+                  {option.label}
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
+        </div>
+      )}
 
       {isUniversityView && (
         <div className="flex items-center gap-2 p-3 bg-[#27C3F2]/10 border border-[#27C3F2]/20 rounded-lg">
           <Info className="h-4 w-4 text-[#0294D0] shrink-0" />
           <p className="text-sm text-[#006A93]">
-            Showing content via PCI mapping for {viewOptions.find((v) => v.value === selectedView)?.label}
+            Showing content for {viewOptions.find((v) => v.value === selectedView)?.label}
           </p>
         </div>
       )}

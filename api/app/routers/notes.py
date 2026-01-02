@@ -33,7 +33,7 @@ from ..utils.db_utils import (
     get_notes_by_user_id, delete_notes_by_id, check_notes_exist
 )
 from ..utils.content_library_utils import (
-    generate_topic_slug, index_content_library
+    generate_topic_slug, index_content_library, delete_content_library_by_s3_key
 )
 
 # Configure logging
@@ -1013,6 +1013,7 @@ async def delete_notes_by_document_id(
             )
         
         notes_id = notes_entry.id
+        s3_key = notes_entry.s3_key  # Get s3_key before deleting
         
         # Delete from PostgreSQL (primary storage)
         deleted = delete_notes_by_id(db, notes_id, user_id)
@@ -1022,6 +1023,15 @@ async def delete_notes_by_document_id(
                 status_code=404,
                 detail="Notes not found or access denied"
             )
+        
+        # Delete from content_library table
+        if s3_key:
+            try:
+                delete_content_library_by_s3_key(db, s3_key)
+                logger.info(f"Successfully deleted notes from content library: s3_key={s3_key}")
+            except Exception as e:
+                logger.warning(f"Failed to delete notes from content library: {str(e)}")
+                # Don't fail the request if content library deletion fails
         
         # Also delete from S3 backup
         try:
@@ -1130,6 +1140,24 @@ async def delete_generated_notes(
     try:
         user_id = auth_result.get('user_data', {}).get('sub', 'unknown')
         
+        # Get notes entry first to retrieve s3_key before deleting
+        notes_entry = get_notes_by_id(db, notes_id)
+        
+        if not notes_entry:
+            raise HTTPException(
+                status_code=404,
+                detail="Notes not found"
+            )
+        
+        # Check if user owns these notes (security check)
+        if notes_entry.user_id != user_id:
+            raise HTTPException(
+                status_code=403,
+                detail="Access denied"
+            )
+        
+        s3_key = notes_entry.s3_key  # Get s3_key before deleting
+        
         # Delete from PostgreSQL (primary storage)
         deleted = delete_notes_by_id(db, notes_id, user_id)
         
@@ -1138,6 +1166,15 @@ async def delete_generated_notes(
                 status_code=404,
                 detail="Notes not found or access denied"
             )
+        
+        # Delete from content_library table
+        if s3_key:
+            try:
+                delete_content_library_by_s3_key(db, s3_key)
+                logger.info(f"Successfully deleted notes from content library: s3_key={s3_key}")
+            except Exception as e:
+                logger.warning(f"Failed to delete notes from content library: {str(e)}")
+                # Don't fail the request if content library deletion fails
         
         # Also delete from S3 backup
         try:

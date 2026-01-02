@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useToast } from "@/hooks/use-toast"
+import { getUser } from "@/lib/api"
 
 // OVERVIEW: Dashboard (main entry point)
 // CONTENT: Documents, Videos, Notes (educational content uploads)
@@ -32,7 +33,7 @@ import { useToast } from "@/hooks/use-toast"
 // UNIVERSITY: University Content
 // AI FEATURES: AI Assistant (AI-powered tools)
 // SETTINGS: Prompt Templates, Directory, Content Migration, Access Management (admin config)
-const navSections = [
+const allNavSections = [
   {
     label: "Overview",
     links: [{ href: "/dashboard", label: "Dashboard", icon: LayoutDashboard }],
@@ -71,6 +72,58 @@ const navSections = [
     ],
   },
 ]
+
+// SME allowed routes
+const smeAllowedRoutes = [
+  "/dashboard",
+  "/documents",
+  "/videos",
+  "/notes",
+  "/ai-assistant",
+  "/directory",
+]
+
+// Helper function to get user role
+function getUserRole(): "admin" | "sme" | null {
+  if (typeof window === "undefined") return null
+  const user = getUser()
+  if (!user || !user.role) return null
+  
+  const role = user.role.toLowerCase()
+  // Handle different role formats from backend
+  // Backend stores: "Admin - Full Access" or "SME - Limited Access"
+  if (role === "admin" || role.startsWith("admin") || role.includes("full access")) {
+    return "admin"
+  }
+  if (role === "sme" || role.includes("sme") || role.includes("limited")) {
+    return "sme"
+  }
+  // Default to SME if role is unclear
+  return "sme"
+}
+
+// Filter navigation sections based on user role
+function getFilteredNavSections(): typeof allNavSections {
+  const role = getUserRole()
+  
+  // Admin gets all sections
+  if (role === "admin") {
+    return allNavSections
+  }
+  
+  // SME gets filtered sections
+  if (role === "sme") {
+    return allNavSections
+      .map((section) => ({
+        ...section,
+        links: section.links.filter((link) => smeAllowedRoutes.includes(link.href)),
+      }))
+      .filter((section) => section.links.length > 0) // Remove empty sections
+  }
+  
+  // Default: show all (fallback for unauthenticated or unknown roles)
+  return allNavSections
+}
 
 const LOGO_DESKTOP = "/images/logo-desktop.png"
 const LOGO_MOBILE = "/images/logo-mobile.png"
@@ -111,11 +164,17 @@ function NavLink({
 }
 
 function UserSection({ onSignOut }: { onSignOut: () => void }) {
+  const user = getUser()
+  const role = getUserRole()
+  
+  const userName = user?.username || user?.name || "User"
+  const userRole = role === "admin" ? "Admin" : role === "sme" ? "SME" : "User"
+  
   return (
     <div className="px-5 py-4 border-t border-neutral-100">
       <div className="mb-3">
-        <p className="text-[15px] font-medium text-neutral-900">SME Expert</p>
-        <p className="text-[13px] text-neutral-500">Sme</p>
+        <p className="text-[15px] font-medium text-neutral-900">{userName}</p>
+        <p className="text-[13px] text-neutral-500">{userRole}</p>
       </div>
       <button
         onClick={onSignOut}
@@ -129,6 +188,8 @@ function UserSection({ onSignOut }: { onSignOut: () => void }) {
 }
 
 function DesktopSidebar({ pathname, onSignOut }: { pathname: string; onSignOut: () => void }) {
+  const navSections = getFilteredNavSections()
+  
   return (
     <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[280px] flex-col bg-white border-r border-neutral-200">
       <div className="flex items-center px-5 h-16 border-b border-neutral-100">
@@ -164,6 +225,7 @@ function DesktopSidebar({ pathname, onSignOut }: { pathname: string; onSignOut: 
 function MobileHeader({ onSignOut }: { onSignOut: () => void }) {
   const [sheetOpen, setSheetOpen] = React.useState(false)
   const pathname = usePathname()
+  const navSections = getFilteredNavSections()
 
   return (
     <header className="md:hidden fixed top-0 left-0 right-0 h-14 bg-white border-b border-neutral-200 flex items-center justify-between px-4 z-50">
@@ -230,6 +292,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const handleSignOut = () => {
     localStorage.removeItem("sme_auth")
+    localStorage.removeItem("sme_access_token")
+    localStorage.removeItem("sme_user")
     toast({
       title: "Signed out",
       description: "You have been successfully signed out.",
