@@ -6,7 +6,34 @@ import sys
 from typing import List, Set
 
 # Load environment variables
-load_dotenv()
+# Try multiple locations for .env file
+import os
+_env_loaded = False
+
+# Try 1: api/.env (relative to settings.py location)
+_API_DIR = Path(__file__).resolve().parent.parent.parent  # api/app/config -> api/
+ENV_FILE_1 = _API_DIR / ".env"
+if ENV_FILE_1.exists():
+    load_dotenv(ENV_FILE_1, override=True)
+    _env_loaded = True
+
+# Try 2: Current working directory/.env
+if not _env_loaded:
+    _cwd_env = Path(os.getcwd()) / ".env"
+    if _cwd_env.exists():
+        load_dotenv(_cwd_env, override=True)
+        _env_loaded = True
+
+# Try 3: api/.env from current working directory
+if not _env_loaded:
+    _api_env = Path(os.getcwd()) / "api" / ".env"
+    if _api_env.exists():
+        load_dotenv(_api_env, override=True)
+        _env_loaded = True
+
+# Try 4: Default dotenv behavior
+if not _env_loaded:
+    load_dotenv()  # Try default locations
 
 # Environment check
 ENV = os.getenv("ENV", "development")
@@ -164,7 +191,7 @@ API_DESCRIPTION = "An AI-powered tutoring system with document and video managem
 
 # CORS Configuration
 CORS_ORIGINS = [
-    "https://student-panel-staging-production-d927.up.railway.app",
+    "https://app.durranis.ai",
     "https://sme-panel-staging-production-67df.up.railway.app",
     "https://sme-panel-staging-production.up.railway.app"
 ]

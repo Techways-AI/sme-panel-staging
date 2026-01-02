@@ -83,26 +83,45 @@ app.add_middleware(
 )
 
 # Add read-only mode middleware (blocks write operations during migration)
+# This MUST run before authentication to catch write requests
 @app.middleware("http")
 async def read_only_mode_middleware(request: Request, call_next):
     """Block POST/PUT/PATCH/DELETE requests when READ_ONLY_MODE is enabled"""
-    if READ_ONLY_MODE and request.method in ["POST", "PUT", "PATCH", "DELETE"]:
-        # Allow health checks and read-only endpoints
-        if request.url.path in ["/", "/health", "/health/detailed", "/health/test", "/test", "/cors-test", "/auth-test"]:
+    # Debug logging
+    import logging
+    logger = logging.getLogger(__name__)
+    
+    if READ_ONLY_MODE:
+        logger.debug(f"Read-only mode: Checking {request.method} {request.url.path}")
+        
+        # Allow GET and OPTIONS requests
+        if request.method in ["GET", "OPTIONS"]:
+            logger.debug(f"Read-only mode: Allowing {request.method} request")
             return await call_next(request)
-        # Allow GET requests to pass through
-        if request.method == "GET":
+        
+        # Allow health checks and read-only endpoints (even if POST)
+        allowed_paths = ["/", "/health", "/health/detailed", "/health/test", "/test", "/cors-test", "/auth-test", "/docs", "/openapi.json", "/redoc"]
+        if request.url.path in allowed_paths:
+            logger.debug(f"Read-only mode: Allowing request to {request.url.path}")
             return await call_next(request)
-        # Block all write operations
-        return JSONResponse(
-            status_code=503,
-            content={
-                "error": "Service temporarily in read-only mode",
-                "message": "The application is currently in read-only mode for database migration. Write operations are disabled.",
-                "read_only_mode": True,
-                "allowed_methods": ["GET", "OPTIONS"]
-            }
-        )
+        
+        # Block all other POST/PUT/PATCH/DELETE operations
+        if request.method in ["POST", "PUT", "PATCH", "DELETE"]:
+            logger.warning(f"Read-only mode: BLOCKING {request.method} {request.url.path}")
+            return JSONResponse(
+                status_code=503,
+                content={
+                    "error": "Service temporarily in read-only mode",
+                    "message": "The application is currently in read-only mode for database migration. Write operations are disabled.",
+                    "read_only_mode": True,
+                    "allowed_methods": ["GET", "OPTIONS"],
+                    "blocked_method": request.method,
+                    "blocked_path": request.url.path
+                }
+            )
+    else:
+        logger.debug(f"Read-only mode: DISABLED - allowing {request.method} {request.url.path}")
+    
     return await call_next(request)
 
 # Add request timing middleware
@@ -338,7 +357,7 @@ async def test_endpoint():
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
         "cors_origins": CORS_ORIGINS,
-        "frontend_url": "https://student-panel-staging-production-d927.up.railway.app",
+        "frontend_url": "https://app.durranis.ai",
         "environment": os.getenv("ENV", "unknown")
     }
 
