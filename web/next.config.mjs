@@ -1,3 +1,8 @@
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -5,6 +10,10 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+  },
+  turbopack: {
+    // Pin the workspace root so Next.js does not walk up to C:\Users\shiva
+    root: __dirname,
   },
   // Performance optimizations
   reactStrictMode: true,
