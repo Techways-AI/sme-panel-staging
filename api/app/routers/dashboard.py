@@ -1183,9 +1183,14 @@ async def get_year_coverage(
                         continue
                     semester_num = semester.get("semester", 0)
                     
-                    # Convert semester number (1-8) to display format (Year 1-4, Semester 1-2)
-                    display_year = ((semester_num - 1) // 2) + 1 if semester_num > 0 else year_num
-                    display_semester = ((semester_num - 1) % 2) + 1 if semester_num > 0 else 1
+                    # Use year_num directly from curriculum structure (years are already 1-4)
+                    # Semester numbers are 1-2 within each year
+                    display_year = year_num if year_num > 0 else 0
+                    display_semester = semester_num if semester_num > 0 else 0
+                    
+                    # Skip if invalid year or semester
+                    if display_year == 0 or display_semester == 0:
+                        continue
                     
                     # Initialize year if not exists
                     if display_year not in year_semester_data:
