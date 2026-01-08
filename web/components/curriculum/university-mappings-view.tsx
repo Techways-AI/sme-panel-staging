@@ -1381,34 +1381,23 @@ export function UniversityMappingsView() {
     }, 1500)
   }
 
-  // Check if all topics are mapped (only relevant when viewing topic mappings)
-  const allTopicsMapped = React.useMemo(() => {
-    // Only check when we're viewing topic mappings (subject selected and topic mappings exist)
+  // Count mapped topics (only relevant when viewing topic mappings)
+  const mappedTopicsCount = React.useMemo(() => {
+    // Only count when we're viewing topic mappings (subject selected and topic mappings exist)
     if (selectedSubjectCode === "all" || topicMappings.length === 0) {
-      return true // Not in topic mapping view, so allow save
+      return 0 // Not in topic mapping view
     }
     
-    // Check if all visible topics (based on unit/topic filters) have status "mapped"
-    // topicMappings already respects selectedUnit and selectedTopic filters
-    const visibleTopics = topicMappings
-    if (visibleTopics.length === 0) {
-      return true // No topics to check
-    }
-    
-    // All visible topics must be mapped
-    return visibleTopics.every((tm) => tm.status === "mapped")
-  }, [topicMappings, selectedSubjectCode, selectedUnit, selectedTopic])
+    // Count only topics that are mapped (not partial) and have a valid PCI topic mapping
+    return topicMappings.filter((tm) => {
+      const topicKey = `${tm.unitNumber}|${tm.topic}`
+      const savedMapping = savedTopicMappings[topicKey]
+      const hasMapping = savedMapping?.pciTopicName || tm.pciTopic
+      return tm.status === "mapped" && hasMapping && (savedMapping?.pciTopicName || tm.pciTopic || "").trim() !== ""
+    }).length
+  }, [topicMappings, selectedSubjectCode, savedTopicMappings])
 
   const handleSaveAll = async () => {
-    if (!allTopicsMapped) {
-      toast({
-        title: "Cannot save",
-        description: "Please map all topics before saving.",
-        variant: "destructive",
-      })
-      return
-    }
-    
     // Only save if we're viewing topic mappings
     if (selectedSubjectCode === "all" || topicMappings.length === 0) {
       toast({
@@ -1436,6 +1425,7 @@ export function UniversityMappingsView() {
       }
       
       // Prepare topic mappings data
+      // Only save fully mapped topics (exclude partial topics - they should be saved individually)
       const mappedTopics = topicMappings
         .filter((tm) => {
           const topicKey = `${tm.unitNumber}|${tm.topic}`
@@ -1615,13 +1605,18 @@ export function UniversityMappingsView() {
     })
   }
 
-  const handleTopicMappingSave = () => {
+  const handleTopicMappingSave = async () => {
     if (!selectedTopicInModal) return
     
     const { topicKey, pciTopicName, pciSubjectCode, pciUnitNumber, pciUnitTitle } = selectedTopicInModal
     const [unitNum, topicName] = topicKey.split("|")
+    const unitNumber = parseInt(unitNum, 10)
     
-    // Save the mapping to local state (will be saved to DB when clicking Save All)
+    // Find the topic mapping to check if it's partial
+    const topicMapping = topicMappings.find((tm) => `${tm.unitNumber}|${tm.topic}` === topicKey)
+    const isPartial = topicMapping?.status === "partial"
+    
+    // Save the mapping to local state first
     setSavedTopicMappings((prev) => ({
       ...prev,
       [topicKey]: {
@@ -1638,10 +1633,106 @@ export function UniversityMappingsView() {
       [topicKey]: pciTopicName,
     }))
     
-    toast({
-      title: "Topic mapped",
-      description: `Mapped "${topicName}" to "${pciTopicName}". Click "Save All" to persist to database.`,
-    })
+    // If it's a partial topic, save directly to database
+    if (isPartial && selectedSubjectCode !== "all") {
+      try {
+        // Extract university name and regulation from selectedUniversity
+        const [universityName, ...regulationParts] = selectedUniversity.split(" ")
+        const regulation = regulationParts.join(" ") || undefined
+        
+        // Get the subject mapping to get the university subject code
+        const subjectMapping = mappings.find((m) => m.uniCode === selectedSubjectCode)
+        if (!subjectMapping) {
+          toast({
+            title: "Error",
+            description: "Could not find subject mapping.",
+            variant: "destructive",
+          })
+          return
+        }
+        
+        // Prepare single topic mapping data
+        // Handle pciUnitNumber conversion (similar to handleSaveAll)
+        let finalPciUnitNumber: number | undefined = undefined
+        if (pciUnitNumber !== undefined && pciUnitNumber !== null) {
+          if (typeof pciUnitNumber === "number") {
+            finalPciUnitNumber = pciUnitNumber
+          } else if (typeof pciUnitNumber === "string" && pciUnitNumber.trim() !== "") {
+            const parsed = parseInt(pciUnitNumber.trim(), 10)
+            if (!isNaN(parsed)) {
+              finalPciUnitNumber = parsed
+            }
+          }
+        }
+        
+        const topicMappingData: TopicMappingSaveRequest = {
+          university_name: universityName,
+          regulation: regulation || undefined,
+          university_subject_code: subjectMapping.uniCode,
+          topic_mappings: [{
+            university_topic: topicName,
+            university_unit_number: unitNumber,
+            pci_topic: pciTopicName,
+            pci_subject_code: pciSubjectCode || undefined,
+            pci_unit_number: finalPciUnitNumber,
+            pci_unit_title: pciUnitTitle || undefined,
+          }],
+        }
+        
+        // Save to database
+        const response = await topicMappingApi.save(topicMappingData)
+        
+        // Reload saved mappings from database to reflect the saved state
+        try {
+          const savedMappings = await topicMappingApi.get(universityName, subjectMapping.uniCode)
+          
+          const formattedMappings: Record<string, {
+            pciTopicName: string
+            pciSubjectCode: string
+            pciUnitNumber: number | string
+            pciUnitTitle: string
+          }> = {}
+          
+          savedMappings.forEach((mapping) => {
+            const key = `${mapping.university_unit_number}|${mapping.university_topic}`
+            formattedMappings[key] = {
+              pciTopicName: mapping.pci_topic,
+              pciSubjectCode: mapping.pci_subject_code || "",
+              pciUnitNumber: mapping.pci_unit_number || 0,
+              pciUnitTitle: mapping.pci_unit_title || "",
+            }
+            
+            setTopicSearchQueries((prev) => ({
+              ...prev,
+              [key]: mapping.pci_topic,
+            }))
+          })
+          
+          setSavedTopicMappings(formattedMappings)
+        } catch (error) {
+          console.error("Failed to reload saved mappings:", error)
+        }
+        
+        toast({
+          title: "Success",
+          description: `Successfully saved mapping for "${topicName}" to database.`,
+        })
+      } catch (error: any) {
+        console.error("Failed to save topic mapping:", error)
+        toast({
+          title: "Error",
+          description: error.message || "Failed to save topic mapping. Please try again.",
+          variant: "destructive",
+        })
+        return
+      }
+    } else {
+      // For non-partial topics, just show a message (will be saved with Save All)
+      toast({
+        title: "Topic mapped",
+        description: `Mapped "${topicName}" to "${pciTopicName}". Click "Save All" to persist to database.`,
+      })
+    }
     
     // Clear selection and close modal
     setSelectedTopicInModal(null)
@@ -2531,7 +2622,7 @@ export function UniversityMappingsView() {
         )}
         <Button 
           onClick={handleSaveAll} 
-          disabled={!allTopicsMapped || isSavingAll}
+          disabled={mappedTopicsCount === 0 || isSavingAll}
           className="bg-[#0294D0] hover:bg-[#0284C0] text-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSavingAll ? (
@@ -2542,7 +2633,7 @@ export function UniversityMappingsView() {
           ) : (
             <>
               <Save className="h-4 w-4 mr-2" />
-              Save All
+              {mappedTopicsCount > 0 ? `Save All (${mappedTopicsCount})` : "Save All"}
             </>
           )}
         </Button>

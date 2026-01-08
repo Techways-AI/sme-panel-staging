@@ -32,6 +32,13 @@ from app.routers import (
 )
 from app.routers.auth import get_current_user, oauth2_scheme
 
+# Toggle verbose startup/router debug logs via env
+ENABLE_DEBUG_LOGS = os.getenv("ENABLE_DEBUG_LOGS", "false").lower() == "true"
+
+def debug_log(message: str):
+    if ENABLE_DEBUG_LOGS:
+        print(message)
+
 # Create FastAPI app with enhanced OpenAPI configuration
 app = FastAPI(
     title=API_TITLE,
@@ -154,19 +161,19 @@ async def error_handling_middleware(request: Request, call_next):
         )
 
 # Register routers directly with error handling
-print(f"[ROUTER_DEBUG] Starting router registration...")
+debug_log(f"[ROUTER_DEBUG] Starting router registration...")
 
 try:
-    print(f"[ROUTER_DEBUG] Registering AI router...")
+    debug_log(f"[ROUTER_DEBUG] Registering AI router...")
     from app.routers.ai import router as ai_router
     app.include_router(ai_router, prefix="")
-    print(f"[ROUTER_DEBUG] ✓ AI router registered successfully")
+    debug_log(f"[ROUTER_DEBUG] ✓ AI router registered successfully")
     
     # Verify the route was added
     ai_routes = [route for route in app.routes if hasattr(route, 'path') and '/api/ai' in route.path]
-    print(f"[ROUTER_DEBUG] AI routes found after registration: {len(ai_routes)}")
+    debug_log(f"[ROUTER_DEBUG] AI routes found after registration: {len(ai_routes)}")
     for route in ai_routes:
-        print(f"[ROUTER_DEBUG]   {route.path} - {list(route.methods)}")
+        debug_log(f"[ROUTER_DEBUG]   {route.path} - {list(route.methods)}")
         
 except Exception as e:
     print(f"[ROUTER_ERROR] Failed to register AI router: {str(e)}")
@@ -175,7 +182,7 @@ except Exception as e:
     traceback.print_exc()
 
 try:
-    print(f"[ROUTER_DEBUG] Registering other routers...")
+    debug_log(f"[ROUTER_DEBUG] Registering other routers...")
     from app.routers.documents import router as documents_router
     from app.routers.videos import router as videos_router
     from app.routers.folders import router as folders_router
@@ -199,21 +206,21 @@ try:
     app.include_router(curriculum_router, prefix="")
     app.include_router(admin.router, prefix="")
     app.include_router(admin_users.router, prefix="")
-    print(f"[ROUTER_DEBUG] ✓ All other routers registered successfully")
+    debug_log(f"[ROUTER_DEBUG] ✓ All other routers registered successfully")
     
     # Verify curriculum router was registered
     curriculum_routes = [route for route in app.routes if hasattr(route, 'path') and '/api/curriculum' in route.path]
-    print(f"[ROUTER_DEBUG] Curriculum routes found: {len(curriculum_routes)}")
+    debug_log(f"[ROUTER_DEBUG] Curriculum routes found: {len(curriculum_routes)}")
     for route in curriculum_routes:
-        print(f"[ROUTER_DEBUG]   {route.path} - {list(route.methods)}")
+        debug_log(f"[ROUTER_DEBUG]   {route.path} - {list(route.methods)}")
 except Exception as e:
     print(f"[ROUTER_ERROR] Failed to register other routers: {str(e)}")
     print(f"[ROUTER_ERROR] Exception type: {type(e).__name__}")
     import traceback
     traceback.print_exc()
 
-print(f"[ROUTER_DEBUG] Router registration complete")
-print(f"[ROUTER_DEBUG] Total routes: {len([r for r in app.routes if hasattr(r, 'path')])}")
+debug_log(f"[ROUTER_DEBUG] Router registration complete")
+debug_log(f"[ROUTER_DEBUG] Total routes: {len([r for r in app.routes if hasattr(r, 'path')])}")
 
 # Root endpoint
 @app.get("/")
@@ -315,7 +322,7 @@ async def test_endpoint():
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
         "cors_origins": CORS_ORIGINS,
-        "frontend_url": "https://app.durranis.ai",
+        "frontend_url": "https://student-panel-staging-production-d927.up.railway.app",
         "environment": os.getenv("ENV", "unknown")
     }
 
@@ -368,66 +375,59 @@ async def protected_route(user=Depends(get_current_user)):
 async def startup_event():
     """Initialize application on startup"""
     try:
-        print(f"[STARTUP_DEBUG] ===== FASTAPI APP STARTING =====")
-        print(f"[STARTUP_DEBUG] App title: {API_TITLE}")
-        print(f"[STARTUP_DEBUG] App version: {API_VERSION}")
-        print(f"[STARTUP_DEBUG] Production mode: {IS_PRODUCTION}")
-        print(f"[STARTUP_DEBUG] Data directory: {DATA_DIR}")
-        print(f"[STARTUP_DEBUG] Vector stores directory: {VECTOR_STORES_DIR}")
-        print(f"[STARTUP_DEBUG] CORS origins: {CORS_ORIGINS}")
-        print(f"[INFO] Starting application initialization...")
-        print(f"[INFO] Environment: {os.getenv('ENV', 'unknown')}")
-        print(f"[INFO] Python version: {os.sys.version}")
-        print(f"[INFO] Working directory: {os.getcwd()}")
-        print(f"[INFO] Current user: {os.getuid() if hasattr(os, 'getuid') else 'unknown'}")
+        debug_log(f"[STARTUP_DEBUG] ===== FASTAPI APP STARTING =====")
+        debug_log(f"[STARTUP_DEBUG] App title: {API_TITLE}")
+        debug_log(f"[STARTUP_DEBUG] App version: {API_VERSION}")
+        debug_log(f"[STARTUP_DEBUG] Production mode: {IS_PRODUCTION}")
+        debug_log(f"[STARTUP_DEBUG] Data directory: {DATA_DIR}")
+        debug_log(f"[STARTUP_DEBUG] Vector stores directory: {VECTOR_STORES_DIR}")
+        debug_log(f"[STARTUP_DEBUG] CORS origins: {CORS_ORIGINS}")
+        debug_log(f"[INFO] Starting application initialization...")
+        debug_log(f"[INFO] Environment: {os.getenv('ENV', 'unknown')}")
+        debug_log(f"[INFO] Python version: {os.sys.version}")
+        debug_log(f"[INFO] Working directory: {os.getcwd()}")
+        debug_log(f"[INFO] Current user: {os.getuid() if hasattr(os, 'getuid') else 'unknown'}")
         
         # Create required directories
-        print(f"[INFO] Creating data directories...")
+        debug_log(f"[INFO] Creating data directories...")
         try:
             os.makedirs(DATA_DIR, exist_ok=True)
             os.makedirs(VECTOR_STORES_DIR, exist_ok=True)
             os.makedirs(VIDEOS_DIR, exist_ok=True)
-            print(f"[INFO] Data directories created successfully")
+            debug_log(f"[INFO] Data directories created successfully")
         except Exception as e:
             print(f"[WARNING] Could not create some directories: {str(e)}")
             print(f"[WARNING] This is normal in Railway production environment")
             # Continue anyway - Railway handles directory permissions
         
         # Initialize data files if they don't exist
-        print(f"[INFO] Initializing data files...")
+        debug_log(f"[INFO] Initializing data files...")
         try:
             if not os.path.exists(os.path.join(DATA_DIR, "documents.json")):
                 with open(os.path.join(DATA_DIR, "documents.json"), "w") as f:
                     f.write("[]")
-                print(f"[INFO] documents.json initialized")
+                debug_log(f"[INFO] documents.json initialized")
             
             if not os.path.exists(os.path.join(DATA_DIR, "videos.json")):
                 with open(os.path.join(DATA_DIR, "videos.json"), "w") as f:
                     f.write("[]")
-                print(f"[INFO] videos.json initialized")
+                debug_log(f"[INFO] videos.json initialized")
         except Exception as e:
             print(f"[WARNING] Could not initialize some data files: {str(e)}")
             print(f"[WARNING] This is normal in Railway production environment")
             # Continue anyway - files will be created when needed
         
         # Initialize user system (file-based)
-        print(f"[INFO] Initializing user system...")
+        debug_log(f"[INFO] Initializing user system...")
         try:
             from .models.user import user_manager
-            print(f"[INFO] User system initialized with {len(user_manager.users)} users")
+            debug_log(f"[INFO] User system initialized with {len(user_manager.users)} users")
         except Exception as e:
             print(f"[WARNING] Could not initialize user system: {str(e)}")
             print(f"[WARNING] This may affect authentication functionality")
             # Continue anyway - app can still run
         
         print(f"[INFO] Application started successfully at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print(f"[INFO] API version: {API_VERSION}")
-        print(f"[INFO] Data directory: {DATA_DIR}")
-        print(f"[INFO] Vector stores directory: {VECTOR_STORES_DIR}")
-        print(f"[INFO] Videos directory: {VIDEOS_DIR}")
-        print(f"[INFO] CORS origins: {CORS_ORIGINS}")
-        
-        print(f"[INFO] Router registration skipped - already done at module level")
         
     except Exception as e:
         print(f"[ERROR] Startup failed: {str(e)}")

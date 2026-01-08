@@ -78,17 +78,6 @@ const getYearCoverageForUniversity = (university: string) => {
 
 // Subjects are now fetched from API - see subjects state in ContentCoverageView component
 
-const gaps = {
-  noContent: [
-    { code: "BP103T", name: "Pharmaceutics I", year: 1, semester: 1 },
-    { code: "BP305T", name: "Pharmacology I", year: 3, semester: 1 },
-    { code: "BP405T", name: "Industrial Pharmacy I", year: 4, semester: 1 },
-    { code: "BP503T", name: "Pharmacology III", year: 5, semester: 1 },
-  ],
-  missingVideos: 28,
-  missingNotes: 15,
-}
-
 function ProgressBar({ percentage, color }: { percentage: number; color: string }) {
   return (
     <div className="h-2 bg-neutral-100 rounded-full overflow-hidden">
@@ -134,6 +123,28 @@ export function ContentCoverageView() {
   const [selectedSubject, setSelectedSubject] = React.useState<string>("all")
   const { toast } = useToast()
   const router = useRouter()
+
+  // Derive gap metrics from live subject coverage data
+  const gaps = React.useMemo(() => {
+    const safeNumber = (value: any) => (typeof value === "number" && !Number.isNaN(value) ? value : 0)
+    const noContent = subjects.filter(
+      (s) => safeNumber(s.docs) === 0 && safeNumber(s.videos) === 0 && safeNumber(s.notes) === 0,
+    )
+    const missingVideos = subjects.filter((s) => safeNumber(s.videos) === 0).length
+    const missingNotes = subjects.filter((s) => safeNumber(s.notes) === 0).length
+
+    return { noContent, missingVideos, missingNotes }
+  }, [subjects])
+
+  // Apply current filters to gaps list
+  const filteredNoContent = React.useMemo(() => {
+    return gaps.noContent.filter((s) => {
+      const yearMatch = selectedYear === "all" || s.year === Number.parseInt(selectedYear)
+      const semesterMatch = selectedSemester === "all" || s.semester === Number.parseInt(selectedSemester)
+      const subjectMatch = selectedSubject === "all" || s.code === selectedSubject
+      return yearMatch && semesterMatch && subjectMatch
+    })
+  }, [gaps.noContent, selectedYear, selectedSemester, selectedSubject])
 
   // Fetch curricula from curriculum manager
   React.useEffect(() => {
@@ -303,11 +314,19 @@ export function ContentCoverageView() {
   }, [subjects])
 
   const availableSubjects = React.useMemo(() => {
-    const subjectSet = new Set<string>()
+    const subjectMap = new Map<string, string>()
     subjects.forEach((s) => {
-      if (s.code) subjectSet.add(s.code)
+      if (s.code) {
+        if (!subjectMap.has(s.code) && s.name) {
+          subjectMap.set(s.code, s.name)
+        } else if (!subjectMap.has(s.code)) {
+          subjectMap.set(s.code, s.code)
+        }
+      }
     })
-    return Array.from(subjectSet).sort()
+    return Array.from(subjectMap.entries())
+      .map(([code, name]) => ({ code, name }))
+      .sort((a, b) => a.name.localeCompare(b.name))
   }, [subjects])
 
   const filteredSubjects = subjects
@@ -694,14 +713,58 @@ export function ContentCoverageView() {
         </CardHeader>
         {showGaps && (
           <CardContent className="pt-0 space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Select value={selectedYear} onValueChange={(value) => {
+                setSelectedYear(value)
+                setSelectedSemester("all")
+              }}>
+                <SelectTrigger className="w-[120px] h-8">
+                  <SelectValue placeholder="Year" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Years</SelectItem>
+                  {availableYears.map((year) => (
+                    <SelectItem key={year} value={year.toString()}>
+                      Year {year}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedSemester} onValueChange={setSelectedSemester}>
+                <SelectTrigger className="w-[140px] h-8">
+                  <SelectValue placeholder="Semester" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Semesters</SelectItem>
+                  {availableSemesters.map((sem) => (
+                    <SelectItem key={sem} value={sem.toString()}>
+                      Semester {sem}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedSubject} onValueChange={setSelectedSubject}>
+                <SelectTrigger className="w-[180px] h-8">
+                  <SelectValue placeholder="Subject" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Subjects</SelectItem>
+                  {availableSubjects.map((subject) => (
+                    <SelectItem key={subject.code} value={subject.code}>
+                      {subject.code} - {subject.name || subject.code}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
             <div>
               <p className="text-sm font-medium text-amber-800 mb-2">
-                Subjects with No Content ({gaps.noContent.length})
+                Subjects with No Content ({filteredNoContent.length})
               </p>
               <div className="space-y-2">
-                {gaps.noContent.map((subject) => (
+                {filteredNoContent.map((subject) => (
                   <div
-                    key={subject.code}
+                    key={`${subject.code}-${subject.year}-${subject.semester}`}
                     className="flex items-center justify-between p-2 bg-white rounded-lg border border-amber-200"
                   >
                     <div className="flex items-center gap-2">
@@ -785,14 +848,11 @@ export function ContentCoverageView() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Subjects</SelectItem>
-                  {availableSubjects.map((code) => {
-                    const subject = subjects.find((s) => s.code === code)
-                    return (
-                      <SelectItem key={code} value={code}>
-                        {code} - {subject?.name || ""}
+                  {availableSubjects.map((subject) => (
+                    <SelectItem key={subject.code} value={subject.code}>
+                      {subject.code} - {subject.name || subject.code}
                       </SelectItem>
-                    )
-                  })}
+                  ))}
                 </SelectContent>
               </Select>
             </div>

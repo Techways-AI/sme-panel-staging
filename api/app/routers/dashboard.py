@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from sqlalchemy import or_
+from sqlalchemy import or_, func
 
 from ..core.dual_auth import get_dual_auth_user
 from ..config.database import get_db
@@ -16,8 +16,17 @@ from ..utils.db_utils import get_notes_by_user_id
 from ..models.curriculum import UniversityCurriculum
 from ..models.notes import GeneratedNotes
 from ..models.content_library import ContentLibrary
+from ..models.topic_mapping import TopicMapping
 
 logger = logging.getLogger(__name__)
+
+# Normalization helpers to keep DB comparisons consistent
+def _norm_lower_trim(col):
+    return func.lower(func.trim(col))
+
+
+def _norm_upper_trim(col):
+    return func.upper(func.trim(col))
 
 router = APIRouter(
     prefix="/api/dashboard",
@@ -182,6 +191,111 @@ def _count_content_from_library(db: Session, uploaded_via: str, file_type: str) 
         return count
     except Exception as e:
         logger.error(f"Failed to count content from library: {e}")
+        return 0
+
+
+def _get_mapped_slugs_by_subject(
+    db: Session,
+    curriculum_obj: UniversityCurriculum,
+    subject_codes: List[str] | None = None,
+) -> Dict[str, set]:
+    """
+    Fetch mapped PCI topic slugs for a university curriculum.
+
+    For non-PCI curricula we look up topic_mappings rows that belong to the same
+    university/regulation and (optionally) a subset of subject codes. The result
+    maps each university subject code (lowercase) to a set of PCI topic slugs.
+    """
+    try:
+        query = db.query(TopicMapping.topic_slug, TopicMapping.university_subject_code).filter(
+            _norm_upper_trim(TopicMapping.university_name) == curriculum_obj.university.strip().upper()
+        )
+
+        if curriculum_obj.regulation:
+            query = query.filter(_norm_upper_trim(TopicMapping.regulation) == curriculum_obj.regulation.strip().upper())
+
+        if subject_codes:
+            upper_codes = [code.upper() for code in subject_codes if code]
+            if upper_codes:
+                query = query.filter(_norm_upper_trim(TopicMapping.university_subject_code).in_(upper_codes))
+
+        mapped: Dict[str, set] = {}
+        for slug, uni_code in query:
+            if not slug or not uni_code:
+                continue
+            mapped.setdefault(uni_code.lower(), set()).add(slug.lower())
+
+        return mapped
+    except Exception as exc:
+        logger.error("Failed to fetch topic mappings for %s: %s", curriculum_obj.university, exc)
+        return {}
+
+
+def _count_content_for_university(
+    db: Session,
+    curriculum_obj: UniversityCurriculum,
+    file_type: str,
+) -> int:
+    """
+    Count content for a university curriculum, reusing PCI uploads via topic_name -> pci_topic mapping.
+
+    Logic for non-PCI:
+    1) Direct university uploads: content_library.uploaded_via LIKE '{UNIVERSITY}%'
+    2) Reused PCI uploads: join content_library.topic_name to topic_mappings.pci_topic
+       for the same university/regulation, and ensure university_topic exists.
+    3) Count distinct topic_name across the union of (1) and (2) for the requested file_type.
+    """
+    try:
+        file_type_lower = file_type.lower()
+        university_upper = curriculum_obj.university.strip().upper()
+        regulation_upper = curriculum_obj.regulation.strip().upper() if curriculum_obj.regulation else None
+
+        # Use a common identifier for distinct counting; fall back to topic_name if slug missing.
+        identifier = func.coalesce(ContentLibrary.topic_slug, ContentLibrary.topic_name)
+
+        # Direct university uploads (keeps previous functionality).
+        direct_q = db.query(identifier).filter(
+            ContentLibrary.file_type == file_type_lower,
+            _norm_upper_trim(ContentLibrary.uploaded_via).like(f"{university_upper}%"),
+        )
+
+        # Mapped PCI uploads via topic_name -> pci_topic for the same university/regulation.
+        mapped_name_q = (
+            db.query(identifier)
+            .join(
+                TopicMapping,
+                _norm_lower_trim(ContentLibrary.topic_name) == _norm_lower_trim(TopicMapping.pci_topic),
+            )
+            .filter(
+                ContentLibrary.file_type == file_type_lower,
+                TopicMapping.university_name.isnot(None),
+                _norm_upper_trim(TopicMapping.university_name) == university_upper,
+                TopicMapping.university_topic.isnot(None),
+            )
+        )
+
+        # Apply regulation match if available; allow null regs in mappings to still match.
+        if regulation_upper:
+            mapped_name_q = mapped_name_q.filter(
+                or_(
+                    TopicMapping.regulation.is_(None),
+                    _norm_upper_trim(TopicMapping.regulation) == regulation_upper,
+                )
+            )
+
+        # Fallback: reuse prior slug-based mapping to avoid losing existing coverage.
+        mapped_slugs_by_subject = _get_mapped_slugs_by_subject(db, curriculum_obj)
+        mapped_slugs_flat: set = set().union(*mapped_slugs_by_subject.values()) if mapped_slugs_by_subject else set()
+        mapped_slug_q = db.query(identifier).filter(
+            ContentLibrary.file_type == file_type_lower,
+            ContentLibrary.topic_slug.in_(list(mapped_slugs_flat)) if mapped_slugs_flat else False,
+        )
+
+        # Union all sources and count distinct identifiers.
+        union_q = direct_q.union(mapped_name_q, mapped_slug_q)
+        return union_q.distinct().count()
+    except Exception as exc:
+        logger.error("Failed to count university content with mappings: %s", exc)
         return 0
 
 
@@ -459,11 +573,10 @@ async def get_content_coverage(
             videos_topics_count = _count_content_from_library(db, "PCI", "video")
             notes_topics_count = _count_content_from_library(db, "PCI", "notes")
         else:
-            # For university curricula, count from content_library table by uploaded_via matching university name
-            uploaded_via = curriculum_obj.university.upper()
-            documents_topics_count = _count_content_from_library(db, uploaded_via, "document")
-            videos_topics_count = _count_content_from_library(db, uploaded_via, "video")
-            notes_topics_count = _count_content_from_library(db, uploaded_via, "notes")
+            # For university curricula, try to reuse PCI content via topic mappings in addition to university uploads
+            documents_topics_count = _count_content_for_university(db, curriculum_obj, "document")
+            videos_topics_count = _count_content_for_university(db, curriculum_obj, "video")
+            notes_topics_count = _count_content_for_university(db, curriculum_obj, "notes")
         
         # Get total topics
         # For PCI Master, aggregate ALL PCI curricula to get total count
@@ -558,6 +671,191 @@ def _count_content_by_subject(db: Session, uploaded_via: str, file_type: str, su
     except Exception as e:
         logger.error(f"Failed to count content by subject: {e}")
         return 0
+
+
+def _bulk_count_content_by_subjects(
+    db: Session,
+    uploaded_via: str,
+    subject_codes: List[str],
+    curriculum_obj: UniversityCurriculum | None = None,
+    mapped_slugs_by_subject: Dict[str, set] | None = None,
+) -> Dict[str, Dict[str, int]]:
+    """Count content for many subjects with as few queries as possible.
+
+    Instead of issuing 3 * N queries (per subject and file type), we:
+    - Build a single OR filter for all subject prefixes
+    - Run one query per file type
+    - Map topic_slugs back to their subject code prefix in Python
+
+    Returns a nested dict: {file_type: {code: count}}
+    """
+    if not subject_codes:
+        return {"document": {}, "video": {}, "notes": {}}
+
+    uploaded_via_upper = uploaded_via.strip().upper()
+    lower_codes = [code.strip().lower() for code in subject_codes if code]
+    if not lower_codes:
+        return {"document": {}, "video": {}, "notes": {}}
+
+    # PCI branch unchanged (no university mapping needed)
+    if uploaded_via_upper == "PCI":
+        mapped_slugs_by_subject = mapped_slugs_by_subject or {}
+        mapped_slugs_flat: set = set().union(*mapped_slugs_by_subject.values()) if mapped_slugs_by_subject else set()
+        slug_to_subjects: Dict[str, set] = {}
+        for subj, slugs in mapped_slugs_by_subject.items():
+            for slug in slugs:
+                slug_to_subjects.setdefault(slug, set()).add(subj)
+
+        subject_filters = [ContentLibrary.topic_slug.like(f"{code}%") for code in lower_codes]
+        if mapped_slugs_flat:
+            subject_filters.append(ContentLibrary.topic_slug.in_(list(mapped_slugs_flat)))
+
+        counts: Dict[str, Dict[str, int]] = {
+            "document": {code: 0 for code in lower_codes},
+            "video": {code: 0 for code in lower_codes},
+            "notes": {code: 0 for code in lower_codes},
+        }
+
+        codes_sorted = sorted(lower_codes, key=len, reverse=True)
+        for file_type in ("document", "video", "notes"):
+            query = db.query(ContentLibrary.topic_slug).filter(
+                ContentLibrary.file_type == file_type,
+                ContentLibrary.uploaded_via == uploaded_via_upper,
+                or_(*subject_filters),
+            )
+            for slug_tuple in query:
+                slug = slug_tuple[0]
+                if not slug:
+                    continue
+                slug_lower = slug.lower()
+                matched = False
+                if slug_lower in slug_to_subjects:
+                    for subj in slug_to_subjects[slug_lower]:
+                        counts[file_type][subj] += 1
+                        matched = True
+                if matched:
+                    continue
+                for code in codes_sorted:
+                    if slug_lower.startswith(code):
+                        counts[file_type][code] += 1
+                        break
+        return counts
+
+    # Non-PCI: include topic_name -> pci_topic mapping
+    university_upper = uploaded_via_upper
+    regulation_upper = curriculum_obj.regulation.strip().upper() if curriculum_obj and curriculum_obj.regulation else None
+
+    mapped_slugs_by_subject = mapped_slugs_by_subject or _get_mapped_slugs_by_subject(db, curriculum_obj, subject_codes)
+    mapped_slugs_flat: set = set().union(*mapped_slugs_by_subject.values()) if mapped_slugs_by_subject else set()
+    slug_to_subjects: Dict[str, set] = {}
+    for subj, slugs in mapped_slugs_by_subject.items():
+        for slug in slugs:
+            slug_to_subjects.setdefault(slug, set()).add(subj)
+
+    # pci_topic mappings by subject_code for topic_name matching
+    mapped_topics_by_subject: Dict[str, set] = {}
+    if curriculum_obj:
+        upper_codes = [code.strip().upper() for code in subject_codes if code]
+        topic_map_query = db.query(
+            func.lower(TopicMapping.pci_topic),
+            func.lower(TopicMapping.university_subject_code),
+        ).filter(
+            _norm_upper_trim(TopicMapping.university_name) == university_upper,
+            TopicMapping.university_topic.isnot(None),
+            TopicMapping.university_subject_code.isnot(None),
+        )
+        if regulation_upper:
+            topic_map_query = topic_map_query.filter(
+                or_(TopicMapping.regulation.is_(None), _norm_upper_trim(TopicMapping.regulation) == regulation_upper)
+            )
+        if upper_codes:
+            topic_map_query = topic_map_query.filter(_norm_upper_trim(TopicMapping.university_subject_code).in_(upper_codes))
+
+        for pci_topic, uni_code in topic_map_query:
+            if not pci_topic or not uni_code:
+                continue
+            mapped_topics_by_subject.setdefault(uni_code, set()).add(pci_topic)
+
+    subject_filters = [ContentLibrary.topic_slug.like(f"{code}%") for code in lower_codes]
+    if mapped_slugs_flat:
+        subject_filters.append(ContentLibrary.topic_slug.in_(list(mapped_slugs_flat)))
+
+    counts: Dict[str, Dict[str, int]] = {
+        "document": {code: 0 for code in lower_codes},
+        "video": {code: 0 for code in lower_codes},
+        "notes": {code: 0 for code in lower_codes},
+    }
+
+    codes_sorted = sorted(lower_codes, key=len, reverse=True)
+
+    for file_type in ("document", "video", "notes"):
+        base_uploaded_filter = _norm_upper_trim(ContentLibrary.uploaded_via).like(f"{university_upper}%")
+
+        # Direct + mapped slugs
+        query = db.query(ContentLibrary.topic_slug).filter(ContentLibrary.file_type == file_type)
+        if mapped_slugs_flat:
+            query = query.filter(or_(base_uploaded_filter, ContentLibrary.topic_slug.in_(list(mapped_slugs_flat))))
+        else:
+            query = query.filter(base_uploaded_filter)
+
+        if subject_filters:
+            query = query.filter(or_(*subject_filters))
+
+        for slug_tuple in query:
+            slug = slug_tuple[0]
+            if not slug:
+                continue
+            slug_lower = slug.lower()
+            matched = False
+            if slug_lower in slug_to_subjects:
+                for subj in slug_to_subjects[slug_lower]:
+                    counts[file_type][subj] += 1
+                    matched = True
+            if matched:
+                continue
+            for code in codes_sorted:
+                if slug_lower.startswith(code):
+                    counts[file_type][code] += 1
+                    break
+
+        # topic_name -> pci_topic mapped rows
+        if mapped_topics_by_subject:
+            mapped_name_q = (
+                db.query(
+                    ContentLibrary.topic_name,
+                    TopicMapping.university_subject_code,
+                )
+                .join(
+                    TopicMapping,
+                    _norm_lower_trim(ContentLibrary.topic_name) == _norm_lower_trim(TopicMapping.pci_topic),
+                )
+                .filter(
+                    ContentLibrary.file_type == file_type,
+                    TopicMapping.university_topic.isnot(None),
+                    _norm_upper_trim(TopicMapping.university_name) == university_upper,
+                    TopicMapping.university_subject_code.isnot(None),
+                )
+            )
+
+            if regulation_upper:
+                mapped_name_q = mapped_name_q.filter(
+                    or_(TopicMapping.regulation.is_(None), _norm_upper_trim(TopicMapping.regulation) == regulation_upper)
+                )
+
+            upper_codes = [code.strip().upper() for code in subject_codes if code]
+            if upper_codes:
+                mapped_name_q = mapped_name_q.filter(_norm_upper_trim(TopicMapping.university_subject_code).in_(upper_codes))
+
+            mapped_name_q = mapped_name_q.distinct()
+
+            for topic_name, uni_code in mapped_name_q:
+                if not uni_code:
+                    continue
+                code_lower = uni_code.lower()
+                if code_lower in counts[file_type]:
+                    counts[file_type][code_lower] += 1
+
+    return counts
 
 
 @router.get("/subject-coverage")
@@ -681,14 +979,19 @@ async def get_subject_coverage(
                                             elif isinstance(topic, dict) and topic.get("name"):
                                                 subjects_map[composite_key]["topics"] += 1
         
-        # Count content for each subject from content_library
+        # Count content for each subject from content_library using bulk queries
         logger.info(f"Processing {len(subjects_map)} subjects for subject coverage")
+        subject_codes = list({data["code"] for data in subjects_map.values() if data.get("code")})
+        mapped_slugs_by_subject = {} if is_pci else _get_mapped_slugs_by_subject(db, curriculum_obj, subject_codes)
+        bulk_counts = _bulk_count_content_by_subjects(db, uploaded_via, subject_codes, curriculum_obj, mapped_slugs_by_subject)
+
         for composite_key, subject_data in subjects_map.items():
             subject_code = subject_data["code"]
+            subject_code_lower = subject_code.lower()
             try:
-                docs_count = _count_content_by_subject(db, uploaded_via, "document", subject_code)
-                videos_count = _count_content_by_subject(db, uploaded_via, "video", subject_code)
-                notes_count = _count_content_by_subject(db, uploaded_via, "notes", subject_code)
+                docs_count = bulk_counts.get("document", {}).get(subject_code_lower, 0)
+                videos_count = bulk_counts.get("video", {}).get(subject_code_lower, 0)
+                notes_count = bulk_counts.get("notes", {}).get(subject_code_lower, 0)
                 
                 total_topics = subject_data["topics"]
                 
@@ -730,23 +1033,15 @@ async def get_subject_coverage(
 
 
 def _count_unique_topics_with_content_by_year_semester(
-    db: Session, 
-    uploaded_via: str, 
-    file_type: str, 
-    subject_codes: List[str]
+    db: Session,
+    uploaded_via: str,
+    file_type: str,
+    subject_codes: List[str],
+    curriculum_obj: UniversityCurriculum | None = None,
 ) -> int:
     """Count unique topics that have content for a specific year/semester from content_library table.
     
-    This counts unique topic_slugs (not files) to get accurate coverage percentage.
-    
-    Args:
-        db: Database session
-        uploaded_via: Filter by uploaded_via column
-        file_type: Filter by file_type column ('document', 'video', 'notes')
-        subject_codes: List of subject codes for this year/semester
-    
-    Returns:
-        Count of unique topics that have content
+    This counts unique topics (by slug or name) to get accurate coverage percentage.
     """
     try:
         if not subject_codes:
@@ -754,28 +1049,69 @@ def _count_unique_topics_with_content_by_year_semester(
         
         uploaded_via_upper = uploaded_via.upper()
         file_type_lower = file_type.lower()
-        
-        # Build query with OR conditions for all subject codes
-        if uploaded_via_upper == "PCI":
-            query = db.query(ContentLibrary.topic_slug).filter(
-                ContentLibrary.uploaded_via == uploaded_via_upper,
-                ContentLibrary.file_type == file_type_lower
-            )
-        else:
-            query = db.query(ContentLibrary.topic_slug).filter(
-                ContentLibrary.uploaded_via.like(f"{uploaded_via_upper}%"),
-                ContentLibrary.file_type == file_type_lower
-            )
-        
-        # Filter by subject codes (topic_slug starts with any subject code)
+        regulation_upper = curriculum_obj.regulation.strip().upper() if curriculum_obj and curriculum_obj.regulation else None
+
+        identifier = func.coalesce(ContentLibrary.topic_slug, ContentLibrary.topic_name)
+
+        # Subject code filters (slug prefix)
         subject_filters = [
-            ContentLibrary.topic_slug.like(f"{code.lower()}%") 
+            ContentLibrary.topic_slug.like(f"{code.lower()}%")
             for code in subject_codes
         ]
-        query = query.filter(or_(*subject_filters))
-        
-        # Count distinct topic_slugs
-        return query.distinct().count()
+
+        # Direct uploads filter
+        base_query = db.query(identifier).filter(ContentLibrary.file_type == file_type_lower)
+        if uploaded_via_upper == "PCI":
+            base_query = base_query.filter(_norm_upper_trim(ContentLibrary.uploaded_via) == uploaded_via_upper)
+        else:
+            base_query = base_query.filter(_norm_upper_trim(ContentLibrary.uploaded_via).like(f"{uploaded_via_upper}%"))
+
+        if subject_filters:
+            base_query = base_query.filter(or_(*subject_filters))
+
+        queries = [base_query]
+
+        # Mapped slugs (fallback to previous behavior)
+        if curriculum_obj and curriculum_obj.curriculum_type.lower() != "pci":
+            mapped_slugs_by_subject = _get_mapped_slugs_by_subject(db, curriculum_obj, subject_codes)
+            mapped_slugs_flat: set = set().union(*mapped_slugs_by_subject.values()) if mapped_slugs_by_subject else set()
+            if mapped_slugs_flat:
+                mapped_slug_q = db.query(identifier).filter(
+                    ContentLibrary.file_type == file_type_lower,
+                    ContentLibrary.topic_slug.in_(list(mapped_slugs_flat)),
+                )
+                queries.append(mapped_slug_q)
+
+            # Mapped topic_name -> pci_topic
+            mapped_name_q = (
+                db.query(identifier)
+                .join(TopicMapping, func.lower(ContentLibrary.topic_name) == func.lower(TopicMapping.pci_topic))
+                .filter(
+                    ContentLibrary.file_type == file_type_lower,
+                    TopicMapping.university_topic.isnot(None),
+                    TopicMapping.university_subject_code.isnot(None),
+                    func.upper(TopicMapping.university_name) == uploaded_via_upper,
+                )
+            )
+            if regulation_upper:
+                mapped_name_q = mapped_name_q.filter(
+                    or_(TopicMapping.regulation.is_(None), func.upper(TopicMapping.regulation) == regulation_upper)
+                )
+            upper_codes = [code.upper() for code in subject_codes if code]
+            if upper_codes:
+                mapped_name_q = mapped_name_q.filter(func.upper(TopicMapping.university_subject_code).in_(upper_codes))
+
+            queries.append(mapped_name_q)
+
+        # Union all queries and count distinct identifiers
+        if len(queries) == 1:
+            return queries[0].distinct().count()
+
+        union_q = queries[0]
+        for q in queries[1:]:
+            union_q = union_q.union(q)
+
+        return union_q.distinct().count()
     except Exception as e:
         logger.error(f"Failed to count unique topics by year/semester: {e}")
         return 0
@@ -902,33 +1238,76 @@ async def get_year_coverage(
             
             # Helper function to get unique topics with content for a semester
             def get_unique_topics_with_content(subject_codes_list):
-                """Get set of unique topic_slugs that have ANY content (documents OR videos OR notes)."""
+                """Get set of unique topics (slug or name) that have ANY content (documents OR videos OR notes)."""
                 topics_set = set()
                 
                 if not subject_codes_list:
                     return topics_set
-                
-                # Build base query filter for uploaded_via
+
+                identifier = func.coalesce(ContentLibrary.topic_slug, ContentLibrary.topic_name)
+                upper_codes = [code.upper() for code in subject_codes_list if code]
+                regulation_upper = curriculum_obj.regulation.upper() if (curriculum_obj and curriculum_obj.regulation) else None
+
+                mapped_slugs_by_subject = {} if is_pci else _get_mapped_slugs_by_subject(db, curriculum_obj, subject_codes_list)
+                mapped_slugs_flat: set = set().union(*mapped_slugs_by_subject.values()) if mapped_slugs_by_subject else set()
+
                 uploaded_via_filter = (
-                    ContentLibrary.uploaded_via == uploaded_via_upper
+                    _norm_upper_trim(ContentLibrary.uploaded_via) == uploaded_via_upper
                     if uploaded_via_upper == "PCI"
-                    else ContentLibrary.uploaded_via.like(f"{uploaded_via_upper}%")
+                    else _norm_upper_trim(ContentLibrary.uploaded_via).like(f"{uploaded_via_upper}%")
                 )
-                
-                # Build subject code filters
+
                 subject_filters = [
-                    ContentLibrary.topic_slug.like(f"{code.lower()}%") 
+                    ContentLibrary.topic_slug.like(f"{code.lower()}%")
                     for code in subject_codes_list
                 ]
-                
-                # Query for all content types at once (more efficient)
-                query = db.query(ContentLibrary.topic_slug).filter(
-                    uploaded_via_filter,
-                    or_(*subject_filters)
-                ).distinct()
-                
-                topics_set.update([row[0] for row in query.all()])
-                
+                if mapped_slugs_flat:
+                    subject_filters.append(ContentLibrary.topic_slug.in_(list(mapped_slugs_flat)))
+
+                queries = []
+                if subject_filters:
+                    direct_q = db.query(identifier).filter(uploaded_via_filter, or_(*subject_filters))
+                else:
+                    direct_q = db.query(identifier).filter(uploaded_via_filter)
+                queries.append(direct_q)
+
+                if mapped_slugs_flat:
+                    mapped_slug_q = db.query(identifier).filter(
+                        ContentLibrary.topic_slug.in_(list(mapped_slugs_flat))
+                    )
+                    queries.append(mapped_slug_q)
+
+                if not is_pci:
+                    mapped_name_q = (
+                        db.query(identifier)
+                        .join(TopicMapping, func.lower(ContentLibrary.topic_name) == func.lower(TopicMapping.pci_topic))
+                        .filter(
+                            TopicMapping.university_topic.isnot(None),
+                            TopicMapping.university_subject_code.isnot(None),
+                            func.upper(TopicMapping.university_name) == uploaded_via_upper,
+                        )
+                    )
+                    if regulation_upper:
+                        mapped_name_q = mapped_name_q.filter(
+                            or_(TopicMapping.regulation.is_(None), func.upper(TopicMapping.regulation) == regulation_upper)
+                        )
+                    if upper_codes:
+                        mapped_name_q = mapped_name_q.filter(func.upper(TopicMapping.university_subject_code).in_(upper_codes))
+                    queries.append(mapped_name_q)
+
+                # Union queries and collect identifiers
+                if not queries:
+                    return topics_set
+
+                union_q = queries[0]
+                for q in queries[1:]:
+                    union_q = union_q.union(q)
+
+                for row in union_q.distinct().all():
+                    val = row[0]
+                    if val:
+                        topics_set.add(val.lower())
+
                 return topics_set
             
             # Get unique topics with content for each semester

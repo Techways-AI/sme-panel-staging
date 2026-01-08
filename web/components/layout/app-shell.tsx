@@ -164,11 +164,17 @@ function NavLink({
 }
 
 function UserSection({ onSignOut }: { onSignOut: () => void }) {
-  const user = getUser()
-  const role = getUserRole()
-  
-  const userName = user?.username || user?.name || "User"
-  const userRole = role === "admin" ? "Admin" : role === "sme" ? "SME" : "User"
+  const [userName, setUserName] = React.useState("User")
+  const [userRole, setUserRole] = React.useState("User")
+
+  // Avoid hydration mismatches: keep initial render static, then hydrate with client data
+  React.useEffect(() => {
+    const user = getUser()
+    const role = getUserRole()
+
+    setUserName(user?.username || user?.name || "User")
+    setUserRole(role === "admin" ? "Admin" : role === "sme" ? "SME" : "User")
+  }, [])
   
   return (
     <div className="px-5 py-4 border-t border-neutral-100">

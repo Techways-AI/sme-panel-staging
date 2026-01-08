@@ -1,3 +1,5 @@
+"use client"
+
 import { AppShell } from "@/components/layout/app-shell"
 import { ContentCoverageView } from "@/components/content-coverage/content-coverage-view"
 

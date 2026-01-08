@@ -219,7 +219,7 @@ export function AIChatView() {
         <div className="md:hidden border-b bg-slate-50 p-3 space-y-3">
           <div className="grid grid-cols-2 gap-2">
             <Select value={filterYear} onValueChange={setFilterYear}>
-              <SelectTrigger className="h-9 text-xs">
+              <SelectTrigger className="h-9 text-xs w-full">
                 <SelectValue placeholder="Year" />
               </SelectTrigger>
               <SelectContent>
@@ -231,7 +231,7 @@ export function AIChatView() {
               </SelectContent>
             </Select>
             <Select value={filterSemester} onValueChange={setFilterSemester}>
-              <SelectTrigger className="h-9 text-xs">
+              <SelectTrigger className="h-9 text-xs w-full">
                 <SelectValue placeholder="Semester" />
               </SelectTrigger>
               <SelectContent>
@@ -243,7 +243,7 @@ export function AIChatView() {
               </SelectContent>
             </Select>
             <Select value={filterSubject} onValueChange={setFilterSubject}>
-              <SelectTrigger className="h-9 text-xs col-span-2">
+              <SelectTrigger className="h-9 text-xs w-full col-span-2">
                 <SelectValue placeholder="Subject" />
               </SelectTrigger>
               <SelectContent>
@@ -276,7 +276,7 @@ export function AIChatView() {
 
       <div className="flex-1 flex overflow-hidden">
         {/* Desktop Context Sidebar */}
-        <aside className="hidden md:flex w-72 border-r bg-white flex-col">
+        <aside className="hidden md:flex w-72 min-w-[18rem] shrink-0 border-r bg-white flex-col">
           <div className="p-4 border-b">
             <h2 className="font-semibold text-foreground">Document Context</h2>
             <p className="text-sm text-muted-foreground mt-1">Filter and select documents</p>
@@ -284,7 +284,7 @@ export function AIChatView() {
 
           <div className="p-3 border-b space-y-3">
             <Select value={filterYear} onValueChange={setFilterYear}>
-              <SelectTrigger className="h-9 text-sm">
+              <SelectTrigger className="h-9 text-sm w-full">
                 <SelectValue placeholder="Select Year" />
               </SelectTrigger>
               <SelectContent>
@@ -296,7 +296,7 @@ export function AIChatView() {
               </SelectContent>
             </Select>
             <Select value={filterSemester} onValueChange={setFilterSemester}>
-              <SelectTrigger className="h-9 text-sm">
+              <SelectTrigger className="h-9 text-sm w-full">
                 <SelectValue placeholder="Select Semester" />
               </SelectTrigger>
               <SelectContent>
@@ -308,7 +308,7 @@ export function AIChatView() {
               </SelectContent>
             </Select>
             <Select value={filterSubject} onValueChange={setFilterSubject}>
-              <SelectTrigger className="h-9 text-sm">
+              <SelectTrigger className="h-9 text-sm w-full">
                 <SelectValue placeholder="Select Subject" />
               </SelectTrigger>
               <SelectContent>
@@ -320,7 +320,7 @@ export function AIChatView() {
               </SelectContent>
             </Select>
             <Select value={filterUnit} onValueChange={setFilterUnit}>
-              <SelectTrigger className="h-9 text-sm">
+              <SelectTrigger className="h-9 text-sm w-full">
                 <SelectValue placeholder="Select Unit" />
               </SelectTrigger>
               <SelectContent>
@@ -332,7 +332,7 @@ export function AIChatView() {
               </SelectContent>
             </Select>
             <Select value={filterTopic} onValueChange={setFilterTopic}>
-              <SelectTrigger className="h-9 text-sm">
+              <SelectTrigger className="h-9 text-sm w-full">
                 <SelectValue placeholder="Select Topic" />
               </SelectTrigger>
               <SelectContent>
@@ -386,7 +386,7 @@ export function AIChatView() {
         </aside>
 
         {/* Chat Area */}
-        <div className="flex-1 flex flex-col bg-slate-50">
+        <div className="flex-1 min-w-0 flex flex-col bg-slate-50">
           {/* Messages */}
           <ScrollArea className="flex-1 p-4">
             <div className="space-y-4 max-w-3xl mx-auto">
