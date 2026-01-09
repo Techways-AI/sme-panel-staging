@@ -2683,7 +2683,15 @@ def get_cached_vector_store(doc_id: str) -> Optional[FAISS]:
             cache_age = current_time - vector_store_timestamps[doc_id]
             if cache_age < VECTOR_STORE_CACHE_TTL:
                 print(f"[CACHE_HIT] Using cached vector store for {doc_id} (age: {cache_age:.1f}s)")
-                return vector_store_cache[doc_id]
+                cached_store = vector_store_cache[doc_id]
+                # Verify cached store is still valid
+                if cached_store and hasattr(cached_store, 'index') and cached_store.index:
+                    return cached_store
+                else:
+                    print(f"[WARNING] Cached vector store for {doc_id} is invalid, reloading...")
+                    # Remove invalid cache
+                    del vector_store_cache[doc_id]
+                    del vector_store_timestamps[doc_id]
             else:
                 # Remove expired cache
                 del vector_store_cache[doc_id]
@@ -2692,7 +2700,16 @@ def get_cached_vector_store(doc_id: str) -> Optional[FAISS]:
         
         # Load vector store from scratch
         print(f"[CACHE_MISS] Loading vector store for {doc_id} from S3...")
-        vector_store = load_vector_store(doc_id)
+        try:
+            vector_store = load_vector_store(doc_id)
+        except Exception as load_error:
+            error_msg = f"Failed to load vector store for {doc_id} from S3: {str(load_error)}"
+            print(f"[ERROR] {error_msg}")
+            print(f"[ERROR] Exception type: {type(load_error).__name__}")
+            import traceback
+            print(f"[ERROR] Traceback: {traceback.format_exc()}")
+            # Re-raise to allow caller to handle appropriately
+            raise Exception(error_msg) from load_error
         
         if vector_store:
             # Cache the vector store using the new structure
@@ -2706,7 +2723,9 @@ def get_cached_vector_store(doc_id: str) -> Optional[FAISS]:
             else:
                 print(f"[WARNING] Vector store {doc_id} has no valid index")
         else:
-            print(f"[WARNING] Failed to load vector store for {doc_id}")
+            error_msg = f"Failed to load vector store for {doc_id} - load_vector_store returned None"
+            print(f"[ERROR] {error_msg}")
+            raise Exception(error_msg)
         
         return vector_store
         

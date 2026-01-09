@@ -70,41 +70,63 @@ def get_embeddings():
         )
 
 def load_vector_store(doc_id: str) -> Optional[FAISS]:
-    """Load vector store from S3 with simplified error handling"""
+    """Load vector store from S3 with improved error handling and logging"""
+    import logging
+    logger = logging.getLogger(__name__)
+    
+    temp_dir = None
     try:
-        print(f"[DEBUG] Loading vector store for doc_id={doc_id}")
+        logger.info(f"Loading vector store for doc_id={doc_id}")
         
         # Create temporary directory
         temp_dir = tempfile.mkdtemp(prefix=f"vectorstore_{doc_id}_")
+        logger.debug(f"Created temporary directory: {temp_dir}")
         
+        # Download files - this will now raise exceptions on failure
         try:
-            # Download files
             download_all_vectorstore_files(doc_id, temp_dir)
-            
-            # Check essential files
-            faiss_path = os.path.join(temp_dir, "index.faiss")
-            pkl_path = os.path.join(temp_dir, "index.pkl")
-            
-            if not (os.path.exists(faiss_path) and os.path.exists(pkl_path)):
-                print(f"[ERROR] Essential vector store files missing")
-                return None
-            
-            # Check file sizes
-            faiss_size = os.path.getsize(faiss_path)
-            pkl_size = os.path.getsize(pkl_path)
-            
-            if faiss_size == 0 or pkl_size == 0:
-                print(f"[ERROR] Vector store files are empty")
-                return None
+            logger.info(f"Successfully downloaded all vector store files for doc_id={doc_id}")
+        except Exception as download_error:
+            error_msg = f"Failed to download vector store files from S3 for doc_id={doc_id}: {str(download_error)}"
+            logger.error(error_msg, exc_info=True)
+            # Re-raise with more context
+            raise Exception(error_msg) from download_error
+        
+        # Check essential files
+        faiss_path = os.path.join(temp_dir, "index.faiss")
+        pkl_path = os.path.join(temp_dir, "index.pkl")
+        
+        if not (os.path.exists(faiss_path) and os.path.exists(pkl_path)):
+            error_msg = f"Essential vector store files missing after download for doc_id={doc_id}. faiss exists: {os.path.exists(faiss_path)}, pkl exists: {os.path.exists(pkl_path)}"
+            logger.error(error_msg)
+            raise Exception(error_msg)
+        
+        # Check file sizes
+        faiss_size = os.path.getsize(faiss_path)
+        pkl_size = os.path.getsize(pkl_path)
+        logger.debug(f"File sizes - faiss: {faiss_size} bytes, pkl: {pkl_size} bytes")
+        
+        if faiss_size == 0 or pkl_size == 0:
+            error_msg = f"Vector store files are empty for doc_id={doc_id}. faiss size: {faiss_size}, pkl size: {pkl_size}"
+            logger.error(error_msg)
+            raise Exception(error_msg)
             
             # Load embeddings
-            embeddings = get_embeddings()
+            try:
+                embeddings = get_embeddings()
+                logger.debug("Embeddings model loaded successfully")
+            except Exception as emb_error:
+                error_msg = f"Failed to load embeddings model: {str(emb_error)}"
+                logger.error(error_msg, exc_info=True)
+                raise Exception(error_msg) from emb_error
             
             # Try loading with different strategies
             strategies = ["COSINE_DISTANCE", "EUCLIDEAN_DISTANCE", None]
+            last_error = None
             
             for strategy in strategies:
                 try:
+                    logger.debug(f"Attempting to load vector store with strategy: {strategy or 'default'}")
                     if strategy:
                         vector_store = FAISS.load_local(
                             temp_dir, 
@@ -121,26 +143,38 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                     
                     # Verify it's usable
                     if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
-                        print(f"[DEBUG] Vector store loaded successfully with {strategy or 'default'} strategy")
+                        logger.info(f"Vector store loaded successfully with {strategy or 'default'} strategy. Index size: {vector_store.index.ntotal}")
                         return vector_store
+                    else:
+                        logger.warning(f"Vector store loaded but appears invalid. Has index: {hasattr(vector_store, 'index') if vector_store else False}")
                         
                 except Exception as e:
-                    print(f"[DEBUG] Strategy {strategy} failed: {e}")
+                    last_error = e
+                    logger.debug(f"Strategy {strategy} failed: {str(e)}")
                     continue
             
-            print(f"[ERROR] All loading strategies failed for {doc_id}")
-            return None
+            # If all strategies failed, raise an exception with details
+            error_msg = f"All loading strategies failed for doc_id={doc_id}. Last error: {str(last_error) if last_error else 'Unknown'}"
+            logger.error(error_msg, exc_info=last_error is not None)
+            if last_error:
+                raise Exception(error_msg) from last_error
+            else:
+                raise Exception(error_msg)
             
         finally:
             # Clean up temp directory
-            try:
-                shutil.rmtree(temp_dir)
-            except Exception as cleanup_error:
-                print(f"[WARNING] Failed to cleanup temp directory: {cleanup_error}")
+            if temp_dir:
+                try:
+                    shutil.rmtree(temp_dir)
+                    logger.debug(f"Cleaned up temporary directory: {temp_dir}")
+                except Exception as cleanup_error:
+                    logger.warning(f"Failed to cleanup temp directory {temp_dir}: {cleanup_error}")
                 
     except Exception as e:
-        print(f"[ERROR] Failed to load vector store: {e}")
-        return None
+        error_msg = f"Failed to load vector store for doc_id={doc_id}: {str(e)}"
+        logger.error(error_msg, exc_info=True)
+        # Re-raise to allow caller to handle
+        raise Exception(error_msg) from e
                         
 
 

@@ -395,9 +395,21 @@ def upload_all_vectorstore_files(doc_id: str, local_dir: str) -> None:
             logger.warning(f"File {filename} for doc_id={doc_id} is missing locally at {local_path}, skipping upload.")
 
 def download_all_vectorstore_files(doc_id: str, target_dir: str) -> None:
+    """Download all vector store files from S3 to target directory.
+    
+    Raises:
+        Exception: If S3 is not available or if essential files cannot be downloaded.
+    """
     import os
+    
+    # Check S3 availability first
+    _check_s3_available()
+    
+    if not s3_client:
+        raise Exception("S3 client is not available. Check AWS credentials and configuration.")
+    
     os.makedirs(target_dir, exist_ok=True)
-    print(f"\n[DEBUG] Starting download of vector store files for doc_id={doc_id} to {target_dir}")
+    logger.info(f"Starting download of vector store files for doc_id={doc_id} to {target_dir}")
     
     # First, check if the vector store directory exists in S3
     prefix = f"{VECTOR_STORES_PREFIX}{doc_id}/"
@@ -407,36 +419,70 @@ def download_all_vectorstore_files(doc_id: str, target_dir: str) -> None:
             Prefix=prefix
         )
         if 'Contents' not in response:
-            print(f"[DEBUG] No vector store files found in S3 for doc_id={doc_id}")
-            return
+            error_msg = f"No vector store files found in S3 for doc_id={doc_id}"
+            logger.error(error_msg)
+            raise Exception(error_msg)
         
         available_files = [obj['Key'].split('/')[-1] for obj in response['Contents']]
-        print(f"[DEBUG] Found files in S3: {available_files}")
+        logger.debug(f"Found files in S3: {available_files}")
+    except ClientError as e:
+        error_code = e.response.get('Error', {}).get('Code', 'Unknown')
+        error_msg = f"Error listing vector store files in S3 for doc_id={doc_id}: {error_code} - {str(e)}"
+        logger.error(error_msg, exc_info=True)
+        raise Exception(error_msg) from e
     except Exception as e:
-        print(f"[DEBUG] Error listing vector store files in S3: {str(e)}")
-        return
+        error_msg = f"Unexpected error listing vector store files in S3 for doc_id={doc_id}: {str(e)}"
+        logger.error(error_msg, exc_info=True)
+        raise Exception(error_msg) from e
+    
+    # Track which essential files were downloaded
+    downloaded_essential = []
+    download_errors = []
     
     for filename in VECTORSTORE_FILES:
-        print(f"[DEBUG] Attempting to download {filename} for doc_id={doc_id}")
+        logger.debug(f"Attempting to download {filename} for doc_id={doc_id}")
         try:
             data = download_vectorstore_file(doc_id, filename)
             if data is not None:
                 file_path = os.path.join(target_dir, filename)
                 with open(file_path, 'wb') as f:
                     f.write(data)
-                print(f"[DEBUG] Downloaded and wrote {filename} ({len(data)} bytes)")
+                logger.debug(f"Downloaded and wrote {filename} ({len(data)} bytes)")
                 
                 # Verify the file was written correctly
                 if os.path.exists(file_path):
                     size = os.path.getsize(file_path)
-                    print(f"[DEBUG] Verified {filename} exists on disk with size {size} bytes")
+                    logger.debug(f"Verified {filename} exists on disk with size {size} bytes")
+                    
+                    # Track essential files
+                    if filename in ESSENTIAL_VECTORSTORE_FILES:
+                        downloaded_essential.append(filename)
                 else:
-                    print(f"[DEBUG] Warning: {filename} was not written to disk properly")
+                    error_msg = f"{filename} was not written to disk properly for doc_id={doc_id}"
+                    logger.error(error_msg)
+                    download_errors.append(error_msg)
             else:
-                print(f"[DEBUG] {filename} not found in S3 for doc_id={doc_id}")
+                if filename in ESSENTIAL_VECTORSTORE_FILES:
+                    error_msg = f"Essential file {filename} not found in S3 for doc_id={doc_id}"
+                    logger.error(error_msg)
+                    download_errors.append(error_msg)
+                else:
+                    logger.warning(f"Optional file {filename} not found in S3 for doc_id={doc_id}")
         except Exception as e:
-            print(f"[DEBUG] Error downloading {filename}: {str(e)}")
-            # Continue with other files even if one fails
+            error_msg = f"Error downloading {filename} for doc_id={doc_id}: {str(e)}"
+            logger.error(error_msg, exc_info=True)
+            if filename in ESSENTIAL_VECTORSTORE_FILES:
+                download_errors.append(error_msg)
+    
+    # Check if all essential files were downloaded
+    missing_essential = set(ESSENTIAL_VECTORSTORE_FILES) - set(downloaded_essential)
+    if missing_essential:
+        error_msg = f"Failed to download essential vector store files for doc_id={doc_id}. Missing: {missing_essential}. Errors: {download_errors}"
+        logger.error(error_msg)
+        raise Exception(error_msg)
+    
+    if download_errors:
+        logger.warning(f"Some non-essential files failed to download, but essential files are present. Errors: {download_errors}")
 
 def delete_all_vectorstore_files(doc_id: str) -> None:
     _check_s3_available()
