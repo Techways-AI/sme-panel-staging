@@ -912,6 +912,20 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             
             # Test if vector store can find any documents at all
             try:
+                # First verify the vector store has proper embeddings
+                if not hasattr(vector_store, 'embeddings') or vector_store.embeddings is None:
+                    print(f"[ERROR] Vector store missing embeddings object")
+                    raise HTTPException(
+                        status_code=500,
+                        detail="Vector store loaded but embeddings are missing"
+                    )
+                
+                # Check index dimensions
+                if hasattr(vector_store, 'index') and vector_store.index:
+                    index_dim = vector_store.index.d if hasattr(vector_store.index, 'd') else None
+                    index_size = vector_store.index.ntotal if hasattr(vector_store.index, 'ntotal') else 0
+                    print(f"[DEBUG] Vector store index dimension: {index_dim}, size: {index_size}")
+                
                 test_results = vector_store.similarity_search("test", k=1)
                 print(f"[DEBUG] Vector store test search successful, found {len(test_results)} results")
                 
@@ -921,14 +935,28 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
                 else:
                     print(f"[DEBUG] Test query returned no results - vector store may be empty")
                     
+            except HTTPException:
+                raise
             except Exception as e:
+                import traceback
+                error_traceback = traceback.format_exc()
                 print(f"[ERROR] Vector store test search failed: {str(e)}")
                 print(f"[ERROR] Exception type: {type(e).__name__}")
                 print(f"[ERROR] Exception details: {str(e)}")
-                raise HTTPException(
-                    status_code=500,
-                    detail=f"Vector store test failed: {str(e)}"
-                )
+                print(f"[ERROR] Full traceback:\n{error_traceback}")
+                
+                # Check if it's an assertion error - might be dimension mismatch
+                if isinstance(e, AssertionError):
+                    error_detail = str(e) if str(e) else "Assertion failed - possible embeddings dimension mismatch"
+                    raise HTTPException(
+                        status_code=500,
+                        detail=f"Vector store test failed: {error_detail}. The embeddings model used to load may not match the model used to create the index."
+                    )
+                else:
+                    raise HTTPException(
+                        status_code=500,
+                        detail=f"Vector store test failed: {str(e)}"
+                    )
             
             # Get relevant chunks
             try:

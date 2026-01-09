@@ -234,6 +234,27 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                     
                     # Verify it's usable
                     if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
+                        # Verify embeddings are properly attached
+                        if not hasattr(vector_store, 'embeddings') or vector_store.embeddings is None:
+                            print(f"[WARNING] Vector store loaded but embeddings missing, re-attaching...")
+                            vector_store.embeddings = embeddings
+                        
+                        # Verify dimension compatibility
+                        if hasattr(vector_store.index, 'd') and hasattr(embeddings, 'embed_query'):
+                            try:
+                                # Test embedding dimension
+                                test_embedding = embeddings.embed_query("test")
+                                stored_dim = vector_store.index.d
+                                embedding_dim = len(test_embedding) if isinstance(test_embedding, list) else test_embedding.shape[0] if hasattr(test_embedding, 'shape') else None
+                                
+                                if embedding_dim and stored_dim != embedding_dim:
+                                    print(f"[ERROR] Dimension mismatch: stored={stored_dim}, current={embedding_dim}")
+                                    continue
+                                else:
+                                    print(f"[DEBUG] Dimension check passed: {stored_dim}")
+                            except Exception as dim_check_error:
+                                print(f"[WARNING] Could not verify dimensions: {dim_check_error}")
+                        
                         print(f"[DEBUG] Vector store loaded successfully with {strategy or 'default'} strategy")
                         return vector_store
                         
