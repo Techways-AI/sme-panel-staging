@@ -805,7 +805,7 @@ export function AddUniversityModal({ open, onOpenChange }: AddUniversityModalPro
       if (errorMessage.includes("Not Found") || errorMessage.includes("404")) {
         toast({
           title: "Backend API Not Available",
-          description: "Cannot save curriculum. Please ensure the backend server is running at " + (process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8001"),
+          description: "Cannot save curriculum. Please ensure the backend server is running at " + (process.env.NEXT_PUBLIC_API_URL || "https://sme-panel-staging-production.up.railway.app"),
           variant: "destructive",
         })
       } else {

@@ -327,7 +327,7 @@ async def test_endpoint():
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
         "cors_origins": CORS_ORIGINS,
-        "frontend_url": "http://localhost:3000",
+        "frontend_url": "https://student-panel-staging-production-d927.up.railway.app",
         "environment": os.getenv("ENV", "unknown")
     }
 
