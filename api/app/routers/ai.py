@@ -866,19 +866,8 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             print(f"[DEBUG] Processing question for specific document: {question.document_id}")
             
             try:
-                # Wrap blocking vector store loading in thread pool with timeout
-                print(f"[DEBUG] Loading vector store in thread pool with 60s timeout...")
-                vector_store = await asyncio.wait_for(
-                    asyncio.to_thread(get_cached_vector_store, question.document_id),
-                    timeout=60.0  # 60 second timeout for vector store loading
-                )
+                vector_store = get_cached_vector_store(question.document_id)
                 print(f"[DEBUG] Vector store loading attempt completed for document {question.document_id}")
-            except asyncio.TimeoutError:
-                print(f"[ERROR] Vector store loading timed out after 60 seconds")
-                raise HTTPException(
-                    status_code=504,
-                    detail="Vector store loading timed out. Please try again."
-                )
             except Exception as vs_error:
                 print(f"[ERROR] Exception during vector store loading: {str(vs_error)}")
                 print(f"[ERROR] Exception type: {type(vs_error).__name__}")
@@ -923,11 +912,7 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             
             # Test if vector store can find any documents at all
             try:
-                # Wrap blocking similarity search in thread pool with timeout
-                test_results = await asyncio.wait_for(
-                    asyncio.to_thread(vector_store.similarity_search, "test", k=1),
-                    timeout=10.0  # 10 second timeout for test search
-                )
+                test_results = vector_store.similarity_search("test", k=1)
                 print(f"[DEBUG] Vector store test search successful, found {len(test_results)} results")
                 
                 # Additional test: try to get any documents at all
@@ -936,12 +921,6 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
                 else:
                     print(f"[DEBUG] Test query returned no results - vector store may be empty")
                     
-            except asyncio.TimeoutError:
-                print(f"[ERROR] Vector store test search timed out after 10 seconds")
-                raise HTTPException(
-                    status_code=504,
-                    detail="Vector store test search timed out. The vector store may be corrupted."
-                )
             except Exception as e:
                 print(f"[ERROR] Vector store test search failed: {str(e)}")
                 print(f"[ERROR] Exception type: {type(e).__name__}")
@@ -954,43 +933,14 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             # Get relevant chunks
             try:
                 print(f"[DEBUG] Attempting similarity search with question: '{question.question}'")
-                # Wrap blocking similarity search in thread pool with timeout
-                docs_with_scores = await asyncio.wait_for(
-                    asyncio.to_thread(
-                        vector_store.similarity_search_with_score,
-                        question.question,
-                        12,  # k
-                        filter_dict,  # filter
-                        25,  # fetch_k
-                        0.05  # score_threshold
-                    ),
-                    timeout=30.0  # 30 second timeout for similarity search
+                docs_with_scores = vector_store.similarity_search_with_score(
+                    question.question,
+                    k=12,  # Increased from 8 to 12 for better coverage
+                    filter=filter_dict,
+                    fetch_k=25,  # Increased from 15 to 25
+                    score_threshold=0.05   # Reduced from 0.1 to 0.05 for better coverage
                 )
                 print(f"[DEBUG] Primary similarity search successful, found {len(docs_with_scores)} results")
-            except asyncio.TimeoutError:
-                print(f"[ERROR] Primary similarity search timed out after 30 seconds")
-                # Try alternative search method with shorter timeout
-                try:
-                    print(f"[DEBUG] Trying alternative search method with shorter timeout...")
-                    docs_with_scores = await asyncio.wait_for(
-                        asyncio.to_thread(vector_store.similarity_search, question.question, 5),
-                        timeout=15.0
-                    )
-                    # Convert to format expected by the rest of the code
-                    docs_with_scores = [(doc, 0.5) for doc in docs_with_scores]  # Default score of 0.5
-                    print(f"[DEBUG] Alternative search method successful, found {len(docs_with_scores)} results")
-                except asyncio.TimeoutError:
-                    print(f"[ERROR] Alternative search also timed out")
-                    raise HTTPException(
-                        status_code=504,
-                        detail="Similarity search timed out. Please try again with a simpler question."
-                    )
-                except Exception as alt_search_error:
-                    print(f"[ERROR] Alternative search failed: {str(alt_search_error)}")
-                    raise HTTPException(
-                        status_code=500,
-                        detail=f"Search failed: {str(alt_search_error)}"
-                    )
             except Exception as search_error:
                 print(f"[ERROR] Primary similarity search failed: {str(search_error)}")
                 print(f"[ERROR] Exception type: {type(search_error).__name__}")
@@ -999,19 +949,13 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
                 # Try alternative search method
                 try:
                     print(f"[DEBUG] Trying alternative search method...")
-                    docs_with_scores = await asyncio.wait_for(
-                        asyncio.to_thread(vector_store.similarity_search, question.question, 5),
-                        timeout=15.0
+                    docs_with_scores = vector_store.similarity_search(
+                        question.question,
+                        k=5  # Increased from 3 to 5
                     )
                     # Convert to format expected by the rest of the code
                     docs_with_scores = [(doc, 0.5) for doc in docs_with_scores]  # Default score of 0.5
                     print(f"[DEBUG] Alternative search method successful, found {len(docs_with_scores)} results")
-                except asyncio.TimeoutError:
-                    print(f"[ERROR] Alternative search timed out")
-                    raise HTTPException(
-                        status_code=504,
-                        detail="Search operation timed out. Please try again."
-                    )
                 except Exception as alt_search_error:
                     print(f"[ERROR] Alternative search also failed: {str(alt_search_error)}")
                     print(f"[ERROR] Exception type: {type(alt_search_error).__name__}")
@@ -1023,25 +967,14 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
                         total_docs = vector_store.index.ntotal
                         if total_docs > 0:
                             # Get the first few documents regardless of relevance
-                            docs_with_scores = await asyncio.wait_for(
-                                asyncio.to_thread(
-                                    vector_store.similarity_search_with_score,
-                                    "",
-                                    min(5, total_docs),
-                                    None,  # filter
-                                    total_docs  # fetch_k
-                                ),
-                                timeout=10.0
+                            docs_with_scores = vector_store.similarity_search_with_score(
+                                "",
+                                k=min(5, total_docs),  # Increased from 3 to 5
+                                fetch_k=total_docs
                             )
                             print(f"[DEBUG] Empty search successful, found {len(docs_with_scores)} chunks")
                         else:
                             raise Exception("Vector store is empty")
-                    except asyncio.TimeoutError:
-                        print(f"[ERROR] Empty search timed out")
-                        raise HTTPException(
-                            status_code=504,
-                            detail="Vector store search timed out. The document may be too large."
-                        )
                     except Exception as empty_search_error:
                         print(f"[ERROR] Empty search also failed: {str(empty_search_error)}")
                         print(f"[ERROR] Exception type: {type(empty_search_error).__name__}")
@@ -1545,18 +1478,14 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             if not docs_with_scores:
                 print("[DEBUG] No results with score_threshold=0.05, trying without threshold...")
                 try:
-                    docs_with_scores = await asyncio.wait_for(
-                        asyncio.to_thread(
-                            combined_store.similarity_search_with_score,
-                            question.question,
-                            8,  # k
-                            filter_dict,  # filter
-                            20  # fetch_k
-                        ),
-                        timeout=20.0
+                    docs_with_scores = combined_store.similarity_search_with_score(
+                        question.question,
+                        k=8,  # Increased from 5 to 8 for better coverage
+                        filter=filter_dict,
+                        fetch_k=20  # Increased from 15 to 20
                     )
                     print(f"[DEBUG] Search without threshold successful, found {len(docs_with_scores)} chunks")
-                except (asyncio.TimeoutError, Exception) as e:
+                except Exception as e:
                     print(f"[ERROR] Search without threshold failed: {str(e)}")
                     docs_with_scores = []
             
@@ -1564,18 +1493,13 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             if not docs_with_scores:
                 print("[DEBUG] Still no results, trying with k=10 and no filter...")
                 try:
-                    docs_with_scores = await asyncio.wait_for(
-                        asyncio.to_thread(
-                            combined_store.similarity_search_with_score,
-                            question.question,
-                            10,  # k
-                            None,  # filter
-                            25  # fetch_k
-                        ),
-                        timeout=20.0
+                    docs_with_scores = combined_store.similarity_search_with_score(
+                        question.question,
+                        k=10,  # Increased from 8 to 10
+                        fetch_k=25  # Increased from 20 to 25
                     )
                     print(f"[DEBUG] Lenient search successful, found {len(docs_with_scores)} chunks")
-                except (asyncio.TimeoutError, Exception) as e:
+                except Exception as e:
                     print(f"[ERROR] Lenient search failed: {str(e)}")
                     docs_with_scores = []
             elif docs_with_scores:
