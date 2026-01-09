@@ -133,7 +133,11 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
             embeddings = get_embeddings()
             
             # Try loading with different strategies (enum for compatibility)
-            strategies = [DistanceStrategy.COSINE, DistanceStrategy.EUCLIDEAN, None]
+            strategies: List[Any] = []
+            for name in ("COSINE", "EUCLIDEAN", "L2"):
+                if hasattr(DistanceStrategy, name):
+                    strategies.append(getattr(DistanceStrategy, name))
+            strategies.append(None)
             
             for strategy in strategies:
                 try:
@@ -171,6 +175,16 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                             print(f"[WARNING] Manual fallback vector store load failed: {fallback_error}")
                     continue
             
+            # Final fallback try before giving up
+            try:
+                print("[DEBUG] All enum strategies failed; attempting manual fallback load")
+                fallback_store = _manual_load_vector_store(temp_dir, embeddings)
+                if fallback_store and hasattr(fallback_store, "index") and fallback_store.index.ntotal > 0:
+                    print("[DEBUG] Manual fallback vector store load succeeded")
+                    return fallback_store
+            except Exception as final_fallback_error:
+                print(f"[WARNING] Manual fallback after strategies failed: {final_fallback_error}")
+            
             print(f"[ERROR] All loading strategies failed for {doc_id}")
             return None
             
@@ -183,6 +197,20 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                 
     except Exception as e:
         print(f"[ERROR] Failed to load vector store: {e}")
+        # If a strategy name itself caused the error (e.g., unsupported enum), attempt manual load
+        if "EUCLIDEAN" in str(e) or "DistanceStrategy" in str(e):
+            try:
+                print("[DEBUG] Attempting manual fallback after strategy error")
+                temp_dir = tempfile.mkdtemp(prefix=f"vectorstore_fallback_{doc_id}_")
+                download_all_vectorstore_files(doc_id, temp_dir)
+                embeddings = get_embeddings()
+                fallback_store = _manual_load_vector_store(temp_dir, embeddings)
+                shutil.rmtree(temp_dir, ignore_errors=True)
+                if fallback_store and hasattr(fallback_store, "index") and fallback_store.index.ntotal > 0:
+                    print("[DEBUG] Manual fallback after strategy error succeeded")
+                    return fallback_store
+            except Exception as fallback_error:
+                print(f"[WARNING] Manual fallback after strategy error failed: {fallback_error}")
         return None
                         
 
