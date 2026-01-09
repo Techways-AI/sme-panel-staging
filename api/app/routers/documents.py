@@ -9,6 +9,7 @@ from fastapi import APIRouter, HTTPException, UploadFile, File, Form, Body, Depe
 from fastapi.responses import JSONResponse
 from typing import List, Optional, Dict, Any
 from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores.faiss import DistanceStrategy
 from copy import deepcopy
 import time
 import asyncio
@@ -678,7 +679,7 @@ async def process_document(doc_id: str, options: ProcessOptions = None, auth_res
                 texts=texts,
                 embedding=embeddings,
                 metadatas=metadatas,
-                distance_strategy="COSINE_DISTANCE"  # Use cosine distance for better similarity scoring
+                distance_strategy=DistanceStrategy.COSINE  # Use cosine distance for better similarity scoring
             )
             
             # Save vector store directly to S3

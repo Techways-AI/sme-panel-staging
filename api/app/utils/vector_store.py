@@ -1,11 +1,14 @@
 import os
 import tempfile
 import shutil
+import pickle
 from typing import Dict, List, Optional, Any
+import faiss
 from langchain_openai import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
+from langchain_community.vectorstores.faiss import DistanceStrategy
 
 try:
     # LangChain >= 0.1
@@ -129,8 +132,8 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
             # Load embeddings
             embeddings = get_embeddings()
             
-            # Try loading with different strategies
-            strategies = ["COSINE_DISTANCE", "EUCLIDEAN_DISTANCE", None]
+            # Try loading with different strategies (enum for compatibility)
+            strategies = [DistanceStrategy.COSINE, DistanceStrategy.EUCLIDEAN, None]
             
             for strategy in strategies:
                 try:
@@ -155,6 +158,17 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                         
                 except Exception as e:
                     print(f"[DEBUG] Strategy {strategy} failed: {e}")
+                    
+                    # Backward compatibility: handle legacy pydantic/Document pickles
+                    if "__fields_set__" in str(e):
+                        try:
+                            print("[DEBUG] Attempting manual fallback vector store load")
+                            fallback_store = _manual_load_vector_store(temp_dir, embeddings)
+                            if fallback_store and hasattr(fallback_store, "index") and fallback_store.index.ntotal > 0:
+                                print("[DEBUG] Manual fallback vector store load succeeded")
+                                return fallback_store
+                        except Exception as fallback_error:
+                            print(f"[WARNING] Manual fallback vector store load failed: {fallback_error}")
                     continue
             
             print(f"[ERROR] All loading strategies failed for {doc_id}")
@@ -171,6 +185,75 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
         print(f"[ERROR] Failed to load vector store: {e}")
         return None
                         
+
+def _manual_load_vector_store(temp_dir: str, embeddings) -> Optional[FAISS]:
+    """Best-effort loader for legacy vector stores serialized with older LangChain/Pydantic versions."""
+    faiss_path = os.path.join(temp_dir, "index.faiss")
+    pkl_path = os.path.join(temp_dir, "index.pkl")
+
+    if not (os.path.exists(faiss_path) and os.path.exists(pkl_path)):
+        print("[ERROR] Manual load failed: index files missing")
+        return None
+
+    with open(pkl_path, "rb") as f:
+        data = pickle.load(f)
+
+    index = faiss.read_index(faiss_path)
+    raw_docstore = data.get("docstore")
+    index_to_docstore_id = data.get("index_to_docstore_id", {})
+    normalize_L2 = data.get("normalize_L2", False)
+    distance_strategy = data.get("distance_strategy")
+
+    # Extract raw docs from various stored shapes
+    if isinstance(raw_docstore, InMemoryDocstore):
+        raw_docs = getattr(raw_docstore, "_dict", {}) or {}
+    elif isinstance(raw_docstore, dict):
+        raw_docs = raw_docstore
+    else:
+        raw_docs = {}
+
+    cleaned_docs = {}
+    for key, value in raw_docs.items():
+        if isinstance(value, Document):
+            cleaned_docs[key] = value
+            continue
+
+        content = getattr(value, "page_content", None)
+        metadata = getattr(value, "metadata", None)
+
+        if content is None and isinstance(value, dict):
+            content = value.get("page_content") or value.get("content") or ""
+            metadata = value.get("metadata", {})
+
+        if content is None:
+            continue
+
+        try:
+            cleaned_docs[key] = Document(page_content=content, metadata=metadata or {})
+        except Exception:
+            cleaned_docs[key] = Document(page_content=str(content), metadata=metadata or {})
+
+    docstore = InMemoryDocstore(cleaned_docs)
+
+    # Map distance strategy from stored value (string or enum)
+    ds = None
+    if distance_strategy:
+        try:
+            if isinstance(distance_strategy, DistanceStrategy):
+                ds = distance_strategy
+            elif isinstance(distance_strategy, str) and distance_strategy in DistanceStrategy.__members__:
+                ds = DistanceStrategy[distance_strategy]
+        except Exception:
+            ds = None
+
+    return FAISS(
+        embedding_function=embeddings,
+        index=index,
+        docstore=docstore,
+        index_to_docstore_id=index_to_docstore_id,
+        normalize_L2=normalize_L2,
+        distance_strategy=ds or DistanceStrategy.COSINE
+    )
 
 
 def save_vector_store(vector_store: FAISS, doc_id: str) -> bool:
