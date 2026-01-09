@@ -88,13 +88,21 @@ async def health_check(auth_result: dict = Depends(get_dual_auth_user)):
             s3_status = f"failed: {str(e)}"
             print(f"[HEALTH_CHECK] ✗ S3 connection failed: {str(e)}")
         
+        # Get system versions for compatibility checking
+        try:
+            from app.utils.vector_store import get_system_versions
+            system_versions = get_system_versions()
+        except Exception as e:
+            system_versions = {"error": str(e)}
+        
         result = {
             "status": "healthy",
             "timestamp": datetime.now().isoformat(),
             "environment": env_status,
             "embeddings": embeddings_status,
             "s3": s3_status,
-            "vector_store_cache_size": len(vector_store_cache)
+            "vector_store_cache_size": len(vector_store_cache),
+            "system_versions": system_versions
         }
         
         print(f"[HEALTH_CHECK] Health check completed successfully")
@@ -137,6 +145,60 @@ async def test_basic_functionality(auth_result: dict = Depends(get_dual_auth_use
             "timestamp": datetime.now().isoformat()
         }
 
+@router.get("/diagnostics/versions")
+async def get_system_versions(auth_result: dict = Depends(get_dual_auth_user)):
+    """Get system versions for compatibility checking"""
+    try:
+        from app.utils.vector_store import get_system_versions
+        versions = get_system_versions()
+        
+        return {
+            "status": "success",
+            "versions": versions,
+            "timestamp": datetime.now().isoformat(),
+            "note": "Compare these versions with the environment where vector stores were created"
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+
+@router.get("/diagnostics/compatibility/{doc_id}")
+async def check_vector_store_compatibility(
+    doc_id: str, 
+    auth_result: dict = Depends(get_dual_auth_user)
+):
+    """Check if a document's vector store is compatible with current system"""
+    try:
+        from app.utils.vector_store import check_vector_store_compatibility, get_system_versions
+        
+        is_compatible, error_message = check_vector_store_compatibility(doc_id)
+        versions = get_system_versions()
+        
+        result = {
+            "doc_id": doc_id,
+            "is_compatible": is_compatible,
+            "system_versions": versions,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        if not is_compatible:
+            result["error"] = error_message
+            result["solution"] = "Reprocess the document to rebuild the vector store with current dependencies"
+        else:
+            result["message"] = "Vector store is compatible with current system"
+        
+        return result
+    except Exception as e:
+        return {
+            "status": "error",
+            "doc_id": doc_id,
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+
 @router.get("/test-vectorstore/{doc_id}")
 async def test_vectorstore_loading(doc_id: str, auth_result: dict = Depends(get_dual_auth_user)):
     """Test endpoint to verify vector store loading for a specific document"""
@@ -144,7 +206,17 @@ async def test_vectorstore_loading(doc_id: str, auth_result: dict = Depends(get_
         print(f"[DEBUG] Testing vector store loading for document {doc_id}")
         
         # Test vector store loading
-        vector_store = get_cached_vector_store(doc_id)
+        try:
+            vector_store = get_cached_vector_store(doc_id)
+        except VectorStoreCompatibilityError as compat_error:
+            return {
+                "status": "compatibility_error",
+                "error": "Vector store compatibility issue",
+                "message": str(compat_error),
+                "doc_id": doc_id,
+                "solution": "Reprocess the document to rebuild the vector store",
+                "timestamp": datetime.now().isoformat()
+            }
         
         if not vector_store:
             return {
@@ -868,6 +940,21 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             try:
                 vector_store = get_cached_vector_store(question.document_id)
                 print(f"[DEBUG] Vector store loading attempt completed for document {question.document_id}")
+            except VectorStoreCompatibilityError as compat_error:
+                # Compatibility error - provide helpful message to user
+                print(f"[ERROR] Vector store compatibility error: {str(compat_error)}")
+                doc = next((d for d in documents if d["id"] == question.document_id), None)
+                doc_name = doc.get("fileName", "Unknown") if doc else "Unknown"
+                raise HTTPException(
+                    status_code=400,
+                    detail={
+                        "error": "Vector store compatibility issue",
+                        "message": str(compat_error),
+                        "document_id": question.document_id,
+                        "document_name": doc_name,
+                        "solution": "Please reprocess the document to rebuild the vector store with current dependencies."
+                    }
+                )
             except Exception as vs_error:
                 print(f"[ERROR] Exception during vector store loading: {str(vs_error)}")
                 print(f"[ERROR] Exception type: {type(vs_error).__name__}")
@@ -1608,7 +1695,24 @@ async def ask_question_public(question: QuestionInput):
         # Get relevant documents
         if question.document_id:
             print(f"[DEBUG] Public endpoint: Processing question for specific document: {question.document_id}")
-            vector_store = get_cached_vector_store(question.document_id)
+            try:
+                vector_store = get_cached_vector_store(question.document_id)
+            except VectorStoreCompatibilityError as compat_error:
+                # Compatibility error - provide helpful message to user
+                print(f"[ERROR] Vector store compatibility error: {str(compat_error)}")
+                doc = next((d for d in documents if d["id"] == question.document_id), None)
+                doc_name = doc.get("fileName", "Unknown") if doc else "Unknown"
+                raise HTTPException(
+                    status_code=400,
+                    detail={
+                        "error": "Vector store compatibility issue",
+                        "message": str(compat_error),
+                        "document_id": question.document_id,
+                        "document_name": doc_name,
+                        "solution": "Please reprocess the document to rebuild the vector store with current dependencies."
+                    }
+                )
+            
             if not vector_store:
                 print(f"[DEBUG] Vector store not found for document {question.document_id}")
                 # Try to provide a helpful error message
@@ -2510,8 +2614,18 @@ async def search_vectorstores_concurrently(
 # Add caching for vector stores
 # Note: vector_store_cache and VECTOR_STORE_CACHE_TTL are defined above
 
+class VectorStoreCompatibilityError(ValueError):
+    """Custom exception for vector store compatibility issues"""
+    pass
+
 def get_cached_vector_store(doc_id: str) -> Optional[FAISS]:
-    """Get vector store from cache or load it with improved error handling"""
+    """
+    Get vector store from cache or load it with improved error handling.
+    
+    Raises:
+        VectorStoreCompatibilityError: If a compatibility issue is detected
+            (with helpful message about rebuilding the vector store)
+    """
     try:
         # Clean up expired caches first
         cleanup_expired_caches()
@@ -2550,8 +2664,22 @@ def get_cached_vector_store(doc_id: str) -> Optional[FAISS]:
         
         return vector_store
         
+    except ValueError as ve:
+        # Compatibility error - re-raise as our custom exception with the helpful message
+        print(f"[ERROR] Vector store compatibility error for {doc_id}: {str(ve)}")
+        
+        # Clear any corrupted cache entry
+        if doc_id in vector_store_cache:
+            del vector_store_cache[doc_id]
+        if doc_id in vector_store_timestamps:
+            del vector_store_timestamps[doc_id]
+        print(f"[DEBUG] Cleared corrupted cache entry for {doc_id}")
+        
+        # Re-raise as our custom exception to preserve the helpful error message
+        raise VectorStoreCompatibilityError(str(ve)) from ve
+        
     except Exception as e:
-        print(f"[ERROR] Exception in get_cached_vector_store for {doc_id}: {str(e)}")
+        print(f"[ERROR] Exception in get_cached_vector_store for {doc_id}: {type(e).__name__}: {str(e)}")
         
         # Clear any corrupted cache entry
         if doc_id in vector_store_cache:

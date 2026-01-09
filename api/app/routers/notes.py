@@ -231,7 +231,20 @@ def extract_document_content(doc_id: str) -> str:
             )
         
         # Load vector store for the document
-        vector_store = load_vector_store(doc_id)
+        try:
+            vector_store = load_vector_store(doc_id)
+        except ValueError as ve:
+            # Compatibility error
+            raise HTTPException(
+                status_code=400,
+                detail={
+                    "error": "Vector store compatibility issue",
+                    "message": str(ve),
+                    "document_id": doc_id,
+                    "solution": "Please reprocess the document to rebuild the vector store with current dependencies."
+                }
+            )
+        
         if not vector_store:
             raise HTTPException(
                 status_code=404,

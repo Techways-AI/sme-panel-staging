@@ -1065,14 +1065,19 @@ async def get_document_status(doc_id: str, auth_result: dict = Depends(get_dual_
                 needs_reprocessing = True
             else:
                 # Get vector store statistics
-                vector_store = load_vector_store(doc_id)
-                if vector_store and hasattr(vector_store, 'index'):
-                    index = vector_store.index
-                    vector_store_stats = {
-                        "total_vectors": index.ntotal if hasattr(index, 'ntotal') else 0,
-                        "dimension": index.d if hasattr(index, 'd') else 0,
-                        "metric_type": getattr(index, 'metric_type', 1)
-                    }
+                try:
+                    vector_store = load_vector_store(doc_id)
+                    if vector_store and hasattr(vector_store, 'index'):
+                        index = vector_store.index
+                        vector_store_stats = {
+                            "total_vectors": index.ntotal if hasattr(index, 'ntotal') else 0,
+                            "dimension": index.d if hasattr(index, 'd') else 0,
+                            "metric_type": getattr(index, 'metric_type', 1)
+                        }
+                except ValueError as ve:
+                    # Compatibility error - mark as needing reprocessing
+                    logger.warning(f"Vector store compatibility error for {doc_id}: {str(ve)}")
+                    needs_reprocessing = True
         except Exception as e:
             logger.warning(f"Error checking vector store compatibility for {doc_id}: {str(e)}")
             needs_reprocessing = True
@@ -1242,7 +1247,19 @@ async def get_chunk_info(doc_id: str, auth_result: dict = Depends(get_dual_auth_
         raise HTTPException(status_code=400, detail="Document is not processed")
     
     try:
-        vector_store = load_vector_store(doc_id)
+        try:
+            vector_store = load_vector_store(doc_id)
+        except ValueError as ve:
+            # Compatibility error
+            raise HTTPException(
+                status_code=400,
+                detail={
+                    "error": "Vector store compatibility issue",
+                    "message": str(ve),
+                    "solution": "Please reprocess the document to rebuild the vector store with current dependencies."
+                }
+            )
+        
         if not vector_store:
             raise HTTPException(status_code=404, detail="Vector store not found")
         
