@@ -57,9 +57,24 @@ def get_embeddings():
     elif AI_PROVIDER == "google":
         if not GOOGLE_API_KEY:
             raise ValueError("GOOGLE_API_KEY is required when AI_PROVIDER is set to 'google'")
+        # Ensure Google embedding model name has the correct format (models/ prefix)
+        model_name = EMBEDDING_MODEL
+        if not model_name.startswith("models/"):
+            # Auto-fix common old format model names
+            if model_name == "text-embedding-gecko-002":
+                model_name = "models/text-embedding-004"
+            elif model_name.startswith("text-embedding-"):
+                # Convert text-embedding-XXX to models/text-embedding-XXX
+                model_name = f"models/{model_name}"
+            elif model_name.startswith("embedding-"):
+                # Convert embedding-XXX to models/embedding-XXX
+                model_name = f"models/{model_name}"
+            else:
+                # Default fallback
+                model_name = "models/text-embedding-004"
         return GoogleGenerativeAIEmbeddings(
             google_api_key=GOOGLE_API_KEY,
-            model=EMBEDDING_MODEL
+            model=model_name
         )
     else:  # OpenAI
         if not OPENAI_API_KEY:

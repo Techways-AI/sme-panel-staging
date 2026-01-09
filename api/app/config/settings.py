@@ -292,7 +292,8 @@ if USE_OPENAI_EMBEDDINGS:
     EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
     EMBEDDING_DIMENSION = 1536
 else:
-    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-gecko-002" if AI_PROVIDER == "google" else "text-embedding-3-small")
+    # Google embedding models must use the "models/" prefix format
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "models/text-embedding-004" if AI_PROVIDER == "google" else "text-embedding-3-small")
     EMBEDDING_DIMENSION = 768 if AI_PROVIDER == "google" else 1536
 
 OPENAI_FALLBACK_MODEL = os.getenv("OPENAI_FALLBACK_MODEL", "gpt-3.5-turbo")
