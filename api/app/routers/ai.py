@@ -935,7 +935,10 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
 
         # Get relevant documents
         if question.document_id:
+            print(f"[DEBUG] ===== SINGLE DOCUMENT MODE =====")
             print(f"[DEBUG] Processing question for specific document: {question.document_id}")
+            print(f"[DEBUG] Question: {question.question}")
+            print(f"[DEBUG] Document ID from request: {question.document_id}")
             
             try:
                 vector_store = get_cached_vector_store(question.document_id)
@@ -1387,31 +1390,70 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
             
         else:
             # Multi-document handling for general questions
+            print(f"[DEBUG] ===== MULTI-DOCUMENT MODE =====")
+            print(f"[DEBUG] Question: {question.question}")
+            print(f"[DEBUG] No specific document_id provided - searching across all processed documents")
             processed_docs = [d for d in documents if d.get("processed", False)]
             if not processed_docs:
                 raise HTTPException(status_code=400, detail="No processed documents available")
             
-            # Apply smart filtering for performance
-            if len(processed_docs) > 10:
-                print(f"[DEBUG] Filtering {len(processed_docs)} documents to improve performance")
-                processed_docs = filter_relevant_documents(question.question, processed_docs, max_docs=10)
-                print(f"[DEBUG] Selected {len(processed_docs)} most relevant documents")
+            # CRITICAL: Filter out incompatible documents BEFORE searching
+            print(f"[DEBUG] Checking compatibility for {len(processed_docs)} processed documents...")
+            from app.utils.vector_store import check_vector_store_compatibility
             
-            print(f"Processing general question across {len(processed_docs)} documents")
+            compatible_docs = []
+            incompatible_docs = []
+            
+            for doc in processed_docs:
+                doc_id = doc.get("id")
+                if not doc_id:
+                    continue
+                
+                is_compatible, error_msg = check_vector_store_compatibility(doc_id)
+                if is_compatible:
+                    compatible_docs.append(doc)
+                else:
+                    incompatible_docs.append((doc_id, error_msg))
+                    print(f"[WARNING] Skipping incompatible document {doc_id}: {error_msg[:100]}...")
+            
+            print(f"[DEBUG] Found {len(compatible_docs)} compatible documents, {len(incompatible_docs)} incompatible")
+            print(f"[DEBUG] Compatible doc IDs: {[d.get('id') for d in compatible_docs]}")
+            
+            if not compatible_docs:
+                error_detail = "No compatible vector stores available. "
+                if incompatible_docs:
+                    error_detail += f"{len(incompatible_docs)} document(s) have compatibility issues and need to be reprocessed."
+                raise HTTPException(
+                    status_code=400,
+                    detail=error_detail
+                )
+            
+            # Apply smart filtering for performance (only on compatible docs)
+            if len(compatible_docs) > 10:
+                print(f"[DEBUG] Filtering {len(compatible_docs)} compatible documents to improve performance")
+                compatible_docs = filter_relevant_documents(question.question, compatible_docs, max_docs=10)
+                print(f"[DEBUG] Selected {len(compatible_docs)} most relevant compatible documents")
+            
+            print(f"[DEBUG] Processing general question across {len(compatible_docs)} compatible documents")
+            print(f"[DEBUG] Document IDs being searched: {[d.get('id') for d in compatible_docs]}")
 
             # Fast path: query existing vector stores concurrently instead of rebuilding
             docs_with_scores = await search_vectorstores_concurrently(
                 question_text=question.question,
-                docs=processed_docs,
+                docs=compatible_docs,
                 per_store_k=4,
                 fetch_k=12,
                 timeout=15.0,
             )
 
             if not docs_with_scores:
+                # Provide helpful error message instead of generic 404
+                error_msg = "No relevant content found in the available documents for your question."
+                if incompatible_docs:
+                    error_msg += f" Note: {len(incompatible_docs)} document(s) were skipped due to compatibility issues and may need reprocessing."
                 raise HTTPException(
                     status_code=404,
-                    detail="No vector stores returned results for the question."
+                    detail=error_msg
                 )
             
             # Build context and sources with document metadata
@@ -2572,11 +2614,15 @@ async def _search_single_store(
             ensure_document_metadata(doc_obj, str(doc_id), doc.get("fileName", "Unknown"))
             sanitized.append((doc_obj, score))
         return sanitized
+    except VectorStoreCompatibilityError as compat_error:
+        # Compatibility error - skip this document gracefully
+        print(f"[WARNING] Skipping incompatible document {doc_id}: {str(compat_error)}")
+        return []
     except asyncio.TimeoutError:
         print(f"[ERROR] Search timed out for doc {doc_id}")
         return []
     except Exception as exc:
-        print(f"[ERROR] Search failed for doc {doc_id}: {exc}")
+        print(f"[ERROR] Search failed for doc {doc_id}: {type(exc).__name__}: {exc}")
         return []
 
 
