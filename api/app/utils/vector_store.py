@@ -110,71 +110,70 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
             error_msg = f"Vector store files are empty for doc_id={doc_id}. faiss size: {faiss_size}, pkl size: {pkl_size}"
             logger.error(error_msg)
             raise Exception(error_msg)
-            
-            # Load embeddings
+        
+        # Load embeddings
+        try:
+            embeddings = get_embeddings()
+            logger.debug("Embeddings model loaded successfully")
+        except Exception as emb_error:
+            error_msg = f"Failed to load embeddings model: {str(emb_error)}"
+            logger.error(error_msg, exc_info=True)
+            raise Exception(error_msg) from emb_error
+        
+        # Try loading with different strategies
+        strategies = ["COSINE_DISTANCE", "EUCLIDEAN_DISTANCE", None]
+        last_error = None
+        
+        for strategy in strategies:
             try:
-                embeddings = get_embeddings()
-                logger.debug("Embeddings model loaded successfully")
-            except Exception as emb_error:
-                error_msg = f"Failed to load embeddings model: {str(emb_error)}"
-                logger.error(error_msg, exc_info=True)
-                raise Exception(error_msg) from emb_error
-            
-            # Try loading with different strategies
-            strategies = ["COSINE_DISTANCE", "EUCLIDEAN_DISTANCE", None]
-            last_error = None
-            
-            for strategy in strategies:
-                try:
-                    logger.debug(f"Attempting to load vector store with strategy: {strategy or 'default'}")
-                    if strategy:
-                        vector_store = FAISS.load_local(
-                            temp_dir, 
-                            embeddings, 
-                            allow_dangerous_deserialization=True,
-                            distance_strategy=strategy
-                        )
-                    else:
-                        vector_store = FAISS.load_local(
-                            temp_dir, 
-                            embeddings, 
-                            allow_dangerous_deserialization=True
-                        )
-                    
-                    # Verify it's usable
-                    if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
-                        logger.info(f"Vector store loaded successfully with {strategy or 'default'} strategy. Index size: {vector_store.index.ntotal}")
-                        return vector_store
-                    else:
-                        logger.warning(f"Vector store loaded but appears invalid. Has index: {hasattr(vector_store, 'index') if vector_store else False}")
-                        
-                except Exception as e:
-                    last_error = e
-                    logger.debug(f"Strategy {strategy} failed: {str(e)}")
-                    continue
-            
-            # If all strategies failed, raise an exception with details
-            error_msg = f"All loading strategies failed for doc_id={doc_id}. Last error: {str(last_error) if last_error else 'Unknown'}"
-            logger.error(error_msg, exc_info=last_error is not None)
-            if last_error:
-                raise Exception(error_msg) from last_error
-            else:
-                raise Exception(error_msg)
-            
-        finally:
-            # Clean up temp directory
-            if temp_dir:
-                try:
-                    shutil.rmtree(temp_dir)
-                    logger.debug(f"Cleaned up temporary directory: {temp_dir}")
-                except Exception as cleanup_error:
-                    logger.warning(f"Failed to cleanup temp directory {temp_dir}: {cleanup_error}")
+                logger.debug(f"Attempting to load vector store with strategy: {strategy or 'default'}")
+                if strategy:
+                    vector_store = FAISS.load_local(
+                        temp_dir, 
+                        embeddings, 
+                        allow_dangerous_deserialization=True,
+                        distance_strategy=strategy
+                    )
+                else:
+                    vector_store = FAISS.load_local(
+                        temp_dir, 
+                        embeddings, 
+                        allow_dangerous_deserialization=True
+                    )
                 
+                # Verify it's usable
+                if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
+                    logger.info(f"Vector store loaded successfully with {strategy or 'default'} strategy. Index size: {vector_store.index.ntotal}")
+                    return vector_store
+                else:
+                    logger.warning(f"Vector store loaded but appears invalid. Has index: {hasattr(vector_store, 'index') if vector_store else False}")
+                    
+            except Exception as e:
+                last_error = e
+                logger.debug(f"Strategy {strategy} failed: {str(e)}")
+                continue
+        
+        # If all strategies failed, raise an exception with details
+        error_msg = f"All loading strategies failed for doc_id={doc_id}. Last error: {str(last_error) if last_error else 'Unknown'}"
+        logger.error(error_msg, exc_info=last_error is not None)
+        if last_error:
+            raise Exception(error_msg) from last_error
+        else:
+            raise Exception(error_msg)
+        
     except Exception as e:
         error_msg = f"Failed to load vector store for doc_id={doc_id}: {str(e)}"
         logger.error(error_msg, exc_info=True)
         # Re-raise to allow caller to handle
         raise Exception(error_msg) from e
+    finally:
+        # Clean up temp directory
+        if temp_dir:
+            try:
+                shutil.rmtree(temp_dir)
+                logger.debug(f"Cleaned up temporary directory: {temp_dir}")
+            except Exception as cleanup_error:
+                logger.warning(f"Failed to cleanup temp directory {temp_dir}: {cleanup_error}")
                         
 
 
