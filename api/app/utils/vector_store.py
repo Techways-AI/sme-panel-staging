@@ -120,17 +120,63 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
             logger.error(error_msg, exc_info=True)
             raise Exception(error_msg) from emb_error
         
-        # Apply Pydantic compatibility fix before loading
+        # Proactively fix Pydantic compatibility issues in pickle file BEFORE loading
         # This handles the case where pickles were created with Pydantic v1 but loaded with v2 (or vice versa)
+        pkl_path = os.path.join(temp_dir, "index.pkl")
+        
+        try:
+            import pickle
+            logger.debug("Checking pickle file for Pydantic compatibility issues...")
+            
+            # Read and check the pickle file
+            with open(pkl_path, 'rb') as f:
+                pickle_data = pickle.load(f)
+            
+            # Recursively fix dicts that look like Pydantic model states
+            fixed_count = [0]  # Use list to allow modification in nested function
+            
+            def fix_pydantic_dict(obj, path=""):
+                if isinstance(obj, dict):
+                    # Check if this looks like a Pydantic model state
+                    # Pydantic v1 models have __fields_set__ but v2 might not when unpickling v1 pickles
+                    has_underscore_fields = any(k.startswith('__') and k != '__fields_set__' for k in obj.keys())
+                    missing_fields_set = '__fields_set__' not in obj
+                    
+                    if has_underscore_fields and missing_fields_set:
+                        # Add __fields_set__ with all non-private keys (this is what Pydantic v1 expects)
+                        obj['__fields_set__'] = set(k for k in obj.keys() if not k.startswith('__'))
+                        fixed_count[0] += 1
+                        logger.debug(f"Fixed __fields_set__ at path: {path}")
+                    
+                    # Recursively fix nested dicts
+                    for k, v in obj.items():
+                        if isinstance(v, (dict, list)):
+                            fix_pydantic_dict(v, f"{path}.{k}" if path else k)
+                elif isinstance(obj, list):
+                    for i, item in enumerate(obj):
+                        if isinstance(item, (dict, list)):
+                            fix_pydantic_dict(item, f"{path}[{i}]" if path else f"[{i}]")
+            
+            fix_pydantic_dict(pickle_data)
+            
+            if fixed_count[0] > 0:
+                # Save the fixed pickle
+                with open(pkl_path, 'wb') as f:
+                    pickle.dump(pickle_data, f)
+                logger.info(f"Proactively fixed {fixed_count[0]} Pydantic compatibility issues in pickle file")
+            else:
+                logger.debug("No Pydantic compatibility issues found in pickle file")
+        except Exception as fix_error:
+            logger.warning(f"Could not proactively fix pickle file: {str(fix_error)}")
+            # Continue anyway - we'll try to fix on error
+        
+        # Apply Pydantic monkey-patch as additional safety
         try:
             import pydantic
-            # Check if we're using Pydantic v2
             if hasattr(pydantic, 'v1'):
-                # We have both v1 and v2 available
-                logger.debug("Pydantic v1 and v2 both available, applying compatibility fix")
+                logger.debug("Pydantic v1 and v2 both available, applying compatibility patch")
                 
                 # Monkey-patch pydantic.v1 to handle missing __fields_set__
-                original_setstate = None
                 if hasattr(pydantic.v1.main, 'BaseModel'):
                     original_setstate = pydantic.v1.main.BaseModel.__setstate__
                     
@@ -148,8 +194,8 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
         # Try loading with different strategies
         strategies = [None, "COSINE_DISTANCE", "EUCLIDEAN_DISTANCE"]  # Try None first (no strategy)
         last_error = None
-        pkl_path = os.path.join(temp_dir, "index.pkl")
-        pydantic_fix_attempted = False
+        vector_store = None
+        retry_after_fix = False
         
         for strategy in strategies:
             try:
@@ -183,62 +229,49 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                 
                 # Check if this is a Pydantic compatibility issue
                 if "__fields_set__" in error_str or (error_type == "KeyError" and "__fields_set__" in str(e)):
-                    logger.warning(f"Pydantic compatibility issue detected: {error_str}")
+                    logger.warning(f"Pydantic compatibility issue detected during load: {error_str}")
                     last_error = e
-                    # Try to fix the pickle file directly - do this on first occurrence
-                    if not pydantic_fix_attempted:
-                        try:
-                            logger.info("Attempting to fix pickle file for Pydantic compatibility...")
-                            import pickle
-                            
-                            # Read the pickle
-                            with open(pkl_path, 'rb') as f:
-                                pickle_data = pickle.load(f)
-                            
-                            # Recursively fix dicts that look like Pydantic model states
-                            fixed_count = [0]  # Use list to allow modification in nested function
-                            
-                            def fix_pydantic_dict(obj, path=""):
-                                if isinstance(obj, dict):
-                                    # Check if this looks like a Pydantic model state
-                                    has_underscore_fields = any(k.startswith('__') and k != '__fields_set__' for k in obj.keys())
-                                    missing_fields_set = '__fields_set__' not in obj
-                                    
-                                    if has_underscore_fields and missing_fields_set:
-                                        # Add __fields_set__ with all non-private keys
-                                        obj['__fields_set__'] = set(k for k in obj.keys() if not k.startswith('__'))
-                                        fixed_count[0] += 1
-                                        logger.debug(f"Fixed __fields_set__ at path: {path}")
-                                    
-                                    # Recursively fix nested dicts
-                                    for k, v in obj.items():
-                                        if isinstance(v, (dict, list)):
-                                            fix_pydantic_dict(v, f"{path}.{k}")
-                                elif isinstance(obj, list):
-                                    for i, item in enumerate(obj):
-                                        if isinstance(item, (dict, list)):
-                                            fix_pydantic_dict(item, f"{path}[{i}]")
-                            
-                            fix_pydantic_dict(pickle_data)
-                            
-                            if fixed_count[0] > 0:
-                                # Save the fixed pickle
-                                with open(pkl_path, 'wb') as f:
-                                    pickle.dump(pickle_data, f)
+                    # This should not happen if proactive fix worked, but try reactive fix
+                    logger.info("Attempting reactive fix for Pydantic compatibility...")
+                    try:
+                        import pickle
+                        
+                        # Read the pickle again
+                        with open(pkl_path, 'rb') as f:
+                            pickle_data = pickle.load(f)
+                        
+                        # Recursively fix dicts
+                        fixed_count = [0]
+                        
+                        def fix_pydantic_dict(obj, path=""):
+                            if isinstance(obj, dict):
+                                has_underscore_fields = any(k.startswith('__') and k != '__fields_set__' for k in obj.keys())
+                                missing_fields_set = '__fields_set__' not in obj
                                 
-                                logger.info(f"Fixed pickle file ({fixed_count[0]} fixes applied), retrying load...")
-                                pydantic_fix_attempted = True
-                                # Retry with the first strategy
-                                continue
-                            else:
-                                logger.warning("No Pydantic fixes needed in pickle structure")
-                                pydantic_fix_attempted = True
-                        except Exception as fix_error:
-                            logger.warning(f"Could not fix pickle file: {str(fix_error)}")
-                            pydantic_fix_attempted = True
-                            last_error = e
-                            continue
-                    else:
+                                if has_underscore_fields and missing_fields_set:
+                                    obj['__fields_set__'] = set(k for k in obj.keys() if not k.startswith('__'))
+                                    fixed_count[0] += 1
+                                    logger.debug(f"Fixed __fields_set__ at path: {path}")
+                                
+                                for k, v in obj.items():
+                                    if isinstance(v, (dict, list)):
+                                        fix_pydantic_dict(v, f"{path}.{k}" if path else k)
+                            elif isinstance(obj, list):
+                                for i, item in enumerate(obj):
+                                    if isinstance(item, (dict, list)):
+                                        fix_pydantic_dict(item, f"{path}[{i}]" if path else f"[{i}]")
+                        
+                        fix_pydantic_dict(pickle_data)
+                        
+                        if fixed_count[0] > 0:
+                            with open(pkl_path, 'wb') as f:
+                                pickle.dump(pickle_data, f)
+                            logger.info(f"Reactive fix applied ({fixed_count[0]} fixes), will retry from first strategy")
+                            # Set flag to retry from beginning
+                            retry_after_fix = True
+                            break
+                    except Exception as fix_error:
+                        logger.warning(f"Reactive fix failed: {str(fix_error)}")
                         last_error = e
                         continue
                 else:
@@ -255,6 +288,36 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                     continue
                 logger.debug(f"Strategy {strategy} failed: {str(e)}")
                 continue
+        
+        # If we fixed the pickle and need to retry, do it now
+        if retry_after_fix:
+            logger.info("Retrying load after Pydantic fix...")
+            for strategy in strategies:
+                try:
+                    logger.debug(f"Retry: Attempting to load vector store with strategy: {strategy or 'default'}")
+                    
+                    if strategy:
+                        vector_store = FAISS.load_local(
+                            temp_dir, 
+                            embeddings, 
+                            allow_dangerous_deserialization=True,
+                            distance_strategy=strategy
+                        )
+                    else:
+                        vector_store = FAISS.load_local(
+                            temp_dir, 
+                            embeddings, 
+                            allow_dangerous_deserialization=True
+                        )
+                    
+                    if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
+                        logger.info(f"Vector store loaded successfully after fix with {strategy or 'default'} strategy. Index size: {vector_store.index.ntotal}")
+                        return vector_store
+                except Exception as retry_error:
+                    logger.debug(f"Retry with strategy {strategy} failed: {str(retry_error)}")
+                    if strategy == strategies[-1]:
+                        last_error = retry_error
+                    continue
         
         # If all strategies failed, raise an exception with details
         error_msg = f"All loading strategies failed for doc_id={doc_id}. Last error: {str(last_error) if last_error else 'Unknown'}"
