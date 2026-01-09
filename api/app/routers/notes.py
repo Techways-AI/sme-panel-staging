@@ -11,6 +11,7 @@ from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 import logging
+import asyncio
 
 from ..core.security import get_current_user
 from ..core.dual_auth import get_dual_auth_user

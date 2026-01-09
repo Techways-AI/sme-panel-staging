@@ -4,10 +4,60 @@
  */
 
 // API Base URL - Update this to match your backend deployment
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://sme-panel-staging-production.up.railway.app';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8001';
 // Token storage key
 const TOKEN_KEY = 'sme_access_token';
 const USER_KEY = 'sme_user';
+const RESPONSE_CACHE_TTL = 30_000; // 30 seconds of client-side memoization
+const SESSION_CACHE_TTL = 60_000;  // 1 minute persisted across navigations
+const DEFAULT_TIMEOUT_MS = 10_000; // fail fast if the API is slow
+
+type CacheEntry<T> = { timestamp: number; data: T };
+const responseCache = new Map<string, CacheEntry<any>>();
+
+const cloneData = <T,>(data: T): T => {
+  if (typeof structuredClone === 'function') return structuredClone(data);
+  return JSON.parse(JSON.stringify(data));
+};
+
+const makeCacheKey = (method: string, endpoint: string, authHeader: string | null) =>
+  `${method.toUpperCase()}:${endpoint}:${authHeader || 'anon'}`;
+
+const clearResponseCache = () => responseCache.clear();
+
+const readSessionCache = <T,>(cacheKey: string): T | null => {
+  if (typeof window === 'undefined' || typeof sessionStorage === 'undefined') return null;
+  try {
+    const raw = sessionStorage.getItem(cacheKey);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as CacheEntry<T>;
+    if (Date.now() - parsed.timestamp > SESSION_CACHE_TTL) return null;
+    return parsed.data;
+  } catch {
+    return null;
+  }
+};
+
+const writeSessionCache = <T,>(cacheKey: string, data: T) => {
+  if (typeof window === 'undefined' || typeof sessionStorage === 'undefined') return;
+  try {
+    const entry: CacheEntry<T> = { timestamp: Date.now(), data };
+    sessionStorage.setItem(cacheKey, JSON.stringify(entry));
+  } catch {
+    // ignore storage quota errors
+  }
+};
+
+const fetchWithTimeout = async (resource: RequestInfo | URL, options: RequestInit, timeoutMs: number) => {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(resource, { ...options, signal: controller.signal });
+    return response;
+  } finally {
+    clearTimeout(id);
+  }
+};
 
 // ============================================
 // AUTH HELPERS
@@ -86,6 +136,16 @@ async function apiRequest<T>(endpoint: string, options: RequestOptions = {}): Pr
     config.body = isFormData ? body : JSON.stringify(body);
   }
   
+  const cacheKey = makeCacheKey(method, endpoint, authHeader);
+
+  // Serve hot GET responses from an in-memory cache to avoid duplicate requests
+  if (method === 'GET' && !isFormData) {
+    const cached = responseCache.get(cacheKey);
+    if (cached && Date.now() - cached.timestamp < RESPONSE_CACHE_TTL) {
+      return cloneData(cached.data);
+    }
+  }
+
   // Execute fetch immediately without any delays
   const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
   
@@ -105,8 +165,16 @@ async function apiRequest<T>(endpoint: string, options: RequestOptions = {}): Pr
     }
     throw new Error(errorMessage);
   }
-  
-  return response.json();
+
+  const data = await response.json();
+
+  if (method === 'GET' && !isFormData) {
+    responseCache.set(cacheKey, { timestamp: Date.now(), data });
+  } else {
+    clearResponseCache();
+  }
+
+  return data;
 }
 
 // ============================================

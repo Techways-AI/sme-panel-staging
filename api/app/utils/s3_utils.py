@@ -1,5 +1,6 @@
 import boto3
 import os
+import time
 from botocore.exceptions import ClientError
 from typing import Optional, BinaryIO, Dict, Any, List
 from ..config.settings import (
@@ -76,6 +77,13 @@ TEMPLATE_KEY = "templates/pharmacy_prompt.txt"
 # Constants for template management
 TEMPLATES_PREFIX = "templates/"
 TEMPLATE_BACKUPS_PREFIX = "templates/backups/"
+
+# Lightweight in‑memory cache for frequently requested metadata to reduce
+# repeated S3 round-trips on hot paths. Default cache horizon is increased
+# to avoid hammering S3 on every page load; can be tuned via env.
+_METADATA_CACHE_TTL = int(os.getenv("S3_METADATA_CACHE_TTL", "120"))
+_documents_cache: Dict[str, Any] = {"data": None, "ts": 0.0}
+_videos_cache: Dict[str, Any] = {"data": None, "ts": 0.0}
 
 def _check_s3_available():
     """Check if S3 is available and provide helpful error message"""
@@ -212,6 +220,9 @@ def save_documents_metadata(documents: list) -> bool:
             Body=json_data.encode('utf-8'),
             ContentType='application/json'
         )
+        # Warm cache to avoid an extra fetch on the next request
+        _documents_cache["data"] = documents
+        _documents_cache["ts"] = time.time()
         return True
     except ClientError as e:
         raise Exception(f"Failed to save documents metadata to S3: {str(e)}")
@@ -220,15 +231,24 @@ def load_documents_metadata() -> list:
     """Load documents metadata from S3"""
     _check_s3_available()
     try:
+        now = time.time()
+        if _documents_cache["data"] is not None and (now - _documents_cache["ts"]) < _METADATA_CACHE_TTL:
+            return _documents_cache["data"]
+
         response = s3_client.get_object(
             Bucket=S3_BUCKET_NAME,
             Key=DOCUMENTS_JSON_KEY
         )
         json_data = response['Body'].read().decode('utf-8')
-        return json.loads(json_data)
+        data = json.loads(json_data)
+        _documents_cache["data"] = data
+        _documents_cache["ts"] = now
+        return data
     except ClientError as e:
         if e.response['Error']['Code'] == 'NoSuchKey':
             # If documents.json doesn't exist yet, return empty list
+            _documents_cache["data"] = []
+            _documents_cache["ts"] = time.time()
             return []
         raise Exception(f"Failed to load documents metadata from S3: {str(e)}")
 
@@ -454,6 +474,8 @@ def save_videos_metadata(videos: list) -> bool:
             Body=json_data.encode('utf-8'),
             ContentType='application/json'
         )
+        _videos_cache["data"] = videos
+        _videos_cache["ts"] = time.time()
         return True
     except ClientError as e:
         raise Exception(f"Failed to save videos metadata to S3: {str(e)}")
@@ -462,11 +484,20 @@ def load_videos_metadata() -> list:
     """Load videos metadata from S3 (videos.json)"""
     _check_s3_available()
     try:
+        now = time.time()
+        if _videos_cache["data"] is not None and (now - _videos_cache["ts"]) < _METADATA_CACHE_TTL:
+            return _videos_cache["data"]
+
         response = s3_client.get_object(Bucket=S3_BUCKET_NAME, Key=VIDEOS_JSON_KEY)
         json_data = response['Body'].read().decode('utf-8')
-        return json.loads(json_data)
+        data = json.loads(json_data)
+        _videos_cache["data"] = data
+        _videos_cache["ts"] = now
+        return data
     except ClientError as e:
         if e.response['Error']['Code'] == 'NoSuchKey':
+            _videos_cache["data"] = []
+            _videos_cache["ts"] = time.time()
             return []
         raise Exception(f"Failed to load videos metadata from S3: {str(e)}")
 

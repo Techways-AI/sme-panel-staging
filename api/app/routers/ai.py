@@ -747,9 +747,9 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
         
         print(f"[DEBUG] API keys validated. Provider: {AI_PROVIDER}")
         
-        # Load documents from S3 to ensure we have latest data
+        # Load documents from S3 to ensure we have latest data without blocking the event loop
         try:
-            documents = load_documents_metadata() or []
+            documents = await asyncio.to_thread(load_documents_metadata) or []
             print(f"[DEBUG] Loaded {len(documents)} documents from S3 metadata.")
         except Exception as e:
             print(f"[ERROR] Failed to load documents from S3: {str(e)}")
@@ -1311,252 +1311,21 @@ async def ask_question(question: QuestionInput, auth_result: dict = Depends(get_
                 print(f"[DEBUG] Selected {len(processed_docs)} most relevant documents")
             
             print(f"Processing general question across {len(processed_docs)} documents")
-            
-            # Initialize variables for multi-document processing
-            combined_store = None
-            all_docs = []
-            docs_with_scores = []  # Initialize docs_with_scores variable
-            filter_dict = None  # Initialize filter_dict for multi-document queries
-            
-            # Load and combine vector stores from all processed documents
-            for doc in processed_docs:
-                try:
-                    print(f"[DEBUG] Loading vector store for document {doc.get('id')} ({doc.get('fileName', 'Unknown')})")
-                    vector_store = get_cached_vector_store(doc["id"])
-                    if vector_store:
-                        # Instead of merging, collect all documents and create a new combined store
-                        try:
-                            # Get all documents from this vector store
-                            total_docs = vector_store.index.ntotal
-                            print(f"[DEBUG] Vector store {doc.get('id')} has {total_docs} documents")
-                            
-                            if total_docs > 0:
-                                docs_from_store = vector_store.similarity_search("", k=total_docs)
-                                # Fix: Add metadata to Document objects for newer LangChain versions
-                                for doc_obj in docs_from_store:
-                                    ensure_document_metadata(doc_obj, str(doc.get('id')), doc.get('fileName', 'Unknown'))
-                                
-                                all_docs.extend(docs_from_store)
-                                print(f"[DEBUG] Added {len(docs_from_store)} chunks from document: {doc.get('fileName', 'Unknown')}")
-                            else:
-                                print(f"[DEBUG] Vector store {doc.get('id')} is empty")
-                        except Exception as e:
-                            print(f"[ERROR] Error extracting documents from vector store {doc.get('id')}: {str(e)}")
-                            print(f"[ERROR] Exception type: {type(e).__name__}")
-                            print(f"[ERROR] Exception details: {str(e)}")
-                            # Try alternative approach - search with a generic term
-                            try:
-                                print(f"[DEBUG] Trying alternative extraction method for {doc.get('id')}")
-                                docs_from_store = vector_store.similarity_search("the", k=10)
-                                
-                                # Fix: Add metadata to Document objects for newer LangChain versions
-                                for doc_obj in docs_from_store:
-                                    ensure_document_metadata(doc_obj, str(doc.get('id')), doc.get('fileName', 'Unknown'))
-                                
-                                all_docs.extend(docs_from_store)
-                                print(f"[DEBUG] Added {len(docs_from_store)} chunks using alternative method from: {doc.get('fileName', 'Unknown')}")
-                            except Exception as alt_e:
-                                print(f"[ERROR] Alternative extraction also failed for {doc.get('id')}: {str(alt_e)}")
-                                print(f"[ERROR] Exception type: {type(alt_e).__name__}")
-                                print(f"[ERROR] Exception details: {str(alt_e)}")
-                                continue
-                    else:
-                        print(f"[WARNING] Vector store not found for document {doc.get('id')}")
-                except Exception as e:
-                    print(f"[ERROR] Error loading vector store for document {doc.get('id')}: {str(e)}")
-                    print(f"[ERROR] Exception type: {type(e).__name__}")
-                    print(f"[ERROR] Exception details: {str(e)}")
-                    continue
-            
-            if not all_docs:
-                raise HTTPException(status_code=404, detail="No documents found in any vector stores")
-            
-            print(f"[DEBUG] Total documents collected: {len(all_docs)}")
-            
-            # Create a new combined vector store with all documents
-            try:
-                print(f"[DEBUG] Creating combined vector store with {len(all_docs)} documents")
-                
-                # Additional validation: ensure all documents have proper metadata
-                for i, doc_obj in enumerate(all_docs):
-                    if not hasattr(doc_obj, 'page_content') or not doc_obj.page_content:
-                        print(f"[WARNING] Document {i} missing page_content, skipping")
-                        continue
-                    if not hasattr(doc_obj, 'metadata'):
-                        doc_obj.metadata = {}
-                
-                embeddings = get_embeddings()
-                print(f"[DEBUG] Embeddings model loaded successfully")
-                
-                # Try to create the combined store
-                combined_store = FAISS.from_documents(all_docs, embeddings, distance_strategy="COSINE_DISTANCE")
-                print(f"[DEBUG] Created combined vector store with {combined_store.index.ntotal} total documents")
-            except Exception as e:
-                print(f"[ERROR] Error creating combined vector store: {str(e)}")
-                print(f"[ERROR] Exception type: {type(e).__name__}")
-                print(f"[ERROR] Exception details: {str(e)}")
-                
-                # Try to provide more specific error information
-                if "id" in str(e).lower():
-                    print(f"[ERROR] This appears to be a Document object metadata issue")
-                    print(f"[ERROR] Document objects may be missing required attributes")
-                
-                print(f"[ERROR] Combined vector store creation failed, falling back to individual stores")
-                # Fallback: try to use individual vector stores instead
-                combined_store = None
-                docs_with_scores = []
-                
-                # Try searching individual vector stores
-                for doc in processed_docs:
-                    try:
-                        vector_store = get_cached_vector_store(doc["id"])
-                        if vector_store:
-                            # Try to get at least one result from each store
-                            try:
-                                single_result = vector_store.similarity_search_with_score(
-                                    question.question,
-                                    k=1,
-                                    fetch_k=3
-                                )
-                                if single_result:
-                                    docs_with_scores.extend(single_result)
-                                    print(f"Found {len(single_result)} results from {doc.get('fileName', 'Unknown')}")
-                            except Exception as e:
-                                print(f"Error searching individual store {doc.get('id')}: {str(e)}")
-                                continue
-                    except Exception as e:
-                        print(f"Error loading individual vector store {doc.get('id')}: {str(e)}")
-                        continue
-                
-                if docs_with_scores:
-                    print(f"[INFO] Fallback successful: found {len(docs_with_scores)} results from individual stores")
-                    # Sort by score and take the best ones
-                    docs_with_scores.sort(key=lambda x: x[1], reverse=True)
-                    docs_with_scores = docs_with_scores[:5]  # Take top 5
-                else:
-                    raise HTTPException(status_code=500, detail=f"Failed to create combined vector store and fallback also failed: {str(e)}")
-            
-            if not combined_store:
-                print(f"[ERROR] Combined vector store creation failed")
-                raise HTTPException(status_code=404, detail="No vector stores found")
-            
-            # Only perform combined search if we have a combined store and no fallback results
-            if combined_store and not docs_with_scores:
-                # Optimize search parameters for multi-doc
-                try:
-                    print(f"[DEBUG] Attempting multi-document similarity search with question: '{question.question}'")
-                    
-                    # Add timeout protection for vector store search
-                    try:
-                        docs_with_scores = await asyncio.wait_for(
-                            asyncio.to_thread(
-                                combined_store.similarity_search_with_score,
-                                question.question,
-                                k=12,  # Increased from 8 to 12 for better coverage
-                                filter=filter_dict,
-                                fetch_k=30,  # Increased from 20 to 30
-                                score_threshold=0.05   # Reduced from 0.1 to 0.05 for better coverage
-                            ),
-                            timeout=30.0  # 30 second timeout for vector search
-                        )
-                        print(f"[DEBUG] Primary multi-doc search successful, found {len(docs_with_scores)} results")
-                    except asyncio.TimeoutError:
-                        print(f"[ERROR] Vector store search timed out after 30 seconds")
-                        docs_with_scores = []
-                    except Exception as search_error:
-                        print(f"[ERROR] Primary multi-doc search failed: {str(search_error)}")
-                        print(f"[ERROR] Exception type: {type(search_error).__name__}")
-                        print(f"[ERROR] Exception details: {str(search_error)}")
-                        docs_with_scores = []
-                except Exception as search_error:
-                    print(f"[ERROR] Primary multi-doc search failed: {str(search_error)}")
-                    print(f"[ERROR] Exception type: {type(search_error).__name__}")
-                    print(f"[ERROR] Exception details: {str(search_error)}")
-                    docs_with_scores = []
-            
-            # If no results with current threshold, try without threshold
+
+            # Fast path: query existing vector stores concurrently instead of rebuilding
+            docs_with_scores = await search_vectorstores_concurrently(
+                question_text=question.question,
+                docs=processed_docs,
+                per_store_k=4,
+                fetch_k=12,
+                timeout=15.0,
+            )
+
             if not docs_with_scores:
-                print("[DEBUG] No results with score_threshold=0.05, trying without threshold...")
-                try:
-                    docs_with_scores = combined_store.similarity_search_with_score(
-                        question.question,
-                        k=8,  # Increased from 5 to 8 for better coverage
-                        filter=filter_dict,
-                        fetch_k=20  # Increased from 15 to 20
-                    )
-                    print(f"[DEBUG] Search without threshold successful, found {len(docs_with_scores)} chunks")
-                except Exception as e:
-                    print(f"[ERROR] Search without threshold failed: {str(e)}")
-                    docs_with_scores = []
-            
-            # If still no results, try with even more lenient parameters
-            if not docs_with_scores:
-                print("[DEBUG] Still no results, trying with k=10 and no filter...")
-                try:
-                    docs_with_scores = combined_store.similarity_search_with_score(
-                        question.question,
-                        k=10,  # Increased from 8 to 10
-                        fetch_k=25  # Increased from 20 to 25
-                    )
-                    print(f"[DEBUG] Lenient search successful, found {len(docs_with_scores)} chunks")
-                except Exception as e:
-                    print(f"[ERROR] Lenient search failed: {str(e)}")
-                    docs_with_scores = []
-            elif docs_with_scores:
-                print(f"[DEBUG] Using fallback results: {len(docs_with_scores)} documents found")
-            
-            # If still no results, try searching individual vector stores as fallback
-            if not docs_with_scores:
-                print("[DEBUG] Combined search failed, trying individual vector stores...")
-                individual_results = []
-                
-                for i, doc in enumerate(processed_docs):
-                    print(f"[DEBUG] Processing individual store {i+1}/{len(processed_docs)}: {doc.get('fileName', 'Unknown')}")
-                    try:
-                        vector_store = get_cached_vector_store(doc["id"])
-                        if vector_store:
-                            # Try to get at least one result from each store
-                            try:
-                                print(f"[DEBUG] Searching in {doc.get('fileName', 'Unknown')}...")
-                                
-                                # Add timeout protection for individual vector store search
-                                try:
-                                    single_result = await asyncio.wait_for(
-                                        asyncio.to_thread(
-                                            vector_store.similarity_search_with_score,
-                                            question.question,
-                                            k=1,
-                                            fetch_k=3
-                                        ),
-                                        timeout=15.0  # 15 second timeout for individual search
-                                    )
-                                    if single_result:
-                                        individual_results.extend(single_result)
-                                        print(f"[DEBUG] Found {len(single_result)} results from {doc.get('fileName', 'Unknown')}")
-                                    else:
-                                        print(f"[DEBUG] No results found in {doc.get('fileName', 'Unknown')}")
-                                except asyncio.TimeoutError:
-                                    print(f"[ERROR] Individual search timed out for {doc.get('fileName', 'Unknown')}")
-                                    continue
-                                except Exception as e:
-                                    print(f"[ERROR] Error searching individual store {doc.get('id')}: {str(e)}")
-                                    continue
-                            except Exception as e:
-                                print(f"[ERROR] Error searching individual store {doc.get('id')}: {str(e)}")
-                                continue
-                        else:
-                            print(f"[DEBUG] Vector store not available for {doc.get('fileName', 'Unknown')}")
-                    except Exception as e:
-                        print(f"[ERROR] Error loading individual vector store {doc.get('id')}: {str(e)}")
-                        continue
-                
-                if individual_results:
-                    # Sort by score and take the best ones
-                    individual_results.sort(key=lambda x: x[1], reverse=True)
-                    docs_with_scores = individual_results[:3]  # Take top 3
-                    print(f"[DEBUG] Found {len(docs_with_scores)} results from individual searches")
-                else:
-                    print("[DEBUG] No results found from any individual vector stores")
+                raise HTTPException(
+                    status_code=404,
+                    detail="No vector stores returned results for the question."
+                )
             
             # Build context and sources with document metadata
             context_chunks = []
@@ -2666,6 +2435,77 @@ def filter_relevant_documents(question: str, documents: list, max_docs: int = 10
     # Sort by score and return top documents
     scored_docs.sort(key=lambda x: x[1], reverse=True)
     return [doc for doc, score in scored_docs[:max_docs]] 
+
+# Concurrent multi-vector-store search to avoid rebuilding combined indexes on every request
+async def _search_single_store(
+    doc: dict,
+    question_text: str,
+    per_store_k: int,
+    fetch_k: int,
+    timeout: float,
+) -> list:
+    """Search a single vector store on a background thread with timeout."""
+    doc_id = doc.get("id")
+    if not doc_id:
+        return []
+
+    try:
+        vector_store = get_cached_vector_store(doc_id)
+        if not vector_store:
+            print(f"[DEBUG] Vector store cache miss for {doc_id}")
+            return []
+
+        def _run_search():
+            return vector_store.similarity_search_with_score(
+                question_text,
+                k=per_store_k,
+                fetch_k=fetch_k,
+            )
+
+        results = await asyncio.wait_for(asyncio.to_thread(_run_search), timeout=timeout)
+        sanitized = []
+        for doc_obj, score in results:
+            ensure_document_metadata(doc_obj, str(doc_id), doc.get("fileName", "Unknown"))
+            sanitized.append((doc_obj, score))
+        return sanitized
+    except asyncio.TimeoutError:
+        print(f"[ERROR] Search timed out for doc {doc_id}")
+        return []
+    except Exception as exc:
+        print(f"[ERROR] Search failed for doc {doc_id}: {exc}")
+        return []
+
+
+async def search_vectorstores_concurrently(
+    question_text: str,
+    docs: list,
+    per_store_k: int = 4,
+    fetch_k: int = 12,
+    timeout: float = 15.0,
+) -> list:
+    """Run similarity search across multiple vector stores in parallel without re-embedding.
+
+    Returns a list of (Document, score) tuples sorted by score (lower distance first).
+    """
+    if not docs:
+        return []
+
+    tasks = [
+        _search_single_store(doc, question_text, per_store_k, fetch_k, timeout)
+        for doc in docs
+    ]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    merged: list = []
+    for res in results:
+        if isinstance(res, list):
+            merged.extend(res)
+        else:
+            print(f"[DEBUG] Skipping failed search result: {res}")
+
+    # Sort by distance (lower is better) and limit to a reasonable set
+    merged.sort(key=lambda pair: pair[1] if isinstance(pair, tuple) else float("inf"))
+    return merged[:max(12, per_store_k)]
 
 # Add caching for vector stores
 # Note: vector_store_cache and VECTOR_STORE_CACHE_TTL are defined above

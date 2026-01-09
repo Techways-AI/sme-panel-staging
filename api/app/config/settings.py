@@ -85,6 +85,11 @@ logging.getLogger('starlette').setLevel(logging.WARNING)
 logging.getLogger('uvicorn').setLevel(logging.INFO)
 logging.getLogger('fastapi').setLevel(logging.WARNING)
 
+# Suppress passlib lazy loading debug messages
+logging.getLogger('passlib').setLevel(logging.WARNING)
+logging.getLogger('passlib.utils.compat').setLevel(logging.ERROR)
+logging.getLogger('passlib.registry').setLevel(logging.ERROR)
+
 logger = logging.getLogger(__name__)
 
 # Base directory
@@ -184,9 +189,9 @@ API_DESCRIPTION = "An AI-powered tutoring system with document and video managem
 
 # CORS Configuration
 CORS_ORIGINS = [
-    "https://student-panel-staging-production-d927.up.railway.app",
-    "https://sme-panel-staging-production-67df.up.railway.app",
-    "https://sme-panel-staging-production.up.railway.app"
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:8001"
 ]
 
 # Function to clean and validate CORS origins
@@ -287,7 +292,7 @@ if USE_OPENAI_EMBEDDINGS:
     EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
     EMBEDDING_DIMENSION = 1536
 else:
-    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "models/text-embedding-004" if AI_PROVIDER == "google" else "text-embedding-3-small")
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-gecko-002" if AI_PROVIDER == "google" else "text-embedding-3-small")
     EMBEDDING_DIMENSION = 768 if AI_PROVIDER == "google" else 1536
 
 OPENAI_FALLBACK_MODEL = os.getenv("OPENAI_FALLBACK_MODEL", "gpt-3.5-turbo")

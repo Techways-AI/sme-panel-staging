@@ -96,6 +96,11 @@ async def add_timing_middleware(request: Request, call_next):
     response = await call_next(request)
     process_time = time.time() - start_time
     response.headers["X-Process-Time"] = str(process_time)
+    
+    # Add cache headers for GET requests to reduce redundant requests
+    if request.method == "GET" and process_time < 1.0:  # Only cache fast responses
+        response.headers["Cache-Control"] = "private, max-age=30"  # 30 second cache
+    
     return response
 
 
@@ -322,7 +327,7 @@ async def test_endpoint():
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
         "cors_origins": CORS_ORIGINS,
-        "frontend_url": "https://student-panel-staging-production-d927.up.railway.app",
+        "frontend_url": "http://localhost:3000",
         "environment": os.getenv("ENV", "unknown")
     }
 

@@ -203,7 +203,7 @@ export function AIChatView() {
     filterTopic !== "all"
 
   return (
-    <div className="h-[calc(100vh-3.5rem)] md:h-[calc(100vh-1.5rem)] flex flex-col">
+    <div className="h-[calc(100vh-3.5rem)] md:h-[calc(100vh-1.5rem)] min-h-0 flex flex-col overflow-hidden">
       {/* Mobile Context Toggle */}
       <div className="md:hidden flex items-center justify-between p-3 border-b bg-white">
         <h1 className="font-semibold text-foreground">AI Assistant</h1>
@@ -274,9 +274,9 @@ export function AIChatView() {
         </div>
       )}
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden min-h-0">
         {/* Desktop Context Sidebar */}
-        <aside className="hidden md:flex w-72 min-w-[18rem] shrink-0 border-r bg-white flex-col">
+        <aside className="hidden md:flex w-72 min-w-[18rem] shrink-0 border-r bg-white flex-col min-h-0">
           <div className="p-4 border-b">
             <h2 className="font-semibold text-foreground">Document Context</h2>
             <p className="text-sm text-muted-foreground mt-1">Filter and select documents</p>
@@ -356,7 +356,7 @@ export function AIChatView() {
             </p>
           </div>
 
-          <ScrollArea className="flex-1 p-3">
+          <ScrollArea className="flex-1 p-3 min-h-0">
             <div className="space-y-2">
               {filteredDocuments.length === 0 ? (
                 <p className="text-sm text-muted-foreground text-center py-4">No documents match filters</p>
@@ -386,9 +386,9 @@ export function AIChatView() {
         </aside>
 
         {/* Chat Area */}
-        <div className="flex-1 min-w-0 flex flex-col bg-slate-50">
+        <div className="flex-1 min-w-0 flex flex-col bg-slate-50 min-h-0">
           {/* Messages */}
-          <ScrollArea className="flex-1 p-4">
+          <ScrollArea className="flex-1 p-4 min-h-0">
             <div className="space-y-4 max-w-3xl mx-auto">
               {messages.map((message) => (
                 <div key={message.id} className={cn("flex gap-3", message.role === "user" && "flex-row-reverse")}>
@@ -437,7 +437,7 @@ export function AIChatView() {
           </ScrollArea>
 
           {/* Input */}
-          <div className="p-4 border-t bg-white">
+          <div className="p-4 border-t bg-white shrink-0">
             <div className="max-w-3xl mx-auto flex gap-2">
               <Input
                 value={input}

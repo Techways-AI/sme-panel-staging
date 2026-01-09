@@ -1,4 +1,5 @@
 import logging
+import asyncio
 from datetime import datetime
 from typing import Any, Dict, List
 
@@ -65,8 +66,11 @@ async def get_dashboard_summary(
     try:
         user_id = auth_result.get("user_data", {}).get("sub", "anonymous")
 
-        documents = load_documents_metadata()
-        videos = load_videos_metadata()
+        # Run metadata fetches in worker threads to avoid blocking the event loop
+        documents, videos = await asyncio.gather(
+            asyncio.to_thread(load_documents_metadata),
+            asyncio.to_thread(load_videos_metadata),
+        )
 
         # Notes are stored per-user in the database; count only this user's notes
         try:

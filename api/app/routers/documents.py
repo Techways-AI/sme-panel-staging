@@ -110,9 +110,9 @@ async def get_documents(auth_result: dict = Depends(get_dual_auth_user)):
         user_id = auth_result.get('user_data', {}).get('sub', 'unknown')
         logger.info(f"User {user_id} requesting documents")
         
-        # Load documents from S3
+        # Load documents from S3 without blocking the event loop
         try:
-            documents = load_documents_metadata()
+            documents = await asyncio.to_thread(load_documents_metadata)
             logger.info(f"Found {len(documents)} documents for user {user_id}")
         except Exception as e:
             logger.error(f"Failed to load documents for user {user_id}: {str(e)}")
@@ -224,9 +224,9 @@ async def upload_documents(
         file_results = []
         current_time = datetime.now()
         
-        # Load latest documents from S3
+        # Load latest documents from S3 without blocking the event loop
         try:
-            documents = load_documents_metadata()
+            documents = await asyncio.to_thread(load_documents_metadata)
         except Exception as e:
             logger.error(f"Failed to load documents from S3: {str(e)}")
             documents = []
@@ -339,7 +339,7 @@ async def upload_documents(
                 
                 # Save updated documents list to S3
                 try:
-                    save_documents_metadata(documents)
+                    await asyncio.to_thread(save_documents_metadata, documents)
                     logger.info("Successfully saved documents metadata to S3")
                 except Exception as e:
                     logger.error(f"Failed to save documents metadata to S3: {str(e)}")

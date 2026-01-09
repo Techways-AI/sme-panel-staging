@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 import shutil
 import threading
 import logging
+import asyncio
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -136,7 +137,7 @@ async def get_videos(auth_result: dict = Depends(get_dual_auth_user)):
     """Get all videos"""
     global videos
     try:
-        videos = load_videos_metadata()
+        videos = await asyncio.to_thread(load_videos_metadata)
         return {"videos": videos}
     except Exception as e:
         print(f"[ERROR] Failed to get videos: {str(e)}")
@@ -182,9 +183,9 @@ async def upload_videos(video_data: VideoUpload, auth_result: dict = Depends(get
         video_results = []
         current_time = datetime.now()
         
-        # Load latest videos list from S3
+        # Load latest videos list from S3 without blocking the event loop
         try:
-            videos = load_videos_metadata()
+            videos = await asyncio.to_thread(load_videos_metadata)
             logger.info(f"Loaded {len(videos)} existing videos from S3")
         except Exception as e:
             logger.error(f"Error loading videos from S3: {str(e)}")
@@ -247,7 +248,7 @@ async def upload_videos(video_data: VideoUpload, auth_result: dict = Depends(get
                 
                 # Save video metadata to S3
                 try:
-                    save_video_metadata_s3(video, s3_folder_path)
+                    await asyncio.to_thread(save_video_metadata_s3, video, s3_folder_path)
                     logger.info(f"Saved video metadata to S3 for video {unique_id}")
                 except Exception as e:
                     logger.error(f"Failed to save video metadata to S3: {str(e)}")
