@@ -1,6 +1,9 @@
 import os
 import tempfile
 import shutil
+import pickle
+import sys
+import time
 from typing import Dict, List, Optional, Any
 from langchain_openai import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -98,10 +101,91 @@ def get_embeddings():
             model=EMBEDDING_MODEL
         )
 
+def _patch_document_for_unpickling():
+    """Patch Document class to handle __fields_set__ during unpickling"""
+    try:
+        # Only patch if not already patched
+        if hasattr(Document, '_unpickle_patched'):
+            return
+        
+        # Store original methods
+        original_setstate = getattr(Document, '__setstate__', None)
+        original_getattr = getattr(Document, '__getattr__', None)
+        
+        # Patch __setstate__ to ensure __fields_set__ is set during unpickling
+        def patched_setstate(self, state):
+            if isinstance(state, dict):
+                # Ensure __fields_set__ is in the state
+                if '__fields_set__' not in state:
+                    state['__fields_set__'] = set()
+            if original_setstate:
+                original_setstate(self, state)
+            else:
+                # Default implementation
+                if isinstance(state, dict):
+                    self.__dict__.update(state)
+        
+        # Patch __getattr__ to handle missing __fields_set__
+        def patched_getattr(self, name):
+            if name == '__fields_set__':
+                try:
+                    if not hasattr(self, '__fields_set__'):
+                        object.__setattr__(self, '__fields_set__', set())
+                    return getattr(self, '__fields_set__')
+                except:
+                    return set()
+            if original_getattr:
+                return original_getattr(self, name)
+            raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+        
+        # Apply patches
+        Document.__setstate__ = patched_setstate
+        Document.__getattr__ = patched_getattr
+        Document._unpickle_patched = True
+        
+    except Exception as e:
+        print(f"[DEBUG] Could not patch Document: {e}")
+        import traceback
+        print(f"[DEBUG] Traceback: {traceback.format_exc()}")
+
+
 def load_vector_store(doc_id: str) -> Optional[FAISS]:
-    """Load vector store from S3 with simplified error handling"""
+    """Load vector store from S3 with simplified error handling and Pydantic compatibility"""
+    original_pickle_load = pickle.load  # Store original at function level
     try:
         print(f"[DEBUG] Loading vector store for doc_id={doc_id}")
+        
+        # Patch Document class for compatibility before loading
+        _patch_document_for_unpickling()
+        
+        # Also patch pickle.load temporarily to handle __fields_set__ errors
+        def patched_pickle_load(file, *args, **kwargs):
+            try:
+                return original_pickle_load(file, *args, **kwargs)
+            except (AttributeError, KeyError) as e:
+                if '__fields_set__' in str(e):
+                    # Try to fix and retry
+                    file.seek(0)  # Reset file pointer
+                    try:
+                        data = original_pickle_load(file, *args, **kwargs)
+                        # If we get here, try to fix any Document objects
+                        if isinstance(data, dict) and 'docstore' in data:
+                            docstore = data.get('docstore')
+                            if hasattr(docstore, '_dict'):
+                                for key, doc in docstore._dict.items():
+                                    if isinstance(doc, Document) and not hasattr(doc, '__fields_set__'):
+                                        try:
+                                            object.__setattr__(doc, '__fields_set__', set())
+                                        except:
+                                            pass
+                        return data
+                    except:
+                        # If retry fails, re-raise original error
+                        raise e
+                raise
+        
+        # Temporarily replace pickle.load
+        pickle.load = patched_pickle_load
         
         # Create temporary directory
         temp_dir = tempfile.mkdtemp(prefix=f"vectorstore_{doc_id}_")
@@ -153,6 +237,14 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                         print(f"[DEBUG] Vector store loaded successfully with {strategy or 'default'} strategy")
                         return vector_store
                         
+                except (AttributeError, KeyError) as e:
+                    error_str = str(e)
+                    if '__fields_set__' in error_str:
+                        print(f"[DEBUG] Strategy {strategy} failed with Pydantic compatibility issue: {e}")
+                        # The Document class should be patched, but if it still fails, 
+                        # the issue might be deeper in the unpickling process
+                    print(f"[DEBUG] Strategy {strategy} failed: {e}")
+                    continue
                 except Exception as e:
                     print(f"[DEBUG] Strategy {strategy} failed: {e}")
                     continue
@@ -161,6 +253,11 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
             return None
             
         finally:
+            # Restore original pickle.load
+            try:
+                pickle.load = original_pickle_load
+            except:
+                pass
             # Clean up temp directory
             try:
                 shutil.rmtree(temp_dir)
@@ -168,7 +265,14 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                 print(f"[WARNING] Failed to cleanup temp directory: {cleanup_error}")
                 
     except Exception as e:
+        # Restore original pickle.load in case of error
+        try:
+            pickle.load = original_pickle_load
+        except:
+            pass
         print(f"[ERROR] Failed to load vector store: {e}")
+        import traceback
+        print(f"[ERROR] Traceback: {traceback.format_exc()}")
         return None
                         
 
