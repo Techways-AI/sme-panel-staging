@@ -188,11 +188,18 @@ API_VERSION = "1.0.0"
 API_DESCRIPTION = "An AI-powered tutoring system with document and video management"
 
 # CORS Configuration
-CORS_ORIGINS = [
+# Default development origins
+DEFAULT_CORS_ORIGINS = [
     "https://student-panel-staging-production-d927.up.railway.app",
     "https://sme-panel-staging-production-67df.up.railway.app",
     "https://sme-panel-staging-production.up.railway.app"
 ]
+
+# In production, only use environment variable origins
+if IS_PRODUCTION:
+    CORS_ORIGINS = []
+else:
+    CORS_ORIGINS = DEFAULT_CORS_ORIGINS.copy()
 
 # Function to clean and validate CORS origins
 def clean_cors_origins(origins):
@@ -242,10 +249,22 @@ if ENV_CORS_ORIGINS:
             ALLOWED_ORIGINS = env_origins
             logger.info(f"CORS origins overridden from environment: {ALLOWED_ORIGINS}")
         else:
-            logger.warning("Environment CORS_ORIGINS parsed but no valid origins found, using defaults")
+            if IS_PRODUCTION:
+                logger.error("Environment CORS_ORIGINS parsed but no valid origins found. CORS_ORIGINS is REQUIRED in production!")
+                raise ValueError("CORS_ORIGINS environment variable is required in production and must contain at least one valid origin")
+            else:
+                logger.warning("Environment CORS_ORIGINS parsed but no valid origins found, using defaults")
     except Exception as e:
-        logger.warning(f"Failed to parse CORS_ORIGINS environment variable: {e}")
-        logger.info(f"Using default CORS origins: {ALLOWED_ORIGINS}")
+        if IS_PRODUCTION:
+            logger.error(f"Failed to parse CORS_ORIGINS environment variable: {e}")
+            raise ValueError(f"CORS_ORIGINS environment variable is required in production: {e}")
+        else:
+            logger.warning(f"Failed to parse CORS_ORIGINS environment variable: {e}")
+            logger.info(f"Using default CORS origins: {ALLOWED_ORIGINS}")
+elif IS_PRODUCTION:
+    # In production, CORS_ORIGINS must be set
+    logger.error("CORS_ORIGINS environment variable is not set. This is REQUIRED in production!")
+    raise ValueError("CORS_ORIGINS environment variable is required in production")
 
 # Add development-specific origins if not in production
 if not IS_PRODUCTION:

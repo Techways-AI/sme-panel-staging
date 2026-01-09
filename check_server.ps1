@@ -2,7 +2,7 @@
 Write-Host "Checking if server is running on port 8001..." -ForegroundColor Yellow
 
 try {
-    $response = Invoke-WebRequest -Uri "https://sme-panel-staging-production.up.railway.app/health" -TimeoutSec 3 -UseBasicParsing
+    $response = Invoke-WebRequest -Uri "http://localhost:8001/health" -TimeoutSec 3 -UseBasicParsing
     Write-Host "✅ Server IS running on port 8001!" -ForegroundColor Green
     Write-Host "Status Code: $($response.StatusCode)" -ForegroundColor Green
     Write-Host "Response: $($response.Content)" -ForegroundColor Green

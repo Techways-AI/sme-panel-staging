@@ -4,13 +4,17 @@
 - **Host:** `durranisdb.cv46gqs82fzh.ap-south-1.rds.amazonaws.com`
 - **User:** `postgres`
 - **Database:** `postgres`
-- **Password:** `Dur!Ns_2025`
+- **Password:** `[REDACTED - Set in environment variable]`
 - **Port:** `5432`
+
+**⚠️ SECURITY NOTE:** Never commit passwords to version control. Use environment variables or secure secret management.
 
 ## Your Railway Connection String
 ```
-postgresql://postgres:aWpxrNtSQmYmEcuuTklKHaFMAwYDxZjt@mainline.proxy.rlwy.net:33207/railway?sslmode=require
+[REDACTED - Set DATABASE_URL environment variable in Railway dashboard]
 ```
+
+**⚠️ SECURITY NOTE:** Store connection strings in Railway environment variables, not in code or documentation.
 
 ---
 
@@ -27,7 +31,7 @@ This will:
 3. ✅ Restore to Railway
 4. ✅ Fix permissions
 
-**Note:** You'll be prompted for password: `Dur!Ns_2025`
+**Note:** You'll be prompted for the database password (set in environment variable or secure vault)
 
 ---
 
@@ -55,7 +59,7 @@ OR manually:
   -v ^
   -f aws_backup.dump
 ```
-Password: `Dur!Ns_2025`
+Password: [Use environment variable or secure vault]
 
 ### STEP 3: Verify Dump
 ```bat
@@ -65,16 +69,19 @@ dir aws_backup.dump
 ### STEP 4: Restore to Railway
 ```bat
 "C:\Program Files\PostgreSQL\18\bin\pg_restore.exe" ^
-  -d "postgresql://postgres:aWpxrNtSQmYmEcuuTklKHaFMAwYDxZjt@mainline.proxy.rlwy.net:33207/railway?sslmode=require" ^
+  -d "%DATABASE_URL%" ^
   -v ^
   aws_backup.dump
 ```
 
+**Note:** Set `DATABASE_URL` environment variable with your Railway connection string.
+
 ### STEP 5: Fix Permissions
 ```bat
-"C:\Program Files\PostgreSQL\18\bin\psql.exe" ^
-"postgresql://postgres:aWpxrNtSQmYmEcuuTklKHaFMAwYDxZjt@mainline.proxy.rlwy.net:33207/railway?sslmode=require"
+"C:\Program Files\PostgreSQL\18\bin\psql.exe" "%DATABASE_URL%"
 ```
+
+**Note:** Set `DATABASE_URL` environment variable with your Railway connection string.
 
 Then run in psql:
 ```sql
@@ -93,8 +100,10 @@ verify_railway_db.bat
 ### STEP 7: Update DATABASE_URL in Railway
 Set in Railway environment variables:
 ```
-DATABASE_URL=postgresql://postgres:aWpxrNtSQmYmEcuuTklKHaFMAwYDxZjt@mainline.proxy.rlwy.net:33207/railway?sslmode=require
+DATABASE_URL=[Your Railway PostgreSQL connection string from Railway dashboard]
 ```
+
+**⚠️ SECURITY NOTE:** Get the connection string from Railway dashboard → Your Service → Variables tab. Never commit connection strings to version control.
 
 ### STEP 8: Redeploy
 ```bash

@@ -89,6 +89,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Add security headers middleware
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    """Add security headers to all responses"""
+    response = await call_next(request)
+    
+    # Security headers
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    
+    # Only add HSTS in production with HTTPS
+    if IS_PRODUCTION:
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    
+    return response
+
 # Add request timing middleware
 @app.middleware("http")
 async def add_timing_middleware(request: Request, call_next):
@@ -109,17 +127,30 @@ async def add_timing_middleware(request: Request, call_next):
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     """Global exception handler"""
-    print(f"[ERROR] Unhandled exception: {str(exc)}")
-    print(f"[ERROR] Exception type: {type(exc).__name__}")
+    import logging
+    logger = logging.getLogger(__name__)
     
-    return JSONResponse(
-        content={
-            "detail": "Internal server error",
-            "error_type": type(exc).__name__,
-            "message": str(exc)
-        },
-        status_code=500
-    )
+    # Log full error details server-side
+    logger.error(f"Unhandled exception: {str(exc)}", exc_info=True)
+    
+    # Don't expose error details in production
+    if IS_PRODUCTION:
+        return JSONResponse(
+            content={
+                "detail": "Internal server error"
+            },
+            status_code=500
+        )
+    else:
+        # In development, show more details
+        return JSONResponse(
+            content={
+                "detail": "Internal server error",
+                "error_type": type(exc).__name__,
+                "message": str(exc)
+            },
+            status_code=500
+        )
 
 # Handle HTTPException
 @app.exception_handler(HTTPException)
@@ -319,10 +350,12 @@ async def health_test():
     except Exception as e:
         return {"status": "unhealthy", "error": str(e), "timestamp": datetime.now().isoformat()}
 
-# Simple test endpoint
+# Simple test endpoint (disabled in production)
 @app.get("/test")
 async def test_endpoint():
     """Simple test endpoint to verify the API is working"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     return {
         "message": "Backend is running!",
         "timestamp": datetime.now().isoformat(),
@@ -331,10 +364,12 @@ async def test_endpoint():
         "environment": os.getenv("ENV", "unknown")
     }
 
-# CORS test endpoint
+# CORS test endpoint (disabled in production)
 @app.get("/cors-test")
 async def cors_test():
     """Test endpoint to verify CORS headers are working correctly"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     return {
         "message": "CORS test successful",
         "timestamp": datetime.now().isoformat(),
@@ -346,12 +381,16 @@ async def cors_test():
 @app.options("/cors-test")
 async def cors_test_options():
     """Handle CORS preflight for the test endpoint"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     return {"message": "CORS preflight handled"}
 
-# Auth test endpoint (no authentication required)
+# Auth test endpoint (disabled in production)
 @app.get("/auth-test")
 async def auth_test_endpoint():
     """Test endpoint to verify auth router is accessible"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     return {
         "message": "Auth test endpoint accessible",
         "timestamp": datetime.now().isoformat(),
@@ -362,6 +401,8 @@ async def auth_test_endpoint():
 @app.options("/auth-test")
 async def auth_test_options():
     """Handle CORS preflight for auth test endpoint"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     return {"message": "Auth test CORS preflight handled"}
 
 # Document upload endpoint
@@ -459,10 +500,12 @@ async def get_openapi_json():
         headers={"Content-Type": "application/json"}
     ) 
 
-# Debug endpoint to list all registered routes
+# Debug endpoint to list all registered routes (disabled in production)
 @app.get("/debug/routes")
 async def debug_routes():
     """Debug endpoint to list all registered routes"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     routes = []
     for route in app.routes:
         if hasattr(route, 'path') and hasattr(route, 'methods'):
@@ -512,20 +555,24 @@ async def debug_routes():
         "curriculum_validate_path": "/api/curriculum/validate"
     }
 
-# Simple CORS test endpoint
+# Simple CORS test endpoint (disabled in production)
 @app.get("/test-cors")
 async def test_cors():
     """Simple endpoint to test CORS functionality"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     return {
         "message": "CORS is working!",
         "timestamp": datetime.now().isoformat(),
         "status": "success"
     }
 
-# Test endpoint that intentionally raises an error to test CORS headers
+# Test endpoint that intentionally raises an error to test CORS headers (disabled in production)
 @app.get("/test-error")
 async def test_error():
     """Test endpoint that raises an error to verify CORS headers are sent"""
+    if IS_PRODUCTION:
+        raise HTTPException(status_code=404, detail="Not found")
     raise HTTPException(status_code=500, detail="This is a test error to verify CORS headers")
 
 # Health check endpoint for vector stores
