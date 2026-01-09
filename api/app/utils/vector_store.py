@@ -2,6 +2,7 @@ import os
 import tempfile
 import shutil
 import pickle
+import time
 from typing import Dict, List, Optional, Any
 import faiss
 from langchain_openai import OpenAIEmbeddings
@@ -134,10 +135,14 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
             
             # Try loading with different strategies (enum for compatibility)
             strategies: List[Any] = []
-            for name in ("COSINE", "EUCLIDEAN", "L2"):
-                if hasattr(DistanceStrategy, name):
-                    strategies.append(getattr(DistanceStrategy, name))
+            try:
+                for name in ("COSINE", "EUCLIDEAN", "L2"):
+                    if hasattr(DistanceStrategy, name):
+                        strategies.append(getattr(DistanceStrategy, name))
+            except Exception as strategy_err:
+                print(f"[WARNING] Failed to enumerate distance strategies: {strategy_err}")
             strategies.append(None)
+            print(f"[DEBUG] Distance strategies to try: {strategies}")
             
             for strategy in strategies:
                 try:
