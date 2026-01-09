@@ -59,19 +59,33 @@ def get_embeddings():
             raise ValueError("GOOGLE_API_KEY is required when AI_PROVIDER is set to 'google'")
         # Ensure Google embedding model name has the correct format (models/ prefix)
         model_name = EMBEDDING_MODEL
-        if not model_name.startswith("models/"):
-            # Auto-fix common old format model names
+        
+        # Detect and reject OpenAI model names - they're not compatible with Google API
+        # Check if model name contains OpenAI-specific patterns (with or without models/ prefix)
+        openai_patterns = ["text-embedding-3-small", "text-embedding-3-large", "text-embedding-ada-002", "text-embedding-ada"]
+        is_openai_model = any(pattern in model_name for pattern in openai_patterns)
+        
+        if is_openai_model:
+            # OpenAI model detected - replace with valid Google model
+            model_name = "models/text-embedding-004"
+        elif not model_name.startswith("models/"):
+            # Auto-fix common old format Google model names
             if model_name == "text-embedding-gecko-002":
                 model_name = "models/text-embedding-004"
-            elif model_name.startswith("text-embedding-"):
-                # Convert text-embedding-XXX to models/text-embedding-XXX
+            elif model_name in ["text-embedding-004", "text-embedding-003"]:
+                # Valid Google model names - add prefix
                 model_name = f"models/{model_name}"
-            elif model_name.startswith("embedding-"):
-                # Convert embedding-XXX to models/embedding-XXX
+            elif model_name == "embedding-001":
+                # Valid Google model name - add prefix
                 model_name = f"models/{model_name}"
             else:
-                # Default fallback
+                # Unknown format - default to valid Google model
                 model_name = "models/text-embedding-004"
+        
+        # Final validation: ensure it's a valid Google model format
+        if not model_name.startswith("models/"):
+            model_name = "models/text-embedding-004"
+            
         return GoogleGenerativeAIEmbeddings(
             google_api_key=GOOGLE_API_KEY,
             model=model_name
