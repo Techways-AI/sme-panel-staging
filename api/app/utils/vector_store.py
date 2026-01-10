@@ -2,6 +2,8 @@ import os
 import tempfile
 import shutil
 import logging
+import threading
+import time
 from typing import Dict, List, Optional, Any
 from langchain_openai import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -26,6 +28,57 @@ from .s3_utils import (
     delete_all_vectorstore_files,
     ESSENTIAL_VECTORSTORE_FILES
 )
+
+# In-memory cache to avoid repeated S3 downloads per document
+_VECTOR_STORE_CACHE: Dict[str, FAISS] = {}
+_VECTOR_STORE_CACHE_TS: Dict[str, float] = {}
+_CACHE_LOCK = threading.Lock()
+_CACHE_TTL = int(os.getenv("VECTOR_STORE_CACHE_TTL", "1800"))  # default 30 minutes
+_CACHE_MAX_ITEMS = int(os.getenv("VECTOR_STORE_CACHE_MAX", "16"))
+
+
+def _clear_cache_entry(doc_id: str, logger: logging.Logger, reason: str) -> None:
+    """Remove a cached vector store entry with logging."""
+    with _CACHE_LOCK:
+        if doc_id in _VECTOR_STORE_CACHE:
+            del _VECTOR_STORE_CACHE[doc_id]
+        if doc_id in _VECTOR_STORE_CACHE_TS:
+            del _VECTOR_STORE_CACHE_TS[doc_id]
+    logger.debug(f"Cleared cached vector store for {doc_id} ({reason})")
+
+
+def _get_cached_vector_store(doc_id: str, logger: logging.Logger) -> Optional[FAISS]:
+    """Return a cached vector store if it is fresh and valid."""
+    now = time.time()
+    with _CACHE_LOCK:
+        store = _VECTOR_STORE_CACHE.get(doc_id)
+        ts = _VECTOR_STORE_CACHE_TS.get(doc_id)
+    if store and ts:
+        age = now - ts
+        if age < _CACHE_TTL:
+            if hasattr(store, "index") and store.index and store.index.ntotal >= 0:
+                logger.debug(f"Using cached vector store for {doc_id} (age {age:.3f}s)")
+                return store
+            _clear_cache_entry(doc_id, logger, "invalid structure")
+        else:
+            _clear_cache_entry(doc_id, logger, "expired")
+    return None
+
+
+def _store_vector_store_cache(doc_id: str, store: FAISS, logger: logging.Logger) -> None:
+    """Cache a vector store with simple LRU-style eviction."""
+    now = time.time()
+    with _CACHE_LOCK:
+        if len(_VECTOR_STORE_CACHE) >= _CACHE_MAX_ITEMS:
+            # Evict the oldest entry to keep memory bounded
+            oldest = min(_VECTOR_STORE_CACHE_TS, key=_VECTOR_STORE_CACHE_TS.get, default=None)
+            if oldest:
+                del _VECTOR_STORE_CACHE[oldest]
+                del _VECTOR_STORE_CACHE_TS[oldest]
+                logger.debug(f"Evicted cached vector store for {oldest} to respect cache limit")
+        _VECTOR_STORE_CACHE[doc_id] = store
+        _VECTOR_STORE_CACHE_TS[doc_id] = now
+    logger.debug(f"Cached vector store for {doc_id}")
 
 def verify_document_processed(doc_id: str, retries: int = 3, delay: float = 2.0) -> bool:
     """Verify if document has been processed by checking essential vector store files in S3, with retries for S3 consistency."""
@@ -112,6 +165,12 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
     """Load vector store from S3 with improved error handling and logging"""
     import logging
     logger = logging.getLogger(__name__)
+
+    # Fast path: serve from in-memory cache when available
+    cached_store = _get_cached_vector_store(doc_id, logger)
+    if cached_store:
+        logger.info(f"Vector store served from cache for doc_id={doc_id}")
+        return cached_store
     
     temp_dir = None
     try:
@@ -258,6 +317,7 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                 # Verify it's usable
                 if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
                     logger.info(f"Vector store loaded successfully with {strategy or 'default'} strategy. Index size: {vector_store.index.ntotal}")
+                    _store_vector_store_cache(doc_id, vector_store, logger)
                     return vector_store
                 else:
                     logger.warning(f"Vector store loaded but appears invalid. Has index: {hasattr(vector_store, 'index') if vector_store else False}")
@@ -351,6 +411,7 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
                     
                     if vector_store and hasattr(vector_store, 'index') and vector_store.index.ntotal > 0:
                         logger.info(f"Vector store loaded successfully after fix with {strategy or 'default'} strategy. Index size: {vector_store.index.ntotal}")
+                        _store_vector_store_cache(doc_id, vector_store, logger)
                         return vector_store
                 except Exception as retry_error:
                     logger.debug(f"Retry with strategy {strategy} failed: {str(retry_error)}")
@@ -385,6 +446,7 @@ def load_vector_store(doc_id: str) -> Optional[FAISS]:
 def save_vector_store(vector_store: FAISS, doc_id: str) -> bool:
     """Save vector store directly to S3 without local storage"""
     try:
+        logger = logging.getLogger(__name__)
         print(f"[DEBUG] Saving vector store for doc_id={doc_id} directly to S3...")
         
         # Create a temporary directory just for serialization
@@ -400,6 +462,7 @@ def save_vector_store(vector_store: FAISS, doc_id: str) -> bool:
             shutil.rmtree(temp_dir)
             
         print(f"[DEBUG] Vector store saved successfully to S3 for doc_id={doc_id}")
+        _store_vector_store_cache(doc_id, vector_store, logger)
         return True
         
     except Exception as e:
@@ -420,6 +483,8 @@ def save_vector_store(vector_store: FAISS, doc_id: str) -> bool:
 def delete_vector_store(doc_id: str) -> bool:
     """Delete all vector store files from S3"""
     try:
+        logger = logging.getLogger(__name__)
+        _clear_cache_entry(doc_id, logger, "delete request")
         delete_all_vectorstore_files(doc_id)
         return True
     except Exception as e:
