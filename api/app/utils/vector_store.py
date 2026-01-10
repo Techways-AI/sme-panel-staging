@@ -56,6 +56,10 @@ def _normalize_google_embedding_model(model_name: str, logger: logging.Logger) -
         "text-embedding-gecko-001": "models/text-embedding-004",
         "text-embedding-gecko-002": "models/text-embedding-004",
         "embedding-001": "models/embedding-001",
+        # OpenAI-style model names that are not valid for Gemini embeddings
+        "text-embedding-3-small": "models/text-embedding-004",
+        "text-embedding-3-large": "models/text-embedding-004",
+        "text-embedding-ada-002": "models/text-embedding-004",
     }
     if name in legacy_map:
         normalized = legacy_map[name]
