@@ -1,6 +1,7 @@
 import os
 import tempfile
 import shutil
+import logging
 from typing import Dict, List, Optional, Any
 from langchain_openai import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -43,9 +44,40 @@ def verify_document_processed(doc_id: str, retries: int = 3, delay: float = 2.0)
             time.sleep(delay)
     return False
 
+def _normalize_google_embedding_model(model_name: str, logger: logging.Logger) -> str:
+    """Normalize Google embedding model names to the format expected by Gemini APIs."""
+    if not model_name:
+        return "models/text-embedding-004"
+
+    name = model_name.strip()
+
+    # Explicit remaps for legacy names that trigger 400 format errors
+    legacy_map = {
+        "text-embedding-gecko-001": "models/text-embedding-004",
+        "text-embedding-gecko-002": "models/text-embedding-004",
+        "embedding-001": "models/embedding-001",
+    }
+    if name in legacy_map:
+        normalized = legacy_map[name]
+        logger.debug(f"Normalized legacy Google embedding model '{name}' -> '{normalized}'")
+        return normalized
+
+    # Add missing models/ prefix when users supply bare model ids
+    if not name.startswith("models/") and (
+        name.startswith("text-embedding-") or name.startswith("embedding-")
+    ):
+        normalized = f"models/{name}"
+        logger.debug(f"Added models/ prefix to Google embedding model '{name}' -> '{normalized}'")
+        return normalized
+
+    return name
+
+
 def get_embeddings():
     """Get embeddings model based on configured AI provider and hybrid mode settings"""
     from ..config.settings import USE_OPENAI_EMBEDDINGS, AI_PROVIDER, OPENAI_API_KEY, GOOGLE_API_KEY, EMBEDDING_MODEL
+
+    logger = logging.getLogger(__name__)
     
     if USE_OPENAI_EMBEDDINGS:
         if not OPENAI_API_KEY:
@@ -57,9 +89,12 @@ def get_embeddings():
     elif AI_PROVIDER == "google":
         if not GOOGLE_API_KEY:
             raise ValueError("GOOGLE_API_KEY is required when AI_PROVIDER is set to 'google'")
+
+        normalized_model = _normalize_google_embedding_model(EMBEDDING_MODEL, logger)
+
         return GoogleGenerativeAIEmbeddings(
             google_api_key=GOOGLE_API_KEY,
-            model=EMBEDDING_MODEL
+            model=normalized_model
         )
     else:  # OpenAI
         if not OPENAI_API_KEY:
