@@ -191,7 +191,7 @@ API_DESCRIPTION = "An AI-powered tutoring system with document and video managem
 CORS_ORIGINS = [
     "https://student-panel-staging-production-d927.up.railway.app",
     "https://sme.durranis.ai",
-    "https://backend-production-fe73.up.railway.app"
+    "https://sme-panel-staging-production-2188.up.railway.app"
 ]
 
 # Function to clean and validate CORS origins
